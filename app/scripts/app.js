@@ -109,12 +109,16 @@ angular
         controller: 'AboutCtrl'
       });
 
-    $translateProvider.registerAvailableLanguageKeys(['en', 'zh'], {
+    $translateProvider.registerAvailableLanguageKeys(['en', 'fr', 'es'], {
       'en': 'en',
-      'zh': 'zh'
+      'fr': 'fr',
+      'es': 'es'
     });
 
     $translateProvider.fallbackLanguage('en');
     $translateProvider.determinePreferredLanguage();
     $urlRouterProvider.otherwise('');
+  })
+  .constant('Config', {
+    Language: 'language'
   });

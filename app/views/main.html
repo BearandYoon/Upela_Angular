@@ -182,7 +182,7 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="address1" class="control-label col-md-2 no-padding-right required-">
+                      <label class="control-label col-md-2 no-padding-right required-">
                         <span class="popmark" id="popmark-origin" data-placement="right" data-title="Origin" data-content="Collection address for your shipment" data-original-title="" title="">Destination</span>
                       </label>
 
@@ -224,13 +224,15 @@
 
                               <label class="parcel-label">Wt/Unit</label>
                               <input type="text" class="form-control parcel-weight input-xmini2" ng-model="parcel.weight" value="" size="16" maxlength="4" placeholder="Wt/Unit">
-                              <span class="weight_unit">kg</span>
+                              <span class="weight_unit" ng-if="ctrl.parcelUnit">kg</span>
+                              <span class="weight_unit" ng-if="!ctrl.parcelUnit">lbs</span>
 
                               <label class="parcel-label">Dimensions</label>
                               <input type="text" class="form-control input-xmini2" ng-model="parcel.x" value="" size="16" maxlength="3" placeholder="Length"> x
                               <input type="text" class="form-control input-xmini2" ng-model="parcel.y" value="" maxlength="3" placeholder="Width"> x
                               <input type="text" class="form-control input-xmini2" ng-model="parcel.z" value="" size="16" maxlength="3" placeholder="Height">
-                              <span class="dimension_unit">cm</span>
+                              <span class="dimension_unit" ng-if="ctrl.parcelUnit">cm</span>
+                              <span class="dimension_unit" ng-if="!ctrl.parcelUnit">in</span>
                               <a class="parcel-action" href="#" ng-click="ctrl.removeParcel($index)">
                                 <i class="glyphicon glyphicon-minus-sign"></i>
                               </a>
@@ -254,20 +256,16 @@
                     </div>
 
                     <div class="form-group form-group-no-margin ">
-                      <label for="shipment_date-" class="control-label col-md-2 no-padding-right required-">
+                      <label class="control-label col-md-2 no-padding-right required-">
                         <span class="popmark" id="popmark-shipment-date" data-placement="right" data-title="Date" data-content="Collection date requested" data-original-title="" title="">Date</span>
                       </label>
 
                       <div class="col-md-4">
                         <div class="input-group">
-                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                           <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            <button type="button" class="btn btn-default" ng-click="openDate()"><i class="glyphicon glyphicon-calendar"></i></button>
                           </span>
-                          <!--<span class="input-group-addon">-->
-                            <!--<i class="fa fa-calendar"></i>-->
-                          <!--</span>-->
-                          <!--<input type="text" id="shipment_date" name="shipment_date" class="form-control datepicker hasDatepicker" value="10/28/2016" size="10" maxlength="10">-->
                         </div>
 
                         <div class="help" style="font-size: 12px;">Collection date requested</div>
