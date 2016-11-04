@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Upela: price comparison for sending parcels France and International</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="styles/font-awesome.min.css" rel="stylesheet">
+    <!-- endbuild -->
+  </head>
+  <body class="home" ng-app="UpelaApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div ng-controller="TopbarCtrl" ng-include="'views/topbar.html'"></div>
+    <!--<div id="wrapper" class="clearfix container">-->
+      <!--<div class="clearfix row">-->
+        <!--<section id="main" class="col-lg-12">-->
+          <!--<div id="load">-->
+            <!--<img src="images/loading.gif" alt="Loading...">&nbsp;&nbsp;Please wait...-->
+          <!--</div>-->
+          <!--<div ui-view=""></div>-->
+        <!--</section>-->
+      <!--</div>-->
+    <!--</div>-->
+    <div ui-view=""></div>
+    <div ng-controller="FooterCtrl" ng-include="'views/footer.html'"></div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-ui-select/dist/select.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/services/mainService.js"></script>
+        <script src="scripts/controllers/topbar.js"></script>
+        <script src="scripts/controllers/footer.js"></script>
+        <script src="scripts/controllers/order-progress.js"></script>
+        <script src="scripts/controllers/order-offer.js"></script>
+        <script src="scripts/controllers/order-order.js"></script>
+        <script src="scripts/controllers/order-payment.js"></script>
+        <script src="scripts/controllers/order-confirm.js"></script>
+        <script src="scripts/controllers/my-account.js"></script>
+        <script src="scripts/controllers/ship-to-contact.js"></script>
+        <script src="scripts/controllers/mass-mailing.js"></script>
+        <script src="scripts/controllers/mass-mailing-upload.js"></script>
+        <script src="scripts/controllers/my-contacts.js"></script>
+        <script src="scripts/controllers/credit-account.js"></script>
+        <script src="scripts/controllers/my-store.js"></script>
+        <script src="scripts/controllers/settings.js"></script>
+        <script src="scripts/controllers/refer-contacts.js"></script>
+        <script src="scripts/controllers/loyalty.js"></script>
+        <script src="scripts/filters/search-selector-filter.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

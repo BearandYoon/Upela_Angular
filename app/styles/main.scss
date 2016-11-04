@@ -1,0 +1,190 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+.shadow_container {
+  margin-top: 50px;
+  max-width: 750px;
+  box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.07);
+  padding: 100px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.space {
+  margin-bottom: 30px;
+}
+
+.custom_button {
+  width: 125px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  //.container {
+  //  max-width: 970px;
+  //}
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.searchandselect {
+  cursor: pointer;
+  position: relative;
+  width: 300px;
+  border: 1px solid #e6e8ea;
+  z-index: 9999;
+}
+
+.searchandselect .header {
+  height: 40px;
+  padding: 10px 15px;
+  z-index: 9999;
+}
+
+.searchandselect .search {
+  padding: 5px;
+  display: none;
+  z-index: 9999;
+}
+
+.searchandselect .dropdown {
+  border: 1px solid #e6e8ea;
+  left: 0;
+  list-style: outside none none;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin: 0;
+  padding: 0;
+  display: none;
+  z-index: 9999;
+}
+
+.searchandselect.active .search {
+  display: inherit;
+}
+
+.searchandselect.active .dropdown {
+  display: inherit;
+  max-height: 290px;
+}
+
+.searchandselect .dropdown li {
+  margin: 10px 0 0;
+  padding: 0 10px;
+}
+
+.searchandselect .dropdown li i {
+  color: inherit;
+  margin-right: 5px;
+  vertical-align: middle;
+  float: right;
+}
+
+.searchandselect .dropdown li small {
+  margin-right: 10px;
+}
+
+
+
+
+.select2 > .select2-choice.ui-select-match {
+  /* Because of the inclusion of Bootstrap */
+  height: 29px;
+}
+
+.selectize-control > .selectize-dropdown {
+  top: 36px;
+}
+/* Some additional styling to demonstrate that append-to-body helps achieve the proper z-index layering. */
+.select-box {
+  background: #fff;
+  position: relative;
+  z-index: 1;
+}
+.alert-info.positioned {
+  margin-top: 1em;
+  position: relative;
+  z-index: 10000; /* The select2 dropdown has a z-index of 9999 */
+}

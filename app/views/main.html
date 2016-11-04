@@ -1,0 +1,403 @@
+<div id="page">
+  <div id="main-wrapper" class="clearfix">
+    <div class="clearfix">
+      <section id="main">
+        <div id="load">
+          <img src="images/loading.gif" alt="">&nbsp;&nbsp;Please wait...
+        </div>
+
+        <!-- success message section-->
+        <!--<div class="alert alert-success">-->
+          <!--<?php echo $_SESSION['success_message']; ?>-->
+        <!--</div>-->
+        <!--<?php unset($_SESSION['success_message']); } ?>-->
+
+        <!--<?php if (isset($_SESSION['error_message']) && !empty($_SESSION['error_message'])) { ?>-->
+        <!--<div class="alert alert-danger">-->
+          <!--<?php echo $_SESSION['error_message']; ?>-->
+        <!--</div>-->
+        <!--<?php unset($_SESSION['error_message']); } ?>-->
+        <div id="home-top">
+          <h1 id="h1-home">Upela: compare quotes from carriers for the delivery and tracking of your consignments, parcels or pallets for professionals or individuals</h1>
+          <div id="carousel-home" class="carousel slide" data-ride="carousel" data-interval="6000">
+            <div class="carousel-inner">
+              <div class="item" style="background-image: url('images/files/upload/home/slider/slide6.jpg');">
+                <div class="carousel-caption" style="margin-right: -740px; top: 260px;">
+                  <h4 class="orange" style="margin-bottom: 7px;">E-merchants</h4>
+                  <div class="espace-pro-headline2" style="margin-bottom: 10px;">
+                    Centralize all your sendings<br>Save time, avoid mistakes
+                  </div>
+                  <a class="btn btn-orange" href="https://www.upela.com/en/transportation-module-plugin-29.html">See all our connectors</a>
+                </div>
+              </div>
+              <div class="item active" style="background-image: url('images/files/upload/home/slider/slide2.jpg');">
+                <div class="carousel-caption">
+                  <h3 style="margin-bottom: 7px;">N°1 for the PROs</h3>
+                  <div class="espace-pro-headline">
+                    +20,000 customers<br> Immediate discounts <br> Deferred payment by Sepa
+                  </div>
+                  <a class="btn btn-orange" href="https://www.upela.com/en/my-account/login#register">Create a professional account</a>
+                </div>
+              </div>
+              <div class="item" style="background-image: url('images/files/upload/home/slider/slide1.jpg');">
+                <div class="carousel-caption">
+                  <div class="black-bg" style="width: 232px;">
+                    <div class="reduction-tag" style="background-image: url('images/files/upload/home/slider/reduction-tag-en.png');">Up to -70%</div>
+                    <div id="tarifs-particuliers">
+                      <h3>Delivery Day+1 <small>*</small></h3>
+                      <h4>More than 220 destinations</h4>
+                      <table cellspacing="0" cellpadding="0" border="0" class="destination-prices">
+                        <tbody>
+                          <tr height="26">
+                            <td width="140" class="destination">Europe</td>
+                            <td width="61" class="price">11.57€</td>
+                          </tr>
+                          <tr height="6">
+                            <td colspan="3"></td>
+                          </tr>
+                          <tr height="26">
+                            <td class="destination">USA</td>
+                            <td class="price">28.42€</td>
+                          </tr>
+                          <tr height="6">
+                            <td colspan="3"></td>
+                          </tr>
+                          <tr height="26">
+                            <td class="destination">Middle East</td>
+                            <td class="price">25.35€</td>
+                          </tr>
+                          <tr height="6">
+                            <td colspan="3"></td>
+                          </tr>
+                          <tr height="26">
+                            <td class="destination">Africa</td>
+                            <td class="price">25.35€</td>
+                          </tr>
+                          <tr height="6">
+                            <td colspan="3"></td>
+                          </tr>
+                          <tr height="26">
+                            <td class="destination">Asia</td>
+                            <td class="price">25.35€</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <p style="font-size: 12px; margin-bottom: 5px;">Public rates tax inc.<small>*</small><a class="pull-right text-underline orange" href="https://www.upela.com/en/my-account/login#register">&gt;&nbsp;PRO rate?</a></p>
+                      <p class="last" style="font-size: 12px; margin-left: 0px; margin-bottom: -5px;"><small>(* from)</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item" style="background-image: url('images/files/upload/home/slider/slide4.jpg');">
+                <div class="carousel-caption" style="padding-top: 90px;">
+                  <h3>Simplify your exports <br>with the express shipping leaders<br>at the lowest prices</h3>
+                  <ul class="icon-ok">
+                    <li>Door-to-Door Delivery</li>
+                    <li>Customs service included</li>
+                    <li>Personality Tip</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item" style="background-image: url('images/files/upload/home/slider/slide3.jpg');">
+                <div class="carousel-caption" style="padding-top: 70px;">
+                  <h3 style="margin-bottom: 0;">Why the PROs<br>choose us?</h3>
+                  <ul class="icon-ok">
+                    <li>to simplify their deliveries</li>
+                    <li>to gain time</li>
+                    <li>for our rates</li>
+                    <li>for our experience</li>
+                    <li>for our destinations</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-home" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-home" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+            <div id="shipment-rating-form-container">
+              <uib-tabset active="activeForm">
+                <uib-tab index="0">
+                  <uib-tab-heading>
+                    Begin a shipment
+                  </uib-tab-heading>
+                  <form id="ShipmentRatingForm" class="form-horizontal" role="form" enctype="multipart/form-data" accept-charset="UTF-8" method="post">
+                    <div class="form-group">
+                      <label for="type" class="control-label col-md-2 no-padding-right required-">
+                        <span class="popmark" id="popmark-type" data-placement="right" data-title="Type" data-content="<b>Envelope</b> : envelope or document < 2.5 Kg<br><b>Parcel</b> : maximum weight 70 Kg, max Length 270 cm AND Length + 2 x Height <419 cm<br><b>Pallet</b> : max height 200 cm and max weight 3 tonnes (international only)<br><b>Bulky shipment</b> : max dimensions : 302 cm x 203 cm x 178 cm height (international only)" data-original-title="" title="">Type</span>
+                      </label>
+
+                      <div class="col-md-10">
+                        <div class="radio-inline" id="radio-inline-type-1">
+                          <label for="type-1">
+                            <input type="radio" id="type-1" name="type" value="1">&nbsp;Envelope&nbsp;
+                            <img src="images/icons/parcel-1.png" style="max-height: 32px;">
+                          </label>
+                        </div>
+
+                        <div class="radio-inline" id="radio-inline-type-2">
+                          <label for="type-2">
+                            <input type="radio" id="type-2" name="type" value="2" checked="">&nbsp;Parcel&nbsp;
+                            <img src="images/icons/parcel-2.png" style="max-height: 32px;">
+                          </label>
+                        </div>
+
+                        <div class="radio-inline" id="radio-inline-type-3">
+                          <label for="type-3">
+                            <input type="radio" id="type-3" name="type" value="3">&nbsp;Pallet&nbsp;
+                            <img src="images/icons/parcel-3.png" style="max-height: 32px;">
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="address1" class="control-label col-md-2 no-padding-right required-">
+                        <span class="popmark" id="popmark-origin" data-placement="right" data-title="Origin" data-content="Collection address for your shipment" data-original-title="" title="">Origin</span>
+                      </label>
+
+                      <div class="col-md-10" id="address1-row">
+                        <ui-select ng-model="ctrl.originCountry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                          <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
+                          <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
+                            <div ng-bind-html="person.name | highlight: $select.search"></div>
+                            <small>
+                              {{country.name}}
+                              <!--age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>-->
+                            </small>
+                          </ui-select-choices>
+                        </ui-select>
+
+                        <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                        <input type="text" id="address1_postcode_city" name="address1_postcode_city" class="form-control ui-autocomplete-input" value="" maxlength="255" placeholder="Postcode, Town" autocomplete="off">
+
+                        <div class="checkbox">
+                          <label for="address1_pro" class="">
+                            <input type="checkbox" id="address1_pro" name="address1_pro" class="check_box" value="1" unchecked="">Business address
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="address1" class="control-label col-md-2 no-padding-right required-">
+                        <span class="popmark" id="popmark-origin" data-placement="right" data-title="Origin" data-content="Collection address for your shipment" data-original-title="" title="">Destination</span>
+                      </label>
+
+                      <div class="col-md-10" id="address1-row">
+                        <ui-select ng-model="ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                          <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
+                          <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
+                            <div ng-bind-html="person.name | highlight: $select.search"></div>
+                            <small>
+                              {{country.name}}
+                              <!--age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>-->
+                            </small>
+                          </ui-select-choices>
+                        </ui-select>
+
+                        <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                        <input type="text" id="address1_postcode_city" name="address1_postcode_city" class="form-control ui-autocomplete-input" value="" maxlength="255" placeholder="Postcode, Town" autocomplete="off">
+
+                        <div class="checkbox">
+                          <label for="address1_pro" class="">
+                            <input type="checkbox" name="address1_pro" class="check_box" value="1" unchecked="">Business address
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group" id="parcels-form-group">
+                      <label class="control-label col-md-2 no-padding-right required-">
+                        <span class="popmark" data-placement="right" data-title="Parcels" data-content="Complete the details of your envelope, parcel or pallet - number of parcels, unit weight and dimensions" data-original-title="" title="">Parcels</span>
+                      </label>
+                      <div class="col-md-10">
+                        <input type="hidden" id="parcel_unit" name="parcel_unit" value="fr">
+                        <input type="hidden" id="with_box_dimensions" name="with_box_dimensions" value="0">
+                        <div class="parcels-container">
+                          <div id="parcel_list" ng-repeat="parcel in ctrl.parcels">
+                            <div class="parcel">
+                              <label class="parcel-label">No.</label>
+                              <input type="text" class="form-control parcel-number input-xmini2" maxlength="3"  ng-model="parcel.number" value="1" placeholder="No.">
+
+                              <label class="parcel-label">Wt/Unit</label>
+                              <input type="text" class="form-control parcel-weight input-xmini2" ng-model="parcel.weight" value="" size="16" maxlength="4" placeholder="Wt/Unit">
+                              <span class="weight_unit">kg</span>
+
+                              <label class="parcel-label">Dimensions</label>
+                              <input type="text" class="form-control input-xmini2" ng-model="parcel.x" value="" size="16" maxlength="3" placeholder="Length"> x
+                              <input type="text" class="form-control input-xmini2" ng-model="parcel.y" value="" maxlength="3" placeholder="Width"> x
+                              <input type="text" class="form-control input-xmini2" ng-model="parcel.z" value="" size="16" maxlength="3" placeholder="Height">
+                              <span class="dimension_unit">cm</span>
+                              <a class="parcel-action" href="#" ng-click="ctrl.removeParcel($index)">
+                                <i class="glyphicon glyphicon-minus-sign"></i>
+                              </a>
+                            </div><!-- /parcel -->
+                          </div>
+
+                          <div class="parcel-actions pull-left">
+                            <a href="#" ng-click="ctrl.addParcel()" style="padding-right:14px;">
+                              <i class="glyphicon glyphicon-plus-sign"></i> Add a parcel
+                            </a>
+                            <span id="switch_parcel_unit_us">
+                              <a href="#" ng-click="ctrl.switchParcelUnit()" style="padding-right:14px;">
+                                <i class="glyphicon glyphicon-refresh"></i> Change unit of measure
+                              </a>
+                            </span>
+                          </div>
+
+                          <div class="clear"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group form-group-no-margin ">
+                      <label for="shipment_date-" class="control-label col-md-2 no-padding-right required-">
+                        <span class="popmark" id="popmark-shipment-date" data-placement="right" data-title="Date" data-content="Collection date requested" data-original-title="" title="">Date</span>
+                      </label>
+
+                      <div class="col-md-4">
+                        <div class="input-group">
+                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                          <!--<span class="input-group-addon">-->
+                            <!--<i class="fa fa-calendar"></i>-->
+                          <!--</span>-->
+                          <!--<input type="text" id="shipment_date" name="shipment_date" class="form-control datepicker hasDatepicker" value="10/28/2016" size="10" maxlength="10">-->
+                        </div>
+
+                        <div class="help" style="font-size: 12px;">Collection date requested</div>
+                      </div>
+
+                      <div class="col-md-6 text-center" id="shipment-date-row">
+                        <button type="submit" class="btn btn-primary btn-lg" id="btn_save" name="btn_save" ng-click="gotoProgress()">
+                          <i class="glyphicon glyphicon-ok"></i> COMPARE THE OFFERS!
+                        </button>
+                      </div>
+                    </div>
+
+                  </form>
+                  <div class="clear"></div>
+                </uib-tab>
+                <uib-tab index="1">
+                  <uib-tab-heading>
+                    How does it work?
+                  </uib-tab-heading>
+                  <div class="video-wrapper">
+                    <iframe width="469" height="264" src="//www.youtube.com/embed/ToXhDYRqwZE?autoplay=0" frameborder="0" allowfullscreen=""></iframe>
+                  </div>
+                </uib-tab>
+              </uib-tabset>
+            </div>
+          </div>
+        </div>
+
+        <div id="home-bottom" class="container">
+          <div id="home-bottom-references" class="row">
+            <div class="col-md-3 transportation-operated-by">
+              <h3 class="home-bottom-section-title" style="margin-bottom: 8px;">The reliability and service of the leaders in international express delivery</h3>
+              <div class="transportation-operated-by-imgs">
+                <a href="#"><img src="images/references/dhl.png" alt="DHL" /></a>
+                <a href="#"><img src="images/references/dpd.png" alt="DPD" /></a>
+                <a href="#"><img src="images/references/mondial-relay.png" alt="Mondial Relay" /></a>
+                <a href="#"><img src="images/references/ups-logo-en.jpg" alt="UPS" /></a>
+                <a href="#"><img src="images/references/fedex.png" alt="FedEx" /></a>
+                <a href="#"><img src="images/references/chronopost.png" alt="Chronopost" /></a>
+                <a href="#"><img src="images/references/colissimo.png" alt="Colissimo" /></a>
+              </div>
+            </div>
+
+            <div class="col-md-3" style="margin-bottom: 10px;">
+              <h3 class="home-bottom-section-title" style="margin-bottom: 10px;">
+                Discover our solutions for e-shops and MarketPlaces
+              </h3>
+              <a class="text-center block-center" href="#">
+                <img class="img-responsive block-center" alt="Discover our solutions for e-shops and MarketPlaces" src="images/home/marketplaces.jpg">
+              </a>
+            </div>
+
+            <div class="col-md-3" style="margin-bottom: 10px;">
+              <h3 class="home-bottom-section-title" style="margin-bottom: 20px;">
+                Take advantage of our programs
+              </h3>
+              <a href="#">
+                <img class="img-responsive block-center" alt="Refer your contacts and win 200€ !" src="images/home/parrainage-en.png">
+              </a>
+            </div>
+
+            <div class="col-md-3">
+              <h3 id="trustedshops_badge_container_title" class="home-bottom-section-title" style="margin-bottom: 25px;">
+                Your opinion matters
+              </h3>
+              <div id="trustedshops_badge_container"></div>
+
+              <?php if (!$content_only && (!isset($is_cms) || !$is_cms) && (!isset($is_blog) || !$is_blog)) { ?>
+              <SCRIPT type="text/javascript">
+                (function () {
+                  var _tsid = 'X27D7D0EE881086E7CAB9E68398B819DF';
+                  _tsConfig = {
+                    'yOffset': '0', //offset from page bottom
+                    'variant': 'custom_reviews', //text, default, small, reviews
+                    'customElementId': 'trustedshops_badge_container',
+                    'trustcardDirection': 'topLeft',
+                    'customBadgeHeight' : '72'
+                  };
+                  var _ts = document.createElement('script');
+                  _ts.type = 'text/javascript';
+                  _ts.async = true;
+                  _ts.charset = 'utf-8';
+                  _ts.src = '//widgets.trustedshops.com/js/' + _tsid + '.js';
+                  var __ts = document.getElementsByTagName('script')[0];
+                  __ts.parentNode.insertBefore(_ts, __ts);
+                })();
+              </SCRIPT>
+              <NOSCRIPT><A href="https://www.trustedshops.de/shop/certificate.php?shop_id=X27D7D0EE881086E7CAB9E68398B819DF">
+                <IMG title="Cliquez sur le label de qualité pour en contrôler la validité!" src="//widgets.trustedshops.com/images/badge.png"
+                     style="position:fixed;bottom:0;right:0;" /></A></NOSCRIPT>
+              <?php } ?>
+            </div>
+          </div>
+
+          <div id="home-bottom-presentation">
+            <h2>UPELA, the best way to ship a parcel!</h2>
+            <p>Thanks to UPELA exclusive prices, afford the services of the leaders in international express delivery while reducing your costs! Do not wait to find out about UPELA, in a few clicks, order your
+              <strong>express delivery</strong>
+              on our site. According to your choice, DHL, FEDEX or UPS will collect your shipment, an enveloppe, a
+              <strong>bulky parcel or a pallet</strong>
+              and deliver it to your recipient. UPELA takes care of the
+              <strong>
+                <a href="https://www.upela.com/en/send-parcel-to-france-41.html">delivery of your parcels in France</a>
+              </strong>, in
+              <a href="https://www.upela.com/en/send-parcel-england-europe-35.html">Europe</a>
+              , in
+              <a href="https://www.upela.com/en/send-parcel-asia-37.html">Asia</a>
+              and in <a href="https://www.upela.com/en/send-parcel-usa-107.html">USA</a>
+              , with full transparency since at any moment, you can track your <strong>parcel</strong>.
+            </p>
+          </div>
+
+          <div id="home-bottom-instructions">
+            <h2>
+              <a class="collapse-toggle collapsed" data-toggle="collapse" href="#upela-instructions" aria-expanded="false">
+                Instructions for the use of the UPELA price comparison for sending your parcels
+              </a>
+            </h2>
+            <div class="collapse" id="upela-instructions" aria-expanded="false" style="height: 0px;">
+              <ol>
+                <li>In order to send your <strong>mail, parcel or pallet</strong> internationally or in France, complete the information requested in the box "Begin sending": select the place of departure and destination in the drop-down list (type in the name of the city or the postal code). Tick the "business address" box if it is a business address, leave blank if it is a personal address. Enter the weight and size of your parcel. Choose the date that the carrier can collect your consignment. Compare our <strong>carriers rates</strong> by clicking on "compare offers!"</li>
+                <li>Here you may access all of our <strong>quotes for express transportation</strong>. These give references to the name of the carrier (FedEx, DHL or UPS), the price of shipping (excluding and including all taxes), the expected delivery date and the type of carrier. If you have a <a href="https://www.upela.com/en/business-account-upela-61.html">UPELA professional account</a>, the <strong>price for parcels, mail and palettes</strong> are even more advantageous (the creation of a professional or individual account is free and without obligation).</li>
+                <li>Once the method of <strong>express delivery</strong> has been selected, complete all the information concerning the sender and the addressee, or select your contacts in the address book. Also indicate the desired time period at the place where the consignment must be picked up. In the case of <strong>imported parcels</strong>, first check the availability of your correspondent. You may also drop off your package at the agency.</li>
+                <li>A summary page summarises all the information of your consignment. Confirm your order and choose your credit card to access the secure online payment. With a pro Upela account you can <a href="https://www.upela.com/en/pay-later-by-deferred-payment-99.html">pay for your consignment at a later date</a>.</li>
+                <li>Your order is validated. You can print your transportation documents, view your invoice, view the parcel tracking or cancel your consignment. The information of your consignment are sent by email: your shipping note, pro-forma invoice (non European Union consignments) and your Upela invoice. All you have to do is stick your transport voucher on your package (envelope, parcel or pallet) and wait for the courier.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

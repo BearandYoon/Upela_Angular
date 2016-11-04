@@ -1,0 +1,130 @@
+<div id="header-spacer"></div>
+<nav id="header" class="navbar navbar-custom navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only"><?php echo __('Toggle navigation'); ?></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/" title="Upela"><img src="images/header/logo-upela.png" alt=""/>Upela</a>
+    </div>
+    <div id="main-navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav" id="main-navbar-nav">
+        <!--<li><a href="<?php echo Language::getUrl('/'); ?>"><?php echo __('Home'); ?></a></li>-->
+        <li><a href="/professional">Professionals</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-submenu">
+              <a href="#">Destinations</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Africa</a></li>
+                <li><a href="#">America</a></li>
+                <li><a href="#">Asia</a></li>
+                <li><a href="#">DOM-TOM</a></li>
+                <li><a href="#">Eastern Europe</a></li>
+                <li><a href="#">Europe</a></li>
+                <li><a href="#">Middle East</a></li>
+                <!--<li><a href="<?php echo Cms::getPageUrlByIdentifier('country-south-america'); ?>"><?php echo __('South America'); ?></a></li>-->
+              </ul>
+            </li>
+
+            <li class="dropdown-submenu">
+              <a href="#">Express courier</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">France</a></li>
+                <li><a href="#">Europe</a></li>
+                <hr style="margin: 5px 0;">
+                <li><a href="#">Aix en Provence</a></li>
+                <li><a href="#">Bordeaux</a></li>
+                <li><a href="#">Lille</a></li>
+                <li><a href="#">Lyon</a></li>
+                <li><a href="#">Marseille</a></li>
+                <li><a href="#">Montpellier</a></li>
+                <li><a href="#">Nantes</a></li>
+                <li><a href="#">Nice</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Rennes</a></li>
+                <li><a href="#">Strasbourg</a></li>
+                <li><a href="#">Toulouse</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-submenu">
+              <a href="#">Carriers</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Chronopost</a></li>
+                <li><a href="#">Colissimo</a></li>
+                <li><a href="#">DHL</a></li>
+                <li><a href="#">DPD</a></li>
+                <li><a href="#">FedEx</a></li>
+                <li><a href="#">Mondial Relay</a></li>
+                <li><a href="#">TNT</a></li>
+                <li><a href="#">UPS</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="#">Tracking</a></li>
+
+        <li><a href="#">Help</a></li>
+
+        <li><a href="#">Blog</a></li>
+
+        <li><a href="#">Contact</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown dropdown-lang">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="images/flags/1.jpg" title="English">
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu" style="min-width: 0; max-width: 58px;">
+            <li>
+              <a href="#" title="fr">
+                <img src="images/flags/2.jpg" title="French">
+              </a>
+            </li>
+            <li>
+              <a href="#" title="ru">
+                <img src="images/flags/3.jpg" title="Spanish">
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!--<?php if (User::isAuthenticatedAndNotGuest()) { ?>-->
+        <!--<li class="dropdown">-->
+          <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <?php echo truncate_text(User::getSessionValue('fullname'), 26); ?> <span class="caret"></span></a>-->
+          <!--<ul class="dropdown-menu">-->
+            <!--&lt;!&ndash;<li class="divider"></li>&ndash;&gt;-->
+            <!--<li><a href="<?php echo Language::getUrl('/account/logout.php'); ?>"><span class="glyphicon glyphicon-off"></span> <?php echo __('Logout'); ?></a></li>-->
+          <!--</ul>-->
+        <!--</li>-->
+
+        <!--<li class="dropdown">-->
+          <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th"></span> <?php echo __('My account'); ?> <span class="caret"></span></a>-->
+          <!--<ul class="dropdown-menu">-->
+            <!--<li><a href="<?php echo Meta::getUrl('/account/'); ?>"><span class="glyphicon glyphicon-th"></span> <?php echo __('My account'); ?></a></li>-->
+            <!--<li><a href="<?php echo Meta::getUrl('/account/'); ?>"><span class="fa fa-paper-plane"></span> <?php echo __('My shipments'); ?></a></li>-->
+            <!--<li><a href="<?php echo Meta::getUrl('/account/invoices.php'); ?>"><span class="fa fa-file-text"></span> <?php echo __('My invoices'); ?></a></li>-->
+            <!--<li><a href="<?php echo Meta::getUrl('/account/payments.php'); ?>"><span class="fa fa-list"></span> <?php echo __('My payments'); ?></a></li>-->
+            <!--<li><a href="<?php echo Meta::getUrl('/address/'); ?>"><span class="fa fa-book"></span> <?php echo __('My contacts'); ?></a></li>-->
+            <!--<li><a href="<?php echo Meta::getUrl('/account/information.php'); ?>"><span class="fa fa-cogs"></span> <?php echo __('Settings'); ?></a></li>-->
+          <!--</ul>-->
+        <!--</li>-->
+
+        <!--<?php } else { ?>-->
+
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+
+        <li><a href="#"><span class="fa fa-user-plus"></span> Register</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>

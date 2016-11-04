@@ -1,0 +1,76 @@
+<div id="wrapper" class="clearfix container">
+  <div class="clearfix row">
+    <section id="main" class="col-lg-12">
+      <div id="load">
+        <img src="images/loading.gif" alt="Loading...">&nbsp;&nbsp;Please wait...
+      </div>
+
+      <h1>My Client Space</h1>
+      <div class="row">
+        <div class="col-md-2">
+          <ul id="account-nav" class="nav nav-tabs nav-stacked account-nav">
+            <li>
+              <a href="#/my-account"><span class="fa fa-home"></span> Overall view</a>
+            </li>
+          </ul>
+
+          <ul id="account-nav2" class="nav nav-tabs nav-stacked account-nav">
+            <!--<li><a href="https://www.upela.com/en/"><span class="fa fa-paper-plane"></span> Single shipment</a></li>-->
+            <li><a href="#/ship-to-contact"><span class="fa fa-user"></span> Ship to contact</a></li>
+            <li><a href="#/mass-mailing"><span class="fa fa-users"></span> Mass mailing</a></li>
+            <li><a href="#/mass-mailing-upload"><span class="fa fa-floppy-o"></span> Sending by file</a></li>
+          </ul>
+
+          <ul id="account-nav3" class="nav nav-tabs nav-stacked account-nav">
+            <li><a href="#/my-contacts"><span class="fa fa-book"></span> My contacts</a></li>
+            <li class="active"><a href="#/credit-account"><span class="fa fa-credit-card"></span> Credit account</a></li>
+            <li><a href="#/my-store"><span class="fa fa-shopping-cart"></span> My stores</a></li>
+            <li><a href="#/settings"><span class="fa fa-cogs"></span> Settings</a></li>
+          </ul>
+
+          <ul id="account-nav4" class="nav nav-tabs nav-stacked account-nav">
+            <li><h3>Our programs</h3></li>
+            <li><a href="#/refer-contacts"><span class="fa fa-gift"></span> Referral</a></li>
+            <li><a href="#/loyalty"><span class="fa fa-gift"></span> Loyalty</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-10">
+          <div class="panel-white cancel-padding-left-15 panel-white-bordered-">
+            <h1>
+              <i class="fa fa-credit-card"></i>Credit your account
+            </h1>
+            <p class="text-muted">Credit your account and get free extra credits!</p>
+            <br>
+            <p><strong>CHOOSE THE AMOUNT TO CREDIT</strong></p>
+
+            <form id="CreditAccountForm" class="form-horizontal" role="form" enctype="multipart/form-data" action="http://localhost:32770/en/credit-account/" accept-charset="UTF-8" method="post" onsubmit="return true;">
+              <div class="form-group">
+                <label for="amount" class="control-label col-lg-3 required">Amount (€)</label>
+                <div class="col-lg-2">
+                  <select id="amount" name="amount" class="form-control">
+                    <option value="100" selected="">100</option>
+                    <option value="300">300</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="alert alert-info text-center">
+                For <strong>100€</strong> purchased, get <strong>2% free</strong> additional credits!<br>For <strong>300€</strong> purchased, get <strong>3% free</strong> additional credits!
+              </div>
+              <div class="form-group">
+                <div class="col-lg-9 col-lg-offset-3">
+                  <button type="submit" class="btn btn-primary btn-lg" id="btn_save" name="btn_save" onclick="return true;">
+                    <i class="glyphicon glyphicon-ok"></i> Continue
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- end main -->
+  </div><!-- end .row -->
+</div>

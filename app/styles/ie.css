@@ -1,0 +1,17 @@
+/*  ie.css - Internet Explorer Fixes  */ 
+
+/* ----------| =IE6 fixes |---------- */ 
+
+/* html div.clear { height: 0; width: 0; clear: both; padding: 0; margin: 0; }*/
+* html body {margin:0;}
+
+* html #tabsmenu ul#tabs li a {float:left;background:url(../images/tabs/tab-left.gif) no-repeat left top;margin:0;padding:0 0 0 9px;text-decoration:none;}
+* html #tabsmenu ul#tabs li a span{float:left;display:block;background:url(../images/tabs/tab-right.gif) no-repeat right top;padding:3px 14px 3px 5px;/*font-weight:bold;*/color:#ffffff;}
+
+/* ----------| =IE6 & 7 fixes |---------- */ 
+div.clear2 { display:none; }
+button { width:auto; overflow:visible; }
+button span { margin-top:1px; }
+
+.collection-name .mi {line-height: 25px;}
+

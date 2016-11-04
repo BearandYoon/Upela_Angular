@@ -1,0 +1,444 @@
+<div id="wrapper" class="clearfix container">
+  <div class="clearfix row">
+    <section id="main" class="col-lg-12">
+      <div id="load">
+        <img src="images/loading.gif" alt="Loading...">&nbsp;&nbsp;Please wait...
+      </div>
+      <div class="alert alert-danger">
+        <ul>
+          <li>FedEx : There are no valid services available.</li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <div class="col-md-9">
+          <div class="panel-white panel-white-bordered-">
+            <div class="order-wizard">
+              <a href="#">1. Your shipment <i class="fa fa-pencil"></i></a>
+              <a class="active" href="#">2. The offers</a>
+              <a class="disabled" href="#">3. Your order</a>
+              <a class="disabled" href="#">4. Payment</a>
+              <a class="disabled" href="#">5. Confirmation</a>
+            </div>
+
+            <h1 class="blue text-center">Step 2 : The offers <small class="pull-right-">Compare and select the best priced offer!</small></h1>
+
+            <uib-tabset active="activeForm">
+              <uib-tab index="0">
+                <uib-tab-heading>
+                  All offers
+                </uib-tab-heading>
+                <p class="help-block" ng-if="false">No offer available</p>
+
+                <table class="table table-condensed table-hover table-striped table-offers" cellspacing="0">
+                  <thead>
+                  <tr class="thead-first-row">
+                    <th style=""></th>
+                    <th style="text-align: center;" colspan="2"><span class="blue">Shipping</span></th>
+                    <th style=""></th>
+                    <th id="th_delivery-date" style="text-align: center;" colspan="2" class="sortable" title="Sort by Expected delivery</th>
+                  <th id="th_price-te" style="text-align: center;" class="sortable" title="Sort by Price">Price</th>
+                  </tr>
+                  <tr class="thead-second-row">
+                    <th style=""></th>
+                    <th style="text-align: center;" colspan="2">
+                      <label for="allow_pickup" class="checkbox-inline" title="Price">
+                        <input type="checkbox" value="1" name="allow_pickup" id="allow_pickup" checked>
+                        <span class="fa fa-home orange" title="Pickup"></span>
+                      </label>&nbsp;
+                      <label for="allow_dropoff" class="checkbox-inline" title="Dropoff">
+                        <input type="checkbox" value="1" name="allow_dropoff" id="allow_dropoff" checked>
+                        <span class="fa fa-map-marker blue" title="Dropoff"></span>
+                      </label>
+                    </th>
+                    <th style=""></th>
+                    <th style="text-align: center;" colspan="2">
+                      <label for="delivery_onsite" class="checkbox-inline" title="On-site">
+                        <input type="checkbox" value="1" name="delivery_onsite" id="delivery_onsite" checked>
+                        <span class="fa fa-home orange" title="On-site"></span>
+                      </label>&nbsp;
+                      <label for="delivery_to_collection_point" class="checkbox-inline" title="Dropoff">
+                        <input type="checkbox" value="1" name="delivery_to_collection_point" id="delivery_to_collection_point" checked>
+                        <span class="fa fa-map-marker blue" title="Dropoff"></span>
+                      </label>
+                    </th>
+                    <th style="text-align: center;"></th>
+                  </tr>
+                  </thead>
+                  <tbody id="table-offers-body">
+                  <tr class="offer-row odd allow_pickup allow_dropoff  delivery_onsite delivery_time_express" data-delivery-date="1478298600" data-price-te="951.17" rel="sort1" style="display: table-row;">
+                    <td style="text-align: center; max-width: 60px;">
+                      <img src="images/carriers/logo-ups-en.png" style="width: 50px; height: auto;">
+                    </td>
+                    <td style="text-align: center; max-width: 150px;">Monday<br>
+                      <strong>10/31/2016</strong><br>
+                    <span id="popmark-more-info-9768123" class="control-label popmark" data-placement="bottom" style="cursor:pointer;" data-content="Express Service, transportation operated by UPS<br />
+        Collection from the sender's address or dropoff on Monday 31 October 2016<br />
+        Delivery at the recipient address on Friday 04 November 2016 during the day<br />
+        Guaranteed delivery time but no refund (<a target='_blank' href='https://www.upela.com/en/shipment-customer-service-late-lost-parcel-60.html'>further details</a>)<br />
+        Possible online tracking<br />
+        Option: insurance Ad Valorem" data-original-title="" title="">UPS Express Saver®</span>
+                    </td>
+                    <td style="text-align: center; padding-left: 0; padding-right: 0; max-width: 75px;">
+                    <span class="dropoff-info orange dropoff-info-pickup" style="display: inline;">
+                      <span class="fa fa-home"></span><br>Pickup
+                    </span>
+                    <span class="dropoff-info blue dropoff-info-dropoff" style="display: none;">
+                      <span class="fa fa-map-marker"></span>
+                      <br><a class="text-underline" href="https://www.ups.com/dropoff?loc=en_US" target="_blank">Dropoff</a>
+                    </span>
+                    </td>
+                    <td style="text-align: center; padding-left: 0; padding-right: 0;">
+                      <img src="images/icons/arrow-small.png">
+                    </td>
+                    <td style="text-align: center; padding-left: 0; padding-right: 0; max-width: 75px;">
+                    <span class="dropoff-info orange">
+                      <span class="fa fa-home"></span>
+                      <br>On-site
+                    </span>
+                    </td>
+                    <td style="text-align: center;">Friday<br>
+                      <strong>11/04/2016</strong>
+                      <br>during the day
+                    </td>
+                    <td style="text-align: center;">
+                      <span class="price-bold">951.17 € with tax</span>
+                      <br>
+                      <span class="price-small">(1 037.38 $ with tax)</span>
+                      <br>
+                      <a class="btn btn-primary" ng-click="clickChoose()">CHOOSE</a>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+                <div class="clear"></div>
+              </uib-tab>
+              <uib-tab index="1">
+                <uib-tab-heading>
+                  Couriers
+                </uib-tab-heading>
+                <p class="help-block" ng-if="false">No offer available</p>
+
+                <table class="table table-condensed table-hover table-striped table-offers" cellspacing="0">
+                  <thead>
+                  <tr class="thead-first-row">
+                    <th style=""></th>
+                    <th style="text-align: center;" colspan="2"><span class="blue">Shipping</span></th>
+                    <th style=""></th>
+                    <th id="th_delivery-date" style="text-align: center;" colspan="2" class="sortable" title="Sort by Expected delivery</th>
+                  <th id="th_price-te" style="text-align: center;" class="sortable" title="Sort by Price">Price</th>
+                  </tr>
+                  <tr class="thead-second-row">
+                    <th style=""></th>
+                    <th style="text-align: center;" colspan="2">
+                      <label for="allow_pickup" class="checkbox-inline" title="Price">
+                        <input type="checkbox" value="1" name="allow_pickup" id="allow_pickup" checked>
+                        <span class="fa fa-home orange" title="Pickup"></span>
+                      </label>&nbsp;
+                      <label for="allow_dropoff" class="checkbox-inline" title="Dropoff">
+                        <input type="checkbox" value="1" name="allow_dropoff" id="allow_dropoff" checked>
+                        <span class="fa fa-map-marker blue" title="Dropoff"></span>
+                      </label>
+                    </th>
+                    <th style=""></th>
+                    <th style="text-align: center;" colspan="2">
+                      <label for="delivery_onsite" class="checkbox-inline" title="On-site">
+                        <input type="checkbox" value="1" name="delivery_onsite" id="delivery_onsite" checked>
+                        <span class="fa fa-home orange" title="On-site"></span>
+                      </label>&nbsp;
+                      <label for="delivery_to_collection_point" class="checkbox-inline" title="Dropoff">
+                        <input type="checkbox" value="1" name="delivery_to_collection_point" id="delivery_to_collection_point" checked>
+                        <span class="fa fa-map-marker blue" title="Dropoff"></span>
+                      </label>
+                    </th>
+                    <th style="text-align: center;"></th>
+                  </tr>
+                  </thead>
+                  <tbody id="table-offers-body">
+                  <tr class="offer-row odd allow_pickup allow_dropoff  delivery_onsite delivery_time_express" data-delivery-date="1478298600" data-price-te="951.17" rel="sort1" style="display: table-row;">
+                    <td style="text-align: center; max-width: 60px;">
+                      <img src="images/carriers/logo-ups-en.png" style="width: 50px; height: auto;">
+                    </td>
+                    <td style="text-align: center; max-width: 150px;">Monday<br>
+                      <strong>10/31/2016</strong><br>
+                    <span id="popmark-more-info-9768123" class="control-label popmark" data-placement="bottom" style="cursor:pointer;" data-content="Express Service, transportation operated by UPS<br />
+        Collection from the sender's address or dropoff on Monday 31 October 2016<br />
+        Delivery at the recipient address on Friday 04 November 2016 during the day<br />
+        Guaranteed delivery time but no refund (<a target='_blank' href='https://www.upela.com/en/shipment-customer-service-late-lost-parcel-60.html'>further details</a>)<br />
+        Possible online tracking<br />
+        Option: insurance Ad Valorem" data-original-title="" title="">UPS Express Saver®</span>
+                    </td>
+                    <td style="text-align: center; padding-left: 0; padding-right: 0; max-width: 75px;">
+                    <span class="dropoff-info orange dropoff-info-pickup" style="display: inline;">
+                      <span class="fa fa-home"></span><br>Pickup
+                    </span>
+                    <span class="dropoff-info blue dropoff-info-dropoff" style="display: none;">
+                      <span class="fa fa-map-marker"></span>
+                      <br><a class="text-underline" href="https://www.ups.com/dropoff?loc=en_US" target="_blank">Dropoff</a>
+                    </span>
+                    </td>
+                    <td style="text-align: center; padding-left: 0; padding-right: 0;">
+                      <img src="images/icons/arrow-small.png">
+                    </td>
+                    <td style="text-align: center; padding-left: 0; padding-right: 0; max-width: 75px;">
+                    <span class="dropoff-info orange">
+                      <span class="fa fa-home"></span>
+                      <br>On-site
+                    </span>
+                    </td>
+                    <td style="text-align: center;">Friday<br>
+                      <strong>11/04/2016</strong>
+                      <br>during the day
+                    </td>
+                    <td style="text-align: center;">
+                      <span class="price-bold">951.17 € with tax</span>
+                      <br>
+                      <span class="price-small">(1 037.38 $ with tax)</span>
+                      <br>
+                      <a class="btn btn-primary" ng-click="clickChoose()">CHOOSE</a>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+                <div class="clear"></div>
+              </uib-tab>
+              <uib-tab index="2">
+                <uib-tab-heading>
+                  Express
+                </uib-tab-heading>
+                <p class="help-block" ng-if="false">No offer available</p>
+
+                <table class="table table-condensed table-hover table-striped table-offers" cellspacing="0">
+                  <thead>
+                  <tr class="thead-first-row">
+                    <th style=""></th>
+                    <th style="text-align: center;" colspan="2"><span class="blue">Shipping</span></th>
+                    <th style=""></th>
+                    <th id="th_delivery-date" style="text-align: center;" colspan="2" class="sortable" title="Sort by Expected delivery</th>
+                  <th id="th_price-te" style="text-align: center;" class="sortable" title="Sort by Price">Price</th>
+                  </tr>
+                  <tr class="thead-second-row">
+                    <th style=""></th>
+                    <th style="text-align: center;" colspan="2">
+                      <label for="allow_pickup" class="checkbox-inline" title="Price">
+                        <input type="checkbox" value="1" name="allow_pickup" id="allow_pickup" checked>
+                        <span class="fa fa-home orange" title="Pickup"></span>
+                      </label>&nbsp;
+                      <label for="allow_dropoff" class="checkbox-inline" title="Dropoff">
+                        <input type="checkbox" value="1" name="allow_dropoff" id="allow_dropoff" checked>
+                        <span class="fa fa-map-marker blue" title="Dropoff"></span>
+                      </label>
+                    </th>
+                    <th style=""></th>
+                    <th style="text-align: center;" colspan="2">
+                      <label for="delivery_onsite" class="checkbox-inline" title="On-site">
+                        <input type="checkbox" value="1" name="delivery_onsite" id="delivery_onsite" checked>
+                        <span class="fa fa-home orange" title="On-site"></span>
+                      </label>&nbsp;
+                      <label for="delivery_to_collection_point" class="checkbox-inline" title="Dropoff">
+                        <input type="checkbox" value="1" name="delivery_to_collection_point" id="delivery_to_collection_point" checked>
+                        <span class="fa fa-map-marker blue" title="Dropoff"></span>
+                      </label>
+                    </th>
+                    <th style="text-align: center;"></th>
+                  </tr>
+                  </thead>
+                  <tbody id="table-offers-body">
+                  <tr class="offer-row odd allow_pickup allow_dropoff  delivery_onsite delivery_time_express" data-delivery-date="1478298600" data-price-te="951.17" rel="sort1" style="display: table-row;">
+                    <td style="text-align: center; max-width: 60px;">
+                      <img src="images/carriers/logo-ups-en.png" style="width: 50px; height: auto;">
+                    </td>
+                    <td style="text-align: center; max-width: 150px;">Monday<br>
+                      <strong>10/31/2016</strong><br>
+                    <span id="popmark-more-info-9768123" class="control-label popmark" data-placement="bottom" style="cursor:pointer;" data-content="Express Service, transportation operated by UPS<br />
+        Collection from the sender's address or dropoff on Monday 31 October 2016<br />
+        Delivery at the recipient address on Friday 04 November 2016 during the day<br />
+        Guaranteed delivery time but no refund (<a target='_blank' href='https://www.upela.com/en/shipment-customer-service-late-lost-parcel-60.html'>further details</a>)<br />
+        Possible online tracking<br />
+        Option: insurance Ad Valorem" data-original-title="" title="">UPS Express Saver®</span>
+                    </td>
+                    <td style="text-align: center; padding-left: 0; padding-right: 0; max-width: 75px;">
+                    <span class="dropoff-info orange dropoff-info-pickup" style="display: inline;">
+                      <span class="fa fa-home"></span><br>Pickup
+                    </span>
+                    <span class="dropoff-info blue dropoff-info-dropoff" style="display: none;">
+                      <span class="fa fa-map-marker"></span>
+                      <br><a class="text-underline" href="https://www.ups.com/dropoff?loc=en_US" target="_blank">Dropoff</a>
+                    </span>
+                    </td>
+                    <td style="text-align: center; padding-left: 0; padding-right: 0;">
+                      <img src="images/icons/arrow-small.png">
+                    </td>
+                    <td style="text-align: center; padding-left: 0; padding-right: 0; max-width: 75px;">
+                    <span class="dropoff-info orange">
+                      <span class="fa fa-home"></span>
+                      <br>On-site
+                    </span>
+                    </td>
+                    <td style="text-align: center;">Friday<br>
+                      <strong>11/04/2016</strong>
+                      <br>during the day
+                    </td>
+                    <td style="text-align: center;">
+                      <span class="price-bold">951.17 € with tax</span>
+                      <br>
+                      <span class="price-small">(1 037.38 $ with tax)</span>
+                      <br>
+                      <a class="btn btn-primary" ng-click="clickChoose()">CHOOSE</a>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+                <div class="clear"></div>
+              </uib-tab>
+              <uib-tab index="3">
+                <uib-tab-heading>
+                  Standard
+                </uib-tab-heading>
+                <p class="help-block" ng-if="false">No offer available</p>
+
+                <table class="table table-condensed table-hover table-striped table-offers" cellspacing="0">
+                  <thead>
+                  <tr class="thead-first-row">
+                    <th style=""></th>
+                    <th style="text-align: center;" colspan="2"><span class="blue">Shipping</span></th>
+                    <th style=""></th>
+                    <th id="th_delivery-date" style="text-align: center;" colspan="2" class="sortable" title="Sort by Expected delivery</th>
+                  <th id="th_price-te" style="text-align: center;" class="sortable" title="Sort by Price">Price</th>
+                  </tr>
+                  <tr class="thead-second-row">
+                    <th style=""></th>
+                    <th style="text-align: center;" colspan="2">
+                      <label for="allow_pickup" class="checkbox-inline" title="Price">
+                        <input type="checkbox" value="1" name="allow_pickup" id="allow_pickup" checked>
+                        <span class="fa fa-home orange" title="Pickup"></span>
+                      </label>&nbsp;
+                      <label for="allow_dropoff" class="checkbox-inline" title="Dropoff">
+                        <input type="checkbox" value="1" name="allow_dropoff" id="allow_dropoff" checked>
+                        <span class="fa fa-map-marker blue" title="Dropoff"></span>
+                      </label>
+                    </th>
+                    <th style=""></th>
+                    <th style="text-align: center;" colspan="2">
+                      <label for="delivery_onsite" class="checkbox-inline" title="On-site">
+                        <input type="checkbox" value="1" name="delivery_onsite" id="delivery_onsite" checked>
+                        <span class="fa fa-home orange" title="On-site"></span>
+                      </label>&nbsp;
+                      <label for="delivery_to_collection_point" class="checkbox-inline" title="Dropoff">
+                        <input type="checkbox" value="1" name="delivery_to_collection_point" id="delivery_to_collection_point" checked>
+                        <span class="fa fa-map-marker blue" title="Dropoff"></span>
+                      </label>
+                    </th>
+                    <th style="text-align: center;"></th>
+                  </tr>
+                  </thead>
+                  <tbody id="table-offers-body">
+                  <tr class="offer-row odd allow_pickup allow_dropoff  delivery_onsite delivery_time_express" data-delivery-date="1478298600" data-price-te="951.17" rel="sort1" style="display: table-row;">
+                    <td style="text-align: center; max-width: 60px;">
+                      <img src="images/carriers/logo-ups-en.png" style="width: 50px; height: auto;">
+                    </td>
+                    <td style="text-align: center; max-width: 150px;">Monday<br>
+                      <strong>10/31/2016</strong><br>
+                    <span id="popmark-more-info-9768123" class="control-label popmark" data-placement="bottom" style="cursor:pointer;" data-content="Express Service, transportation operated by UPS<br />
+        Collection from the sender's address or dropoff on Monday 31 October 2016<br />
+        Delivery at the recipient address on Friday 04 November 2016 during the day<br />
+        Guaranteed delivery time but no refund (<a target='_blank' href='https://www.upela.com/en/shipment-customer-service-late-lost-parcel-60.html'>further details</a>)<br />
+        Possible online tracking<br />
+        Option: insurance Ad Valorem" data-original-title="" title="">UPS Express Saver®</span>
+                    </td>
+                    <td style="text-align: center; padding-left: 0; padding-right: 0; max-width: 75px;">
+                    <span class="dropoff-info orange dropoff-info-pickup" style="display: inline;">
+                      <span class="fa fa-home"></span><br>Pickup
+                    </span>
+                    <span class="dropoff-info blue dropoff-info-dropoff" style="display: none;">
+                      <span class="fa fa-map-marker"></span>
+                      <br><a class="text-underline" href="https://www.ups.com/dropoff?loc=en_US" target="_blank">Dropoff</a>
+                    </span>
+                    </td>
+                    <td style="text-align: center; padding-left: 0; padding-right: 0;">
+                      <img src="images/icons/arrow-small.png">
+                    </td>
+                    <td style="text-align: center; padding-left: 0; padding-right: 0; max-width: 75px;">
+                    <span class="dropoff-info orange">
+                      <span class="fa fa-home"></span>
+                      <br>On-site
+                    </span>
+                    </td>
+                    <td style="text-align: center;">Friday<br>
+                      <strong>11/04/2016</strong>
+                      <br>during the day
+                    </td>
+                    <td style="text-align: center;">
+                      <span class="price-bold">951.17 € with tax</span>
+                      <br>
+                      <span class="price-small">(1 037.38 $ with tax)</span>
+                      <br>
+                      <a class="btn btn-primary" ng-click="clickChoose()">CHOOSE</a>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+                <div class="clear"></div>
+              </uib-tab>
+            </uib-tabset>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="panel-white cancel-padding-left-15 panel-muted">
+            <p>
+              <span class="very-light-grey bold">1. Your shipment&nbsp;&nbsp;
+                <a href="https://www.upela.com/en/">
+                  <i class="fa fa-pencil"></i>
+                </a>
+              </span>
+            </p>
+            <p style="margin-bottom: 10px;"><strong>Type :</strong> 1 Parcel(s)<br>
+              1 Parcel(s) of 12 kg (120x120x12 cm)<br>
+
+              <strong>From :</strong> 517042 (Romania)<br>
+              <strong>To :</strong> 101000 (Russia)<br>
+              <strong>Collection date :</strong> 10/28/2016<br>
+            </p>
+
+            <div style="text-align: justify;">
+              Our prices include fuel supplements, Air Cargo Security and all other supplements - residential address, remote location, oversize, extra handling supplements ….
+              <strong>but do not include taxes and duties, nor possible customs checks, weight or dimensions amendments, address amendments</strong>...
+              <a href="https://www.upela.com/en/documents-for-an-international-consignment-25.html">
+                <span style="text-decoration: underline;">More infos</span>
+              </a>
+            </div>
+            <br>
+            <a class="orange pull-left" href="#">
+              <i class="glyphicon glyphicon-envelope" style="margin-right: 5px;"></i>Send by email
+            </a>
+            <br>
+          </div>
+
+          <div class="panel-white cancel-padding-left-15">
+            <a href="https://www.upela.com/en/my-account/refer-contacts" target="_blank">
+              <img class="img-responsive block-center" alt="Refer your contacts and win 30€ !" src="images/files/upload/parrainage/parrainage-en.png">
+            </a>
+          </div>
+
+
+          <div class="panel-white cancel-padding-left-15 panel-muted">
+            <a class="collapse-toggle collapse-toggle-panel collapsed" data-toggle="collapse" href="#online-help">
+              <i class="fa fa-question-circle"></i> Frequently asked questions
+            </a>
+            <div class="clear"></div>
+            <div class="collapse" id="online-help">
+              <p><a target="_blank" href="https://www.upela.com/en/frequently-asked-questions-20.html#faq-1">Comment effectuer un devis ?</a></p>
+              <p><a target="_blank" href="https://www.upela.com/en/frequently-asked-questions-20.html#faq-2">Est-ce que vous fournissez/effectuez l’emballage ?</a></p>
+              <p><a target="_blank" href="https://www.upela.com/en/frequently-asked-questions-20.html#faq-3">Que se passe-t-il si je ne suis pas présent lors de la livraison ?</a></p>
+              <p><a target="_blank" href="https://www.upela.com/en/frequently-asked-questions-20.html#faq-4">Le destinataire peut-il également passer commande ?</a></p>
+              <p><a target="_blank" href="https://www.upela.com/en/frequently-asked-questions-20.html#faq-6">Je ne veux pas que ce soit le destinataire qui paye les droits et taxes, comment puis-je faire ?</a></p>
+              <p><a target="_blank" href="https://www.upela.com/en/frequently-asked-questions-20.html#faq-7">Le coursier n’a pas pu récupérer mon colis car l’adresse de l’expéditeur était incomplète, que dois-je faire ?</a></p>
+              <p><a target="_blank" href="https://www.upela.com/en/frequently-asked-questions-20.html#faq-8">Le suivi de mon envoi n’affiche aucune information, comment cela se fait ?</a></p>
+              <p><a target="_blank" href="https://www.upela.com/en/frequently-asked-questions-20.html#faq-9">Si mon colis est livré avec du retard, puis-je me faire rembourser ?</a></p>    </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

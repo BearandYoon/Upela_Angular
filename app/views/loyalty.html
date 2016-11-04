@@ -1,0 +1,222 @@
+<div id="wrapper" class="clearfix container">
+  <div class="clearfix row">
+    <section id="main" class="col-lg-12">
+      <div id="load">
+        <img src="images/loading.gif" alt="Loading...">&nbsp;&nbsp;Please wait...
+      </div>
+
+      <h1>My Client Space</h1>
+      <div class="row">
+        <div class="col-md-2">
+          <ul id="account-nav" class="nav nav-tabs nav-stacked account-nav">
+            <li>
+              <a href="#/my-account"><span class="fa fa-home"></span> Overall view</a>
+            </li>
+          </ul>
+
+          <ul id="account-nav2" class="nav nav-tabs nav-stacked account-nav">
+            <!--<li><a href="https://www.upela.com/en/"><span class="fa fa-paper-plane"></span> Single shipment</a></li>-->
+            <li><a href="#/ship-to-contact"><span class="fa fa-user"></span> Ship to contact</a></li>
+            <li><a href="#/mass-mailing"><span class="fa fa-users"></span> Mass mailing</a></li>
+            <li><a href="#/mass-mailing-upload"><span class="fa fa-floppy-o"></span> Sending by file</a></li>
+          </ul>
+
+          <ul id="account-nav3" class="nav nav-tabs nav-stacked account-nav">
+            <li><a href="#/my-contacts"><span class="fa fa-book"></span> My contacts</a></li>
+            <li><a href="#/credit-account"><span class="fa fa-credit-card"></span> Credit account</a></li>
+            <li><a href="#/my-store"><span class="fa fa-shopping-cart"></span> My stores</a></li>
+            <li><a href="#/settings"><span class="fa fa-cogs"></span> Settings</a></li>
+          </ul>
+
+          <ul id="account-nav4" class="nav nav-tabs nav-stacked account-nav">
+            <li><h3>Our programs</h3></li>
+            <li><a href="#/refer-contacts"><span class="fa fa-gift"></span> Referral</a></li>
+            <li class="active"><a href="#/loyalty"><span class="fa fa-gift"></span> Loyalty</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-7">
+          <div class="cms_content">
+            <div class="panel-white cancel-padding-left-15" style="text-align: center;">
+              <h1 style="text-align: center;">
+                <span style="color: #808080;">The <span style="color: #41a7bc;"><strong>Loyalty</strong></span> Program by <span style="color: #f37845;"><strong>Upela</strong></span><br>The more you send, <br>the more gift vouchers you get <br></span>
+              </h1>
+              with the gift vouchers&nbsp;<br><br>
+              <img src="images/files/upload/parrainage/logo_eticket_kadeos.png" alt="parrainage avec Ticket Kadeos Online" width="154" height="42">
+            </div>
+            <div class="cancel-padding-left-15" style="margin-bottom: 20px;">
+              <img class="img-responsive" src="images/files/upload/parrainage/offre-fidelite-en.png" alt="Loyalty program" style="max-height: 500px; display: block; margin-left: auto; margin-right: auto;" width="766" height="181">
+            </div>
+          </div>
+
+          <div class="panel-white cancel-padding-left-15 panel-white-bordered-">
+            <!--<h1 style="margin-bottom: 10px;"><i class="fa fa-gift"></i>Loyalty program</h1>-->
+            <p class="text-muted"><strong>You would like to benefit of our Loyalty Program and get up to €200 of Tickets Kadéos* gift vouchers?</strong></p>
+            <p class="text-muted">Nothing could be easier: you just have to subscribe by filling out this below registration form:</p>
+
+            <form id="LoyaltyForm" class="form-horizontal" role="form" enctype="application/x-www-form-urlencoded" action="http://localhost:32769/en/my-account/loyalty" accept-charset="UTF-8" method="post" onsubmit="validateForm('LoyaltyForm', {'displayErrorMessage': false}); return false;">
+              <input type="hidden" id="loyalty_program" name="loyalty_program" value="1">
+              <input type="hidden" id="loyalty_address_id" name="loyalty_address_id" value="">
+
+              <div class="form-group">
+                <label for="loyalty_address_gender" class="control-label col-lg-3 required">Gender</label>
+                <div class="col-lg-9">
+                  <div class="radio-inline" id="radio-inline-loyalty_address_gender-M">
+                    <label for="loyalty_address_gender-M">
+                      <input type="radio" id="loyalty_address_gender-M" name="loyalty_address_gender" value="M">&nbsp;Mr
+                    </label>
+                  </div>
+                  <div class="radio-inline" id="radio-inline-loyalty_address_gender-F">
+                    <label for="loyalty_address_gender-F">
+                      <input type="radio" id="loyalty_address_gender-F" name="loyalty_address_gender" value="F">&nbsp;Mrs
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="loyalty_address_firstname" class="control-label col-lg-3 required">First name</label>
+                <div class="col-lg-7">
+                  <input type="text" id="loyalty_address_firstname" name="loyalty_address_firstname" class="form-control" value="" maxlength="100">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="loyalty_address_lastname" class="control-label col-lg-3 required">Last name</label>
+                <div class="col-lg-7">
+                  <input type="text" id="loyalty_address_lastname" name="loyalty_address_lastname" class="form-control" value="" maxlength="100">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="loyalty_address_address1" class="control-label col-lg-3 required">Address</label>
+                <div class="col-lg-9">
+                  <input type="text" id="loyalty_address_address1" name="loyalty_address_address1" class="form-control validate" data-validate="isAddress" value="" placeholder="No., street" maxlength="255">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="loyalty_address_address2" class="control-label col-lg-3">&nbsp;</label>
+                <div class="col-lg-9">
+                  <input type="text" id="loyalty_address_address2" name="loyalty_address_address2" class="form-control" value="" placeholder="Line 2" maxlength="255">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="loyalty_address_address3" class="control-label col-lg-3">&nbsp;</label>
+                <div class="col-lg-9">
+                  <input type="text" id="loyalty_address_address3" name="loyalty_address_address3" class="form-control" value="" placeholder="Line 3" maxlength="255">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="loyalty_address_country_id" class="control-label col-lg-3 required">Country</label>
+                <div class="col-lg-7">
+                  <select id="loyalty_address_country_id" name="loyalty_address_country_id" class="form-control chosen-select" onchange="onChangeCountry('loyalty_address_country_id', 'loyalty_address_postcode', 'loyalty_address_postcode_container', null, 'loyalty_address_state', 'loyalty_address_state_container');" style="display: none;">
+                    <option value="" selected=""></option>
+                    <option value="1" code="AF" contains-states="0" zipcode="0">Afghanistan</option>
+                    <option value="3" code="AL" contains-states="0" zipcode="0">Albania</option>
+                    <option value="4" code="DZ" contains-states="0" zipcode="1">Algeria</option>
+                    <option value="197" code="AS" contains-states="0" zipcode="0">American Samoa</option>
+                    <option value="244" code="AD" contains-states="0" zipcode="1">Andorra</option>
+                    <option value="7" code="AO" contains-states="0" zipcode="0">Angola</option>
+                    <option value="8" code="AI" contains-states="0" zipcode="0">Anguilla</option>
+                    <option value="9" code="AQ" contains-states="0" zipcode="0">Antarctica</option>
+                    <option value="10" code="AG" contains-states="0" zipcode="0">Antigua &amp; Barbuda</option>
+                    <option value="13" code="AR" contains-states="1" zipcode="1">Argentina</option>
+                    <option value="14" code="AM" contains-states="0" zipcode="1">Armenia</option>
+                  </select>
+
+                  <div class="chosen-container chosen-container-single" style="width: 359px;" title="" id="loyalty_address_country_id_chosen">
+                    <a class="chosen-single chosen-default" tabindex="-1">
+                      <span>Select an option</span>
+                      <div><b></b></div>
+                    </a>
+                    <div class="chosen-drop">
+                      <div class="chosen-search">
+                        <input type="text" autocomplete="off">
+                      </div>
+                      <ul class="chosen-results"></ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" id="loyalty_address_postcode_container" style="display: none;">
+                <label for="loyalty_address_postcode" class="control-label col-lg-3 required">Postal code</label>
+                <div class="col-lg-7">
+                  <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                  <input type="text" id="loyalty_address_postcode" name="loyalty_address_postcode" class="form-control validate ui-autocomplete-input" data-validate="isPostCode" value="" maxlength="20" autocomplete="off">
+                </div>
+              </div>
+
+              <div class="form-group" id="loyalty_address_city_container">
+                <label for="loyalty_address_city" class="control-label col-lg-3 required">City</label>
+                <div class="col-lg-7">
+                  <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                  <input type="text" id="loyalty_address_city" name="loyalty_address_city" class="form-control validate ui-autocomplete-input" data-validate="isCityName" value="" maxlength="255" autocomplete="off">
+                </div>
+              </div>
+
+              <div class="form-group hidden" id="loyalty_address_state_container" style="display: none;">
+                <label for="loyalty_address_state" class="control-label col-lg-3">State code</label>
+                <div class="col-lg-3">
+                  <input type="text" id="loyalty_address_state" name="loyalty_address_state" class="form-control" value="" maxlength="64">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-lg-9 col-lg-offset-3">
+                  <button type="submit" class="btn btn-primary btn-lg" id="btn_save" name="btn_save" onclick="validateForm('LoyaltyForm', {'displayErrorMessage': false}); return false;">
+                    <span class="fa fa-ok"></span> I take the opportunity
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div class="clear"></div>
+          </div>
+
+          <div class="cms_content">
+            <div class="panel-white cancel-padding-left-15">
+              <h2>
+                <span style="text-decoration: underline;">
+                  <a href="https://www.ticketkadeosonline.fr/Presentation.aspx">Ticket Kadéos® Online</a>
+                </span> voucher benefits :
+              </h2>
+              <ul>
+                <li>Easy and practical, the gift voucher is directly emailed to beneficiary;</li>
+                <li>It allows an easy and secured purchase on the Internet, 24/7;</li>
+                <li>Scored : can be spent in one purchase or divided into several purchases;</li>
+                <li>Compatible with other additional means of payment;</li>
+                <li>Access to thousands of items on 36 online shops covering various industries;</li>
+                <li>The beneficiary is allowed to exchange his Ticket Kadéos® Online voucher with a Ticket Kadéos® Infini.paper gift voucher.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 cancel-padding-left-15 cms_content">
+          <div class="panel-white" style="text-align: justify;">
+            <h5 style="text-align: center;">
+              <span style="color: #808080;">Ticket Kadéos® Online voucher give access to thousands of items on 36 online shops covering various industries</span>
+              <br>
+              <img class="img-responsive" src="images/files/upload/parrainage/logos Kadeos nouvelle disposition.png" alt="liste enseignes partenaires" width="337" height="323" style="max-height: 500px; display: block; margin-left: auto; margin-right: auto;">
+              <span style="color: #808080;">They are also redeemable for Ticket Kadeos Infini® paper gift vouchers</span>
+            </h5>
+          </div>
+          <div class="panel-white" style="text-align: justify;">
+            <h2>Terms and conditions:</h2>
+            <ul>
+              <li style="text-align: left;">Offer cannot be combined with other commercial operations<br><br></li>
+              <li style="text-align: left;">3% of your purchases without tax offered as Ticket Kadeos Online gift vouchers (insurance and rebilling excluded)<br><br></li>
+              <li style="text-align: left;">Offer limited to €200 of Ticket Kadeos vouchers per year and per beneficiary</li>
+              <li style="text-align: left;">Valid for 12 months from the date on which the beneficiary has been emailed</li>
+            </ul>
+          </div>
+          <div class="panel-white" style="text-align: justify;">
+            <div class="alert alert-warning">Please note that we invite you today to add to your address book the email address of the shipper of your Kadéos gift voucher: <a href="mailto:c.lopez@upela.com">c.lopez@upela.com</a>. Also, do not forget to check your “Junk Mail” or “Spam” folders.</div>
+          </div>
+        </div>
+      </div>
+    </section><!-- end main -->
+  </div><!-- end .row -->
+</div>

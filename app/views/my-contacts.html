@@ -1,0 +1,401 @@
+<div id="wrapper" class="clearfix container">
+  <div class="clearfix row">
+    <section id="main" class="col-lg-12">
+      <div id="load">
+        <img src="images/loading.gif" alt="Loading...">&nbsp;&nbsp;Please wait...
+      </div>
+
+      <h1>My Client Space</h1>
+      <div class="row">
+        <div class="col-md-2">
+          <ul id="account-nav" class="nav nav-tabs nav-stacked account-nav">
+            <li>
+              <a href="#/my-account"><span class="fa fa-home"></span> Overall view</a>
+            </li>
+          </ul>
+
+          <ul id="account-nav2" class="nav nav-tabs nav-stacked account-nav">
+            <!--<li><a href="https://www.upela.com/en/"><span class="fa fa-paper-plane"></span> Single shipment</a></li>-->
+            <li><a href="#/ship-to-contact"><span class="fa fa-user"></span> Ship to contact</a></li>
+            <li><a href="#/mass-mailing"><span class="fa fa-users"></span> Mass mailing</a></li>
+            <li><a href="#/mass-mailing-upload"><span class="fa fa-floppy-o"></span> Sending by file</a></li>
+          </ul>
+
+          <ul id="account-nav3" class="nav nav-tabs nav-stacked account-nav">
+            <li class="active"><a href="#/my-contacts"><span class="fa fa-book"></span> My contacts</a></li>
+            <li><a href="#/credit-account"><span class="fa fa-credit-card"></span> Credit account</a></li>
+            <li><a href="#/my-store"><span class="fa fa-shopping-cart"></span> My stores</a></li>
+            <li><a href="#/settings"><span class="fa fa-cogs"></span> Settings</a></li>
+          </ul>
+
+          <ul id="account-nav4" class="nav nav-tabs nav-stacked account-nav">
+            <li><h3>Our programs</h3></li>
+            <li><a href="#/refer-contacts"><span class="fa fa-gift"></span> Referral</a></li>
+            <li><a href="#/loyalty"><span class="fa fa-gift"></span> Loyalty</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-10">
+          <div class="panel-white cancel-padding-left-15 panel-white-bordered-">
+            <h2 style="margin-bottom: 10px;">
+              <i class="fa fa-book"></i>My contacts
+            </h2>
+            <p class="text-muted" style="margin-bottom: 20px;">Manage your address book</p>
+
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#" onclick="return false;"><i class="glyphicon glyphicon-user"></i> All the contacts</a></li>
+              <li><a href="http://localhost:32770/en/address/edit.php"><i class="glyphicon glyphicon-plus-sign"></i> Add a contact</a></li>
+              <li><a href="http://localhost:32770/en/my-contacts/import"><i class="glyphicon glyphicon-upload"></i> Import a list</a></li>
+            </ul>
+
+            <div style="margin: 30px auto 0 auto;">
+              <div class="search-box clearfix">
+                <form id="searchform" class="form-inline-" role="form" action="http://localhost:32770/en/address/" method="get" accept-charset="UTF-8">
+                  <div class="form-group col-lg-9 no-padding-left">
+                    <label for="q" class="control-label col-lg-12 hidden">&nbsp;</label>
+
+                    <div class="col-lg-12">
+                      <div class="input-group col-lg-12">
+                        <input type="text" id="q" name="q" class="form-control" value="" placeholder="Search by company, name, client code">
+                        <span class="input-group-btn">
+                          <button class="btn btn-default btn-search" type="submit" title="Search" onclick="return true;">
+                            <i class="glyphicon glyphicon-search"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-lg-2 float-right text-right no-padding-right hidden">
+                    <label class="control-label">&nbsp;</label>
+                    <button class="btn btn-primary btn-search" type="submit" title="Search">
+                      <i class="glyphicon glyphicon-search"></i> Search
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <form id="table_form" name="table_form" action="/en/address/?&amp;sort=lastname&amp;order=asc&amp;page=1" method="post" accept-charset="UTF-8">
+                <div class="paging-container clearfix">
+                  <input type="hidden" id="table_action" name="table_action" value="">
+                  <div class="col-sm-6 text-left bulk-actions no-padding-left no-padding-right form-inline">
+                    <div class="btn-group bulk-actions">
+                      <a class="btn btn-default btn-xs" href="#" onclick="tableAction(&quot;table_form&quot;, &quot;delete&quot;, &quot;Are you sure you want to delete the selected contact(s)?&quot;); return false;">
+                        <span class="glyphicon glyphicon-remove"></span>Delete selected
+                      </a>&nbsp;
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 text-right pagination-container no-padding-left no-padding-right">
+                    <ul id="pagination" class="pagination pagination-sm">
+                      <li class="disabled">
+                        <a href="#">«</a>
+                      </li>
+                      <li class="active">
+                        <a href="#">1</a>
+                      </li>
+                      <li class="disabled">
+                        <a href="#">»</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="grid table table-condensed table-bordered table-hover" cellspacing="0">
+                    <thead>
+                    <tr>
+                      <th width="13px" class="first" style="text-align: center;">
+                        <input id="select_all" name="select_all" type="checkbox" class="check_box" value="1" onclick="checkUncheckAllRows(this, 'table_form');" title="Select/Deselect all">
+                      </th>
+                      <th align="left" style="text-align: left;" width="70px" class="">
+                        <a href="/en/address/?&amp;sort=customer_code&amp;order=asc" title="Sort by Client Code">Client Code&nbsp;</a>
+                      </th>
+                      <th align="left" style="text-align: left;" width="120px" class="">
+                        <a href="/en/address/?&amp;sort=lastname&amp;order=desc" title="Sort by Name">Name&nbsp;
+                          <span class="glyphicon glyphicon-chevron-up"></span>
+                        </a>
+                      </th>
+                      <th align="left" style="text-align: left;" width="120px" class="">
+                        <a href="/en/address/?&amp;sort=company&amp;order=asc" title="Sort by Company">Company&nbsp;</a>
+                      </th>
+                      <th align="left" style="text-align: left;" width="80px" class="">
+                        <a href="/en/address/?&amp;sort=city&amp;order=asc" title="Sort by City">City&nbsp;</a>
+                      </th>
+                      <th align="left" style="text-align: left;" width="80px" class="">
+                        <a href="/en/address/?&amp;sort=country_name&amp;order=asc" title="Sort by Country">Country&nbsp;</a>
+                      </th>
+                      <th width="100px">&nbsp;</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td class="" style="text-align: center;">
+                        <input type="checkbox" class="check_box" id="row_ids_439616" name="row_ids[]" value="439616">
+                      </td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439616';"></td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439616';">
+                        <font><font>China / Hong Kong</font></font>
+                      </td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439616';">
+                        <font><font>China / Hong Kong</font></font>
+                      </td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439616';">kowloon city</td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439616';">
+                        <font><font>Hong Kong</font></font>
+                      </td>
+                      <td class="table-action">
+                        <a href="http://localhost:32770/en/address/edit.php?id=439616" title="Edit">
+                          <span class="glyphicon glyphicon-pencil"></span>Edit
+                        </a>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">Actions&nbsp;
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href="http://localhost:32770/en/?address2=439616" title="">
+                                <span class="fa fa-mail-forward"></span>Send
+                              </a>
+                            </li>
+                            <li>
+                              <a href="http://localhost:32770/en/?address1=439616" title="">
+                                <span class="fa fa-mail-reply"></span>Arrange a return
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" title="Delete" onclick="if (confirm(&quot;Are you sure you want to delete the contact 439616?&quot;)) {checkSingleRow(&quot;table_form&quot;, &quot;row_ids_439616&quot;); $(&quot;#table_action&quot;).val(&quot;delete&quot;); $(&quot;#table_form&quot;).submit();}; return false;">
+                                <span class="glyphicon glyphicon-remove"></span>Delete
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="" style="text-align: center;">
+                        <input type="checkbox" class="check_box" id="row_ids_439617" name="row_ids[]" value="439617">
+                      </td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439617';"></td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439617';">
+                        <font><font>DomTom Reunion / Martinique / Guade</font></font>
+                      </td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439617';">
+                        <font><font>DomTom Reunion / Martinique / Guadeloupe</font></font>
+                      </td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439617';">
+                        <font><font>Saint Louis</font></font>
+                      </td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439617';">Reunion</td>
+                      <td class="table-action">
+                        <a href="http://localhost:32770/en/address/edit.php?id=439617" title="Edit">
+                          <span class="glyphicon glyphicon-pencil"></span>
+                          <font><font>Edit</font></font>
+                        </a>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            <font><font>Actions&nbsp;</font></font>
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href="http://localhost:32770/en/?address2=439617" title="">
+                                <span class="fa fa-mail-forward"></span>
+                                <font><font>Send</font></font>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="http://localhost:32770/en/?address1=439617" title="">
+                                <span class="fa fa-mail-reply"></span>
+                                <font><font>Arrange a return</font></font>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" title="Delete" onclick="if (confirm(&quot;Are you sure you want to delete the contact 439617?&quot;)) {checkSingleRow(&quot;table_form&quot;, &quot;row_ids_439617&quot;); $(&quot;#table_action&quot;).val(&quot;delete&quot;); $(&quot;#table_form&quot;).submit();}; return false;">
+                                <span class="glyphicon glyphicon-remove"></span>
+                                <font><font>Delete</font></font>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="" style="text-align: center;">
+                        <input type="checkbox" class="check_box" id="row_ids_439620" name="row_ids[]" value="439620">
+                      </td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439620';"></td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439620';">Dubai</td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439620';">
+                        <font><font>Dubai</font></font>
+                      </td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439620';">
+                        <font><font>Dubai</font></font>
+                      </td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439620';">United Arab Emirates</td>
+                      <td class="table-action">
+                        <a href="http://localhost:32770/en/address/edit.php?id=439620" title="Edit">
+                          <span class="glyphicon glyphicon-pencil"></span>
+                          <font><font>Edit</font></font>
+                        </a>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            <font><font>Actions&nbsp;</font></font>
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href="http://localhost:32770/en/?address2=439620" title="">
+                                <span class="fa fa-mail-forward"></span>
+                                <font><font>Send</font></font>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="http://localhost:32770/en/?address1=439620" title="">
+                                <span class="fa fa-mail-reply"></span>
+                                <font><font>Arrange a return</font></font>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" title="Delete" onclick="if (confirm(&quot;Are you sure you want to delete the contact 439620?&quot;)) {checkSingleRow(&quot;table_form&quot;, &quot;row_ids_439620&quot;); $(&quot;#table_action&quot;).val(&quot;delete&quot;); $(&quot;#table_form&quot;).submit();}; return false;">
+                                <span class="glyphicon glyphicon-remove"></span>
+                                <font><font>Delete</font></font>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="" style="text-align: center;">
+                        <input type="checkbox" class="check_box" id="row_ids_439613" name="row_ids[]" value="439613">
+                      </td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439613';"></td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439613';">Europe Berlin</td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439613';">
+                        <font><font>Europe Berlin</font></font>
+                      </td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439613';">Berlin</td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439613';">Germany</td>
+                      <td class="table-action">
+                        <a href="http://localhost:32770/en/address/edit.php?id=439613" title="Edit">
+                          <span class="glyphicon glyphicon-pencil"></span>
+                          <font><font>Edit</font></font>
+                        </a>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            <font><font>Actions&nbsp;</font></font>
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href="http://localhost:32770/en/?address2=439613" title="">
+                                <span class="fa fa-mail-forward"></span>
+                                <font><font>Send</font></font>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="http://localhost:32770/en/?address1=439613" title="">
+                                <span class="fa fa-mail-reply"></span>
+                                <font><font>Arrange a return</font></font>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" title="Delete" onclick="if (confirm(&quot;Are you sure you want to delete the contact 439613?&quot;)) {checkSingleRow(&quot;table_form&quot;, &quot;row_ids_439613&quot;); $(&quot;#table_action&quot;).val(&quot;delete&quot;); $(&quot;#table_form&quot;).submit();}; return false;">
+                                <span class="glyphicon glyphicon-remove"></span>
+                                <font><font>Delete</font></font>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="" style="text-align: center;">
+                        <input type="checkbox" class="check_box" id="row_ids_422671" name="row_ids[]" value="422671">
+                      </td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=422671';"></td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=422671';">USA Miami</td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=422671';">
+                        <font><font>USA Miami</font></font>
+                      </td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=422671';">Miami</td>
+                      <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=422671';">United States</td>
+                      <td class="table-action">
+                        <a href="http://localhost:32770/en/address/edit.php?id=422671" title="Edit">
+                          <span class="glyphicon glyphicon-pencil"></span>
+                          <font><font>Edit</font></font>
+                        </a>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            <font><font>Actions&nbsp;</font></font>
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href="http://localhost:32770/en/?address2=422671" title="">
+                                <span class="fa fa-mail-forward"></span>
+                                <font><font>Send</font></font>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="http://localhost:32770/en/?address1=422671" title="">
+                                <span class="fa fa-mail-reply"></span>
+                                <font><font>Arrange a return</font></font>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" title="Delete" onclick="if (confirm(&quot;Are you sure you want to delete the contact 422671?&quot;)) {checkSingleRow(&quot;table_form&quot;, &quot;row_ids_422671&quot;); $(&quot;#table_action&quot;).val(&quot;delete&quot;); $(&quot;#table_form&quot;).submit();}; return false;">
+                                <span class="glyphicon glyphicon-remove"></span>
+                                <font><font>Delete</font></font>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </form>
+
+              <div class="paging-container clearfix">
+                <div class="col-sm-6 text-left nb-results no-padding-left no-padding-right form-inline">Results per page&nbsp;
+                  <select id="items_per_page" class="select_items_per_page form-control input-sm" onchange="itemsPerPageChanged(this);">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50" selected="">50</option>
+                    <option value="75">75</option>
+                    <option value="100">100</option>
+                    <option value="1000">1000</option>
+                  </select>&nbsp;&nbsp;
+                  <span class="separator">|</span>&nbsp;&nbsp;Results 1 - 5 of 5
+                </div>
+
+                <div class="col-md-6 text-right pagination-container no-padding-left no-padding-right">
+                  <ul id="pagination" class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="#">
+                        <font><font>«</font></font>
+                      </a>
+                    </li>
+                    <li class="active">
+                      <a href="#">
+                        <font><font>1</font></font>
+                      </a>
+                    </li>
+                    <li class="disabled">
+                      <a href="#">
+                        <font><font>»</font></font>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- end main -->
+  </div><!-- end .row -->
+</div>

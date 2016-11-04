@@ -1,0 +1,447 @@
+<div id="wrapper" class="clearfix container">
+  <div class="clearfix row">
+    <section id="main" class="col-lg-12">
+      <div id="load">
+        <img src="/images/loading.gif" alt="Loading...">&nbsp;&nbsp;Please wait...
+      </div>
+
+      <h1>My Client Space</h1>
+      <div class="row">
+        <div class="col-md-2">
+          <ul id="account-nav" class="nav nav-tabs nav-stacked account-nav">
+            <li>
+              <a href="#/my-account"><span class="fa fa-home"></span> Overall view</a>
+            </li>
+          </ul>
+
+          <ul id="account-nav2" class="nav nav-tabs nav-stacked account-nav">
+            <!--<li><a href="https://www.upela.com/en/"><span class="fa fa-paper-plane"></span> Single shipment</a></li>-->
+            <li><a href="#/ship-to-contact"><span class="fa fa-user"></span> Ship to contact</a></li>
+            <li><a href="#/mass-mailing"><span class="fa fa-users"></span> Mass mailing</a></li>
+            <li><a href="#/mass-mailing-upload"><span class="fa fa-floppy-o"></span> Sending by file</a></li>
+          </ul>
+
+          <ul id="account-nav3" class="nav nav-tabs nav-stacked account-nav">
+            <li><a href="#/my-contacts"><span class="fa fa-book"></span> My contacts</a></li>
+            <li><a href="#/credit-account"><span class="fa fa-credit-card"></span> Credit account</a></li>
+            <li><a href="#/my-store"><span class="fa fa-shopping-cart"></span> My stores</a></li>
+            <li class="active"><a href="#/settings"><span class="fa fa-cogs"></span> Settings</a></li>
+          </ul>
+
+          <ul id="account-nav4" class="nav nav-tabs nav-stacked account-nav">
+            <li><h3>Our programs</h3></li>
+            <li><a href="#/refer-contacts"><span class="fa fa-gift"></span> Referral</a></li>
+            <li><a href="#/loyalty"><span class="fa fa-gift"></span> Loyalty</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-10">
+          <div class="panel-white cancel-padding-left-15 panel-white-bordered-">
+            <h2>
+              <i class="fa fa-cogs"></i>Settings
+            </h2>
+
+            <ul class="nav nav-tabs">
+              <li class="active">
+                <a href="#" onclick="return false;">
+                  <i class="glyphicon glyphicon-info-sign"></i> My information
+                </a>
+              </li>
+              <li>
+                <a href="http://localhost:32769/en/my-account/sepa-direct-debit">
+                  <i class="fa fa-bank"></i> Direct Debit
+                </a>
+              </li>
+              <li>
+                <a href="http://localhost:32769/en/my-account/settings">
+                  <i class="glyphicon glyphicon-cog"></i> Options
+                </a>
+              </li>
+              <li>
+                <a href="http://localhost:32769/en/my-account/change-email">
+                  <i class="fa fa-envelope"></i> Change email
+                </a>
+              </li>
+              <li>
+                <a href="http://localhost:32769/en/my-account/change-password">
+                  <i class="glyphicon glyphicon-lock"></i> Change password
+                </a>
+              </li>
+            </ul>
+
+            <form id="UserForm" class="form-horizontal" role="form" enctype="multipart/form-data" action="http://localhost:32769/en/account/information.php" accept-charset="UTF-8" method="post" onsubmit="return true;">
+              <div class="panel-grey">
+                <h3 class="form-group-legend">Address</h3>
+                <div class="form-group">
+                  <label for="address_pro" class="control-label col-lg-3">&nbsp;</label>
+                  <div class="col-lg-9">
+                    <div class="radio-inline" id="radio-inline-address_pro-0">
+                      <label for="address_pro-0">
+                        <input type="radio" id="address_pro-0" name="address_pro" value="0" onclick="selectAccountType();">&nbsp;Residential address
+                      </label>
+                    </div>
+                    <div class="radio-inline" id="radio-inline-address_pro-1">
+                      <label for="address_pro-1">
+                        <input type="radio" id="address_pro-1" name="address_pro" value="1" checked="" onclick="selectAccountType();">&nbsp;Business address
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group" id="address_company_container">
+                  <label for="address_company" class="control-label col-lg-3 required">Company</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="address_company" name="address_company" class="form-control" value="_CLI1" maxlength="255">
+                  </div>
+                </div>
+
+                <div class="form-group" id="address_siret_container">
+                  <label for="address_siret" class="control-label col-lg-3">SIRET</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="address_siret" name="address_siret" class="form-control" value="" maxlength="31">
+                  </div>
+                </div>
+
+                <div class="form-group" id="address_siret_container2">
+                  <label class="control-label col-lg-3">&nbsp;</label>
+                  <div class="col-lg-9">
+                    <span class="help-block">For a French professional account, you can enter either the company registration number field or the intra-community VAT field. For a foreign-based account, please indicate a legal registration number in the place of SIRET</span>
+                  </div>
+                </div>
+
+                <div class="form-group" id="address_vat_number_container">
+                  <label for="address_vat_number" class="control-label col-lg-3">or VAT N°</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="address_vat_number" name="address_vat_number" class="form-control" value="" maxlength="32">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="address_lastname" class="control-label col-lg-3 required">Last name / First name</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="address_lastname" name="address_lastname" class="form-control" value="_CLI1" maxlength="100">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="address_phone" class="control-label col-lg-3 required">Phone</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="address_phone" name="address_phone" class="form-control validate" data-validate="isPhoneNumber" value="0178767979" maxlength="50">
+                  </div>
+                </div>
+                <input type="hidden" id="address_email" name="address_email" value="cli1l@upela.com">
+
+                <div class="form-group">
+                  <label for="address_address1" class="control-label col-lg-3 required">Address</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="address_address1" name="address_address1" class="form-control validate" data-validate="isAddress" value="Cli1" placeholder="No., street" maxlength="255">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="address_address2" class="control-label col-lg-3">&nbsp;</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="address_address2" name="address_address2" class="form-control" value="" placeholder="Line 2" maxlength="255">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="address_address3" class="control-label col-lg-3">&nbsp;</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="address_address3" name="address_address3" class="form-control" value="" placeholder="Line 3" maxlength="255">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="address_notes" class="control-label col-lg-3">Comments</label>
+                  <div class="col-lg-4">
+                    <textarea id="address_notes" name="address_notes" class="form-control" placeholder="Other information to help the collection driver (interphone, entry code, instructions, opening hours...)" rows="2" maxlength="35" data-maxchar="35"></textarea>
+                    <span class="text-count-down-container">
+                      <span id="address_notes_counter" class="text-count-down">35</span> character(s) left
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="address_country_id" class="control-label col-lg-3 required">Country</label>
+                  <div class="col-lg-4">
+                    <select id="address_country_id" name="address_country_id" class="form-control chosen-select" onchange="onChangeCountry('address_country_id', 'address_postcode', 'address_postcode_container', null, 'address_state', 'address_state_container');" style="display: none;">
+                      <option value=""></option>
+                      <option value="1" code="AF" contains-states="0" zipcode="0">Afghanistan</option>
+                      <option value="3" code="AL" contains-states="0" zipcode="0">Albania</option>
+                      <option value="4" code="DZ" contains-states="0" zipcode="1">Algeria</option>
+                      <option value="197" code="AS" contains-states="0" zipcode="0">American Samoa</option>
+                      <option value="244" code="AD" contains-states="0" zipcode="1">Andorra</option>
+                      <option value="7" code="AO" contains-states="0" zipcode="0">Angola</option>
+                      <option value="8" code="AI" contains-states="0" zipcode="0">Anguilla</option>
+                      <option value="9" code="AQ" contains-states="0" zipcode="0">Antarctica</option>
+                      <option value="10" code="AG" contains-states="0" zipcode="0">Antigua &amp; Barbuda</option>
+                      <option value="13" code="AR" contains-states="1" zipcode="1">Argentina</option>
+                      <option value="14" code="AM" contains-states="0" zipcode="1">Armenia</option>
+                      <option value="15" code="AW" contains-states="0" zipcode="0">Aruba</option>
+                      <option value="16" code="AU" contains-states="0" zipcode="1">Australia</option>
+                      <option value="17" code="AT" contains-states="0" zipcode="1">Austria</option>
+                      <option value="18" code="AZ" contains-states="0" zipcode="1">Azerbaijan</option>
+                      <option value="212" code="TW" contains-states="0" zipcode="1">Taiwan</option>
+                      <option value="213" code="TJ" contains-states="0" zipcode="1">Tajikistan</option>
+                      <option value="214" code="TZ" contains-states="0" zipcode="0">Tanzania, United Republic of</option>
+                      <option value="218" code="TH" contains-states="0" zipcode="1">Thailand</option>
+                      <option value="219" code="TL" contains-states="0" zipcode="0">Timor-Leste</option>
+                      <option value="220" code="TG" contains-states="0" zipcode="0">Togo</option>
+                      <option value="223" code="TT" contains-states="0" zipcode="0">Trinidad &amp; Tobago</option>
+                      <option value="224" code="TN" contains-states="0" zipcode="1">Tunisia</option>
+                      <option value="226" code="TR" contains-states="0" zipcode="1">Turkey</option>
+                      <option value="102" code="TC" contains-states="0" zipcode="0">Turks and Caicos Islands</option>
+                      <option value="227" code="TV" contains-states="0" zipcode="0">Tuvalu</option>
+                      <option value="163" code="UG" contains-states="0" zipcode="0">Uganda</option>
+                      <option value="228" code="UA" contains-states="0" zipcode="1">Ukraine</option>
+                    </select>
+
+                    <div class="chosen-container chosen-container-single" style="width: 283px;" title="" id="address_country_id_chosen">
+                      <a class="chosen-single chosen-single-with-deselect" tabindex="-1">
+                        <span>France</span>
+                        <abbr class="search-choice-close"></abbr>
+                        <div><b></b></div>
+                      </a>
+
+                      <div class="chosen-drop">
+                        <div class="chosen-search">
+                          <input type="text" autocomplete="off">
+                        </div>
+                        <ul class="chosen-results">
+                          <li class="active-result" style="" data-option-array-index="1">Afghanistan</li>
+                          <li class="active-result" style="" data-option-array-index="2">Albania</li>
+                          <li class="active-result" style="" data-option-array-index="3">Algeria</li>
+                          <li class="active-result" style="" data-option-array-index="4">American Samoa</li>
+                          <li class="active-result" style="" data-option-array-index="5">Andorra</li>
+                          <li class="active-result" style="" data-option-array-index="6">Angola</li>
+                          <li class="active-result" style="" data-option-array-index="7">Anguilla</li>
+                          <li class="active-result" style="" data-option-array-index="8">Antarctica</li>
+                          <li class="active-result" style="" data-option-array-index="9">Antigua &amp; Barbuda</li>
+                          <li class="active-result" style="" data-option-array-index="10">Argentina</li>
+                          <li class="active-result" style="" data-option-array-index="11">Armenia</li>
+                          <li class="active-result" style="" data-option-array-index="12">Aruba</li>
+                          <li class="active-result" style="" data-option-array-index="13">Australia</li>
+                          <li class="active-result" style="" data-option-array-index="14">Austria</li>
+                          <li class="active-result" style="" data-option-array-index="15">Azerbaijan</li>
+                          <li class="active-result" style="" data-option-array-index="16">Bahamas, The</li>
+                          <li class="active-result" style="" data-option-array-index="234">Vatican</li>
+                          <li class="active-result" style="" data-option-array-index="235">Venezuela</li>
+                          <li class="active-result" style="" data-option-array-index="236">Viet Nam</li>
+                          <li class="active-result" style="" data-option-array-index="237">Virgin Islands, British</li>
+                          <li class="active-result" style="" data-option-array-index="238">Virgin Islands, U.S.</li>
+                          <li class="active-result" style="" data-option-array-index="239">Wallis and Futuna</li>
+                          <li class="active-result" style="" data-option-array-index="240">Western Sahara</li>
+                          <li class="active-result" style="" data-option-array-index="241">Zambia</li>
+                          <li class="active-result" style="" data-option-array-index="242">Zimbabwe</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group" id="address_postcode_container">
+                  <label for="address_postcode" class="control-label col-lg-3 required">Postal code</label>
+
+                  <div class="col-lg-4">
+                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                    <input type="text" id="address_postcode" name="address_postcode" class="form-control ui-autocomplete-input" value="75001" maxlength="20" autocomplete="off">
+                  </div>
+                </div>
+
+                <div class="form-group" id="address_city_container">
+                  <label for="address_city" class="control-label col-lg-3 required">City</label>
+                  <div class="col-lg-4">
+                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                    <input type="text" id="address_city" name="address_city" class="form-control validate ui-autocomplete-input" data-validate="isCityName" value="Paris" maxlength="255" autocomplete="off">
+                  </div>
+                </div>
+
+                <div class="form-group hidden" id="address_state_container" style="display: none;">
+                  <label for="address_state" class="control-label col-lg-3">State code</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="address_state" name="address_state" class="form-control" value="" maxlength="64">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-lg-9 col-lg-offset-3">
+                    <div class="checkbox">
+                      <label for="different-addresses" class="">
+                        <input type="checkbox" id="different-addresses" name="different-addresses" class="check_box" value="1" unchecked="" onclick="showHideInvoiceAddress();">Use another address for invoice
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--<hr>-->
+
+              <div id="invoice_address_container" style="display: none;">
+                <div class="panel-grey">
+                  <h3 class="form-group-legend">Invoice address</h3>
+                  <div class="form-group">
+                    <label for="invoice_address_company" class="control-label col-lg-3">Company</label>
+
+                    <div class="col-lg-4">
+                      <input type="text" id="invoice_address_company" name="invoice_address_company" class="form-control" value="" maxlength="255">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="invoice_address_lastname" class="control-label col-lg-3">Last name / First name</label>
+                    <div class="col-lg-4">
+                      <input type="text" id="invoice_address_lastname" name="invoice_address_lastname" class="form-control" value="" maxlength="100">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="invoice_address_phone" class="control-label col-lg-3">Phone</label>
+                    <div class="col-lg-4">
+                      <input type="text" id="invoice_address_phone" name="invoice_address_phone" class="form-control validate" data-validate="isPhoneNumber" value="" maxlength="50">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="invoice_address_email" class="control-label col-lg-3">Email to receive invoices</label>
+                    <div class="col-lg-4">
+                      <input type="text" id="invoice_address_email" name="invoice_address_email" class="form-control" value="" maxlength="200">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="invoice_address_address1" class="control-label col-lg-3">Address</label>
+                    <div class="col-lg-4">
+                      <input type="text" id="invoice_address_address1" name="invoice_address_address1" class="form-control validate" data-validate="isAddress" value="" placeholder="No., street" maxlength="255">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="invoice_address_address2" class="control-label col-lg-3">&nbsp;</label>
+                    <div class="col-lg-4">
+                      <input type="text" id="invoice_address_address2" name="invoice_address_address2" class="form-control" value="" placeholder="Line 2" maxlength="255">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="invoice_address_address3" class="control-label col-lg-3">&nbsp;</label>
+                    <div class="col-lg-4">
+                      <input type="text" id="invoice_address_address3" name="invoice_address_address3" class="form-control" value="" placeholder="Line 3" maxlength="255">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="invoice_address_country_id" class="control-label col-lg-3">Country</label>
+                    <div class="col-lg-4">
+                      <select id="invoice_address_country_id" name="invoice_address_country_id" class="form-control chosen-select" onchange="onChangeCountry('invoice_address_country_id', 'invoice_address_postcode', 'invoice_address_postcode_container', null, 'invoice_address_state', 'invoice_address_state_container');" style="display: none;">
+                        <option value="" selected=""></option>
+                        <option value="1" code="AF" contains-states="0" zipcode="0">Afghanistan</option>
+                        <option value="3" code="AL" contains-states="0" zipcode="0">Albania</option>
+                        <option value="4" code="DZ" contains-states="0" zipcode="1">Algeria</option>
+                        <option value="197" code="AS" contains-states="0" zipcode="0">American Samoa</option>
+                        <option value="244" code="AD" contains-states="0" zipcode="1">Andorra</option>
+                        <option value="7" code="AO" contains-states="0" zipcode="0">Angola</option>
+                        <option value="8" code="AI" contains-states="0" zipcode="0">Anguilla</option>
+                        <option value="9" code="AQ" contains-states="0" zipcode="0">Antarctica</option>
+                        <option value="10" code="AG" contains-states="0" zipcode="0">Antigua &amp; Barbuda</option>
+                        <option value="13" code="AR" contains-states="1" zipcode="1">Argentina</option>
+                        <option value="14" code="AM" contains-states="0" zipcode="1">Armenia</option>
+                        <option value="15" code="AW" contains-states="0" zipcode="0">Aruba</option>
+                        <option value="16" code="AU" contains-states="0" zipcode="1">Australia</option>
+                        <option value="17" code="AT" contains-states="0" zipcode="1">Austria</option>
+                        <option value="18" code="AZ" contains-states="0" zipcode="1">Azerbaijan</option>
+                        <option value="20" code="BS" contains-states="0" zipcode="0">Bahamas, The</option>
+                        <option value="21" code="BH" contains-states="0" zipcode="0">Bahrain</option>
+                        <option value="22" code="BD" contains-states="0" zipcode="1">Bangladesh</option>
+                        <option value="23" code="BB" contains-states="0" zipcode="0">Barbados</option>
+                        <option value="29" code="BY" contains-states="0" zipcode="1">Belarus</option>
+                        <option value="25" code="BE" contains-states="0" zipcode="1">Belgium</option>
+                        <option value="26" code="BZ" contains-states="0" zipcode="0">Belize</option>
+                        <option value="19" code="BJ" contains-states="0" zipcode="0">Benin</option>
+                        <option value="27" code="BM" contains-states="0" zipcode="0">Bermuda</option>
+                        <option value="28" code="BT" contains-states="0" zipcode="1">Bhutan</option>
+                        <option value="31" code="BO" contains-states="0" zipcode="0">Bolivia</option>
+                        <option value="32" code="BA" contains-states="0" zipcode="0">Bosnia and Herzegovina</option>
+                        <option value="33" code="BW" contains-states="0" zipcode="0">Botswana</option>
+                        <option value="88" code="BV" contains-states="0" zipcode="0">Bouvet Island</option>
+                        <option value="34" code="BR" contains-states="0" zipcode="1">Brazil</option>
+                        <option value="217" code="IO" contains-states="0" zipcode="0">British Indian Ocean Territory</option>
+                        <option value="35" code="BN" contains-states="0" zipcode="0">Brunei Darussalam</option>
+                        <option value="36" code="BG" contains-states="0" zipcode="1">Bulgaria</option>
+                        <option value="37" code="BF" contains-states="0" zipcode="0">Burkina Faso</option>
+                        <option value="230" code="VU" contains-states="0" zipcode="0">Vanuatu</option>
+                        <option value="191" code="VA" contains-states="0" zipcode="1">Vatican</option>
+                        <option value="231" code="VE" contains-states="0" zipcode="0">Venezuela</option>
+                        <option value="232" code="VN" contains-states="0" zipcode="1">Viet Nam</option>
+                        <option value="104" code="VG" contains-states="0" zipcode="0">Virgin Islands, British</option>
+                        <option value="103" code="VI" contains-states="0" zipcode="0">Virgin Islands, U.S.</option>
+                        <option value="233" code="WF" contains-states="0" zipcode="1">Wallis and Futuna</option>
+                        <option value="187" code="EH" contains-states="0" zipcode="0">Western Sahara</option>
+                        <option value="236" code="ZM" contains-states="0" zipcode="0">Zambia</option>
+                        <option value="237" code="ZW" contains-states="0" zipcode="0">Zimbabwe</option>
+                      </select>
+
+                      <div class="chosen-container chosen-container-single" style="width: 283px;" title="" id="invoice_address_country_id_chosen">
+                        <a class="chosen-single chosen-default" tabindex="-1">
+                          <span>Select an option</span>
+                          <div><b></b></div>
+                        </a>
+
+                        <div class="chosen-drop">
+                          <div class="chosen-search">
+                            <input type="text" autocomplete="off">
+                          </div>
+                          <ul class="chosen-results"></ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group" id="invoice_address_postcode_container" style="display: none;">
+                    <label for="invoice_address_postcode" class="control-label col-lg-3 required">Postal code</label>
+                    <div class="col-lg-4">
+                      <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                      <input type="text" id="invoice_address_postcode" name="invoice_address_postcode" class="form-control validate ui-autocomplete-input" data-validate="isPostCode" value="" maxlength="20" autocomplete="off">
+                    </div>
+                  </div>
+
+                  <div class="form-group" id="invoice_address_city_container">
+                    <label for="invoice_address_city" class="control-label col-lg-3">City</label>
+                    <div class="col-lg-4">
+                      <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                      <input type="text" id="invoice_address_city" name="invoice_address_city" class="form-control validate ui-autocomplete-input" data-validate="isCityName" value="" maxlength="255" autocomplete="off">
+                    </div>
+                  </div>
+
+                  <div class="form-group hidden" id="invoice_address_state_container" style="display: none;">
+                    <label for="invoice_address_state" class="control-label col-lg-3">State code</label>
+                    <div class="col-lg-4">
+                      <input type="text" id="invoice_address_state" name="invoice_address_state" class="form-control" value="" maxlength="64">
+                    </div>
+                  </div>
+                </div>
+                <!--<hr>-->
+              </div>
+
+              <div class="panel-grey">
+                <h3 class="form-group-legend">Apporteur Code</h3>
+                <div class="form-group">
+                  <label for="apporteur_code" class="control-label col-lg-3">Apporteur Code</label>
+                  <div class="col-lg-7">
+                    <input type="text" id="apporteur_code" name="apporteur_code" class="form-control" value="TARIF" maxlength="50">
+                  </div>
+                </div>
+              </div>
+              <!--<hr>-->
+              <div class="clearfix">
+                <div class="col-lg-9 col-lg-offset-3">
+                  <button type="submit" class="btn btn-primary" id="btn_save" name="btn_save" onclick="return true;">Save</button>
+                  &nbsp;&nbsp;<a href="http://localhost:32769/en/my-account/my-information">Cancel</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><!-- end main -->
+  </div><!-- end .row -->
+</div>

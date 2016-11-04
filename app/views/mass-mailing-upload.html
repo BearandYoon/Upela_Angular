@@ -1,0 +1,204 @@
+<div id="wrapper" class="clearfix container">
+  <div class="clearfix row">
+    <section id="main" class="col-lg-12">
+      <div id="load">
+        <img src="/images/loading.gif" alt="Loading...">&nbsp;&nbsp;Please wait...
+      </div>
+
+      <h1>My Client Space</h1>
+
+      <div class="row">
+        <div class="col-md-2">
+          <ul id="account-nav" class="nav nav-tabs nav-stacked account-nav">
+            <li>
+              <a href="#/my-account"><span class="fa fa-home"></span> Overall view</a>
+            </li>
+          </ul>
+
+          <ul id="account-nav2" class="nav nav-tabs nav-stacked account-nav">
+            <!--<li><a href="https://www.upela.com/en/"><span class="fa fa-paper-plane"></span> Single shipment</a></li>-->
+            <li><a href="#/ship-to-contact"><span class="fa fa-user"></span> Ship to contact</a></li>
+            <li><a href="#/mass-mailing"><span class="fa fa-users"></span> Mass mailing</a></li>
+            <li class="active"><a href="#/mass-mailing-upload"><span class="fa fa-floppy-o"></span> Sending by file</a></li>
+          </ul>
+
+          <ul id="account-nav3" class="nav nav-tabs nav-stacked account-nav">
+            <li><a href="#/my-contacts"><span class="fa fa-book"></span> My contacts</a></li>
+            <li><a href="#/credit-account"><span class="fa fa-credit-card"></span> Credit account</a></li>
+            <li><a href="#/my-store"><span class="fa fa-shopping-cart"></span> My stores</a></li>
+            <li><a href="#/settings"><span class="fa fa-cogs"></span> Settings</a></li>
+          </ul>
+
+          <ul id="account-nav4" class="nav nav-tabs nav-stacked account-nav">
+            <li><h3>Our programs</h3></li>
+            <li><a href="#/refer-contacts"><span class="fa fa-gift"></span> Referral</a></li>
+            <li><a href="#/loyalty"><span class="fa fa-gift"></span> Loyalty</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-10">
+          <div class="panel-white cancel-padding-left-15 panel-white-bordered-">
+            <a class="btn btn-default btn-sm btn-rounded text-uppercase pull-right" href="http://www.youtube.com/watch?v=xz3wpmicKG4" target="_blank">
+              <i class="glyphicon glyphicon-play-circle"></i> See the demonstration
+            </a>
+            <h1 style="margin-bottom: 5px;">
+              <i class="fa fa-floppy-o"></i>Ship using Excel spreadsheet or text
+            </h1>
+            <p class="text-muted" style="margin-bottom: 20px;">
+              Schedule the shipment of multiple packages to multiple recipients. Import your completed file according to the examples below.<br>
+              Only the weight is required, you must take into account the dimensional weight of your parcel calculated as follows: [length (cm) x height (cm) x width (cm)] / 5000.
+              Fill in the highest value between this result and the actual weight.<br>
+              <span class="orange">Careful : if the length is greater than <strong>119 cm</strong> (47 inches), you will not be able to use this service.</span><br>
+              If you encounter any problems, contact the <a href="http://localhost:32770/en/contact-us">Upela Customer Service</a> or send us your file <a href="mailto:contact@upela.com">contact@upela.com</a></p>
+            <hr>
+
+            <form id="MassMailingForm" class="form-horizontal" role="form" enctype="multipart/form-data" action="http://localhost:32770/en/mass-mailing/upload.php" accept-charset="UTF-8" method="post" onsubmit="return true;">
+              <h3 class="form-group-legend" style="margin-bottom:10px;">YOUR SPREADSHEET</h3>
+
+              <div class="clearfix" style="margin-bottom: 0px;">
+                <div class="col-md-8">
+                  <input type="hidden" id="address1_id" name="address1_id" value="439617">
+                  <input type="hidden" id="address1_country_id" name="address1_country_id" value="181">
+                  <input type="hidden" id="address1_country_code" name="address1_country_code" value="RE">
+                  <input type="hidden" id="mass_mailing_upload" name="mass_mailing_upload" value="1">
+
+                  <div class="form-group">
+                    <label for="uploadfile" class="control-label col-lg-7 required">Import spreadsheet (xls, xlsx, csv, txt)</label>
+                    <div class="col-lg-5">
+                      <input type="file" id="uploadfile" name="uploadfile" medium="" style="padding-left: 0; border: 0; background: none;" value="">
+                    </div>
+                  </div>
+                  <br>
+
+                  <p>Les pays doivent être renseignés au format
+                    <a href="images/files/upload/iso/Upela_codes_iso.pdf" target="_blank">ISO 3166-1</a>
+                  </p>
+                  <p>
+                    <a href="images/files/templates/shipments/listeexpeditions_en.xls" download_="listeexpeditions_en.xls">Cliquez ici</a> pour télécharger un exemple de tableau de contacts au format excel
+                  </p>
+                  <p>
+                    <a href="images/files/templates/shipments/listeexpeditions.csv" download_="listeexpeditions.csv">Cliquez ici</a> pour télécharger un exemple de tableau de contacts au format csv ou txt
+                  </p>
+                </div>
+              </div>
+
+              <p>
+                <strong>Sender :</strong>
+                <span id="address1_container" class="text-muted"><strong>DomTom Réunion/Martinique/Guade</strong> (DomTom Réunion/Martinique/Guadeloupe) - DomTom Réunion/Martinique/Guadeloup - 97450 Saint-Louis (Reunion)</span>
+                <a href="#" onclick="openModal('modal_addresses', 'http://localhost:32770/en/address/popup_search.php?multiple=0&amp;address_type=1&amp;fill_address_fields=0', {}); return false;">Change sender</a>
+              </p>
+              <hr>
+
+              <h3 class="form-group-legend" style="margin-bottom:10px; cursor: pointer;">CARRIER</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="priority" class="control-label col-lg-3 required">Priority</label>
+
+                    <div class="col-lg-7">
+                      <select id="priority" name="priority" class="form-control">
+                        <option value="cheapest">The cheapest</option>
+                        <option value="fastest">The quickest</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="preferred_carrier_groups" class="control-label col-lg-3">Carrier</label>
+                    <div class="col-lg-7">
+                      <select id="preferred_carrier_groups" name="preferred_carrier_groups[]" class="form-control" multiple="" size="2" style="display: none;">
+                        <option value="CHRONOPOST">CHRONOPOST</option>
+                        <option value="COLISSIMO">COLISSIMO</option>
+                        <option value="COURSIER">COURSIER</option>
+                        <option value="DHL">DHL</option>
+                        <option value="DPD">DPD</option>
+                        <option value="FEDEX">FEDEX</option>
+                        <option value="MONDIALRELAY">MONDIALRELAY</option>
+                        <option value="TNT">TNT</option>
+                        <option value="UPS">UPS</option>
+                      </select>
+                      <button type="button" class="ui-multiselect ui-widget ui-state-default ui-corner-all" aria-haspopup="true" style="width: 286px;">
+                        <span class="ui-icon ui-icon-triangle-2-n-s"></span>
+                        <span>All</span>
+                      </button>
+                    </div>
+                  </div>
+                  <input type="hidden" id="excluded_carrier_ids" name="excluded_carrier_ids" value="15,17,20,21,22">
+                </div>
+              </div>
+              <hr>
+
+              <h3 class="form-group-legend" style="margin-bottom:10px;">COLLECTION DATE</h3>
+              <div class="row" style="margin-bottom: 10px;">
+                <div class="col-md-12">
+                  <input type="hidden" id="dropoff_selection" name="dropoff_selection" value="1">
+
+                  <div class="form-group">
+                    <div class="col-lg-9 col-lg-offset-3">
+                      <div class="radio">
+                        <label for="dropoff-0">
+                          <input type="radio" id="dropoff-0" name="dropoff" value="0" checked="" onclick="onclickDropoff();">&nbsp;Collection chosen (subject to the carrier availability)
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-lg-9 col-lg-offset-3">
+                      <label for="shipment_date" class="control-label required-" style="display: inline-block; padding: 0; height: 34px; line-height: 34px;">Date</label>&nbsp;
+                      <div class="input-group" style="width: 160px; display: inline-table; vertical-align: middle;">
+                        <span class="input-group-addon">
+                          <i class="fa fa-calendar"></i>
+                        </span>
+                        <input type="text" id="shipment_date" name="shipment_date" class="form-control datepicker hasDatepicker" value="11/01/2016" size="10" maxlength="10">
+                      </div>&nbsp;&nbsp;Between&nbsp;
+
+                      <select id="ready_time" name="ready_time" class="form-control input-small2 display-inline-block">
+                        <option value="0800">08:00am</option>
+                        <option value="0815">08:15am</option>
+                        <option value="0830">08:30am</option>
+                        <option value="0845">08:45am</option>
+                        <option value="0900">09:00am</option>
+                        <option value="0915">09:15am</option>
+                        <option value="0930">09:30am</option>
+                        <option value="0945">09:45am</option>
+                        <option value="1000">10:00am</option>
+                        <option value="1015">10:15am</option>
+                        <option value="1030">10:30am</option>
+                        <option value="1045">10:45am</option>
+                        <option value="1100" selected="">11:00am</option>
+                        <option value="1115">11:15am</option>
+                        <option value="1130">11:30am</option>
+                        <option value="1145">11:45am</option>
+                        <option value="1200">12:00pm</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-lg-9 col-lg-offset-3">
+                      <div class="radio">
+                        <label for="dropoff-1">
+                          <input type="radio" id="dropoff-1" name="dropoff" value="1" onclick="onclickDropoff();">&nbsp;I drop off my parcel at
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <center>
+                  <button type="submit" class="btn btn-primary btn-lg" id="btn_save" name="btn_save" onclick="return true;">
+                    <i class="glyphicon glyphicon-ok"></i> IMPORT
+                  </button>
+                </center>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><!-- end main -->
+  </div><!-- end .row -->
+</div>
