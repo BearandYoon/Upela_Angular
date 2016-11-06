@@ -79,7 +79,7 @@
             ASIA: 'Asia',
             FOOTER: {
               TITLE: 'Public rates tax inc.',
-              LINK: 'PRO rate?',
+              LINK: '&gt;&nbsp;PRO rate?',
               FOOTER: '(* from)'
             }
           },
@@ -165,32 +165,32 @@
             TEXT: '+20,000 clients<br> immédiate Remises <br> Paiement différé by Sepa'
           },
           PAGE_THREE: {
-            TITLE1: 'Delivery Day+1 ',
-            TITLE2: 'More than 220 destinations',
+            TITLE1: 'Livraison J+1 ',
+            TITLE2: '+ de 220 destinations...',
             EUROPE: 'Europe',
             USA: 'USA',
-            MIDDLE_EAST: 'Middle East',
-            AFRICA: 'Africa',
-            ASIA: 'Asia',
+            MIDDLE_EAST: 'Moyen Orient',
+            AFRICA: 'Afrique',
+            ASIA: 'Asie',
             FOOTER: {
-              TITLE: 'Public rates tax inc.',
-              LINK: 'PRO rate?',
-              FOOTER: '(* from)'
+              TITLE: 'Tarifs publics TTC ',
+              LINK: '&gt;&nbsp;Tarifs PRO ?',
+              FOOTER: '(* à partir de)'
             }
           },
           PAGE_FOUR: {
-            TITLE: 'Simplify your exports <br>with the express shipping leaders<br>at the lowest prices',
-            OPTION1: 'Door-to-Door Delivery',
-            OPTION2: 'Customs service included',
-            OPTION3: 'Personality Tip'
+            TITLE: "Simplifiez-vous l'export<br/>avec les leaders du transport<br/>express au meilleur prix",
+            OPTION1: 'Livraison en porte-à-porte',
+            OPTION2: 'Service douane intégré',
+            OPTION3: 'Conseil personnalisé'
           },
           PAGE_FIVE: {
-            TITLE: 'Why the PROs<br>choose us?',
-            OPTION1: 'to simplify their deliveries',
-            OPTION2: 'to gain time',
-            OPTION3: 'for our rates',
-            OPTION4: 'for our experience',
-            OPTION5: 'for our destinations'
+            TITLE: 'Pourquoi les PROS<br/>nous choisissent ?',
+            OPTION1: 'pour simplifier leurs envois',
+            OPTION2: 'pour gagner du temps',
+            OPTION3: 'pour nos tarifs',
+            OPTION4: 'pour notre expérience',
+            OPTION5: 'pour nos destinations'
           }
         }
       }
@@ -200,23 +200,23 @@
       MAIN: {
         TITLE: 'Upela',
         MENU: {
-          PROFESSIONALS: 'Professionals',
+          PROFESSIONALS: 'Profesionales',
           SERVICES: {
-            TITLE: 'Services',
+            TITLE: 'Servicios',
             DESTINATIONS: {
-              TITLE: 'Destinations',
-              AFRICA: 'Africa',
-              AMERICA: 'America',
+              TITLE: 'Destinos',
+              AFRICA: 'África',
+              AMERICA: 'América',
               ASIA: 'Asia',
               DOM_TOM: 'DOM-TOM',
-              EASTERN_EUROPE: 'Eastern Europe',
-              EUROPE: 'Europe',
-              MIDDLE_EAST: 'Middle East'
+              EASTERN_EUROPE: 'Europa oriental',
+              EUROPE: 'Europa',
+              MIDDLE_EAST: 'Oriente Medio'
             },
             EXPRESS_COURIER: {
-              TITLE: 'Express courier',
+              TITLE: 'Servicio mensajero',
               FRANCE: 'France',
-              EUROPE: 'Europe',
+              EUROPE: 'Europa',
               AIX: 'Aix en Provence',
               BORDEAUX: 'Bordeaux',
               LILLE: 'Lille',
@@ -231,7 +231,7 @@
               TOULOUSE: 'Toulouse'
             },
             CARRIERS: {
-              TITLE: 'Carriers',
+              TITLE: 'Transportistas',
               CHRONOPOST: 'Chronopost',
               COLISSIMO: 'Colissimo',
               DHL: 'DHL',
@@ -242,50 +242,50 @@
               UPS: 'UPS'
             }
           },
-          TRACKING: 'Tracking',
-          HELP: 'Help',
+          TRACKING: 'Seguimiento',
+          HELP: 'Asistencia',
           BLOG: 'Blog',
-          CONTACT: 'Contact',
-          LOGIN: 'Login',
-          REGISTER: 'Register'
+          CONTACT: 'Contacto',
+          LOGIN: 'Iniciar sesión',
+          REGISTER: 'Inscripción'
         },
         PAGES: {
-          TITLE: 'Upela: compare quotes from carriers for the delivery and tracking of your consignments, parcels or pallets for professionals or individuals',
+          TITLE: 'Upela: compare las ofertas de transportistas para la entrega y seguimiento de sus envíos, paquetes o palets para profesionales o particulares',
           PAGE_ONE: {
-            E_MERCHANTS: 'E-merchants',
-            TEXT: 'Centralize all your sendings<br>Save time, avoid mistakes'
+            E_MERCHANTS: 'E-comerciante',
+            TEXT: 'Centralice todos sus envíos<br>Ahorre tiempo, evite los errores'
           },
           PAGE_TWO: {
-            PRO: 'N°1 for the PROs',
-            TEXT: '+20,000 customers<br> Immediate discounts <br> Deferred payment by Sepa'
+            PRO: 'N°1 entre los PROFESIONALES',
+            TEXT: '+ 20 000 clientes<br> Descuentos inmediatos <br> Pago diferido Sepa'
           },
           PAGE_THREE: {
-            TITLE1: 'Delivery Day+1 ',
-            TITLE2: 'More than 220 destinations',
-            EUROPE: 'Europe',
-            USA: 'USA',
-            MIDDLE_EAST: 'Middle East',
-            AFRICA: 'Africa',
+            TITLE1: 'Entrega D+1 ',
+            TITLE2: '+ de 220 destinos...',
+            EUROPE: 'Europa',
+            USA: 'EE.UU.',
+            MIDDLE_EAST: 'Oriente Medio',
+            AFRICA: 'África',
             ASIA: 'Asia',
             FOOTER: {
-              TITLE: 'Public rates tax inc.',
-              LINK: 'PRO rate?',
-              FOOTER: '(* from)'
+              TITLE: 'Tarifas públicas imp. incl.',
+              LINK: '&gt;&nbsp;Tarifas Profesionales ?',
+              FOOTER: '(* a partir de)'
             }
           },
           PAGE_FOUR: {
-            TITLE: 'Simplify your exports <br>with the express shipping leaders<br>at the lowest prices',
-            OPTION1: 'Door-to-Door Delivery',
-            OPTION2: 'Customs service included',
-            OPTION3: 'Personality Tip'
+            TITLE: 'Simplifique sus exportaciones <br>con los líderes del transporte<br>exprés a los mejores precios',
+            OPTION1: 'Entrega puerta a puerta',
+            OPTION2: 'Servicio de aduanas integrado',
+            OPTION3: 'Consejo personalizado'
           },
           PAGE_FIVE: {
-            TITLE: 'Why the PROs<br>choose us?',
-            OPTION1: 'to simplify their deliveries',
-            OPTION2: 'to gain time',
-            OPTION3: 'for our rates',
-            OPTION4: 'for our experience',
-            OPTION5: 'for our destinations'
+            TITLE: '¿Por qué nos eligen<br>los PROFESIONALES?',
+            OPTION1: 'para simplificar sus envíos',
+            OPTION2: 'para ganar tiempo',
+            OPTION3: 'por nuestras tarifas',
+            OPTION4: 'por nuestra experiencia',
+            OPTION5: 'por nuestros destinos'
           }
         }
       }
