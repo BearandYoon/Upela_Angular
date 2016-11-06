@@ -113,32 +113,32 @@
               <uib-tabset active="activeForm">
                 <uib-tab index="0">
                   <uib-tab-heading>
-                    Begin a shipment
+                    <span translate="MAIN.DIALOG.TITLE1">Begin a shipment</span>
                   </uib-tab-heading>
                   <form id="ShipmentRatingForm" class="form-horizontal" role="form" enctype="multipart/form-data" accept-charset="UTF-8" method="post">
                     <div class="form-group">
                       <label class="control-label col-md-2 no-padding-right required-">
-                        <span class="popmark" id="popmark-type" data-placement="right" data-title="Type" data-content="<b>Envelope</b> : envelope or document < 2.5 Kg<br><b>Parcel</b> : maximum weight 70 Kg, max Length 270 cm AND Length + 2 x Height <419 cm<br><b>Pallet</b> : max height 200 cm and max weight 3 tonnes (international only)<br><b>Bulky shipment</b> : max dimensions : 302 cm x 203 cm x 178 cm height (international only)" data-original-title="" title="">Type</span>
+                        <span class="popmark" id="popmark-type" data-placement="right" data-title="Type" data-content="<b>Envelope</b> : envelope or document < 2.5 Kg<br><b>Parcel</b> : maximum weight 70 Kg, max Length 270 cm AND Length + 2 x Height <419 cm<br><b>Pallet</b> : max height 200 cm and max weight 3 tonnes (international only)<br><b>Bulky shipment</b> : max dimensions : 302 cm x 203 cm x 178 cm height (international only)" data-original-title="" title="" translate="MAIN.DIALOG.TYPE.TITLE">Type</span>
                       </label>
 
                       <div class="col-md-10">
                         <div class="radio-inline" id="radio-inline-type-1">
                           <label for="type-1">
-                            <input type="radio" id="type-1" name="type" value="1">&nbsp;Envelope&nbsp;
+                            <input type="radio" id="type-1" name="type" value="1" translate="MAIN.TYPE.ENVELOPE">&nbsp;Envelope&nbsp;
                             <img src="images/icons/parcel-1.png" style="max-height: 32px;">
                           </label>
                         </div>
 
                         <div class="radio-inline" id="radio-inline-type-2">
                           <label for="type-2">
-                            <input type="radio" id="type-2" name="type" value="2" checked="">&nbsp;Parcel&nbsp;
+                            <input type="radio" id="type-2" name="type" value="2" checked="" translate="MAIN.TYPE.PARCEL">&nbsp;Parcel&nbsp;
                             <img src="images/icons/parcel-2.png" style="max-height: 32px;">
                           </label>
                         </div>
 
                         <div class="radio-inline" id="radio-inline-type-3">
                           <label for="type-3">
-                            <input type="radio" id="type-3" name="type" value="3">&nbsp;Pallet&nbsp;
+                            <input type="radio" id="type-3" name="type" value="3" translate="MAIN.TYPE.PALLET">&nbsp;Pallet&nbsp;
                             <img src="images/icons/parcel-3.png" style="max-height: 32px;">
                           </label>
                         </div>
@@ -146,8 +146,8 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="address1" class="control-label col-md-2 no-padding-right required-">
-                        <span class="popmark" id="popmark-origin" data-placement="right" data-title="Origin" data-content="Collection address for your shipment" data-original-title="" title="">Origin</span>
+                      <label class="control-label col-md-2 no-padding-right required-">
+                        <span class="popmark" id="popmark-origin" data-placement="right" data-title="Origin" data-content="Collection address for your shipment" translate="MAIN.DIALOG.ORIGIN.TITLE">Origin</span>
                       </label>
 
                       <div class="col-md-10" id="address1-row">
@@ -167,7 +167,7 @@
 
                         <div class="checkbox">
                           <label for="address1_pro" class="">
-                            <input type="checkbox" id="address1_pro" name="address1_pro" class="check_box" value="1" unchecked="">Business address
+                            <input type="checkbox" id="address1_pro" name="address1_pro" class="check_box" value="1" unchecked="" translate="MAIN.DIALOG.ORIGIN.ADDRESS">Business address
                           </label>
                         </div>
                       </div>
@@ -175,7 +175,7 @@
 
                     <div class="form-group">
                       <label class="control-label col-md-2 no-padding-right required-">
-                        <span class="popmark" id="popmark-origin" data-placement="right" data-title="Origin" data-content="Collection address for your shipment" data-original-title="" title="">Destination</span>
+                        <span class="popmark" id="popmark-origin" data-placement="right" data-title="Origin" data-content="Collection address for your shipment" data-original-title="" title="" translate="MAIN.DIALOG.DESTINATION.TITLE">Destination</span>
                       </label>
 
                       <div class="col-md-10" id="address1-row">
@@ -195,7 +195,7 @@
 
                         <div class="checkbox">
                           <label for="address1_pro" class="">
-                            <input type="checkbox" name="address1_pro" class="check_box" value="1" unchecked="">Business address
+                            <input type="checkbox" name="address1_pro" class="check_box" value="1" unchecked="" translate="MAIN.DIALOG.DESTINATION.ADDRESS">Business address
                           </label>
                         </div>
                       </div>

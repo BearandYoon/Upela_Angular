@@ -97,6 +97,40 @@
             OPTION4: 'for our experience',
             OPTION5: 'for our destinations'
           }
+        },
+        DIALOG: {
+          TITLE1: 'Begin a shipment',
+          TITLE2: 'How doew it work?',
+          TYPE: {
+            TITLE: 'Type',
+            ENVELOPE: 'Envelope',
+            PARCEL: 'Parcel',
+            PALLET: 'Pallet'
+          },
+          ORIGIN: {
+            TITLE: 'Origin',
+            TOWN: 'Postcode, Town',
+            ADDRESS: 'Business address'
+          },
+          DESTINATION: {
+            TITLE: 'Destination',
+            TOWN: 'Postcode, Town',
+            ADDRESS: 'Business address'
+          },
+          PARCELS: {
+            TITLE: 'Parcels',
+            NO: 'No.',
+            UNIT: 'Wt/Unit',
+            DIMENSIONS: 'Dimensions',
+            LENGTH: 'Length',
+            WIDTH: 'Width',
+            HEIGHT: 'Height',
+            ADD_PARCEL: 'Add a parcel',
+            CNANGE_UNIT: 'Change unit of measure',
+            DATE: 'Date',
+            COLLECTION_DATE: 'Collection date requested',
+            COMPARE_OFFER: 'COMPARE THE OFFERS!'
+          }
         }
       }
     });
@@ -192,6 +226,40 @@
             OPTION4: 'pour notre expérience',
             OPTION5: 'pour nos destinations'
           }
+        },
+        DIALOG: {
+          TITLE1: 'Commencez un envoi',
+          TITLE2: 'Comment ça fonctionne ?',
+          TYPE: {
+            TITLE: 'Type',
+            ENVELOPE: 'Pli',
+            PARCEL: 'Colis',
+            PALLET: 'Palette'
+          },
+          ORIGIN: {
+            TITLE: 'Départ',
+            TOWN: 'Code postal Ville',
+            ADDRESS: 'Adresse commerciale'
+          },
+          DESTINATION: {
+            TITLE: 'Destination',
+            TOWN: 'Code postal Ville',
+            ADDRESS: 'Adresse commerciale'
+          },
+          PARCELS: {
+            TITLE: 'Colis',
+            NO: 'Nb.',
+            UNIT: 'Pds/Unit',
+            DIMENSIONS: 'Dimensions',
+            LENGTH: 'Long',
+            WIDTH: 'Larg',
+            HEIGHT: 'Haut',
+            ADD_PARCEL: 'Ajouter un colis',
+            CNANGE_UNIT: 'Changer unité',
+            DATE: 'Date',
+            COLLECTION_DATE: 'Date d\'enlèvement souhaitée',
+            COMPARE_OFFER: 'COMPAREZ LES OFFRES !'
+          }
         }
       }
     });
@@ -286,6 +354,40 @@
             OPTION3: 'por nuestras tarifas',
             OPTION4: 'por nuestra experiencia',
             OPTION5: 'por nuestros destinos'
+          }
+        },
+        DIALOG: {
+          TITLE1: 'Comience el proceso de envío',
+          TITLE2: '¿Cómo funciona?',
+          TYPE: {
+            TITLE: 'Tipo',
+            ENVELOPE: 'Sobre',
+            PARCEL: 'Paquete',
+            PALLET: 'Palet'
+          },
+          ORIGIN: {
+            TITLE: 'Salida',
+            TOWN: 'Código postal, Ciudad',
+            ADDRESS: 'Dirección de la empresa'
+          },
+          DESTINATION: {
+            TITLE: 'Destino',
+            TOWN: 'Código postal, Ciudad',
+            ADDRESS: 'Dirección de la empresa'
+          },
+          PARCELS: {
+            TITLE: 'Paquete',
+            NO: 'N.°',
+            UNIT: 'Peso /u',
+            DIMENSIONS: 'Dimensiones',
+            LENGTH: 'Long.',
+            WIDTH: 'Anch.',
+            HEIGHT: 'Alt.',
+            ADD_PARCEL: 'Añadir un paquete',
+            CNANGE_UNIT: 'Cambiar unidad',
+            DATE: 'El:',
+            COLLECTION_DATE: 'Fecha de recogida deseada',
+            COMPARE_OFFER: '¡COMPARE LAS OFERTAS!'
           }
         }
       }
