@@ -126,10 +126,28 @@
             WIDTH: 'Width',
             HEIGHT: 'Height',
             ADD_PARCEL: 'Add a parcel',
-            CNANGE_UNIT: 'Change unit of measure',
+            CHANGE_UNIT: 'Change unit of measure',
             DATE: 'Date',
             COLLECTION_DATE: 'Collection date requested',
             COMPARE_OFFER: 'COMPARE THE OFFERS!'
+          }
+        },
+        FOOTER: {
+          SERVICES: 'The reliability and service of the leaders in international express delivery',
+          E_SHOPS: 'Discover our solutions for e-shops and MarketPlaces',
+          ADVANTAGE: 'Take advantage of our programs',
+          OPINION: 'Your opinion matters',
+          COMMENT: {
+            TITLE: 'UPELA, the best way to ship a parcel!',
+            CONTENT: 'Thanks to UPELA exclusive prices, afford the services of the leaders in international express delivery while reducing your costs! Do not wait to find out about UPELA, in a few clicks, order your <strong>express delivery</strong> on our site. According to your choice, DHL, FEDEX or UPS will collect your shipment, an enveloppe, a <strong>bulky parcel or a pallet</strong> and deliver it to your recipient. UPELA takes care of the <strong> <a href="#">delivery of your parcels in France</a> </strong>, in <a href="">Europe</a>, in <a href="#">Asia</a> and in <a href="#">USA</a>, with full transparency since at any moment, you can track your <strong>parcel</strong>.'
+          },
+          INSTRUCTION: {
+            TITLE: 'Instructions for the use of the UPELA price comparison for sending your parcels',
+            CONTENT1: 'In order to send your <strong>mail, parcel or pallet</strong> internationally or in France, complete the information requested in the box "Begin sending": select the place of departure and destination in the drop-down list (type in the name of the city or the postal code). Tick the "business address" box if it is a business address, leave blank if it is a personal address. Enter the weight and size of your parcel. Choose the date that the carrier can collect your consignment. Compare our <strong>carriers rates</strong> by clicking on "compare offers!"',
+            CONTENT2: 'Here you may access all of our <strong>quotes for express transportation</strong>. These give references to the name of the carrier (FedEx, DHL or UPS), the price of shipping (excluding and including all taxes), the expected delivery date and the type of carrier. If you have a <a href="#">UPELA professional account</a>, the <strong>price for parcels, mail and palettes</strong> are even more advantageous (the creation of a professional or individual account is free and without obligation).',
+            CONTENT3: 'Once the method of <strong>express delivery</strong> has been selected, complete all the information concerning the sender and the addressee, or select your contacts in the address book. Also indicate the desired time period at the place where the consignment must be picked up. In the case of <strong>imported parcels</strong>, first check the availability of your correspondent. You may also drop off your package at the agency.',
+            CONTENT4: 'A summary page summarises all the information of your consignment. Confirm your order and choose your credit card to access the secure online payment. With a pro Upela account you can <a href="#">pay for your consignment at a later date</a>.',
+            CONTENT5: 'Your order is validated. You can print your transportation documents, view your invoice, view the parcel tracking or cancel your consignment. The information of your consignment are sent by email: your shipping note, pro-forma invoice (non European Union consignments) and your Upela invoice. All you have to do is stick your transport voucher on your package (envelope, parcel or pallet) and wait for the courier.'
           }
         }
       }
@@ -255,10 +273,28 @@
             WIDTH: 'Larg',
             HEIGHT: 'Haut',
             ADD_PARCEL: 'Ajouter un colis',
-            CNANGE_UNIT: 'Changer unité',
+            CHANGE_UNIT: 'Changer unité',
             DATE: 'Date',
             COLLECTION_DATE: 'Date d\'enlèvement souhaitée',
             COMPARE_OFFER: 'COMPAREZ LES OFFRES !'
+          }
+        },
+        FOOTER: {
+          SERVICES: 'La fiabilité et le service des leaders de la livraison express internationale',
+          E_SHOPS: 'Découvrez nos solutions e-boutiques et MarketPlaces',
+          ADVANTAGE: 'Profitez de nos programmes',
+          OPINION: 'Votre avis compte',
+          COMMENT: {
+            TITLE: "UPELA, la meilleure façon d'envoyer un colis !",
+            CONTENT: "Grâce aux tarifs exclusifs UPELA, offrez vous les services des leaders du transport express international tout en réduisant vos coûts&nbsp;! N'attendez plus pour découvrir UPELA, en quelques clics seulement, commandez votre <strong>transport express</strong> sur notre site. Selon votre choix, DHL, FEDEX ou UPS vient chercher votre envoi, qu'il s'agisse d'un pli, d'un <strong>colis volumineux ou d'une palette</strong> et le livre à votre destinataire. UPELA assure la <strong><a href='#'>livraison de votre colis en France</a></strong>, <a href='#'>en Europe</a>, en <a href='#'>Asie</a> et aux <a href='#'>USA</a>, en toute transparence puisqu'à tout moment, vous pouvez suivre votre <strong>colis</strong>."
+          },
+          INSTRUCTION: {
+            TITLE: "Mode d'emploi du comparateur de tarifs UPELA pour l'envoi de vos colis",
+            CONTENT1: "Pour commencer votre <strong>envoi de pli, colis ou palette à l'international ou en France</strong>, remplissez les informations demandées dans l’encadré « Commencez un envoi » : sélectionnez les lieux de départ et de destination dans la liste déroulante (taper le nom de la ville ou son code postal). Cochez la case « adresse commerciale » s’il s’agit d'une adresse professionnelle, laissez vierge s’il s’agit d’une adresse personnelle. Indiquez le poids et les dimensions de votre colis. Choisissez la date à laquelle le transporteur viendra collecter votre envoi. Comparez nos <strong>tarifs transporteurs</strong> en cliquant sur 'comparez les offres!'",
+            CONTENT2: "Vous accédez à tous nos <strong>devis de transport express</strong>. Ceux-ci référencent le nom du transporteur (Fedex, DHL ou UPS), le prix de l’expédition (HT et TTC), la date de livraison prévue ainsi que la formule du transporteur. Si vous avez <a href='#'>un compte professionnel UPELA</a>, les <strong>tarifs colis, pli et palette</strong> sont encore plus avantageux (la création d'un compte professionnel ou particulier est gratuite et sans engagement).",
+            CONTENT3: "Une fois votre formule de <strong>livraison express</strong> sélectionnée, remplissez toutes les informations concernant l'expéditeur et le destinataire, ou sélectionnez vos contacts dans le carnet d'adresse. Indiquez également la tranche horaire d'enlèvement souhaitée sur le lieu de prise en charge de l’envoi. Dans le cas d’un <strong>import de colis</strong>, vérifiez préalablement les disponibilités de votre correspondant. Vous pouvez aussi déposer votre colis en agence.",
+            CONTENT4: 'Une page récapitulative résume toutes les informations de votre envoi. Confirmez votre commande et choisissez votre carte bancaire pour accéder au paiement en ligne sécurisé. Avec un compte pro Upela vous pouvez <a href="#">régler votre expédition plus tard</a>.',
+            CONTENT5: "Votre commande est validée. Vous pouvez imprimer vos documents de transport, visualiser votre facture, afficher le suivi colis ou annuler votre envoi. Les informations de votre envoi sont également envoyées par email : votre bordereau de transport, votre facture pro-forma (envois hors Union Européenne) et votre facture Upela. Vous n'avez plus qu'à coller votre bon de transport sur votre paquet (pli, colis ou palette) et attendre l'arrivée du coursier."
           }
         }
       }
@@ -384,10 +420,28 @@
             WIDTH: 'Anch.',
             HEIGHT: 'Alt.',
             ADD_PARCEL: 'Añadir un paquete',
-            CNANGE_UNIT: 'Cambiar unidad',
+            CHANGE_UNIT: 'Cambiar unidad',
             DATE: 'El:',
             COLLECTION_DATE: 'Fecha de recogida deseada',
             COMPARE_OFFER: '¡COMPARE LAS OFERTAS!'
+          }
+        },
+        FOOTER: {
+          SERVICES: 'La fiabilidad y el servicio de los líderes de la entrega internacional exprés',
+          E_SHOPS: 'Descubra nuestras soluciones para tiendas en línea y Marketplaces',
+          ADVANTAGE: 'Disfrute de nuestros programas',
+          OPINION: 'Su opinión es importante',
+          COMMENT: {
+            TITLE: 'UPELA, ¡la mejor forma de enviar un paquete!',
+            CONTENT: 'Gracias a las tarifas exclusivas de UPELA, disfrute de los servicios de los líderes del transporte exprés internacional a la vez que reduce sus costes. No espere más para descubrir UPELA, en solo unos clics, realice su pedido de <strong>transporte exprés</strong> en nuestro sitio web. Según su elección, FEDEX o UPS irán a buscar su envío, tanto si se trata de un sobre, de un <strong>paquete voluminoso o de un palet</strong> y se lo entrega a su destinatario. UPELA garantiza la <strong><a href="#">entrega de su paquete en Francia</a></strong>, en <a href="#">Europa</a>, en <a href="#">Asia</a> y en <a href="#">Estados Unidos</a>, con toda transparencia, ya que en todo momento puede seguir su <strong>paquete</strong>.'
+          },
+          INSTRUCTION: {
+            TITLE: 'Instrucciones de uso del comparador de tarifas UPELA para el envío de sus paquetes',
+            CONTENT1: 'Para comenzar el <strong>envío de sobres, paquetes o palets a destinos en Francia o internacionales</strong>, rellene la información solicitada en el cuadro «Comenzar un envío»: seleccione los lugares de origen y de destino en la lista desplegable (escriba el nombre de la ciudad o su código postal). Marque la casilla «dirección comercial» si se trata de una dirección profesional, déjela vacía si se trata de una dirección personal. Indique el peso y las dimensiones de su paquete. Indique la fecha de recogida del envío. Compare nuestras <strong>tarifas de transportistas</strong> haciendo clic en "¡Compare las ofertas!"',
+            CONTENT2: 'Podrá acceder a todos nuestros <strong>presupuestos de transporte exprés</strong>. En los presupuestos se indica el nombre del transportista (Fedex, DHL o UPS), el precio del envío (sin y con IVA), la fecha de entrega prevista, así como la fórmula del transportista. Si tiene <a href="#">una cuenta profesional UPELA</a>, las <strong>tarifas de paquetes, sobres y palets</strong> son aún más ventajosas (la creación de una cuenta profesional o personal es gratuita y sin compromisos).',
+            CONTENT3: 'Cuando haya seleccionado su fórmula de <strong>entrega exprés</strong>, rellene toda la información relacionada con el remitente y el destinatario, o seleccione sus contactos de la agenda. Indique también el tramo horario de recogida que desea en el lugar donde el transportista se hará cargo del envío. En el caso de una <strong>importación de paquete</strong>, compruebe con anterioridad la disponibilidad del remitente. También puede depositar su paquete en una agencia.',
+            CONTENT4: 'Una página de resumen recoge toda la información de su envío. Confirme su pedido y elija su tarjeta bancaria para acceder al pago a través de una línea segura. Con una cuenta profesional de Upela, puede <a href="#">posponer el pago del envío para más adelante</a>.',
+            CONTENT5: 'Se valida su pedido. Ahora puede imprimir la documentación del transporte, visualizar su factura, mostrar el seguimiento del paquete o cancelar el envío. La información sobre su envío normalmente se le envía por correo electrónico: el albarán de transporte, la factura pro&nbsp;forma (envíos fuera de la Unión Europea) y la factura de Upela. Ya solo tiene que pegar el albarán de transporte en el paquete (sobre, paquete o palet) y esperar a que llegue el mensajero.'
           }
         }
       }

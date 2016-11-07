@@ -163,11 +163,12 @@
                         </ui-select>
 
                         <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                        <input type="text" id="address1_postcode_city" name="address1_postcode_city" class="form-control ui-autocomplete-input" value="" maxlength="255" placeholder="Postcode, Town" autocomplete="off">
+                        <input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" value="" maxlength="255" placeholder="Postcode, Town" translate translate-attr-placeholder="MAIN.DIALOG.ORIGIN.TOWN">
 
                         <div class="checkbox">
                           <label for="address1_pro" class="">
-                            <input type="checkbox" id="address1_pro" name="address1_pro" class="check_box" value="1" unchecked="" translate="MAIN.DIALOG.ORIGIN.ADDRESS">Business address
+                            <input type="checkbox" id="address1_pro" name="address1_pro" class="check_box" value="1" unchecked="">
+                            <span translate="MAIN.DIALOG.ORIGIN.ADDRESS"></span>
                           </label>
                         </div>
                       </div>
@@ -191,11 +192,12 @@
                         </ui-select>
 
                         <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                        <input type="text" id="address1_postcode_city" name="address1_postcode_city" class="form-control ui-autocomplete-input" value="" maxlength="255" placeholder="Postcode, Town" autocomplete="off">
+                        <input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" value="" maxlength="255" placeholder="Postcode, Town" translate translate-attr-placeholder="MAIN.DIALOG.DESTINATION.TOWN">
 
                         <div class="checkbox">
                           <label for="address1_pro" class="">
-                            <input type="checkbox" name="address1_pro" class="check_box" value="1" unchecked="" translate="MAIN.DIALOG.DESTINATION.ADDRESS">Business address
+                            <input type="checkbox" name="address1_pro" class="check_box" value="1" unchecked="">
+                            <span translate="MAIN.DIALOG.DESTINATION.ADDRESS"></span>
                           </label>
                         </div>
                       </div>
@@ -203,7 +205,7 @@
 
                     <div class="form-group" id="parcels-form-group">
                       <label class="control-label col-md-2 no-padding-right required-">
-                        <span class="popmark" data-placement="right" data-title="Parcels" data-content="Complete the details of your envelope, parcel or pallet - number of parcels, unit weight and dimensions" data-original-title="" title="">Parcels</span>
+                        <span class="popmark" data-placement="right" data-title="Parcels" data-content="Complete the details of your envelope, parcel or pallet - number of parcels, unit weight and dimensions" data-original-title="" title="" translate="MAIN.DIALOG.PARCELS.TITLE">Parcels</span>
                       </label>
                       <div class="col-md-10">
                         <input type="hidden" id="parcel_unit" name="parcel_unit" value="fr">
@@ -211,18 +213,18 @@
                         <div class="parcels-container">
                           <div id="parcel_list" ng-repeat="parcel in ctrl.parcels">
                             <div class="parcel">
-                              <label class="parcel-label">No.</label>
-                              <input type="text" class="form-control parcel-number input-xmini2" maxlength="3"  ng-model="parcel.number" value="1" placeholder="No.">
+                              <label class="parcel-label" translate="MAIN.DIALOG.PARCELS.NO">No.</label>
+                              <input type="text" class="form-control parcel-number input-xmini2" maxlength="3"  ng-model="parcel.number" value="1" placeholder="No." translate translate-attr-placeholder="MAIN.DIALOG.PARCELS.NO">
 
-                              <label class="parcel-label">Wt/Unit</label>
-                              <input type="text" class="form-control parcel-weight input-xmini2" ng-model="parcel.weight" value="" size="16" maxlength="4" placeholder="Wt/Unit">
+                              <label class="parcel-label" translate="MAIN.DIALOG.PARCELS.UNIT">Wt/Unit</label>
+                              <input type="text" class="form-control parcel-weight input-xmini2" ng-model="parcel.weight" value="" size="16" maxlength="4" placeholder="Wt/Unit" translate translate-attr-placeholder="MAIN.DIALOG.PARCELS.UNIT">
                               <span class="weight_unit" ng-if="ctrl.parcelUnit">kg</span>
                               <span class="weight_unit" ng-if="!ctrl.parcelUnit">lbs</span>
 
-                              <label class="parcel-label">Dimensions</label>
-                              <input type="text" class="form-control input-xmini2" ng-model="parcel.x" value="" size="16" maxlength="3" placeholder="Length"> x
-                              <input type="text" class="form-control input-xmini2" ng-model="parcel.y" value="" maxlength="3" placeholder="Width"> x
-                              <input type="text" class="form-control input-xmini2" ng-model="parcel.z" value="" size="16" maxlength="3" placeholder="Height">
+                              <label class="parcel-label" translate="MAIN.DIALOG.PARCELS.DIMENSIONS">Dimensions</label>
+                              <input type="text" class="form-control input-xmini2" ng-model="parcel.x" value="" size="16" maxlength="3" placeholder="Length" translate translate-attr-placeholder="MAIN.DIALOG.PARCELS.LENGTH"> x
+                              <input type="text" class="form-control input-xmini2" ng-model="parcel.y" value="" maxlength="3" placeholder="Width" translate translate-attr-placeholder="MAIN.DIALOG.PARCELS.WIDTH"> x
+                              <input type="text" class="form-control input-xmini2" ng-model="parcel.z" value="" size="16" maxlength="3" placeholder="Height" translate translate-attr-placeholder="MAIN.DIALOG.PARCELS.HEIGHT">
                               <span class="dimension_unit" ng-if="ctrl.parcelUnit">cm</span>
                               <span class="dimension_unit" ng-if="!ctrl.parcelUnit">in</span>
                               <a class="parcel-action" href="#" ng-click="ctrl.removeParcel($index)">
@@ -233,11 +235,13 @@
 
                           <div class="parcel-actions pull-left">
                             <a href="#" ng-click="ctrl.addParcel()" style="padding-right:14px;">
-                              <i class="glyphicon glyphicon-plus-sign"></i> Add a parcel
+                              <i class="glyphicon glyphicon-plus-sign"></i>
+                              <span translate="MAIN.DIALOG.PARCELS.ADD_PARCEL"></span>
                             </a>
                             <span id="switch_parcel_unit_us">
                               <a href="#" ng-click="ctrl.switchParcelUnit()" style="padding-right:14px;">
-                                <i class="glyphicon glyphicon-refresh"></i> Change unit of measure
+                                <i class="glyphicon glyphicon-refresh"></i>
+                                <span translate="MAIN.DIALOG.PARCELS.CHANGE_UNIT"></span>
                               </a>
                             </span>
                           </div>
@@ -247,9 +251,9 @@
                       </div>
                     </div>
 
-                    <div class="form-group form-group-no-margin ">
+                    <div class="form-group form-group-no-margin">
                       <label class="control-label col-md-2 no-padding-right required-">
-                        <span class="popmark" id="popmark-shipment-date" data-placement="right" data-title="Date" data-content="Collection date requested" data-original-title="" title="">Date</span>
+                        <span class="popmark" id="popmark-shipment-date" data-placement="right" data-title="Date" data-content="Collection date requested" data-original-title="" title="" translate="MAIN.DIALOG.PARCELS.DATE">Date</span>
                       </label>
 
                       <div class="col-md-4">
@@ -260,12 +264,15 @@
                           </span>
                         </div>
 
-                        <div class="help" style="font-size: 12px;">Collection date requested</div>
+                        <div class="help" style="font-size: 12px;">
+                          <span translate="MAIN.DIALOG.PARCELS.COLLECTION_DATE"></span>
+                        </div>
                       </div>
 
                       <div class="col-md-6 text-center" id="shipment-date-row">
                         <button type="submit" class="btn btn-primary btn-lg" id="btn_save" name="btn_save" ng-click="gotoProgress()">
-                          <i class="glyphicon glyphicon-ok"></i> COMPARE THE OFFERS!
+                          <i class="glyphicon glyphicon-ok"></i>
+                          <span translate="MAIN.DIALOG.PARCELS.COMPARE_OFFER"></span>
                         </button>
                       </div>
                     </div>
@@ -275,7 +282,7 @@
                 </uib-tab>
                 <uib-tab index="1">
                   <uib-tab-heading>
-                    How does it work?
+                    <span translate="MAIN.DIALOG.TITLE2">How does it work?</span>
                   </uib-tab-heading>
                   <div class="video-wrapper">
                     <iframe width="469" height="264" src="//www.youtube.com/embed/ToXhDYRqwZE?autoplay=0" frameborder="0" allowfullscreen=""></iframe>
@@ -289,7 +296,7 @@
         <div id="home-bottom" class="container">
           <div id="home-bottom-references" class="row">
             <div class="col-md-3 transportation-operated-by">
-              <h3 class="home-bottom-section-title" style="margin-bottom: 8px;">The reliability and service of the leaders in international express delivery</h3>
+              <h3 class="home-bottom-section-title" style="margin-bottom: 8px;" translate="MAIN.FOOTER.SERVICES"></h3>
               <div class="transportation-operated-by-imgs">
                 <a href="#"><img src="images/references/dhl.png" alt="DHL" /></a>
                 <a href="#"><img src="images/references/dpd.png" alt="DPD" /></a>
@@ -302,7 +309,7 @@
             </div>
 
             <div class="col-md-3" style="margin-bottom: 10px;">
-              <h3 class="home-bottom-section-title" style="margin-bottom: 10px;">
+              <h3 class="home-bottom-section-title" style="margin-bottom: 10px;" translate="MAIN.FOOTER.E_SHOPS">
                 Discover our solutions for e-shops and MarketPlaces
               </h3>
               <a class="text-center block-center" href="#">
@@ -311,7 +318,7 @@
             </div>
 
             <div class="col-md-3" style="margin-bottom: 10px;">
-              <h3 class="home-bottom-section-title" style="margin-bottom: 20px;">
+              <h3 class="home-bottom-section-title" style="margin-bottom: 20px;" translate="MAIN.FOOTER.ADVANTAGE">
                 Take advantage of our programs
               </h3>
               <a href="#">
@@ -320,7 +327,7 @@
             </div>
 
             <div class="col-md-3">
-              <h3 id="trustedshops_badge_container_title" class="home-bottom-section-title" style="margin-bottom: 25px;">
+              <h3 id="trustedshops_badge_container_title" class="home-bottom-section-title" style="margin-bottom: 25px;" translate="MAIN.FOOTER.OPINION">
                 Your opinion matters
               </h3>
               <div id="trustedshops_badge_container"></div>
@@ -353,8 +360,8 @@
           </div>
 
           <div id="home-bottom-presentation">
-            <h2>UPELA, the best way to ship a parcel!</h2>
-            <p>Thanks to UPELA exclusive prices, afford the services of the leaders in international express delivery while reducing your costs! Do not wait to find out about UPELA, in a few clicks, order your
+            <h2 translate="MAIN.FOOTER.COMMENT.TITLE">UPELA, the best way to ship a parcel!</h2>
+            <p translate="MAIN.FOOTER.COMMENT.CONTENT">Thanks to UPELA exclusive prices, afford the services of the leaders in international express delivery while reducing your costs! Do not wait to find out about UPELA, in a few clicks, order your
               <strong>express delivery</strong>
               on our site. According to your choice, DHL, FEDEX or UPS will collect your shipment, an enveloppe, a
               <strong>bulky parcel or a pallet</strong>
@@ -372,17 +379,17 @@
 
           <div id="home-bottom-instructions">
             <h2>
-              <a class="collapse-toggle collapsed" data-toggle="collapse" href="#upela-instructions" aria-expanded="false">
+              <a class="collapse-toggle collapsed" data-toggle="collapse" href="#upela-instructions" aria-expanded="false" translate="MAIN.FOOTER.INSTRUCTION.TITLE">
                 Instructions for the use of the UPELA price comparison for sending your parcels
               </a>
             </h2>
             <div class="collapse" id="upela-instructions" aria-expanded="false" style="height: 0px;">
               <ol>
-                <li>In order to send your <strong>mail, parcel or pallet</strong> internationally or in France, complete the information requested in the box "Begin sending": select the place of departure and destination in the drop-down list (type in the name of the city or the postal code). Tick the "business address" box if it is a business address, leave blank if it is a personal address. Enter the weight and size of your parcel. Choose the date that the carrier can collect your consignment. Compare our <strong>carriers rates</strong> by clicking on "compare offers!"</li>
-                <li>Here you may access all of our <strong>quotes for express transportation</strong>. These give references to the name of the carrier (FedEx, DHL or UPS), the price of shipping (excluding and including all taxes), the expected delivery date and the type of carrier. If you have a <a href="https://www.upela.com/en/business-account-upela-61.html">UPELA professional account</a>, the <strong>price for parcels, mail and palettes</strong> are even more advantageous (the creation of a professional or individual account is free and without obligation).</li>
-                <li>Once the method of <strong>express delivery</strong> has been selected, complete all the information concerning the sender and the addressee, or select your contacts in the address book. Also indicate the desired time period at the place where the consignment must be picked up. In the case of <strong>imported parcels</strong>, first check the availability of your correspondent. You may also drop off your package at the agency.</li>
-                <li>A summary page summarises all the information of your consignment. Confirm your order and choose your credit card to access the secure online payment. With a pro Upela account you can <a href="https://www.upela.com/en/pay-later-by-deferred-payment-99.html">pay for your consignment at a later date</a>.</li>
-                <li>Your order is validated. You can print your transportation documents, view your invoice, view the parcel tracking or cancel your consignment. The information of your consignment are sent by email: your shipping note, pro-forma invoice (non European Union consignments) and your Upela invoice. All you have to do is stick your transport voucher on your package (envelope, parcel or pallet) and wait for the courier.</li>
+                <li translate="MAIN.FOOTER.INSTRUCTION.CONTENT1">In order to send your <strong>mail, parcel or pallet</strong> internationally or in France, complete the information requested in the box "Begin sending": select the place of departure and destination in the drop-down list (type in the name of the city or the postal code). Tick the "business address" box if it is a business address, leave blank if it is a personal address. Enter the weight and size of your parcel. Choose the date that the carrier can collect your consignment. Compare our <strong>carriers rates</strong> by clicking on "compare offers!"</li>
+                <li translate="MAIN.FOOTER.INSTRUCTION.CONTENT2">Here you may access all of our <strong>quotes for express transportation</strong>. These give references to the name of the carrier (FedEx, DHL or UPS), the price of shipping (excluding and including all taxes), the expected delivery date and the type of carrier. If you have a <a href="https://www.upela.com/en/business-account-upela-61.html">UPELA professional account</a>, the <strong>price for parcels, mail and palettes</strong> are even more advantageous (the creation of a professional or individual account is free and without obligation).</li>
+                <li translate="MAIN.FOOTER.INSTRUCTION.CONTENT3">Once the method of <strong>express delivery</strong> has been selected, complete all the information concerning the sender and the addressee, or select your contacts in the address book. Also indicate the desired time period at the place where the consignment must be picked up. In the case of <strong>imported parcels</strong>, first check the availability of your correspondent. You may also drop off your package at the agency.</li>
+                <li translate="MAIN.FOOTER.INSTRUCTION.CONTENT4">A summary page summarises all the information of your consignment. Confirm your order and choose your credit card to access the secure online payment. With a pro Upela account you can <a href="https://www.upela.com/en/pay-later-by-deferred-payment-99.html">pay for your consignment at a later date</a>.</li>
+                <li translate="MAIN.FOOTER.INSTRUCTION.CONTENT5">Your order is validated. You can print your transportation documents, view your invoice, view the parcel tracking or cancel your consignment. The information of your consignment are sent by email: your shipping note, pro-forma invoice (non European Union consignments) and your Upela invoice. All you have to do is stick your transport voucher on your package (envelope, parcel or pallet) and wait for the courier.</li>
               </ol>
             </div>
           </div>
