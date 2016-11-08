@@ -8,9 +8,7 @@
  * Service in the UpelaApp.
  */
 angular.module('UpelaApp')
-  .service('MainService', function ($http, $q) {
-    var urlBase = 'https://gist.github.com/unceus/6501985';
-
+  .service('MainService', function () {
     var countries = [ // Taken from https://gist.github.com/unceus/6501985
       {name: 'Afghanistan', code: 'AF'},
       {name: 'Åland Islands', code: 'AX'},

@@ -1,0 +1,79 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <div class="bootstrap-dialog-header">
+      <div class="bootstrap-dialog-title">
+        <h4 class="modal-title">Login to Upela</h4>
+      </div>
+
+      <div class="bootstrap-dialog-close-button" style="display: block;">
+        <button class="close">×</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-body">
+    <div class="bootstrap-dialog-body">
+      <div class="bootstrap-dialog-message">
+        <form id="PopupLoginForm" class="form-horizontal" role="form" enctype="application/x-www-form-urlencoded" action="http://localhost:32769/en/account/actions.php?action=popup_login" accept-charset="UTF-8" method="post" onsubmit="validateForm('PopupLoginForm', {'displayErrorMessage': false}, function(result) {
+          closeDialog();
+          window.location = 'http://localhost:32769/en/my-account/';
+        }); return false;">
+          <div class="form-group">
+            <label for="login" class="control-label col-lg-3 required">Email</label>
+            <div class="col-lg-7">
+              <input type="text" id="login" name="login" class="form-control" value="1CLI1" placeholder="Login" maxlength="100" autocomplete="off">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="control-label col-lg-3 required">Password</label>
+            <div class="col-lg-7">
+              <input type="password" id="password" name="password" class="form-control" value="upela1" placeholder="Password" maxlength="100" autocomplete="off">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-lg-9 col-lg-offset-3">
+              <div class="checkbox" style="padding: 0;">
+                <label for="remember_me" class="">
+                  <input type="checkbox" id="remember_me" name="remember_me" class="" value="1" checked="">Remember me
+                </label>
+              </div>
+
+              <span class="help-block">
+                <a href="/lost-password">Forgot password?</a>
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-lg-9 col-lg-offset-3">
+              <button type="submit" class="btn btn-primary" id="btn_login" name="btn_login" onclick="validateForm('PopupLoginForm', {'displayErrorMessage': false}, function(result) {
+          closeDialog();
+          window.location = 'http://localhost:32769/en/my-account/';
+        }); return false;">
+                <span class="fa fa-lock"></span> Login
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-lg-9 col-lg-offset-3">
+                <span class="help-block">No account yet ?
+                  <a href="http://localhost:32769/en/my-account/login#register">Open your free account</a>
+                </span>
+            </div>
+          </div>
+        </form>
+
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <div class="bootstrap-dialog-footer">
+      <div class="bootstrap-dialog-footer-buttons"></div>
+    </div>
+  </div>
+</div>

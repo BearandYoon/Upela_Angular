@@ -1,0 +1,123 @@
+<div id="wrapper" class="clearfix container">
+  <div class="clearfix row">
+    <section id="main" class="col-lg-12">
+      <div id="load">
+        <img src="images/loading.gif" alt="Loading...">&nbsp;&nbsp;Please wait...
+      </div>
+
+      <h1>Parcel consignment account</h1>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="panel-white panel-white-bordered- clearfix">
+            <h2>Already registered?</h2>
+
+            <form id="LoginForm" class="form-horizontal" role="form" enctype="application/x-www-form-urlencoded" action="http://localhost:32769/en/my-account/login" accept-charset="UTF-8" method="post" onsubmit="validateForm('LoginForm', {'displayErrorMessage': false}); return false;">
+              <div class="form-group">
+                <label for="login" class="control-label col-lg-3 required">Email</label>
+                <div class="col-lg-7">
+                  <input type="text" id="login" name="login" class="form-control" value="1CLI1" placeholder="Login" maxlength="100" autocomplete="off">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="password" class="control-label col-lg-3 required">Password</label>
+                <div class="col-lg-7">
+                  <input type="password" id="password" name="password" class="form-control" value="upela1" placeholder="Password" maxlength="100" autocomplete="off">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-lg-9 col-lg-offset-3">
+                  <div class="checkbox" style="padding: 0;">
+                    <label for="remember_me" class="">
+                      <input type="checkbox" id="remember_me" name="remember_me" class="" value="1" checked="">Remember me
+                    </label>
+                  </div>
+
+                  <span class="help-block">
+                    <a href="http://localhost:32769/en/my-account/lost-password">Forgot password?</a>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-lg-9 col-lg-offset-3">
+                  <button type="submit" class="btn btn-primary" id="btn_login" name="btn_login" onclick="validateForm('LoginForm', {'displayErrorMessage': false}); return false;">
+                    <span class="fa fa-lock"></span> Login
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div class="clear"></div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+          <div class="panel-white panel-white-bordered- clearfix">
+            <h2>Open an account</h2>
+            <form id="RegisterForm" class="form-horizontal" role="form" enctype="multipart/form-data" action="http://localhost:32769/en/my-account/login" accept-charset="UTF-8" method="post" onsubmit="validateForm('RegisterForm', {'displayErrorMessage': false}); return false;">
+              <div class="form-group">
+                <label for="email" class="control-label col-lg-3 required">Email</label>
+
+                <div class="col-lg-7">
+                  <input type="text" id="email" name="email" class="form-control validate" data-validate="isEmail" value="" maxlength="100">
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <label for="register_password" class="control-label col-lg-3 required">Password</label>
+                <div class="col-lg-7">
+                  <input type="password" id="register_password" name="password" class="form-control validate" data-validate="isPassword" value="" maxlength="15">
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <label for="password2" class="control-label col-lg-3 required">Confirm password</label>
+                <div class="col-lg-7">
+                  <input type="password" id="password2" name="password2" class="form-control" value="" maxlength="100">
+                </div>
+              </div>
+
+              <div class="form-group hidden">
+                <label class="control-label col-lg-3">Choose your type of account</label>
+                <div class="col-lg-9">
+                  <div class="radio-inline" id="radio-inline-address_pro-0">
+                    <label for="address_pro-0">
+                      <input type="radio" id="address_pro-0" name="address_pro" value="0" checked="" onclick="selectAccountType();">&nbsp;Personnal account
+                    </label>
+                  </div>
+
+                  <div class="radio-inline" id="radio-inline-address_pro-1">
+                    <label for="address_pro-1">
+                      <input type="radio" id="address_pro-1" name="address_pro" value="1" onclick="selectAccountType();">&nbsp;Professional account
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-lg-9 col-lg-offset-3">
+                  <p class="help-block">We need extra information about you as a company to validate a professional account.  You will be asked to enter your company registration number and EU VATIN number.  No other distinction is made by Upela.<br>
+                    <a class="text-underline" href="#" onclick="showPageInPopup('http://localhost:32769/en/pro-account-send-parcel-24.html'); return false;">What are the advantages of a pro account?</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-lg-9 col-lg-offset-3">
+                  <button type="submit" class="btn btn-primary" id="btn_register_perso" name="btn_register_perso" onclick="$('#address_pro-0').prop('checked', true); validateForm('RegisterForm', {'displayErrorMessage': false}); return false;">
+                    <span class="fa fa-user"></span> Personnal account
+                  </button>&nbsp;&nbsp;
+                  <button type="submit" class="btn btn-primary" id="btn_register_pro" name="btn_register_pro" onclick="$('#address_pro-1').prop('checked', true); validateForm('RegisterForm', {'displayErrorMessage': false}); return false;">
+                    <span class="fa fa-user"></span> Professional account
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- end main -->
+  </div><!-- end .row -->
+</div>

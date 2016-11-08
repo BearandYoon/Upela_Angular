@@ -11,5 +11,5 @@ angular.module('UpelaApp')
   .controller('OrderOrderCtrl', function ($scope, $state) {
     $scope.clickContinue = function() {
       $state.go('order-payment');
-    }
+    };
   });

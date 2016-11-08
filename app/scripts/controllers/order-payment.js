@@ -11,5 +11,5 @@ angular.module('UpelaApp')
   .controller('OrderPaymentCtrl', function ($scope, $state) {
     $scope.clickPayment = function() {
       $state.go('my-account');
-    }
+    };
    });

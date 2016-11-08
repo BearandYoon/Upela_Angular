@@ -8,7 +8,8 @@
  * Controller of the UpelaApp
  */
 angular.module('UpelaApp')
-  .controller('TopbarCtrl', function ($scope, $cookies, Config, $translate) {
+  .controller('TopbarCtrl', function ($scope, $cookies, $rootScope, Config, $translate, $uibModal, $state) {
+    $scope.IsLoggedIn = $rootScope.IsLoggedIn;
     $scope.languages = [
       {
         language: 'English',
@@ -43,5 +44,23 @@ angular.module('UpelaApp')
       $scope.selLanguage = language;
       $cookies.put(Config.Language, $scope.selLanguage.language);
       $translate.use(language.short);
+    };
+
+    $scope.login = function() {
+      $uibModal.open({
+        animation: true,
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: '$ctrl',
+        size: 'small-st',
+        backdrop  : 'static',
+        keyboard  : false
+      });
+    };
+
+    $scope.register = function() {
+      console.log('$scope.register()');
+      //$state.go('register');
+      $state.go('order-progress');
     };
   });

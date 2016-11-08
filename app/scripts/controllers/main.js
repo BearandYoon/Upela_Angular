@@ -8,7 +8,7 @@
  * Controller of the UpelaApp
  */
 angular.module('UpelaApp')
-  .controller('MainCtrl', function ($scope, $state, MainService, $http, $timeout, $interval) {
+  .controller('MainCtrl', function ($scope, $state, MainService) {
     $scope.gotoProgress = function() {
       $state.go('order-progress');
     };
@@ -35,6 +35,31 @@ angular.module('UpelaApp')
     vm.setInputFocus = function (){
       $scope.$broadcast('UiSelectDemo1');
     };
+
+    // Disable weekend selection
+    function disabled(data) {
+      var date = data.date,
+        mode = data.mode;
+      return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
+    }
+
+    function getDayClass(data) {
+      var date = data.date,
+        mode = data.mode;
+      if (mode === 'day') {
+        var dayToCheck = new Date(date).setHours(0,0,0,0);
+
+        for (var i = 0; i < $scope.events.length; i++) {
+          var currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);
+
+          if (dayToCheck === currentDay) {
+            return $scope.events[i].status;
+          }
+        }
+      }
+
+      return '';
+    }
 
     vm.enable = function() {
       vm.disabled = false;
@@ -91,13 +116,6 @@ angular.module('UpelaApp')
       startingDay: 1
     };
 
-    // Disable weekend selection
-    function disabled(data) {
-      var date = data.date,
-        mode = data.mode;
-      return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
-    }
-
     $scope.toggleMin = function() {
       $scope.inlineOptions.minDate = $scope.inlineOptions.minDate ? null : new Date();
       $scope.dateOptions.minDate = $scope.inlineOptions.minDate;
@@ -135,24 +153,6 @@ angular.module('UpelaApp')
         status: 'partially'
       }
     ];
-
-    function getDayClass(data) {
-      var date = data.date,
-        mode = data.mode;
-      if (mode === 'day') {
-        var dayToCheck = new Date(date).setHours(0,0,0,0);
-
-        for (var i = 0; i < $scope.events.length; i++) {
-          var currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);
-
-          if (dayToCheck === currentDay) {
-            return $scope.events[i].status;
-          }
-        }
-      }
-
-      return '';
-    }
 
     vm.countries = MainService.getCountries();
   });

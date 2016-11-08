@@ -100,9 +100,73 @@
           </ul>
         </li>
 
-        <li><a href="#" translate="MAIN.MENU.LOGIN"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+        <li ng-if="!IsLoggedIn">
+          <a href="#" ng-click="login()">
+            <span class="glyphicon glyphicon-user"></span>
+            <span translate="MAIN.MENU.LOGIN"></span>
+          </a>
+        </li>
 
-        <li><a href="#" translate="MAIN.MENU.REGISTER"><span class="fa fa-user-plus"></span> Register</a></li>
+        <li ng-if="!IsLoggedIn">
+          <a href="#" ng-click="register()">
+            <span class="fa fa-user-plus"></span>
+            <span translate="MAIN.MENU.REGISTER"></span>
+          </a>
+        </li>
+
+        <li class="dropdown" ng-if="IsLoggedIn">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+            <span class="glyphicon glyphicon-user"></span> _CLI1
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <!--<li class="divider"></li>-->
+            <li>
+              <a href="http://localhost:32769/en/account/logout.php">
+                <span class="glyphicon glyphicon-off"></span> Logout
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="dropdown" ng-if="IsLoggedIn">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <span class="glyphicon glyphicon-th"></span> My account
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="/my-account">
+                <span class="glyphicon glyphicon-th"></span> My account
+              </a>
+            </li>
+            <li>
+              <a href="/my-account">
+                <span class="fa fa-paper-plane"></span> My shipments
+              </a>
+            </li>
+            <li>
+              <a href="/my-invoices">
+                <span class="fa fa-file-text"></span> My invoices
+              </a>
+            </li>
+            <li>
+              <a href="http://localhost:32769/en/my-account/payments">
+                <span class="fa fa-list"></span> My payments
+              </a>
+            </li>
+            <li>
+              <a href="/my-contacts">
+                <span class="fa fa-book"></span> My contacts
+              </a>
+            </li>
+            <li>
+              <a href="http://localhost:32769/en/my-account/my-information">
+                <span class="fa fa-cogs"></span> Settings
+              </a>
+            </li>
+          </ul>
+        </li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>

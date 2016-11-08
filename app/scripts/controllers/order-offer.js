@@ -11,5 +11,5 @@ angular.module('UpelaApp')
   .controller('OrderOfferCtrl', function ($scope, $state) {
     $scope.clickChoose = function() {
       $state.go('order-order');
-    }
+    };
   });
