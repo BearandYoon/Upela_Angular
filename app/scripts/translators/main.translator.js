@@ -57,7 +57,14 @@
           BLOG: 'Blog',
           CONTACT: 'Contact',
           LOGIN: 'Login',
-          REGISTER: 'Register'
+          LOGOUT: 'Logout',
+          REGISTER: 'Register',
+          ACCOUNT: 'My account',
+          SHIPMENTS: 'My shipments',
+          INVOICES: 'My invoices',
+          PAYMENTS: 'My payments',
+          CONTACTS: 'My contacts',
+          SETTINGS: 'Settings'
         },
         PAGES: {
           TITLE: 'Upela: compare quotes from carriers for the delivery and tracking of your consignments, parcels or pallets for professionals or individuals',
@@ -204,7 +211,14 @@
           BLOG: 'Blog',
           CONTACT: 'Contact',
           LOGIN: 'Se connecter',
-          REGISTER: 'Inscription'
+          LOGOUT: 'Déconnexion',
+          REGISTER: 'Inscription',
+          ACCOUNT: 'Mon compte',
+          SHIPMENTS: 'Mes envois',
+          INVOICES: 'Mes factures',
+          PAYMENTS: 'Mes règlements',
+          CONTACTS: 'Mes contacts',
+          SETTINGS: 'Paramètres'
         },
         PAGES: {
           TITLE: 'Upela : comparez les offres de transporteurs pour la livraison et le suivi de vos envois, colis ou palettes pour professionnels ou particuliers',
@@ -351,7 +365,14 @@
           BLOG: 'Blog',
           CONTACT: 'Contacto',
           LOGIN: 'Iniciar sesión',
-          REGISTER: 'Inscripción'
+          LOGOUT: 'Desconexión',
+          REGISTER: 'Inscripción',
+          ACCOUNT: 'Mi cuenta',
+          SHIPMENTS: 'Mis envíos',
+          INVOICES: 'Mis facturas',
+          PAYMENTS: 'Mis pagos',
+          CONTACTS: 'Mis contactos',
+          SETTINGS: 'Parámetros'
         },
         PAGES: {
           TITLE: 'Upela: compare las ofertas de transportistas para la entrega y seguimiento de sus envíos, paquetes o palets para profesionales o particulares',

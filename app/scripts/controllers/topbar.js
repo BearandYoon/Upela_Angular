@@ -23,7 +23,7 @@ angular.module('UpelaApp')
       },
       {
         language: 'Spanish',
-        image: 'images/flags/3.jpg',
+        image: 'images/flags/4.jpg',
         short: 'es'
       }
     ];

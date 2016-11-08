@@ -9,7 +9,6 @@
     </div>
     <div id="main-navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav" id="main-navbar-nav">
-        <!--<li><a href="<?php echo Language::getUrl('/'); ?>"><?php echo __('Home'); ?></a></li>-->
         <li><a href="#/settings" translate="MAIN.MENU.PROFESSIONALS"></a></li>
 
         <li class="dropdown">
@@ -29,12 +28,11 @@
                 <li><a href="#" translate="MAIN.MENU.SERVICES.DESTINATIONS.EASTERN_EUROPE">Eastern Europe</a></li>
                 <li><a href="#" translate="MAIN.MENU.SERVICES.DESTINATIONS.EUROPE">Europe</a></li>
                 <li><a href="#" translate="MAIN.MENU.SERVICES.DESTINATIONS.MIDDLE_EAST">Middle East</a></li>
-                <!--<li><a href="<?php echo Cms::getPageUrlByIdentifier('country-south-america'); ?>"><?php echo __('South America'); ?></a></li>-->
               </ul>
             </li>
 
             <li class="dropdown-submenu">
-              <a href="#" translate="MAIN.MENU.SERVICES.EXPRESS_COURIER.TITLE">Express courier</a>
+              <a translate="MAIN.MENU.SERVICES.EXPRESS_COURIER.TITLE">Express courier</a>
               <ul class="dropdown-menu">
                 <li><a href="#" translate="MAIN.MENU.SERVICES.EXPRESS_COURIER.FRANCE">France</a></li>
                 <li><a href="#" translate="MAIN.MENU.SERVICES.EXPRESS_COURIER.EUROPE">Europe</a></li>
@@ -55,7 +53,7 @@
             </li>
 
             <li class="dropdown-submenu">
-              <a href="#" translate="MAIN.MENU.SERVICES.CARRIERS.TITLE">Carriers</a>
+              <a translate="MAIN.MENU.SERVICES.CARRIERS.TITLE">Carriers</a>
               <ul class="dropdown-menu">
                 <li><a href="#" translate="MAIN.MENU.SERVICES.CARRIERS.CHRONOPOST">Chronopost</a></li>
                 <li><a href="#" translate="MAIN.MENU.SERVICES.CARRIERS.COLISSIMO">Colissimo</a></li>
@@ -70,13 +68,13 @@
           </ul>
         </li>
 
-        <li><a href="#" translate="MAIN.MENU.TRACKING">Tracking</a></li>
+        <li><a translate="MAIN.MENU.TRACKING">Tracking</a></li>
 
-        <li><a href="#" translate="MAIN.MENU.HELP">Help</a></li>
+        <li><a translate="MAIN.MENU.HELP">Help</a></li>
 
-        <li><a href="#" translate="MAIN.MENU.BLOG">Blog</a></li>
+        <li><a translate="MAIN.MENU.BLOG">Blog</a></li>
 
-        <li><a href="#" translate="MAIN.MENU.CONTACT">Contact</a></li>
+        <li><a translate="MAIN.MENU.CONTACT">Contact</a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -116,7 +114,8 @@
           <ul class="dropdown-menu">
             <li>
               <a href="#" ng-click="logout()">
-                <span class="glyphicon glyphicon-off"></span> Logout
+                <span class="glyphicon glyphicon-off"></span>
+                <span translate="MAIN.MENU.LOGOUT"></span>
               </a>
             </li>
           </ul>
@@ -124,38 +123,45 @@
 
         <li class="dropdown" ng-if="IsLoggedIn">
           <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <span class="glyphicon glyphicon-th"></span> My account
+            <span class="glyphicon glyphicon-th"></span>
+            <span translate="MAIN.MENU.ACCOUNT"></span>
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
             <li>
               <a href="#/my-account">
-                <span class="glyphicon glyphicon-th"></span> My account
+                <span class="glyphicon glyphicon-th"></span>
+                <span translate="MAIN.MENU.ACCOUNT"></span>
               </a>
             </li>
             <li>
               <a href="#/my-account">
-                <span class="fa fa-paper-plane"></span> My shipments
+                <span class="fa fa-paper-plane"></span>
+                <span translate="MAIN.MENU.SHIPMENTS"></span>
               </a>
             </li>
             <li>
               <a href="#/settings">
-                <span class="fa fa-file-text"></span> My invoices
+                <span class="fa fa-file-text"></span>
+                <span translate="MAIN.MENU.INVOICES"></span>
               </a>
             </li>
             <li>
               <a href="#/settings">
-                <span class="fa fa-list"></span> My payments
+                <span class="fa fa-list"></span>
+                <span translate="MAIN.MENU.PAYMENTS"></span>
               </a>
             </li>
             <li>
-              <a href="/my-contacts">
-                <span class="fa fa-book"></span> My contacts
+              <a href="#/my-contacts">
+                <span class="fa fa-book"></span>
+                <span translate="MAIN.MENU.CONTACTS"></span>
               </a>
             </li>
             <li>
               <a href="#/settings">
-                <span class="fa fa-cogs"></span> Settings
+                <span class="fa fa-cogs"></span>
+                <span translate="MAIN.MENU.SETTINGS"></span>
               </a>
             </li>
           </ul>

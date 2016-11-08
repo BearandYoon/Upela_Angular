@@ -2,7 +2,7 @@
   <div class="modal-header">
     <div class="bootstrap-dialog-header">
       <div class="bootstrap-dialog-title">
-        <h4 class="modal-title">Login to Upela</h4>
+        <h4 class="modal-title" translate="LOGIN.TITLE">Login to Upela</h4>
       </div>
 
       <div class="bootstrap-dialog-close-button" style="display: block;">
@@ -16,14 +16,14 @@
       <div class="bootstrap-dialog-message">
         <form class="form-horizontal" name="loginForm" ng-submit="$ctrl.login()">
           <div class="form-group">
-            <label for="login" class="control-label col-lg-3 required">Email</label>
+            <label for="login" class="control-label col-lg-3 required" translate="LOGIN.EMAIL">Email</label>
             <div class="col-lg-7">
               <input type="text" id="login" name="login" class="form-control" value="1CLI1" placeholder="Login" maxlength="100" autocomplete="off">
             </div>
           </div>
 
           <div class="form-group">
-            <label for="password" class="control-label col-lg-3 required">Password</label>
+            <label for="password" class="control-label col-lg-3 required" translate="LOGIN.PASSWORD">Password</label>
             <div class="col-lg-7">
               <input type="password" id="password" name="password" class="form-control" value="upela1" placeholder="Password" maxlength="100" autocomplete="off">
             </div>
@@ -33,12 +33,13 @@
             <div class="col-lg-9 col-lg-offset-3">
               <div class="checkbox" style="padding: 0;">
                 <label for="remember_me" class="">
-                  <input type="checkbox" id="remember_me" name="remember_me" class="" value="1" checked="">Remember me
+                  <input type="checkbox" id="remember_me" name="remember_me" class="" value="1" checked="">
+                  <span  translate="LOGIN.REMEMBER"></span>
                 </label>
               </div>
 
               <span class="help-block">
-                <a href="/lost-password">Forgot password?</a>
+                <a href="/lost-password" translate="LOGIN.FORGOT">Forgot password?</a>
               </span>
             </div>
           </div>
@@ -46,15 +47,17 @@
           <div class="form-group">
             <div class="col-lg-9 col-lg-offset-3">
               <button type="submit" class="btn btn-primary">
-                <span class="fa fa-lock"></span> Login
+                <span class="fa fa-lock"></span>
+                <span translate="LOGIN.LOGIN"></span>
               </button>
             </div>
           </div>
 
           <div class="form-group">
             <div class="col-lg-9 col-lg-offset-3">
-                <span class="help-block">No account yet ?
-                  <a href="#">Open your free account</a>
+                <span class="help-block">
+                  <span translate="LOGIN.NO_ACCOUNT"></span>
+                  <a href="#" translate="LOGIN.FREE_ACCOUNT">Open your free account</a>
                 </span>
             </div>
           </div>
