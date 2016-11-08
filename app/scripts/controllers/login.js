@@ -8,10 +8,16 @@
  * Controller of the UpelaApp
  */
 angular.module('UpelaApp')
-  .controller('LoginCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('LoginCtrl', function ($uibModalInstance, $rootScope) {
+    var self = this;
+
+    self.closeModal = function closeModal() {
+      $uibModalInstance.close();
+    };
+
+    self.login = function() {
+      console.log('login');
+      $uibModalInstance.close();
+      $rootScope.IsLoggedIn = true;
+    }
   });

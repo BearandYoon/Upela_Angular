@@ -6,7 +6,7 @@
       </div>
 
       <div class="bootstrap-dialog-close-button" style="display: block;">
-        <button class="close">×</button>
+        <button class="close" ng-click="$ctrl.closeModal()">×</button>
       </div>
     </div>
   </div>
@@ -14,10 +14,7 @@
   <div class="modal-body">
     <div class="bootstrap-dialog-body">
       <div class="bootstrap-dialog-message">
-        <form id="PopupLoginForm" class="form-horizontal" role="form" enctype="application/x-www-form-urlencoded" action="http://localhost:32769/en/account/actions.php?action=popup_login" accept-charset="UTF-8" method="post" onsubmit="validateForm('PopupLoginForm', {'displayErrorMessage': false}, function(result) {
-          closeDialog();
-          window.location = 'http://localhost:32769/en/my-account/';
-        }); return false;">
+        <form class="form-horizontal" name="loginForm" ng-submit="$ctrl.login()">
           <div class="form-group">
             <label for="login" class="control-label col-lg-3 required">Email</label>
             <div class="col-lg-7">
@@ -48,10 +45,7 @@
 
           <div class="form-group">
             <div class="col-lg-9 col-lg-offset-3">
-              <button type="submit" class="btn btn-primary" id="btn_login" name="btn_login" onclick="validateForm('PopupLoginForm', {'displayErrorMessage': false}, function(result) {
-          closeDialog();
-          window.location = 'http://localhost:32769/en/my-account/';
-        }); return false;">
+              <button type="submit" class="btn btn-primary">
                 <span class="fa fa-lock"></span> Login
               </button>
             </div>
@@ -60,7 +54,7 @@
           <div class="form-group">
             <div class="col-lg-9 col-lg-offset-3">
                 <span class="help-block">No account yet ?
-                  <a href="http://localhost:32769/en/my-account/login#register">Open your free account</a>
+                  <a href="#">Open your free account</a>
                 </span>
             </div>
           </div>

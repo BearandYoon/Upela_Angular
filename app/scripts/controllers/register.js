@@ -8,10 +8,5 @@
  * Controller of the UpelaApp
  */
 angular.module('UpelaApp')
-  .controller('RegisterCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('RegisterCtrl', function ($state) {
+ });

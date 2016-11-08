@@ -23,7 +23,7 @@ angular
   .config(function ($stateProvider, $urlRouterProvider, $translateProvider) {
     $stateProvider
       .state('home', {
-        url: '',
+        url: '/index',
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'ctrl'
@@ -31,92 +31,110 @@ angular
       .state('login', {
         url: '/login',
         templateUrl: 'views/login.html',
-        controller: 'LoginCtrl'
+        controller: 'LoginCtrl',
+        controllerAs: '$ctrl'
       })
       .state('register', {
         url: '/register',
         templateUrl: 'views/register.html',
-        controller: 'RegisterCtrl'
+        controller: 'RegisterCtrl',
+        controllerAs: 'ctrl'
       })
       .state('order-progress', {
         url: '/order-progress',
         templateUrl: 'views/order-progress.html',
-        controller: 'OrderProgressCtrl'
+        controller: 'OrderProgressCtrl',
+        controllerAs: 'ctrl'
       })
       .state('order-offer', {
         url: '/order-offer',
         templateUrl: 'views/order-offer.html',
-        controller: 'OrderOfferCtrl'
+        controller: 'OrderOfferCtrl',
+        controllerAs: 'ctrl'
       })
       .state('order-order', {
         url: '/order-order',
         templateUrl: 'views/order-order.html',
-        controller: 'OrderOrderCtrl'
+        controller: 'OrderOrderCtrl',
+        controllerAs: 'ctrl'
       })
       .state('order-payment', {
         url: '/order-payment',
         templateUrl: 'views/order-payment.html',
-        controller: 'OrderPaymentCtrl'
+        controller: 'OrderPaymentCtrl',
+        controllerAs: 'ctrl'
       })
       .state('order-confirm', {
         url: '/order-confirm',
         templateUrl: 'views/order-confirm.html',
-        controller: 'OrderOrderCtrl'
+        controller: 'OrderOrderCtrl',
+        controllerAs: 'ctrl'
       })
       .state('my-account', {
         url: '/my-account',
         templateUrl: 'views/my-account.html',
-        controller: 'MyAccountCtrl'
+        controller: 'MyAccountCtrl',
+        controllerAs: 'ctrl'
       })
       .state('ship-to-contact', {
         url: '/ship-to-contact',
         templateUrl: 'views/ship-to-contact.html',
-        controller: 'ShipToContactCtrl'
+        controller: 'ShipToContactCtrl',
+        controllerAs: 'ctrl'
       })
       .state('mass-mailing', {
         url: '/mass-mailing',
         templateUrl: 'views/mass-mailing.html',
-        controller: 'MassMailingCtrl'
+        controller: 'MassMailingCtrl',
+        controllerAs: 'ctrl'
       })
       .state('mass-mailing-upload', {
         url: '/mass-mailing-upload',
         templateUrl: 'views/mass-mailing-upload.html',
-        controller: 'MassMailingUploadCtrl'
+        controller: 'MassMailingUploadCtrl',
+        controllerAs: 'ctrl'
       })
       .state('my-contacts', {
         url: '/my-contacts',
         templateUrl: 'views/my-contacts.html',
-        controller: 'MyContactsCtrl'
+        controller: 'MyContactsCtrl',
+        controllerAs: 'ctrl'
       })
       .state('credit-account', {
         url: '/credit-account',
         templateUrl: 'views/credit-account.html',
-        controller: 'CreditAccountCtrl'
+        controller: 'CreditAccountCtrl',
+        controllerAs: 'ctrl'
       })
       .state('my-store', {
         url: "/my-store",
         templateUrl: 'views/my-store.html',
-        controller: 'MyStoreCtrl'
+        controller: 'MyStoreCtrl',
+        controllerAs: 'ctrl'
       })
       .state('settings', {
         url: '/settings',
         templateUrl: 'views/settings.html',
-        controller: 'SettingsCtrl'
+        controller: 'SettingsCtrl',
+        controllerAs: 'ctrl'
       })
       .state('refer-contacts', {
         url: '/refer-contacts',
         templateUrl: 'views/refer-contacts.html',
-        controller: 'ReferContactsCtrl'
+        controller: 'ReferContactsCtrl',
+        controllerAs: 'ctrl'
       })
       .state('loyalty', {
         url: '/loyalty',
         templateUrl: 'views/loyalty.html',
-        controller: 'LoyaltyCtrl'
+        controller: 'LoyaltyCtrl',
+        controllerAs: 'ctrl'
       })
-      .state('/about', {
-        url: 'about',
+      .state('about', {
+        url: '/about',
         templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+        controller: 'AboutCtrl',
+        controllerAs: 'ctrl'
       });
 
     $translateProvider.registerAvailableLanguageKeys(['en', 'fr', 'es'], {
@@ -127,7 +145,7 @@ angular
 
     $translateProvider.fallbackLanguage('en');
     $translateProvider.determinePreferredLanguage();
-    $urlRouterProvider.otherwise('');
+    $urlRouterProvider.otherwise('/index');
   })
   .constant('Config', {
     Language: 'language'
