@@ -79,13 +79,13 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown dropdown-lang">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">
             <img ng-src="{{selLanguage.image}}" title={{selLanguage.language}}>
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu" style="min-width: 0; max-width: 58px;">
             <li ng-repeat="language in languages" ng-if="selLanguage !== language">
-              <a href="#" title={{language.language}} ng-click="selectLanguage(language)">
+              <a title={{language.language}} ng-click="selectLanguage(language)">
                 <img ng-src="{{language.image}}" title={{language.language}}>
               </a>
             </li>
@@ -93,7 +93,7 @@
         </li>
 
         <li ng-if="!IsLoggedIn">
-          <a href="#" ng-click="login()">
+          <a ng-click="login()">
             <span class="glyphicon glyphicon-user"></span>
             <span translate="MAIN.MENU.LOGIN"></span>
           </a>
