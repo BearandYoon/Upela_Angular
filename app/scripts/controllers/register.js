@@ -8,5 +8,10 @@
  * Controller of the UpelaApp
  */
 angular.module('UpelaApp')
-  .controller('RegisterCtrl', function ($state) {
+  .controller('RegisterCtrl', function ($rootScope) {
+    var self = this;
+
+    self.login = function() {
+      $rootScope.IsLoggedIn = true;
+    }
  });

@@ -38,7 +38,7 @@ angular
         url: '/register',
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('order-progress', {
         url: '/order-progress',

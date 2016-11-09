@@ -7,7 +7,7 @@
           <div class="panel-white panel-white-bordered- clearfix">
             <h2 translate="REGISTER.ALREADY">Already registered?</h2>
 
-            <form id="LoginForm" class="form-horizontal" role="form" enctype="application/x-www-form-urlencoded" action="http://localhost:32769/en/my-account/login" accept-charset="UTF-8" method="post" onsubmit="validateForm('LoginForm', {'displayErrorMessage': false}); return false;">
+            <form id="LoginForm" class="form-horizontal" accept-charset="UTF-8">
               <div class="form-group">
                 <label for="login" class="control-label col-lg-3 required" translate="LOGIN.EMAIL">Email</label>
                 <div class="col-lg-7">
@@ -39,7 +39,7 @@
 
               <div class="form-group">
                 <div class="col-lg-9 col-lg-offset-3">
-                  <button type="submit" class="btn btn-primary" id="btn_login" name="btn_login">
+                  <button type="submit" class="btn btn-primary" id="btn_login"  ng-click="$ctrl.login()">
                     <span class="fa fa-lock"></span>
                     <span translate="LOGIN.LOGIN"></span>
                   </button>

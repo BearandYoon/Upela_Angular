@@ -70,11 +70,13 @@
           TITLE: 'Upela: compare quotes from carriers for the delivery and tracking of your consignments, parcels or pallets for professionals or individuals',
           PAGE_ONE: {
             E_MERCHANTS: 'E-merchants',
-            TEXT: 'Centralize all your sendings<br>Save time, avoid mistakes'
+            TEXT: 'Centralize all your sendings<br>Save time, avoid mistakes',
+            BUTTON_TEXT: 'See all our connectors'
           },
           PAGE_TWO: {
             PRO: 'N°1 for the PROs',
-            TEXT: '+20,000 customers<br> Immediate discounts <br> Deferred payment by Sepa'
+            TEXT: '+20,000 customers<br> Immediate discounts <br> Deferred payment by Sepa',
+            BUTTON_TEXT: 'Create a professional account'
           },
           PAGE_THREE: {
             TITLE1: 'Delivery Day+1 ',
@@ -224,11 +226,13 @@
           TITLE: 'Upela : comparez les offres de transporteurs pour la livraison et le suivi de vos envois, colis ou palettes pour professionnels ou particuliers',
           PAGE_ONE: {
             E_MERCHANTS: 'E-commerçants',
-            TEXT: 'Centralisez toutes vos expéditions<br>Gagnez du temps, évitez les erreurs'
+            TEXT: 'Centralisez toutes vos expéditions<br>Gagnez du temps, évitez les erreurs',
+            BUTTON_TEXT: 'Voir tous nos connecteurs'
           },
           PAGE_TWO: {
             PRO: 'N°1 chez les PRO',
-            TEXT: '+20,000 clients<br> immédiate Remises <br> Paiement différé by Sepa'
+            TEXT: '+20,000 clients<br> immédiate Remises <br> Paiement différé by Sepa',
+            BUTTON_TEXT: 'Créer un compte PRO'
           },
           PAGE_THREE: {
             TITLE1: 'Livraison J+1 ',
@@ -378,11 +382,13 @@
           TITLE: 'Upela: compare las ofertas de transportistas para la entrega y seguimiento de sus envíos, paquetes o palets para profesionales o particulares',
           PAGE_ONE: {
             E_MERCHANTS: 'E-comerciante',
-            TEXT: 'Centralice todos sus envíos<br>Ahorre tiempo, evite los errores'
+            TEXT: 'Centralice todos sus envíos<br>Ahorre tiempo, evite los errores',
+            BUTTON_TEXT: 'Ver todos los conectores'
           },
           PAGE_TWO: {
             PRO: 'N°1 entre los PROFESIONALES',
-            TEXT: '+ 20 000 clientes<br> Descuentos inmediatos <br> Pago diferido Sepa'
+            TEXT: '+ 20 000 clientes<br> Descuentos inmediatos <br> Pago diferido Sepa',
+            BUTTON_TEXT: 'Crear una cuenta profesional'
           },
           PAGE_THREE: {
             TITLE1: 'Entrega D+1 ',
