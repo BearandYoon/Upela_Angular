@@ -1,10 +1,7 @@
 <div id="wrapper" class="clearfix container">
   <div class="clearfix row">
     <section id="main" class="col-lg-12">
-      <div id="load">
-        <img src="images/loading.gif" alt="Loading...">&nbsp;&nbsp;Please wait...
-      </div>
-      <div class="alert alert-danger">
+      <div class="alert alert-danger hide">
         <ul>
           <li>FedEx : There are no valid services available.</li>
         </ul>
@@ -14,19 +11,25 @@
         <div class="col-md-9">
           <div class="panel-white panel-white-bordered-">
             <div class="order-wizard">
-              <a href="#">1. Your shipment <i class="fa fa-pencil"></i></a>
-              <a class="active" href="#">2. The offers</a>
-              <a class="disabled" href="#">3. Your order</a>
-              <a class="disabled" href="#">4. Payment</a>
-              <a class="disabled" href="#">5. Confirmation</a>
+              <a href="#">
+                <span translate="ORDER.STEP_TITLE.SHIPMENT"></span>
+                <i class="fa fa-pencil"></i>
+              </a>
+              <a class="active" href="#" translate="ORDER.STEP_TITLE.OFFERS">2. The offers</a>
+              <a class="disabled" href="#" translate="ORDER.STEP_TITLE.ORDER">3. Your order</a>
+              <a class="disabled" href="#" translate="ORDER.STEP_TITLE.PAYMENT">4. Payment</a>
+              <a class="disabled" href="#" translate="ORDER.STEP_TITLE.CONFIRMATION">5. Confirmation</a>
             </div>
 
-            <h1 class="blue text-center">Step 2 : The offers <small class="pull-right-">Compare and select the best priced offer!</small></h1>
+            <h1 class="blue text-center">
+              <span translate="ORDER_OFFER.TITLE"></span>
+              <small class="pull-right-" translate="ORDER_OFFER.COMMENT">Compare and select the best priced offer!</small>
+            </h1>
 
             <uib-tabset active="activeForm">
               <uib-tab index="0">
                 <uib-tab-heading>
-                  All offers
+                  <span translate="ORDER_OFFER.OFFERS.TITLE">All offers</span>
                 </uib-tab-heading>
                 <p class="help-block" ng-if="false">No offer available</p>
 
@@ -115,7 +118,7 @@
               </uib-tab>
               <uib-tab index="1">
                 <uib-tab-heading>
-                  Couriers
+                  <span translate="ORDER_OFFER.COURIERS.TITLE">Couriers</span>
                 </uib-tab-heading>
                 <p class="help-block" ng-if="false">No offer available</p>
 
@@ -204,7 +207,7 @@
               </uib-tab>
               <uib-tab index="2">
                 <uib-tab-heading>
-                  Express
+                  <span translate="ORDER_OFFER.EXPRESS.TITLE">EXPRESS</span>
                 </uib-tab-heading>
                 <p class="help-block" ng-if="false">No offer available</p>
 
@@ -293,7 +296,7 @@
               </uib-tab>
               <uib-tab index="3">
                 <uib-tab-heading>
-                  Standard
+                  <span translate="ORDER_OFFER.STANDARD.TITLE">Standard</span>
                 </uib-tab-heading>
                 <p class="help-block" ng-if="false">No offer available</p>
 
@@ -387,23 +390,26 @@
         <div class="col-md-3">
           <div class="panel-white cancel-padding-left-15 panel-muted">
             <p>
-              <span class="very-light-grey bold">1. Your shipment&nbsp;&nbsp;
+              <span class="very-light-grey bold">
+                <span translate="ORDER_OFFER.PAST_STEP.TITLE">1. Your shipment&nbsp;&nbsp;</span>
                 <a href="https://www.upela.com/en/">
                   <i class="fa fa-pencil"></i>
                 </a>
               </span>
             </p>
-            <p style="margin-bottom: 10px;"><strong>Type :</strong> 1 Parcel(s)<br>
-              1 Parcel(s) of 12 kg (120x120x12 cm)<br>
-
-              <strong>From :</strong> 517042 (Romania)<br>
-              <strong>To :</strong> 101000 (Russia)<br>
-              <strong>Collection date :</strong> 10/28/2016<br>
+            <p style="margin-bottom: 10px;">
+              <span translate="ORDER_OFFER.PAST_STEP.TYPE"></span>
+              <span> 1 Parcel(s)<br> 1 Parcel(s) of 12 kg (120x120x12 cm)<br></span>
+              <span translate="ORDER_OFFER.PAST_STEP.FROM"></span>
+              <span> 517042 (Romania)<br></span>
+              <span translate="ORDER_OFFER.PAST_STEP.TO"></span>
+              <span> 101000 (Russia)<br></span>
+              <span translate="ORDER_OFFER.PAST_STEP.DATE"></span>
+              <span> 10/28/2016<br></span>
             </p>
 
             <div style="text-align: justify;">
-              Our prices include fuel supplements, Air Cargo Security and all other supplements - residential address, remote location, oversize, extra handling supplements ….
-              <strong>but do not include taxes and duties, nor possible customs checks, weight or dimensions amendments, address amendments</strong>...
+              <span translate="ORDER_OFFER.PAST_STEP.COMMENT">Our prices include fuel supplements, Air Cargo Security and all other supplements - residential address, remote location, oversize, extra handling supplements …. <strong>but do not include taxes and duties, nor possible customs checks, weight or dimensions amendments, address amendments</strong>...</span>
               <a href="https://www.upela.com/en/documents-for-an-international-consignment-25.html">
                 <span style="text-decoration: underline;">More infos</span>
               </a>
