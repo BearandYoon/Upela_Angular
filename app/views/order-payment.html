@@ -8,17 +8,28 @@
         <div class="col-md-9">
           <div class="panel-white panel-white-bordered-">
             <div class="order-wizard">
-              <a href="#">1. Your shipment <i class="fa fa-pencil"></i></a>
-              <a href="#/order-offer">2. The offers <i class="fa fa-pencil"></i></a>
-              <a href="/order-order">3. Your order <i class="fa fa-pencil"></i></a>
-              <a class="active" href="#" onclick="return false;">4. Payment</a>
-              <a class="disabled" href="#" onclick="return false;">5. Confirmation</a>
+              <a href="#/">
+                <span translate="ORDER.STEP_TITLE.SHIPMENT"></span>
+                <i class="fa fa-pencil"></i>
+              </a>
+              <a href="#/order-offer">
+                <span translate="ORDER.STEP_TITLE.OFFERS"></span>
+                <i class="fa fa-pencil"></i>
+              </a>
+              <a href="#/order-order">
+                <span translate="ORDER.STEP_TITLE.ORDER">3. Your order </span>
+                <i class="fa fa-pencil"></i>
+              </a>
+              <a class="active" translate="ORDER.STEP_TITLE.PAYMENT">4. Payment</a>
+              <a class="disabled" translate="ORDER.STEP_TITLE.CONFIRMATION">5. Confirmation</a>
             </div>
 
-            <h1 class="blue text-center"> 4 : Confirmation and payment</h1>
+            <h1 class="blue text-center" translate="ORDER_PAYMENT.TITLE"> 4 : Confirmation and payment</h1>
 
             <div>
-              <a class="orange pull-right" href="#/order-order"><i class="fa fa-pencil" style="margin-right: 5px;"></i>Edit</a>
+              <a class="orange pull-right" href="#/order-order">
+                <i class="fa fa-pencil" style="margin-right: 5px;" translate="ORDER_PAYMENT.EDIT">Edit</i>
+              </a>
             </div>
 
             <table class="table table-bordered addresses-summary">
@@ -27,7 +38,7 @@
                   <td width="42%">
                     <ul class="list-unstyled address">
                       <li>
-                        <h3>Sender</h3>
+                        <h3 translate="ORDER_PAYMENT.SENDER">Sender</h3>
                       </li>
                       <li>denis</li>
                       <li>opios</li>
@@ -44,7 +55,7 @@
                   <td width="42%">
                     <ul class="list-unstyled address">
                       <li>
-                        <h3>Recipient</h3>
+                        <h3 translate="ORDER_PAYMENT.RECIPIENT">Recipient</h3>
                       </li>
                       <li>daniel</li>
                       <li>opios</li>
@@ -61,7 +72,7 @@
 
             <div>
               <a class="orange pull-right" href="/order-offer">
-                <i class="fa fa-pencil" style="margin-right: 5px;"></i>Edit
+                <i class="fa fa-pencil" style="margin-right: 5px;" translate="ORDER_PAYMENT.EDIT"></i>
               </a>
             </div>
 
@@ -97,9 +108,9 @@
             </center>
 
             <div class="panel-grey panel-grey-bordered" id="payment_form_container">
-              <h2 class="text-center text-uppercase blue">SECURE ON LINE PAYMENT</h2>
+              <h2 class="text-center text-uppercase blue" translate="ORDER_PAYMENT.PAYMENT.TITLE">SECURE ON LINE PAYMENT</h2>
               <center>
-                <p class="muted">Choose your payment method  <br>You will be transferred to our secure payment server</p>
+                <p class="muted" translate="ORDER_PAYMENT.PAYMENT.COMMENT">Choose your payment method  <br>You will be transferred to our secure payment server</p>
               </center>
 
               <form method="POST" ng-click="clickPayment()" target="_top">
@@ -115,8 +126,8 @@
 
               <div class="alert alert-info">
                 <center>
-                  <p><strong>Several parcels to send?</strong></p>
-                  <p><a style="text-decoration: underline;" href="https://www.upela.com/en/credit-account/" target="_blank">Credit your account</a> and receive extra discounts</p>
+                  <p><strong translate="ORDER_PAYMENT.PAYMENT.SEVERAL">Several parcels to send?</strong></p>
+                  <p translate="ORDER_PAYMENT.PAYMENT.CREDIT"><a style="text-decoration: underline;" href="https://www.upela.com/en/credit-account/" target="_blank">Credit your account</a> and receive extra discounts</p>
                 </center>
               </div>
               <center>
