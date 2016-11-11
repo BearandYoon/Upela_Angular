@@ -1,36 +1,82 @@
 <div id="wrapper" class="clearfix container">
   <div class="clearfix row">
     <section id="main" class="col-lg-12">
-      <div id="load">
-        <img src="/images/loading.gif" alt="Loading...">&nbsp;&nbsp;Please wait...
-      </div>
-      <h1>My Client Space</h1>
+      <h1 translate="SETTINGS.TITLE">My Client Space</h1>
       <div class="row">
         <div class="col-md-2">
           <ul id="account-nav" class="nav nav-tabs nav-stacked account-nav">
             <li class="active">
-              <a href="#/my-account"><span class="fa fa-home"></span> Overall view</a>
+              <a href="#/my-account">
+                <i class="fa fa-home"></i>
+                <span translate="SETTINGS.OVERALL">Overall view</span>
+              </a>
             </li>
           </ul>
 
           <ul id="account-nav2" class="nav nav-tabs nav-stacked account-nav">
-            <!--<li><a href="https://www.upela.com/en/"><span class="fa fa-paper-plane"></span> Single shipment</a></li>-->
-            <li><a href="#/ship-to-contact"><span class="fa fa-user"></span> Ship to contact</a></li>
-            <li><a href="#/mass-mailing"><span class="fa fa-users"></span> Mass mailing</a></li>
-            <li><a href="#/mass-mailing-upload"><span class="fa fa-floppy-o"></span> Sending by file</a></li>
+            <li>
+              <a href="#/ship-to-contact">
+                <i class="fa fa-user"></i>
+                <span translate="SETTINGS.SHIP"> Ship to contact</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/mass-mailing">
+                <i class="fa fa-users"></i>
+                <span translate="SETTINGS.MAILING"> Mass mailing</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/mass-mailing-upload">
+                <i class="fa fa-floppy-o"></i>
+                <span translate="SETTINGS.SENDING"> Sending by file</span>
+              </a>
+            </li>
           </ul>
 
           <ul id="account-nav3" class="nav nav-tabs nav-stacked account-nav">
-            <li><a href="#/my-contacts"><span class="fa fa-book"></span> My contacts</a></li>
-            <li><a href="#/credit-account"><span class="fa fa-credit-card"></span> Credit account</a></li>
-            <li><a href="#/my-store"><span class="fa fa-shopping-cart"></span> My stores</a></li>
-            <li><a href="#/settings"><span class="fa fa-cogs"></span> Settings</a></li>
+            <li>
+              <a href="#/my-contacts">
+                <i class="fa fa-book"></i>
+                <span translate="SETTINGS.CONTACTS"> My contacts</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/credit-account">
+                <i class="fa fa-credit-card"></i>
+                <span translate="SETTINGS.CREDIT"> Credit account</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/my-store">
+                <i class="fa fa-shopping-cart"></i>
+                <span translate="SETTINGS.STORE"> My stores</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/settings">
+                <i class="fa fa-cogs"></i>
+                <span translate="SETTINGS.SETTINGS"> Settings</span>
+              </a>
+            </li>
           </ul>
 
           <ul id="account-nav4" class="nav nav-tabs nav-stacked account-nav">
-            <li><h3>Our programs</h3></li>
-            <li><a href="#/refer-contacts"><span class="fa fa-gift"></span> Referral</a></li>
-            <li><a href="#/loyalty"><span class="fa fa-gift"></span> Loyalty</a></li>
+            <li>
+              <h3 translate="SETTINGS.PROGRAMS">Our programs</h3>
+            </li>
+            <li>
+              <a href="#/refer-contacts">
+                <i class="fa fa-gift"></i>
+                <span translate="SETTINGS.REFERRAL"> Referral</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/loyalty">
+                <i class="fa fa-gift"></i>
+                <span translate="SETTINGS.LOYALTY"> Loyalty</span>
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -39,105 +85,41 @@
             <div id="account-rating-form-container">
               <ul class="nav nav-tabs">
                 <li class="active">
-                  <a href="#pricer" data-toggle="tab">Begin a shipment</a>
+                  <a href="#pricer" data-toggle="tab" translate="MY_ACCOUNT.BEGIN_SHIP">Begin a shipment</a>
                 </li>
               </ul>
 
               <div class="tab-content">
                 <div class="tab-pane fade in active" id="pricer">
                   <form id="AccountShipmentRatingForm" class="form-horizontal" role="form" enctype="multipart/form-data" action="https://www.upela.com/en/" accept-charset="UTF-8" method="post" onsubmit="return true;">
-                    <input type="hidden" id="reason" name="reason" value="Cadeau"><input type="hidden" id="content" name="content" value="gift"><input type="hidden" id="invoicing" name="invoicing" value="0"><input type="hidden" id="insurance" name="insurance" value="1"><input type="hidden" id="insurance_declared_value" name="insurance_declared_value" value="50.00"><input type="hidden" id="insurance_currency" name="insurance_currency" value="EUR"><input type="hidden" id="insurance_declared_value_eur" name="insurance_declared_value_eur" value="50.00"><input type="hidden" id="proforma" name="proforma" value="0"><input type="hidden" id="proforma_notes" name="proforma_notes" value=""><input type="hidden" id="duty_payment_third_party" name="duty_payment_third_party" value="0"><input type="hidden" id="duty_account_number" name="duty_account_number" value=""><input type="hidden" id="duty_account_postcode" name="duty_account_postcode" value=""><input type="hidden" id="duty_account_country_id" name="duty_account_country_id" value=""><input type="hidden" id="dropoff" name="dropoff" value="1"><input type="hidden" id="ready_time" name="ready_time" value="1100"><input type="hidden" id="close_time" name="close_time" value="1700">
-                    <input type="hidden" id="products_description_0" name="products[0][description]" value="">
-                    <input type="hidden" id="products_manufacture_country_code_0" name="products[0][manufacture_country_code]" value="">
-                    <input type="hidden" id="products_number_0" name="products[0][number]" value="1">
-                    <input type="hidden" id="products_value_0" name="products[0][value]" value="0.00">
-                    <input type="hidden" id="products_value_eur_0" name="products[0][value_eur]" value="0.00">
-                    <input type="hidden" id="products_currency_0" name="products[0][currency]" value="EUR">
-
                     <div class="row" style="margin-bottom: 20px;">
                       <div class="col-md-6">
                         <div class="">
-                          <label for="address1" class="control-label required-" style="margin-bottom: 7px;">
+                          <label class="control-label required-" style="margin-bottom: 7px;">
                             <span class="popmark" id="popmark-origin" data-placement="right" data-title="Origin" data-content="Collection address for your shipment" data-original-title="" title="">
-                              <i class="step-circle-small">1</i> Origin
+                              <i class="step-circle-small">1</i>
+                              <span translate="MY_ACCOUNT.ORIGIN.TITLE"></span>
                             </span>
                           </label>
 
                           <div id="address1-row">
-                            <input type="hidden" id="address1_id" name="address1_id" value="2889132">
-                            <input type="hidden" id="address1_company" name="address1_company" value="opios">
-                            <input type="hidden" id="address1_lastname" name="address1_lastname" value="denis">
-                            <input type="hidden" id="address1_phone" name="address1_phone" value="+40712345678">
-                            <input type="hidden" id="address1_email" name="address1_email" value="luckysevenbear@gmail.com">
-                            <input type="hidden" id="address1_address1" name="address1_address1" value="bucharest 15-2">
-                            <input type="hidden" id="address1_address2" name="address1_address2" value="">
-                            <input type="hidden" id="address1_address3" name="address1_address3" value="">
-                            <input type="hidden" id="address1_postcode" name="address1_postcode" value="107497">
-                            <input type="hidden" id="address1_city" name="address1_city" value="Buchilaşi">
-                            <input type="hidden" id="address1_state" name="address1_state" value="">
-                            <input type="hidden" id="address1_customer_code" name="address1_customer_code" value="">
-                            <input type="hidden" id="address1_notes" name="address1_notes" value="">
-
-                            <select id="address1_country_id" name="address1_country_id" class="form-control chosen-select" style="display: none;">
-                              <option value=""></option>
-                              <option value="1" zipcode="0">Afghanistan</option>
-                              <option value="3" zipcode="0">Albania</option>
-                              <option value="4" zipcode="1">Algeria</option>
-                              <option value="197" zipcode="0">American Samoa</option>
-                              <option value="244" zipcode="1">Andorra</option>
-                              <option value="8" zipcode="0">Anguilla</option>
-                              <option value="9" zipcode="0">Antarctica</option>
-                              <option value="13" zipcode="1">Argentina</option>
-                              <option value="14" zipcode="1">Armenia</option>
-                              <option value="15" zipcode="0">Aruba</option>
-                              <option value="16" zipcode="1">Australia</option>
-                              <option value="17" zipcode="1">Austria</option>
-                              <option value="18" zipcode="1">Azerbaijan</option>
-                              <option value="20" zipcode="0">Bahamas, The</option>
-                              <option value="21" zipcode="0">Bahrain</option>
-                              <option value="22" zipcode="1">Bangladesh</option>
-                              <option value="23" zipcode="0">Barbados</option>
-                              <option value="29" zipcode="1">Belarus</option>
-                              <option value="25" zipcode="1">Belgium</option>
-                              <option value="26" zipcode="0">Belize</option>
-                              <option value="19" zipcode="0">Benin</option>
-                              <option value="27" zipcode="0">Bermuda</option>
-                              <option value="28" zipcode="1">Bhutan</option>
-                              <option value="31" zipcode="0">Bolivia</option>
-                              <option value="32" zipcode="0">Bosnia and Herzegovina</option>
-                              <option value="33" zipcode="0">Botswana</option>
-                              <option value="88" zipcode="0">Bouvet Island</option>
-                              <option value="34" zipcode="1">Brazil</option>
-                              <option value="217" zipcode="0">British Indian Ocean Territory</option>
-                              <option value="35" zipcode="0">Brunei Darussalam</option>
-                              <option value="36" zipcode="1">Bulgaria</option>
-                              <option value="37" zipcode="0">Burkina Faso</option>
-                              <option value="40" zipcode="0">Cambodia</option>
-                              <option value="41" zipcode="0">Cameroon</option>
-                              <option value="42" zipcode="1">Canada</option>
-                              <option value="237" zipcode="0">Zimbabwe</option>
-                            </select>
-
-                            <div class="chosen-container chosen-container-single" style="width: 160px;" title="" id="address1_country_id_chosen">
-                              <a class="chosen-single chosen-single-with-deselect" tabindex="-1">
-                                <span>Romania</span>
-                                <abbr class="search-choice-close"></abbr>
-                                <div><b></b></div>
-                              </a>
-                              <div class="chosen-drop">
-                                <div class="chosen-search">
-                                  <input type="text" autocomplete="off">
-                                </div>
-                                <ul class="chosen-results"></ul>
-                              </div>
-                            </div>
+                            <ui-select ng-model="ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                              <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
+                              <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
+                                <div ng-bind-html="person.name | highlight: $select.search"></div>
+                                <small>
+                                  {{country.name}}
+                                </small>
+                              </ui-select-choices>
+                            </ui-select>
 
                             <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                            <input type="text" id="address1_postcode_city" name="address1_postcode_city" class="form-control ui-autocomplete-input" value="107497, Buchilaşi" maxlength="255" placeholder="Postcode, Town" autocomplete="off">
+                            <input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" value="107497, Buchilaşi" maxlength="255" placeholder="Postcode, Town" translate translate-attr-placeholder="MY_ACCOUNT.ORIGIN.TOWN">
 
                             <div class="checkbox">
                               <label for="address1_pro" class="">
-                                <input type="checkbox" id="address1_pro" name="address1_pro" class="check_box" value="1" unchecked="">Business
+                                <input type="checkbox" id="address1_pro" name="address1_pro" class="check_box" value="1" unchecked="">
+                                <span translate="MY_ACCOUNT.ORIGIN.ADDRESS"></span>
                               </label>
                             </div>
                           </div>
@@ -146,81 +128,31 @@
 
                       <div class="col-md-6">
                         <div class="">
-                          <label for="address2" class="control-label required-" style="margin-bottom: 7px;">
+                          <label class="control-label required-" style="margin-bottom: 7px;">
                             <span class="popmark" id="popmark-destination" data-placement="right" data-title="Destination" data-content="Delivery address for your shipment" data-original-title="" title="">
-                              <i class="step-circle-small">2</i> Destination
+                              <i class="step-circle-small">2</i>
+                              <span translate="MY_ACCOUNT.DESTINATION.TITLE"></span>
                             </span>
                           </label>
 
                           <div id="address2-row">
-                            <input type="hidden" id="address2_id" name="address2_id" value="2889133">
-                            <input type="hidden" id="address2_company" name="address2_company" value="opios">
-                            <input type="hidden" id="address2_lastname" name="address2_lastname" value="daniel">
-                            <input type="hidden" id="address2_phone" name="address2_phone" value="+40123456">
-                            <input type="hidden" id="address2_email" name="address2_email" value="happybear@gmail.com">
-                            <input type="hidden" id="address2_address1" name="address2_address1" value="bucharest 17-3">
-                            <input type="hidden" id="address2_address2" name="address2_address2" value="">
-                            <input type="hidden" id="address2_address3" name="address2_address3" value="">
-                            <input type="hidden" id="address2_postcode" name="address2_postcode" value="517042">
-                            <input type="hidden" id="address2_city" name="address2_city" value="Bubeşti">
-                            <input type="hidden" id="address2_state" name="address2_state" value="">
-                            <input type="hidden" id="address2_customer_code" name="address2_customer_code" value="">
-                            <input type="hidden" id="address2_notes" name="address2_notes" value="">
-
-                            <select id="address2_country_id" name="address2_country_id" class="form-control chosen-select" style="display: none;">
-                              <option value=""></option>
-                              <option value="1" zipcode="0">Afghanistan</option>
-                              <option value="3" zipcode="0">Albania</option>
-                              <option value="4" zipcode="1">Algeria</option>
-                              <option value="197" zipcode="0">American Samoa</option>
-                              <option value="244" zipcode="1">Andorra</option>
-                              <option value="7" zipcode="0">Angola</option>
-                              <option value="8" zipcode="0">Anguilla</option>
-                              <option value="9" zipcode="0">Antarctica</option>
-                              <option value="10" zipcode="0">Antigua &amp; Barbuda</option>
-                              <option value="13" zipcode="1">Argentina</option>
-                              <option value="14" zipcode="1">Armenia</option>
-                              <option value="15" zipcode="0">Aruba</option>
-                              <option value="16" zipcode="1">Australia</option>
-                              <option value="17" zipcode="1">Austria</option>
-                              <option value="18" zipcode="1">Azerbaijan</option>
-                              <option value="20" zipcode="0">Bahamas, The</option>
-                              <option value="21" zipcode="0">Bahrain</option>
-                              <option value="22" zipcode="1">Bangladesh</option>
-                              <option value="23" zipcode="0">Barbados</option>
-                              <option value="29" zipcode="1">Belarus</option>
-                              <option value="25" zipcode="1">Belgium</option>
-                              <option value="26" zipcode="0">Belize</option>
-                              <option value="19" zipcode="0">Benin</option>
-                              <option value="27" zipcode="0">Bermuda</option>
-                              <option value="28" zipcode="1">Bhutan</option>
-                              <option value="31" zipcode="0">Bolivia</option>
-                              <option value="32" zipcode="0">Bosnia and Herzegovina</option>
-                              <option value="33" zipcode="0">Botswana</option>
-                              <option value="88" zipcode="0">Bouvet Island</option>
-                            </select>
-
-                            <div class="chosen-container chosen-container-single" style="width: 160px;" title="" id="address2_country_id_chosen">
-                              <a class="chosen-single chosen-single-with-deselect" tabindex="-1">
-                                <span>Romania</span>
-                                <abbr class="search-choice-close"></abbr>
-                                <div><b></b></div>
-                              </a>
-
-                              <div class="chosen-drop">
-                                <div class="chosen-search">
-                                  <input type="text" autocomplete="off">
-                                </div>
-                                <ul class="chosen-results"></ul>
-                              </div>
-                            </div>
+                            <ui-select ng-model="ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                              <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
+                              <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
+                                <div ng-bind-html="person.name | highlight: $select.search"></div>
+                                <small>
+                                  {{country.name}}
+                                </small>
+                              </ui-select-choices>
+                            </ui-select>
 
                             <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                            <input type="text" id="address2_postcode_city" name="address2_postcode_city" class="form-control ui-autocomplete-input" value="517042, Bubeşti" maxlength="255" placeholder="Postcode, Town" autocomplete="off">
+                            <input type="text" id="address2_postcode_city" class="form-control ui-autocomplete-input" value="517042, Bubeşti" maxlength="255" placeholder="Postcode, Town" translate translate-attr-placeholder="MY_ACCOUNT.DESTINATION.TOWN">
 
                             <div class="checkbox">
                               <label for="address2_pro" class="">
-                                <input type="checkbox" id="address2_pro" name="address2_pro" class="check_box" value="1" unchecked="">Business
+                                <input type="checkbox" id="address2_pro" name="address2_pro" class="check_box" value="1" unchecked="">
+                                <span translate="MY_ACCOUNT.DESTINATION.ADDRESS"></span>
                               </label>
                             </div>
                           </div>
@@ -231,7 +163,12 @@
                     <div class="row" style="margin-bottom: 20px;">
                       <div class="col-md-6">
                         <div class="" id="parcels-form-group">
-                          <label for="parcels" class="control-label required-" style="margin-bottom: 7px;"><span class="popmark" id="popmark-parcels" data-placement="right" data-title="Your shipment" data-content="Complete the details of your envelope, parcel or pallet - number of parcels, unit weight and dimensions<br><br><b>Envelope</b> : envelope or document < 2.5 Kg<br><b>Parcel</b> : maximum weight 70 Kg, max Length 270 cm AND Length + 2 x Height <419 cm<br><b>Pallet</b> : max height 200 cm and max weight 3 tonnes (international only)<br><b>Bulky shipment</b> : max dimensions : 302 cm x 203 cm x 178 cm height (international only)" data-original-title="" title=""><i class="step-circle-small">3</i> Your shipment</span></label>
+                          <label class="control-label required-" style="margin-bottom: 7px;">
+                            <span class="popmark" id="popmark-parcels" data-placement="right" data-title="Your shipment" data-content="Complete the details of your envelope, parcel or pallet - number of parcels, unit weight and dimensions<br><br><b>Envelope</b> : envelope or document < 2.5 Kg<br><b>Parcel</b> : maximum weight 70 Kg, max Length 270 cm AND Length + 2 x Height <419 cm<br><b>Pallet</b> : max height 200 cm and max weight 3 tonnes (international only)<br><b>Bulky shipment</b> : max dimensions : 302 cm x 203 cm x 178 cm height (international only)" data-original-title="" title="">
+                              <i class="step-circle-small">3</i>
+                              <span translate="MY_ACCOUNT.SHIPMENT.TITLE"></span>
+                            </span>
+                          </label>
                           <div>
                             <select id="type" name="type" class="form-control">
                               <option value="1">Envelope</option>
@@ -245,37 +182,40 @@
                             <div class="parcels-container">
                               <div id="parcel_list">
                                 <div class="parcel" id="parcel_0">
-                                  <label class="parcel-label" for="parcels_number_0">No.</label>
-                                  <input type="text" class="form-control parcel-number input-xmini2" maxlength="3" id="parcels_number_0" name="parcels[0][number]" value="1" placeholder="No.">
-                                  <label class="parcel-label" for="parcels_weight_0">Wt/Unit</label>
+                                  <label class="parcel-label" translate="MY_ACCOUNT.SHIPMENT.NO">No.</label>
+                                  <input type="text" class="form-control parcel-number input-xmini2" maxlength="3" value="1" placeholder="No." translate translate-attr-placeholder="MY_ACCOUNT.SHIPMENT.NO">
 
-                                  <input type="text" class="form-control parcel-weight input-xmini2" id="parcels_weight_0" name="parcels[0][weight]" value="10" size="16" maxlength="4" placeholder="Wt/Unit">
+                                  <label class="parcel-label" translate="MY_ACCOUNT.SHIPMENT.UNIT">Wt/Unit</label>
+                                  <input type="text" class="form-control parcel-weight input-xmini2" value="10" size="16" maxlength="4" placeholder="Wt/Unit" translate translate-attr-placeholder="MY_ACCOUNT.SHIPMENT.UNIT">
+
                                   <span class="weight_unit">kg</span>
-                                  <label class="parcel-label" for="parcels_x_0">Dimensions</label>
+                                  <label class="parcel-label">Dimensions</label>
 
-                                  <input type="text" class="form-control input-xmini2" id="parcels_x_0" name="parcels[0][x]" value="50" size="16" maxlength="3" placeholder="Length"> x
-                                  <input type="text" class="form-control input-xmini2" id="parcels_y_0" name="parcels[0][y]" value="50" maxlength="3" placeholder="Width"> x
-                                  <input type="text" class="form-control input-xmini2" id="parcels_z_0" name="parcels[0][z]" value="50" size="16" maxlength="3" placeholder="Height">
+                                  <input type="text" class="form-control input-xmini2" value="50" size="16" maxlength="3" placeholder="Length" translate translate-attr-placeholder="MY_ACCOUNT.SHIPMENT.LENGTH"> x
+                                  <input type="text" class="form-control input-xmini2" value="50" maxlength="3" placeholder="Width" translate translate-attr-placeholder="MY_ACCOUNT.SHIPMENT.WIDTH"> x
+                                  <input type="text" class="form-control input-xmini2" value="50" size="16" maxlength="3" placeholder="Height" translate translate-attr-placeholder="MY_ACCOUNT.SHIPMENT.HEIGHT">
                                   <span class="dimension_unit">cm</span>
-                                  <a class="parcel-action" href="#" onclick="removeParcel(0);return false;">
+                                  <a class="parcel-action" href="#">
                                     <i class="glyphicon glyphicon-minus-sign"></i>
                                   </a>
                                 </div><!-- /parcel -->
                               </div>
 
                               <div class="parcel-actions pull-left">
-                                <a href="#" onclick="addParcel(); return false;" style="padding-right:14px;">
-                                  <i class="glyphicon glyphicon-plus-sign"></i> Add a parcel
+                                <a href="#" style="padding-right:14px;">
+                                  <i class="glyphicon glyphicon-plus-sign"></i>
+                                  <span translate="MY_ACCOUNT.SHIPMENT.ADD_PARCEL"> Add a parcel</span>
                                 </a>
                                 <span id="switch_parcel_unit_fr" style="display: none;">
-                                  <a href="#" onclick="switchParcelUnit('fr');return false;" style="padding-right:14px;">
+                                  <a href="#" style="padding-right:14px;">
                                     <i class="glyphicon glyphicon-refresh"></i> Change unit of measure (Kgs/cm)
                                   </a>
                                 </span>
 
                                 <span id="switch_parcel_unit_us">
-                                  <a href="#" onclick="switchParcelUnit('us');return false;" style="padding-right:14px;">
-                                    <i class="glyphicon glyphicon-refresh"></i> Change unit of measure (lbs/inch)
+                                  <a href="#" style="padding-right:14px;">
+                                    <i class="glyphicon glyphicon-refresh"></i>
+                                    <span translate="MY_ACCOUNT.SHIPMENT.CHANGE_UNIT"> Change unit of measure (lbs/inch)</span>
                                   </a>
                                 </span>
                               </div>
@@ -287,9 +227,10 @@
 
                       <div class="col-md-6">
                         <div class="">
-                          <label for="shipment_date-" class="control-label required-" style="margin-bottom: 7px;">
+                          <label class="control-label required-" style="margin-bottom: 7px;">
                             <span class="popmark" id="popmark-shipment-date" data-placement="right" data-title="Date" data-content="Collection date requested" data-original-title="" title="">
-                              <i class="step-circle-small">4</i> Date
+                              <i class="step-circle-small">4</i>
+                              <span translate="MY_ACCOUNT.DATE.TITLE"></span>
                             </span>
                           </label>
 
@@ -301,11 +242,12 @@
                                 </span>
                                 <input type="text" id="shipment_date" name="shipment_date" class="form-control datepicker hasDatepicker" value="10/31/2016" size="10" maxlength="10">
                               </div>
-                              <div class="help" style="font-size: 12px; margin-right: -40px;">Collection date requested</div>
+                              <div class="help" style="font-size: 12px; margin-right: -40px;" translate="MY_ACCOUNT.DATE.COLLECTION_DATE">Collection date requested</div>
                             </div>
                             <div class="col-md-8 text-center" id="shipment-date-row">
                               <button type="submit" class="btn btn-primary btn-lg" id="btn_save" name="btn_save" onclick="return true;">
-                                <i class="glyphicon glyphicon-ok"></i> COMPARE THE OFFERS!
+                                <i class="glyphicon glyphicon-ok"></i>
+                                <span translate="MY_ACCOUNT.COMPARE_OFFER"> COMPARE THE OFFERS!</span>
                               </button>
                             </div>
                           </div>
@@ -321,22 +263,28 @@
 
           <div class="panel-white cancel-padding-left-15 panel-white-bordered-">
             <h2>
-              <i class="fa fa-home"></i>My account
+              <i class="fa fa-home"></i>
+              <span translate="MY_ACCOUNT.TITLE">My account</span>
             </h2>
 
             <uib-tabset active="activeForm">
               <uib-tab index="0" heading="Justified">
                 <uib-tab-heading>
-                  <i class="fa fa-paper-plane"></i> My shipments
+                  <i class="fa fa-paper-plane"></i>
+                  <span translate="MY_ACCOUNT.MY_SHIPMENTS.TITLE"> My shipments</span>
                 </uib-tab-heading>
-                <p class="text-muted" style="margin-bottom: 15px;">Your Upela shipment history</p>
+                <p class="text-muted" style="margin-bottom: 15px;" translate="MY_ACCOUNT.MY_SHIPMENTS.HISTORY">Your Upela shipment history</p>
 
                 <div class="row">
                   <div class="col-lg-6">
-                    <form id="SearchShipmentForm" class="form-horizontal" role="form" action="https://www.upela.com/en/my-account/" enctype="multipart/form-data" accept-charset="UTF-8" method="get" onsubmit="return true;">
+                    <form id="SearchShipmentForm" class="form-horizontal" role="form">
                       <div class="input-group">
-                        <input type="text" id="q" name="q" class="form-control" value="" placeholder="Search by shipment code or tracking number">
-                        <span class="input-group-btn"><button class="btn btn-default btn-search" type="submit" title="Search" onclick="return true;"><i class="glyphicon glyphicon-search"></i></button></span>
+                        <input type="text" id="q" name="q" class="form-control" value="" placeholder="Search by shipment code or tracking number" translate translate-attr-placeholder="MY_ACCOUNT.MY_SHIPMENTS.SEARCH">
+                        <span class="input-group-btn">
+                          <button class="btn btn-default btn-search" type="submit" title="Search">
+                            <i class="glyphicon glyphicon-search"></i>
+                          </button>
+                        </span>
                       </div>
                     </form>
                   </div>
@@ -346,14 +294,15 @@
               </uib-tab>
               <uib-tab index="1">
                 <uib-tab-heading>
-                  <i class="fa fa-file-text"></i> My invoices
+                  <i class="fa fa-file-text"></i>
+                  <span translate="MY_ACCOUNT.MY_INVOICES.TITLE"> My invoices</span>
                 </uib-tab-heading>
                 <div class="search-box- clearfix">
-                  <form id="SearchInvoiceForm" class="form-horizontal" role="form" action="http://localhost:32769/en/my-account/my-invoices" enctype="multipart/form-data" accept-charset="UTF-8" method="get" onsubmit="return true;">
+                  <form id="SearchInvoiceForm" class="form-horizontal">
                     <div class="panel-grey">
                       <div class="row">
                         <div class="col-md-5" style="margin-bottom: 10px;">
-                          <label class="control-label" for="created_date_from" style="width: 140px; margin-right: 10px;">Created From</label>
+                          <label class="control-label" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_INVOICES.CREATED_FROM">Created From</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
                             <span class="input-group-addon">
                               <i class="fa fa-calendar"></i>
@@ -362,7 +311,7 @@
                           </div>
                         </div>
                         <div class="col-md-5" style="margin-bottom: 10px;">
-                          <label class="control-label" for="created_date_to" style="width: 140px; margin-right: 10px;">To</label>
+                          <label class="control-label" for="created_date_to" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_INVOICES.CREATED_TO">To</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
                             <span class="input-group-addon">
                               <i class="fa fa-calendar"></i>
@@ -374,7 +323,7 @@
                       </div>
                       <div class="row">
                         <div class="col-md-5" style="margin-bottom: 10px;">
-                          <label class="control-label" for="due_date_from" style="width: 140px; margin-right: 10px;">Due date From</label>
+                          <label class="control-label" for="due_date_from" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_INVOICES.DUE_FROM">Due date From</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
                             <span class="input-group-addon">
                               <i class="fa fa-calendar"></i>
@@ -383,7 +332,7 @@
                           </div>
                         </div>
                         <div class="col-md-5" style="margin-bottom: 10px;">
-                          <label class="control-label" for="due_date_to" style="width: 140px; margin-right: 10px;">To</label>
+                          <label class="control-label" for="due_date_to" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_INVOICES.DUE_TO">To</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
                             <span class="input-group-addon">
                               <i class="fa fa-calendar"></i>
@@ -395,16 +344,17 @@
                       </div>
                       <div class="row">
                         <div class="col-md-5" style="margin-bottom: 10px;">
-                          <label class="control-label" for="price_ti_from" style="width: 140px; margin-right: 10px;">Amount From</label>
+                          <label class="control-label" for="price_ti_from" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_INVOICES.AMOUNT_FROM">Amount From</label>
                           <input class="form-control" style="display: inline-block; width: 130px; vertical-align: top;" type="text" id="price_ti_from" name="price_ti_from" value="">
                         </div>
                         <div class="col-md-5" style="margin-bottom: 10px;">
-                          <label class="control-label" for="price_ti_to" style="width: 140px; margin-right: 10px;">To</label>
+                          <label class="control-label" for="price_ti_to" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_INVOICES.AMOUNT_TO">To</label>
                           <input class="form-control" style="display: inline-block; width: 130px; vertical-align: top;" type="text" id="price_ti_to" name="price_ti_to" value="">
                         </div>
                         <div class="col-md-2">
-                          <button type="submit" class="btn btn-primary btn-search pull-right" id="btn_search" name="btn_search" onclick="return true;">
-                            <i class="glyphicon glyphicon-search"></i> Search
+                          <button type="submit" class="btn btn-primary btn-search pull-right">
+                            <i class="glyphicon glyphicon-search"></i>
+                            <span translate="MY_ACCOUNT.MY_INVOICES.SEARCH">Search</span>
                           </button>
                         </div>
                       </div>
@@ -416,36 +366,39 @@
                   <div class="col-lg-6"></div>
                   <div class="col-lg-6">
                     <a class="pull-right" href="http://localhost:32769/en/account/actions.php?action=export_invoices">
-                      <span class="glyphicon glyphicon-download-alt"></span>Download your invoices
+                      <span class="glyphicon glyphicon-download-alt"></span>
+                      <span translate="MY_ACCOUNT.MY_INVOICES.DOWNLOAD">Download your invoices</span>
                     </a>
                   </div>
                 </div>
                 <table id="invoice_table" class="table table-bordered table-striped table-hover" cellspacing="0">
                   <thead>
                   <tr>
-                    <th style="text-align: center; background: #fff;" colspan="4">INVOICE</th>
-                    <th style="text-align: center; background: #fff;" colspan="2">PAYMENT</th>
+                    <th style="text-align: center; background: #fff;" colspan="4" translate="MY_ACCOUNT.MY_INVOICES.TABLE.INVOICE.TITLE">INVOICE</th>
+                    <th style="text-align: center; background: #fff;" colspan="2" translate="MY_ACCOUNT.MY_INVOICES.TABLE.PAYMENT.TITLE">PAYMENT</th>
                   </tr>
                   <tr>
                     <th style="text-align: center; background: #fff;">
-                      <a href="/en/my-account/my-invoices?&amp;sort=created_date&amp;order=asc" title="Sort by Date">Date&nbsp;
+                      <a title="Sort by Date">
+                        <span translate="MY_ACCOUNT.MY_INVOICES.TABLE.INVOICE.DATE">Date</span>
                         <span class="glyphicon glyphicon-chevron-down"></span>
                       </a>
                     </th>
                     <th style="text-align: center; background: #fff;">
-                      <a href="/en/my-account/my-invoices?&amp;sort=id&amp;order=asc" title="Sort by Number">Number&nbsp;</a>
+                      <a title="Sort by Number" translate="MY_ACCOUNT.MY_INVOICES.TABLE.INVOICE.NUMBER">Number&nbsp;</a>
+                      <a title="Sort by Number" translate="MY_ACCOUNT.MY_INVOICES.TABLE.INVOICE.NUMBER">Number&nbsp;</a>
                     </th>
                     <th style="text-align: center; background: #fff;">
-                      <a href="/en/my-account/my-invoices?&amp;sort=price_ti&amp;order=asc" title="Sort by Amount incl.">Amount incl.&nbsp;</a>
+                      <a title="Sort by Amount incl." translate="MY_ACCOUNT.MY_INVOICES.TABLE.INVOICE.AMOUNT">Amount incl.&nbsp;</a>
                     </th>
                     <th style="text-align: center; background: #fff;">
-                      <a href="/en/my-account/my-invoices?&amp;sort=due_date&amp;order=desc" title="Sort by Due date">Due date&nbsp;</a>
+                      <a title="Sort by Due date" translate="MY_ACCOUNT.MY_INVOICES.TABLE.INVOICE.DUE_DATE">Due date&nbsp;</a>
                     </th>
                     <th style="text-align: center; background: #fff;">
-                      <a href="/en/my-account/my-invoices?&amp;sort=payment_date&amp;order=desc" title="Sort by Date">Date&nbsp;</a>
+                      <a title="Sort by Date" translate="MY_ACCOUNT.MY_INVOICES.TABLE.INVOICE.DATE">Date&nbsp;</a>
                     </th>
                     <th style="text-align: center; background: #fff;">
-                      <a href="/en/my-account/my-invoices?&amp;sort=payment_method&amp;order=asc" title="Sort by Method">Method&nbsp;</a>
+                      <a title="Sort by Method" translate="MY_ACCOUNT.MY_INVOICES.TABLE.PAYMENT.METHOD">Method&nbsp;</a>
                     </th>
                   </tr>
                   </thead>
@@ -505,15 +458,16 @@
               </uib-tab>
               <uib-tab index="2">
                 <uib-tab-heading>
-                  <i class="fa fa-list"></i> My payments
+                  <i class="fa fa-list"></i>
+                  <span translate="MY_ACCOUNT.MY_PAYMENTS.TITLE">My payments</span>
                 </uib-tab-heading>
-                <p class="text-muted" style="margin-bottom: 15px;">Your Upela invoice history</p>
+                <p class="text-muted" style="margin-bottom: 15px;" translate="MY_ACCOUNT.MY_PAYMENTS.HISTORY">Your Upela invoice history</p>
                 <div class="search-box- clearfix">
-                  <form id="SearchPaymentForm" class="form-horizontal" role="form" action="http://localhost:32769/en/my-account/payments" enctype="multipart/form-data" accept-charset="UTF-8" method="get" onsubmit="return true;">
+                  <form id="SearchPaymentForm" class="form-horizontal">
                     <div class="panel-grey">
                       <div class="row">
                         <div class="col-md-5" style="margin-bottom: 10px;">
-                          <label class="control-label" for="created_date_from" style="width: 140px; margin-right: 10px;">Date From</label>
+                          <label class="control-label" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_PAYMENTS.DATE_FROM">Date From</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
                             <span class="input-group-addon">
                               <i class="fa fa-calendar"></i>
@@ -522,7 +476,7 @@
                           </div>
                         </div>
                         <div class="col-md-5" style="margin-bottom: 10px;">
-                          <label class="control-label" for="created_date_to" style="width: 140px; margin-right: 10px;">To</label>
+                          <label class="control-label" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_PAYMENTS.DATE_TO">To</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
                             <span class="input-group-addon">
                               <i class="fa fa-calendar"></i>
@@ -534,15 +488,18 @@
                       </div>
                       <div class="row">
                         <div class="col-md-5" style="margin-bottom: 10px;">
-                          <label class="control-label" for="amount_from" style="width: 140px; margin-right: 10px;">Amount From</label>
+                          <label class="control-label" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_PAYMENTS.AMOUNT_FROM">Amount From</label>
                           <input class="form-control" style="display: inline-block; width: 130px; vertical-align: top;" type="text" id="amount_from" name="amount_from" value="">
                         </div>
                         <div class="col-md-5" style="margin-bottom: 10px;">
-                          <label class="control-label" for="amount_to" style="width: 140px; margin-right: 10px;">To</label>
+                          <label class="control-label" for="amount_to" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_PAYMENTS.AMOUNT_TO">To</label>
                           <input class="form-control" style="display: inline-block; width: 130px; vertical-align: top;" type="text" id="amount_to" name="amount_to" value="">
                         </div>
                         <div class="col-md-2">
-                          <button type="submit" class="btn btn-primary btn-search pull-right" id="btn_search" name="btn_search" onclick="return true;"><i class="glyphicon glyphicon-search"></i> Search</button>
+                          <button type="submit" class="btn btn-primary btn-search pull-right" id="btn_search" name="btn_search">
+                            <i class="glyphicon glyphicon-search"></i>
+                            <span  translate="MY_ACCOUNT.MY_PAYMENTS.SEARCH">Search</span>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -550,7 +507,7 @@
                 </div>
 
                 <div class="clear"></div>
-                <p class="text-muted">No result found.</p>
+                <p class="text-muted" translate="MY_ACCOUNT.MY_PAYMENTS.NO_RESULT">No result found.</p>
               </uib-tab>
             </uib-tabset>
           </div>
