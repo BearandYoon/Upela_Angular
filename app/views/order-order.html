@@ -1,30 +1,37 @@
 <div id="wrapper" class="clearfix container">
   <div class="clearfix row">
     <section id="main" class="col-lg-12">
-      <div id="load">
-        <img src="images/loading.gif" alt="Loading...">&nbsp;&nbsp;Please wait...
-      </div>
-
       <div class="row">
         <div class="col-md-9">
           <div class="panel-white panel-white-bordered-">
             <div class="order-wizard">
-              <a href="/">1. Your shipment <i class="fa fa-pencil"></i></a>
-              <a href="/order-offer">2. The offers <i class="fa fa-pencil"></i></a>
-              <a class="active" href="#">3. Your order</a>
-              <a class="disabled" href="#">4. Payment</a>
-              <a class="disabled" href="#">5. Confirmation</a>
+              <a href="#/">
+                <span translate="ORDER.STEP_TITLE.SHIPMENT"></span>
+                <i class="fa fa-pencil"></i>
+              </a>
+              <a href="#/order-offer">
+                <span translate="ORDER.STEP_TITLE.OFFERS"></span>
+                <i class="fa fa-pencil"></i>
+              </a>
+              <a class="active" href="#" translate="ORDER.STEP_TITLE.ORDER">3. Your order</a>
+              <a class="disabled" href="#" translate="ORDER.STEP_TITLE.PAYMENT">4. Payment</a>
+              <a class="disabled" href="#" translate="ORDER.STEP_TITLE.CONFIRMATION">5. Confirmation</a>
             </div>
 
-            <h1 class="blue text-center">Step 3 : Your order<small class="pull-right-">Complete your choice</small></h1>
+            <h1 class="blue text-center">
+              <span translate="ORDER_ORDER.TITLE"></span>
+              <small class="pull-right-" translate="ORDER_ORDER.COMMENT">Complete your choice</small>
+            </h1>
 
             <form id="ShipmentForm" class="form-horizontal" role="form" enctype="multipart/form-data" accept-charset="UTF-8" autocomplete="off">
               <input type="hidden" id="carrier_id" name="carrier_id" value="1">
               <div class="row">
                 <div class="col-md-6 col-md-right-border">
-                  <h2 class="address-group-legend">Sender
+                  <h2 class="address-group-legend">
+                    <span translate="ORDER_ORDER.SENDER.TITLE"></span>
                     <small>
-                      <a class="pull-right" href="#">open address book
+                      <a class="pull-right" href="#">
+                        <span translate="ORDER_ORDER.OPEN_ADD_BOOK"></span>
                         <span class="fa fa-book" style="margin-left: 5px; margin-right: 0;"></span>
                       </a>
                     </small>
@@ -33,21 +40,21 @@
                   <input type="hidden" id="address1_pro" name="address1_pro" value="1">
 
                   <div class="form-group">
-                    <label for="address1_company" class="control-label col-lg-3">Company</label>
+                    <label for="address1_company" class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.COMPANY">Company</label>
                     <div class="col-lg-7">
                       <input type="text" id="address1_company" name="address1_company" class="form-control" value="" maxlength="35">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="address1_lastname" class="control-label col-lg-3 required">Name</label>
+                    <label for="address1_lastname" class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.NAME">Name</label>
                     <div class="col-lg-7">
                       <input type="text" id="address1_lastname" name="address1_lastname" class="form-control" value="" maxlength="35">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="address1_phone" class="control-label col-lg-3">Phone</label>
+                    <label for="address1_phone" class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.PHONE">Phone</label>
                     <div class="col-lg-7">
                       <div class="intl-tel-input allow-dropdown">
                         <div class="flag-container">
@@ -105,13 +112,13 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="address1_email" class="control-label col-lg-3">Email</label>
+                    <label for="address1_email" class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.EMAIL">Email</label>
                     <div class="col-lg-7">
                       <input type="text" id="address1_email" name="address1_email" class="form-control" value="" maxlength="50">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="address1_address1" class="control-label col-lg-3 required">Address</label>
+                    <label for="address1_address1" class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.ADDRESS">Address</label>
                     <div class="col-lg-9">
                       <input type="text" id="address1_address1" name="address1_address1" class="form-control validate" data-validate="isAddress" value="" placeholder="No., street" maxlength="35">
                     </div>
@@ -129,7 +136,7 @@
                     </div>
                   </div>
                   <div class="form-group hidden">
-                    <label for="address1_country_id" class="control-label col-lg-3 required">Country</label>
+                    <label for="address1_country_id" class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.COUNTRY">Country</label>
                     <div class="col-lg-7">
                       <select id="address1_country_id" name="address1_country_id" class="form-control chosen-select" style="display: none;">
                         <option value=""></option>
@@ -172,19 +179,19 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="address1_country_name" class="control-label col-lg-3">Country</label>
+                    <label for="address1_country_name" class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.COUNTRY">Country</label>
                     <div class="col-lg-7">
                       <input type="text" id="address1_country_name" name="address1_country_name" class="form-control" value="Romania" maxlength="255" readonly="readonly" tabindex="-1">
                     </div>
                   </div>
                   <div class="form-group" id="address1_postcode_container">
-                    <label for="address1_postcode" class="control-label col-lg-3">Postal code</label>
+                    <label for="address1_postcode" class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.POSTAL">Postal code</label>
                     <div class="col-lg-7">
                       <input type="text" id="address1_postcode" name="address1_postcode" class="form-control" value="517042" maxlength="20" readonly="readonly" tabindex="-1">
                     </div>
                   </div>
                   <div class="form-group" id="address1_city_container">
-                    <label for="address1_city" class="control-label col-lg-3 required">City</label>
+                    <label for="address1_city" class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.CITY">City</label>
                     <div class="col-lg-7">
                       <input type="text" id="address1_city" name="address1_city" class="form-control" value="Bubeşti" maxlength="255" readonly="readonly" tabindex="-1">
                     </div>
@@ -196,13 +203,13 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="address1_customer_code" class="control-label col-lg-3">Your ref.</label>
+                    <label for="address1_customer_code" class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.REF">Your ref.</label>
                     <div class="col-lg-7">
                       <input type="text" id="address1_customer_code" name="address1_customer_code" class="form-control" value="" maxlength="35" autocomplete="off">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="address1_notes" class="control-label col-lg-3">Others</label>
+                    <label for="address1_notes" class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.OTHERS">Others</label>
                     <div class="col-lg-9">
                       <textarea id="address1_notes" name="address1_notes" class="form-control" placeholder="Other information to help the collection driver (interphone, entry code, instructions, opening hours...)" rows="2" maxlength="30" data-maxchar="30" autocomplete="off"></textarea>
                       <span class="text-count-down-container">
@@ -214,16 +221,19 @@
                     <div class="col-lg-9 col-lg-offset-3">
                       <div class="checkbox">
                         <label for="address1_save_in_address_book" class="">
-                          <input type="checkbox" id="address1_save_in_address_book" name="address1_save_in_address_book" class="check_box" value="1" unchecked="">Save this address in my address book
+                          <input type="checkbox" id="address1_save_in_address_book" name="address1_save_in_address_book" class="check_box" value="1" unchecked="">
+                          <span translate="ORDER_ORDER.SAVE_ADD_BOOK"></span>
                         </label>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <h2 class="address-group-legend">Recipient
+                  <h2 class="address-group-legend">
+                    <span translate="ORDER_ORDER.RECIPIENT.TITLE"></span>
                     <small>
-                      <a class="pull-right" href="#">open address book
+                      <a class="pull-right" href="#">
+                        <span translate="ORDER_ORDER.OPEN_ADD_BOOK"></span>
                         <span class="fa fa-book" style="margin-left: 5px; margin-right: 0;"></span>
                       </a>
                     </small>
@@ -232,21 +242,21 @@
                   <input type="hidden" id="address2_pro" name="address2_pro" value="1">
 
                   <div class="form-group">
-                    <label for="address2_company" class="control-label col-lg-3">Company</label>
+                    <label for="address2_company" class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.COMPANY">Company</label>
                     <div class="col-lg-7">
                       <input type="text" id="address2_company" name="address2_company" class="form-control" value="" maxlength="35">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="address2_lastname" class="control-label col-lg-3 required">Name</label>
+                    <label for="address2_lastname" class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.NAME">Name</label>
                     <div class="col-lg-7">
                       <input type="text" id="address2_lastname" name="address2_lastname" class="form-control" value="" maxlength="35">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="address2_phone" class="control-label col-lg-3">Cellphone</label>
+                    <label for="address2_phone" class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.CELL_PHONE">Cellphone</label>
                     <div class="col-lg-7">
                       <div class="intl-tel-input allow-dropdown">
                         <div class="flag-container">
@@ -303,14 +313,14 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="address2_email" class="control-label col-lg-3">Email</label>
+                    <label for="address2_email" class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.EMAIL">Email</label>
                     <div class="col-lg-7">
                       <input type="text" id="address2_email" name="address2_email" class="form-control" value="" maxlength="50">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="address2_address1" class="control-label col-lg-3 required">Address</label>
+                    <label for="address2_address1" class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.ADDRESS">Address</label>
                     <div class="col-lg-9">
                       <input type="text" id="address2_address1" name="address2_address1" class="form-control validate" data-validate="isAddress" value="" placeholder="No., street" maxlength="35">
                     </div>
@@ -330,7 +340,7 @@
                   </div>
 
                   <div class="form-group hidden">
-                    <label for="address2_country_id" class="control-label col-lg-3 required">Country</label>
+                    <label for="address2_country_id" class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.COUNTRY">Country</label>
                     <div class="col-lg-7">
                       <select id="address2_country_id" name="address2_country_id" class="form-control chosen-select" style="display: none;">
                         <option value=""></option>
@@ -373,42 +383,42 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="address2_country_name" class="control-label col-lg-3">Country</label>
+                    <label for="address2_country_name" class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.COUNTRY">Country</label>
                     <div class="col-lg-7">
                       <input type="text" id="address2_country_name" name="address2_country_name" class="form-control" value="Russia" maxlength="255" readonly="readonly" tabindex="-1">
                     </div>
                   </div>
 
                   <div class="form-group" id="address2_postcode_container">
-                    <label for="address2_postcode" class="control-label col-lg-3">Postal code</label>
+                    <label for="address2_postcode" class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.POSTAL">Postal code</label>
                     <div class="col-lg-7">
                       <input type="text" id="address2_postcode" name="address2_postcode" class="form-control" value="101000" maxlength="20" readonly="readonly" tabindex="-1">
                     </div>
                   </div>
 
                   <div class="form-group" id="address2_city_container">
-                    <label for="address2_city" class="control-label col-lg-3 required">City</label>
+                    <label for="address2_city" class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.CITY">City</label>
                     <div class="col-lg-7">
                       <input type="text" id="address2_city" name="address2_city" class="form-control" value="Moscow" maxlength="255" readonly="readonly" tabindex="-1">
                     </div>
                   </div>
 
                   <div class="form-group hidden" id="address2_state_container" style="display: none;">
-                    <label for="address2_state" class="control-label col-lg-3">State code</label>
+                    <label for="address2_state" class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.POSTAL">State code</label>
                     <div class="col-lg-3">
                       <input type="text" id="address2_state" name="address2_state" class="form-control" value="" maxlength="64">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="address2_customer_code" class="control-label col-lg-3">Your ref.</label>
+                    <label for="address2_customer_code" class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.REF">Your ref.</label>
                     <div class="col-lg-7">
                       <input type="text" id="address2_customer_code" name="address2_customer_code" class="form-control" value="" maxlength="35" autocomplete="off">
                     </div>
                   </div>
 
                   <div class="form-group hidden">
-                    <label for="address2_notes" class="control-label col-lg-3">Others</label>
+                    <label for="address2_notes" class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.OTHERS">Others</label>
                     <div class="col-lg-9">
                       <textarea id="address2_notes" name="address2_notes" class="form-control blue-placeholder" placeholder="Delivery instructions: opening hours, desired date/time of delivery (subject to feasibility), access code, ..." rows="3" maxlength="35" data-maxchar="35" autocomplete="off"></textarea>
                       <span class="text-count-down-container">
@@ -421,7 +431,8 @@
                     <div class="col-lg-9 col-lg-offset-3">
                       <div class="checkbox">
                         <label for="address2_save_in_address_book" class="">
-                          <input type="checkbox" id="address2_save_in_address_book" name="address2_save_in_address_book" class="check_box" value="1" unchecked="">Save this address in my address book
+                          <input type="checkbox" id="address2_save_in_address_book" name="address2_save_in_address_book" class="check_box" value="1" unchecked="">
+                          <span translate="ORDER_ORDER.SAVE_ADD_BOOK"></span>
                         </label>
                       </div>
                     </div>
@@ -431,7 +442,8 @@
                     <div class="col-lg-9 col-lg-offset-3">
                       <div class="checkbox">
                         <label for="notification_recipient" class="">
-                          <input type="checkbox" id="notification_recipient" name="notification_recipient" class="check_box" value="1" checked="">Send an e-mail notification to the recipient
+                          <input type="checkbox" id="notification_recipient" name="notification_recipient" class="check_box" value="1" checked="">
+                          <span translate="ORDER_ORDER.RECIPIENT.SEND_EMAIL"></span>
                         </label>
                       </div>
                     </div>
@@ -442,9 +454,9 @@
               <br>
               <div class="row">
                 <div class="col-md-6">
-                  <h2 class="form-group-legend">Characteristics</h2>
+                  <h2 class="form-group-legend" translate="ORDER_ORDER.CHARACTERISTICS.TITLE">Characteristics</h2>
                   <div class="form-group">
-                    <label for="reason" class="control-label col-lg-3 required">Reason</label>
+                    <label for="reason" class="control-label col-lg-3 required" translate="ORDER_ORDER.CHARACTERISTICS.REASON">Reason</label>
                     <div class="col-lg-7">
                       <select id="reason" name="reason" class="form-control">
                         <option value="" selected="">-- Select in the list --</option>
@@ -460,11 +472,11 @@
                 <div class="col-md-6">
                   <h2 class="form-group-legend">&nbsp;</h2>
                   <div class="form-group">
-                    <label for="content" class="control-label col-lg-3 required">Content</label>
+                    <label for="content" class="control-label col-lg-3 required" translate="ORDER_ORDER.CHARACTERISTICS.CONTENT">Content</label>
                     <div class="col-lg-7">
                       <input type="text" id="content" name="content" class="form-control" value="" maxlength="35">
                       <span class="help-block">
-                        <a href="#">Prohibited Goods</a>
+                        <a href="#" translate="ORDER_ORDER.CHARACTERISTICS.PROHIBIT">Prohibited Goods</a>
                       </span>
                     </div>
                   </div>
@@ -484,17 +496,21 @@
               <hr style="margin: 10px 0 20px 0;">
               <div class="row">
                 <div class="col-md-12">
-                  <h2 class="form-group-legend">Insurance</h2>
+                  <h2 class="form-group-legend" translate="ORDER_ORDER.INSURANCE.TITLE">Insurance</h2>
                   <div class="form-group no-personal-effects">
-                    <label for="insurance_declared_value" class="control-label col-lg-3">Declared value</label>
+                    <label for="insurance_declared_value" class="control-label col-lg-3" translate="ORDER_ORDER.INSURANCE.DECLARED_VALUE">Declared value</label>
                     <div class="col-lg-9">
                       <input type="text" id="insurance_declared_value" name="insurance_declared_value" class="form-control input-small" style="display: inline-block;" value="0.00" maxlength="32">
                       <select class="form-control input-mini" style="display: inline-block;" id="insurance_currency" name="insurance_currency">
                         <option value="EUR" selected="selected">€</option>
                         <option value="USD">$</option>
                       </select>
-                      &nbsp;<span class="help-block" style="display: inline;">Value of your shipment</span>
-                      <div class="help-block">Warranty limited to carrier's <a href="http://www.ffsa.fr/sites/jcms/c_33806/fr/entreprise-lassurance-du-transport-de-marchandises?cc=fn_7316" target="_blank">contractual insurance</a> of € 22/kilo</div>
+                      &nbsp;<span class="help-block" style="display: inline;" translate="ORDER_ORDER.INSURANCE.SHIPMENT_VALUE">Value of your shipment</span>
+                      <div class="help-block">
+                        <span translate="ORDER_ORDER.INSURANCE.WARRANTY.TEXT1"></span>
+                        <a href="http://www.ffsa.fr/sites/jcms/c_33806/fr/entreprise-lassurance-du-transport-de-marchandises?cc=fn_7316" target="_blank" translate="ORDER_ORDER.INSURANCE.WARRANTY.TEXT2">contractual insurance</a>
+                        <span translate="ORDER_ORDER.INSURANCE.WARRANTY.TEXT3"></span>
+                      </div>
                     </div>
                   </div>
 
@@ -502,14 +518,15 @@
                     <div class="col-lg-9 col-lg-offset-3">
                       <div class="checkbox">
                         <label for="insurance" class="">
-                          <input type="checkbox" id="insurance" name="insurance" class="check_box" value="1">I want to insure my parcel at its real value (0.6%, minimum 4.5€)&nbsp;
+                          <input type="checkbox" id="insurance" name="insurance" class="check_box" value="1">
+                          <span translate="ORDER_ORDER.INSURANCE.REAL_VALUE"></span>
                           <span id="insurance_price_label_container" style="display: none;">
                             <span id="insurance_price_label" style="display: none;">0€</span>
                           </span>
                         </label>
                       </div>
                       <div class="help-block">
-                        <a href="images/files/upload/insurance/Upela Assurance EXCLUSIONS CONDITIONS GENERALES.pdf" target="_blank">see the conditions of insurance</a>
+                        <a href="images/files/upload/insurance/Upela Assurance EXCLUSIONS CONDITIONS GENERALES.pdf" target="_blank" translate="ORDER_ORDER.INSURANCE.CONDITIONS">see the conditions of insurance</a>
                       </div>
                     </div>
                   </div>
@@ -531,9 +548,10 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div id="duties_and_taxes_container-">
-                      <h2 class="form-group-legend">Customs obligations</h2>
-                      <p class="text-muted">Documents and taxes may be requested. Please refer to our section
-                        <a target="_blank" href="https://www.upela.com/en/documents-for-an-international-consignment-25.html">International shipping</a>
+                      <h2 class="form-group-legend" translate="ORDER_ORDER.OBLIGATIONS.TITLE">Customs obligations</h2>
+                      <p class="text-muted">
+                        <span translate="ORDER_ORDER.OBLIGATIONS.COMMENT1">Documents and taxes may be requested. Please refer to our section</span>
+                        <!--<a target="_blank" href="https://www.upela.com/en/documents-for-an-international-consignment-25.html" translate="ORDER_ORDER.OBLIGATIONS.COMMENT">International shipping</a>-->
                       </p>
 
                       <div class="proforma-with-note" style="display: none;">
@@ -567,21 +585,21 @@
                       </div>
 
                       <div class="proforma-without-note" style="display: block;">
-                        <p class="text-muted">So that your shipment is carried in the correct conditions, complete the following fields</p>
+                        <p class="text-muted" translate="ORDER_ORDER.OBLIGATIONS.COMMENT2">So that your shipment is carried in the correct conditions, complete the following fields</p>
                       </div>
 
                       <div id="products-container" class="products-container">
                         <table id="products-table" class="table table-bordered table-striped- table-condensed" style="background-color:#fff;">
                           <thead>
                             <tr>
-                              <th colspan="6" style="text-align: center;">DETAILS OF THE GOODS</th>
+                              <th colspan="6" style="text-align: center;" translate="ORDER_ORDER.OBLIGATIONS.DETAIL">DETAILS OF THE GOODS</th>
                             </tr>
                             <tr>
-                              <th style="text-align: center;">DESCRIPTION</th>
-                              <th style="text-align: center;">COUNTRY</th>
-                              <th style="text-align: center;">QTY</th>
-                              <th style="text-align: center;">Unit price</th>
-                              <th style="text-align: center;">TOTAL €</th>
+                              <th style="text-align: center;" translate="ORDER_ORDER.OBLIGATIONS.DESCRIPTION">DESCRIPTION</th>
+                              <th style="text-align: center;" translate="ORDER_ORDER.OBLIGATIONS.COUNTRY">COUNTRY</th>
+                              <th style="text-align: center;" translate="ORDER_ORDER.OBLIGATIONS.QTY">QTY</th>
+                              <th style="text-align: center;" translate="ORDER_ORDER.OBLIGATIONS.UNIT">Unit price</th>
+                              <th style="text-align: center;" translate="ORDER_ORDER.OBLIGATIONS.TOTAL">TOTAL €</th>
                               <th></th>
                             </tr>
                           </thead>
@@ -638,7 +656,7 @@
                       <p class="text-center">
                         <i class="fa fa-warning orange"></i>
                         <span class="popmark pointer" id="popmark-duties" data-placement="right" data-title="Customs duties and VAT" data-content="The customs duties and VAT are not included in the transport costs. Additional costs may be required at destination (personal effects included) when departure and destination countries are not in the same economic area (French overseas departments and territories included). These duties and taxes are calculated by the Customs." data-original-title="" title="">
-                          <span class="orange">The customs duties and VAT are not included in the transport costs.</span>
+                          <span class="orange" translate="ORDER_ORDER.OBLIGATIONS.VAT">The customs duties and VAT are not included in the transport costs.</span>
                         </span>
                       </p>
 
@@ -745,11 +763,11 @@
 
               <div class="row">
                 <div class="col-md-12">
-                  <h2 class="form-group-legend">Voucher code or Apporteur code</h2>
+                  <h2 class="form-group-legend" translate="ORDER_ORDER.VOUCHER.TITLE">Voucher code or Apporteur code</h2>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="apporteur_code" class="control-label col-lg-3">Apporteur Code</label>
+                    <label for="apporteur_code" class="control-label col-lg-3" translate="ORDER_ORDER.VOUCHER.APPORTEUR">Apporteur Code</label>
                     <div class="col-lg-7">
                       <input type="text" id="apporteur_code" name="apporteur_code" class="form-control" value="" maxlength="50">
                     </div>
@@ -758,7 +776,7 @@
 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="cart_rule_code" class="control-label col-lg-3">Voucher code</label>
+                    <label for="cart_rule_code" class="control-label col-lg-3" translate="ORDER_ORDER.VOUCHER.VOUCHER">Voucher code</label>
                     <div class="col-lg-7">
                       <input type="text" id="cart_rule_code" name="cart_rule_code" class="form-control" value="" maxlength="50">
                     </div>
@@ -769,27 +787,28 @@
               <hr style="margin: 10px 0 20px 0;">
               <div class="row">
                 <div class="col-md-12">
-                  <h2 class="form-group-legend">Pickup</h2>
+                  <h2 class="form-group-legend" translate="ORDER_ORDER.PICKUP.TITLE">Pickup</h2>
                   <input type="hidden" id="dropoff_selection" name="dropoff_selection" value="1">
                   <div class="form-group">
                   <div class="col-lg-9 col-lg-offset-3">
                     <div class="radio">
                       <label for="dropoff-0">
-                        <input type="radio" id="dropoff-0" name="dropoff" value="0" checked="">&nbsp;Collection chosen (subject to the carrier availability)
+                        <input type="radio" id="dropoff-0" name="dropoff" value="0" checked="" translate="ORDER_ORDER.PICKUP.COLLECTION">&nbsp;Collection chosen (subject to the carrier availability)
                       </label>
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-lg-9 col-lg-offset-3">
-                    <label for="shipment_date" class="control-label required-" style="display: inline-block; padding: 0; height: 34px; line-height: 34px;">Date</label>&nbsp;
+                    <label for="shipment_date" class="control-label required-" style="display: inline-block; padding: 0; height: 34px; line-height: 34px;" translate="ORDER_ORDER.PICKUP.DATE">Date</label>&nbsp;
 
                     <div class="input-group" style="width: 160px; display: inline-table; vertical-align: middle;">
                       <span class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                       </span>
                       <input type="text" id="shipment_date" name="shipment_date" class="form-control datepicker hasDatepicker" value="10/31/2016" size="10" maxlength="10">
-                    </div>&nbsp;&nbsp;Between&nbsp;
+                    </div>
+                    <span translate="ORDER_ORDER.PICKUP.BETWEEN"></span>
 
                     <select id="ready_time" name="ready_time" class="form-control input-small2 display-inline-block">
                       <option value="0800">08:00am</option>
@@ -823,11 +842,12 @@
                   <div class="col-lg-9 col-lg-offset-3">
                     <div class="radio">
                       <label for="dropoff-1">
-                        <input type="radio" id="dropoff-1" name="dropoff" value="1">&nbsp;I drop off my parcel at
+                        <input type="radio" id="dropoff-1" name="dropoff" value="1">
+                        <span translate="ORDER_ORDER.PICKUP.DROP_OFF"></span>
                         <img src="images/carriers/logo-ups-en.png" style="max-height: 32px; max-width: 50px; margin-left: 10px;">
                       </label>&nbsp;&nbsp;
                       <span class="text-muted">
-                        <a href="https://www.ups.com/dropoff?loc=en_US" target="_blank">See the nearest collection points</a>
+                        <a href="https://www.ups.com/dropoff?loc=en_US" target="_blank" translate="ORDER_ORDER.PICKUP.NEAREST">See the nearest collection points</a>
                       </span>
                     </div>
                   </div>
@@ -844,14 +864,14 @@
               <hr style="margin: 10px 0 20px 0;">
               <div class="row">
                 <div class="col-md-12">
-                  <h4 class="warning">INFORMATION &amp; CUSTOMS OBLIGATIONS</h4>
+                  <h4 class="warning" translate="ORDER_ORDER.INFORMATION.TITLE">INFORMATION &amp; CUSTOMS OBLIGATIONS</h4>
                   <div class="alert alert-warning">
-                    <p style="color: #f60;">To a private individual, only paper documents without market or reconstruction value are allowed. Any object or merchandise of any kind will be retained by Customs.<br><br> To a company, you need to provide a very detailed description of the contents of your shipment (eg, "white long sleeve shirt 100% cotton"), an original commercial invoice + 2 copies.</p>  <br>
+                    <p style="color: #f60;" translate="ORDER_ORDER.INFORMATION.COMMENT">To a private individual, only paper documents without market or reconstruction value are allowed. Any object or merchandise of any kind will be retained by Customs.<br><br> To a company, you need to provide a very detailed description of the contents of your shipment (eg, "white long sleeve shirt 100% cotton"), an original commercial invoice + 2 copies.</p>  <br>
                     <p style="text-align: justify;">
-                      <img src="images/files/upload/help/imprimante.png" alt="Printer" style="vertical-align: middle; margin-right: 5px;"> Before confirming your order, check that the sender is able to print out the transport label.
+                      <img src="images/files/upload/help/imprimante.png" alt="Printer" style="vertical-align: middle; margin-right: 5px;" translate="ORDER_ORDER.INFORMATION.TRANSPORT_LABEL"> Before confirming your order, check that the sender is able to print out the transport label.
                     </p>
                     <p style="text-align: justify;">
-                      <img src="images/files/upload/help/carton-emballage.png" alt="Packaging" style="vertical-align: middle; margin-right: 5px;"> Your package should be properly wrapped and protected: inadequate packaging will preclude damage claims.
+                      <img src="images/files/upload/help/carton-emballage.png" alt="Packaging" style="vertical-align: middle; margin-right: 5px;" translate="ORDER_ORDER.INFORMATION.DAMAGE"> Your package should be properly wrapped and protected: inadequate packaging will preclude damage claims.
                     </p>
                   </div>
                 </div>
@@ -865,7 +885,7 @@
                         <div class="checkbox">
                           <label for="prohibited_goods" class="">
                             <input type="checkbox" id="prohibited_goods" name="prohibited_goods" class="check_box" value="1" unchecked="">
-                            I declare that my shipment <strong>does not contain any following hazardous products</strong> :
+                            <span translate="ORDER_ORDER.HAZARDOUS.TITLE"></span>
                           </label>
                         </div>
                       </div>
@@ -875,19 +895,19 @@
                     <div class="row">
                       <div class="col-md-6">
                         <ul class="disc" style="margin-bottom: 5px;">
-                          <li>Lithium batteries alone (<a href="https://www.upela.com/en/prohibited-controlled-goods-23.html" target="_blank">further details +</a>)</li>
-                          <li>Perfumes</li>
+                          <li translate="ORDER_ORDER.HAZARDOUS.LITHIUM">Lithium batteries alone (<a href="https://www.upela.com/en/prohibited-controlled-goods-23.html" target="_blank">further details +</a>)</li>
+                          <li translate="ORDER_ORDER.HAZARDOUS.PERFUME">Perfumes</li>
                         </ul>
                       </div>
                       <div class="col-md-6">
                         <ul class="disc" style="margin-bottom: 5px;">
-                          <li>Electronic smoking devices (<a href="https://www.upela.com/en/prohibited-controlled-goods-23.html" target="_blank">further details +</a>)</li>
-                          <li>Aerosols, gas bottles, extinguishers</li>
+                          <li translate="ORDER_ORDER.HAZARDOUS.ELECTRONIC">Electronic smoking devices (<a href="https://www.upela.com/en/prohibited-controlled-goods-23.html" target="_blank">further details +</a>)</li>
+                          <li translate="ORDER_ORDER.HAZARDOUS.AEROSOLS">Aerosols, gas bottles, extinguishers</li>
                         </ul>
                       </div>
                     </div>
                     <p>
-                      <small>Or any other product with this kind of symbol, it will be then your full responsibility in case of incidence :</small>
+                      <small translate="ORDER_ORDER.HAZARDOUS.OTHERS">Or any other product with this kind of symbol, it will be then your full responsibility in case of incidence :</small>
                     </p>
                     <table cellspacing="5" cellpadding="5" style="margin: 5px auto 0 auto;">
                       <tbody>
@@ -915,9 +935,8 @@
                       <div class="form-group">
                         <div class="checkbox">
                           <label for="tos" class="">
-                            <input type="checkbox" id="tos" name="tos" class="check_box" value="1" checked="">I accept
-                            <a href="images/files/upload/cgv/CGV_Upela.pdf" target="_blank">terms and conditions of the Upela.com website</a> and the
-                            <a href="images/files/upload/cgv/CGV UPS En.pdf" target="_blank">terms and conditions of the carrier</a>
+                            <input type="checkbox" id="tos" name="tos" class="check_box" value="1" checked="">
+                            <span translate="ORDER_ORDER.TERMS_CONDITION"></span>
                           </label>
                         </div>
                       </div>
@@ -930,7 +949,7 @@
               <div class="form-group">
                 <div class="text-center">
                   <button type="submit" class="btn btn-primary btn-lg" id="btn_save" name="btn_save" ng-click="clickContinue()">
-                    <i class="glyphicon glyphicon-ok"></i> Continue
+                    <i class="glyphicon glyphicon-ok" translate="ORDER_ORDER.CONTINUE"></i>
                   </button>
                 </div>
               </div>
@@ -939,7 +958,7 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="alert alert-warning">
-                  <p>Information that is collected is subject to computer processing to ensure the good routing of your shipments. Data may be passed to: DHL, FedEx, or UPS to allow the performance of the contract.<br>In accordance with the law of Data Protection of January 6th, 1978, amended in 2004, you have the right to access and rectify all data concerning you, writing to: <a href="mailto:contact@upela.com">contact@upela.com</a>, Philippe Boulay<br>You can also, for legitimate reasons, oppose the processing of your personal data.</p>
+                  <p translate="ORDER_ORDER.CONTACT">Information that is collected is subject to computer processing to ensure the good routing of your shipments. Data may be passed to: DHL, FedEx, or UPS to allow the performance of the contract.<br>In accordance with the law of Data Protection of January 6th, 1978, amended in 2004, you have the right to access and rectify all data concerning you, writing to: <a href="mailto:contact@upela.com">contact@upela.com</a>, Philippe Boulay<br>You can also, for legitimate reasons, oppose the processing of your personal data.</p>
                 </div>
               </div>
             </div>
