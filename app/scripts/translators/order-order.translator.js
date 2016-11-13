@@ -173,8 +173,8 @@
           COLLECTION: 'Enlèvement souhaité (sous réserve des disponibilités du transporteur)',
           DATE: 'Date',
           BETWEEN: 'Entre',
-          DROP_OFF: 'I drop off my parcel at',
-          NEAREST: 'See the nearest collection points'
+          DROP_OFF: 'Je dépose mes colis en agence',
+          NEAREST: 'Voir les points de dépôt à proximité'
         },
         INFORMATION: {
           TITLE: 'INFORMATIONS',
@@ -268,7 +268,7 @@
           COLLECTION: 'Recogida seleccionada (según disponibilidad del transportista)',
           DATE: 'El',
           BETWEEN: 'Entre',
-          DROP_OFF: 'I drop off my parcel at',
+          DROP_OFF: 'Deposito mis paquetes en la agencia',
           NEAREST: 'See the nearest collection points'
         },
         INFORMATION: {

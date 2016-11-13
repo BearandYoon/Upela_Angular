@@ -74,7 +74,7 @@ angular
         url: '/my-account',
         templateUrl: 'views/my-account.html',
         controller: 'MyAccountCtrl',
-        controllerAs: '$ctrl'
+        controllerAs: 'ctrl'
       })
       .state('ship-to-contact', {
         url: '/ship-to-contact',
@@ -86,7 +86,7 @@ angular
         url: '/mass-mailing',
         templateUrl: 'views/mass-mailing.html',
         controller: 'MassMailingCtrl',
-        controllerAs: '$ctrl'
+        controllerAs: 'ctrl'
       })
       .state('mass-mailing-upload', {
         url: '/mass-mailing-upload',

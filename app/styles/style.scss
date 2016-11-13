@@ -663,9 +663,9 @@ body.home #main-wrapper {padding-top: 0; background: #fff;}
   background-image: -moz-linear-gradient(top, #ee5f37, #c84428);
   background-image: -ms-linear-gradient(top, #ee5f37, #c84428);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f37), to(#c84428));
-  background-image: -webkit-linear-gradient(top, #ee5f37, #c84428);
-  background-image: -o-linear-gradient(top, #ee5f37, #c84428);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f37', endColorstr='#c84428', GradientType=0);
+//  background-image: -webkit-linear-gradient(top, #ee5f37, #c84428);
+//  background-image: -o-linear-gradient(top, #ee5f37, #c84428);
+  //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f37', endColorstr='#c84428', GradientType=0);
   background-repeat: repeat-x;
   border-width: 0;
   -webkit-border-radius: 0px;
@@ -928,23 +928,46 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfhover ul {left:200px;/* matc
 
 /* CLIENT SPACE NAVIGATION */
 .account-nav.nav-tabs.nav-stacked {border-bottom: 0; margin-bottom: 15px;}
+.account-nav span {
+  font-size: 12px !important;
+  margin-left: 5px;
+}
 .account-nav.nav-tabs.nav-stacked > li {margin-bottom:6px;}
-.account-nav.nav-tabs.nav-stacked > li > a {padding:10px 15px; font-size:12px; font-weight:600; color:#4a515b;
-background:#e9e9e9; background:-moz-linear-gradient(top,#fafafa 0%,#e9e9e9 100%);
-background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#fafafa),color-stop(100%,#e9e9e9));
-background:-webkit-linear-gradient(top,#fafafa 0%,#e9e9e9 100%);
-background:-o-linear-gradient(top,#fafafa 0%,#e9e9e9 100%);
-background:-ms-linear-gradient(top,#fafafa 0%,#e9e9e9 100%);
-background:linear-gradient(top,#fafafa 0%,#e9e9e9 100%);
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA',endColorstr='#E9E9E9');
--ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA',endColorstr='#E9E9E9')";
-border:1px solid #D5D5D5; border-radius:4px;
-/*-webkit-transition-duration:0.4s;
--moz-transition-duration:0.4s;
--o-transition-duration:0.4s;*/}
+
+.account-nav.nav-tabs.nav-stacked > li > a {
+  padding: 10px 15px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a515b;
+  background: #e9e9e9;
+  //background: -moz-linear-gradient(top, #fafafa 0%, #e9e9e9 100%);
+  //background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fafafa), color-stop(100%, #e9e9e9));
+  //background: -webkit-linear-gradient(top, #fafafa 0%, #e9e9e9 100%);
+  //background: -o-linear-gradient(top, #fafafa 0%, #e9e9e9 100%);
+  //background: -ms-linear-gradient(top, #fafafa 0%, #e9e9e9 100%);
+  background: linear-gradient(top, #fafafa 0%, #e9e9e9 100%);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#e9e9e9));
+//  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#E9E9E9');
+//  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA',endColorstr='#E9E9E9')";
+  border: 1px solid #D5D5D5;
+  border-radius: 4px;
+}
 .account-nav.nav-tabs.nav-stacked > li > a i, .account-nav.nav-tabs.nav-stacked > li > a span {font-size: 16px;}
-.account-nav.nav-tabs.nav-stacked > li.active > a, .account-nav.nav-tabs.nav-stacked > li > a:hover{color:#FFF;  background-color:#EE5F37; background-image:-moz-linear-gradient(top,#EE5F37,#C84428); background-image:-ms-linear-gradient(top,#EE5F37,#C84428); background-image:-webkit-gradient(linear,0 0,0 100%,from(#EE5F37),to(#C84428));  background-image:-webkit-linear-gradient(top,#EE5F37,#C84428);  background-image:-o-linear-gradient(top,#EE5F37,#C84428);  background-image:linear-gradient(top,#EE5F37,#C84428);  background-repeat:repeat-x;  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#EE5F37',endColorstr='#C84428',GradientType=0);  border-color:#D5D5D5;
-/*-webkit-transition-duration:0.4s; -moz-transition-duration:0.4s;   -o-transition-duration:0.4s;*/}
+
+.account-nav.nav-tabs.nav-stacked > li.active > a, .account-nav.nav-tabs.nav-stacked > li > a:hover {
+  color: #FFF;
+  background-color: #EE5F37;
+  //background-image: -moz-linear-gradient(top, #EE5F37, #C84428);
+  //background-image: -ms-linear-gradient(top, #EE5F37, #C84428);
+  //background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#EE5F37), to(#C84428));
+  //background-image: -webkit-linear-gradient(top, #EE5F37, #C84428);
+//  background-image: -o-linear-gradient(top, #EE5F37, #C84428);
+  //background-image: linear-gradient(top, #EE5F37, #C84428);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f37), to(#c84428));
+  background-repeat: repeat-x;
+//  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EE5F37', endColorstr='#C84428', GradientType=0);
+  border-color: #D5D5D5;
+}
 .account-nav.nav-tabs.nav-stacked > li:first-child > a, .account-nav.nav-tabs.nav-stacked > li:last-child > a {border-radius:5px;}
 .account-nav.nav-tabs.nav-stacked li [class^="icon-"], .account-nav.nav-tabs.nav-stacked li [class*=" icon-"] {position:relative; top:1px; margin-right:.35em; font-size:15px;}
 .account-nav.nav-tabs.nav-stacked li .label{position:relative; top:2px;}
