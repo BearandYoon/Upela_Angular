@@ -26,7 +26,7 @@ angular
         url: '/index',
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('login', {
         url: '/login',
@@ -44,97 +44,97 @@ angular
         url: '/order-progress',
         templateUrl: 'views/order-progress.html',
         controller: 'OrderProgressCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('order-offer', {
         url: '/order-offer',
         templateUrl: 'views/order-offer.html',
         controller: 'OrderOfferCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('order-order', {
         url: '/order-order',
         templateUrl: 'views/order-order.html',
         controller: 'OrderOrderCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('order-payment', {
         url: '/order-payment',
         templateUrl: 'views/order-payment.html',
         controller: 'OrderPaymentCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('order-confirm', {
         url: '/order-confirm',
         templateUrl: 'views/order-confirm.html',
         controller: 'OrderOrderCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('my-account', {
         url: '/my-account',
         templateUrl: 'views/my-account.html',
         controller: 'MyAccountCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('ship-to-contact', {
         url: '/ship-to-contact',
         templateUrl: 'views/ship-to-contact.html',
         controller: 'ShipToContactCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('mass-mailing', {
         url: '/mass-mailing',
         templateUrl: 'views/mass-mailing.html',
         controller: 'MassMailingCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('mass-mailing-upload', {
         url: '/mass-mailing-upload',
         templateUrl: 'views/mass-mailing-upload.html',
         controller: 'MassMailingUploadCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('my-contacts', {
         url: '/my-contacts',
         templateUrl: 'views/my-contacts.html',
         controller: 'MyContactsCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('credit-account', {
         url: '/credit-account',
         templateUrl: 'views/credit-account.html',
         controller: 'CreditAccountCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('my-store', {
         url: "/my-store",
         templateUrl: 'views/my-store.html',
         controller: 'MyStoreCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('settings', {
         url: '/settings',
         templateUrl: 'views/settings.html',
         controller: 'SettingsCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('refer-contacts', {
         url: '/refer-contacts',
         templateUrl: 'views/refer-contacts.html',
         controller: 'ReferContactsCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('loyalty', {
         url: '/loyalty',
         templateUrl: 'views/loyalty.html',
         controller: 'LoyaltyCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       })
       .state('about', {
         url: '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: '$ctrl'
       });
 
     $translateProvider.registerAvailableLanguageKeys(['en', 'fr', 'es'], {

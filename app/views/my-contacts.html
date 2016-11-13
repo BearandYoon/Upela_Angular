@@ -1,65 +1,112 @@
 <div id="wrapper" class="clearfix container">
   <div class="clearfix row">
     <section id="main" class="col-lg-12">
-      <div id="load">
-        <img src="images/loading.gif" alt="Loading...">&nbsp;&nbsp;Please wait...
-      </div>
-
-      <h1>My Client Space</h1>
+      <h1 translate="SETTINGS.TITLE">My Client Space</h1>
       <div class="row">
         <div class="col-md-2">
           <ul id="account-nav" class="nav nav-tabs nav-stacked account-nav">
             <li>
-              <a href="#/my-account"><span class="fa fa-home"></span> Overall view</a>
+              <a href="#/my-account">
+                <i class="fa fa-home"></i>
+                <span translate="SETTINGS.OVERALL">Overall view</span>
+              </a>
             </li>
           </ul>
 
           <ul id="account-nav2" class="nav nav-tabs nav-stacked account-nav">
-            <!--<li><a href="https://www.upela.com/en/"><span class="fa fa-paper-plane"></span> Single shipment</a></li>-->
-            <li><a href="#/ship-to-contact"><span class="fa fa-user"></span> Ship to contact</a></li>
-            <li><a href="#/mass-mailing"><span class="fa fa-users"></span> Mass mailing</a></li>
-            <li><a href="#/mass-mailing-upload"><span class="fa fa-floppy-o"></span> Sending by file</a></li>
+            <li>
+              <a href="#/ship-to-contact">
+                <i class="fa fa-user"></i>
+                <span translate="SETTINGS.SHIP"> Ship to contact</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/mass-mailing">
+                <i class="fa fa-users"></i>
+                <span translate="SETTINGS.MAILING"> Mass mailing</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/mass-mailing-upload">
+                <i class="fa fa-floppy-o"></i>
+                <span translate="SETTINGS.SENDING"> Sending by file</span>
+              </a>
+            </li>
           </ul>
 
           <ul id="account-nav3" class="nav nav-tabs nav-stacked account-nav">
-            <li class="active"><a href="#/my-contacts"><span class="fa fa-book"></span> My contacts</a></li>
-            <li><a href="#/credit-account"><span class="fa fa-credit-card"></span> Credit account</a></li>
-            <li><a href="#/my-store"><span class="fa fa-shopping-cart"></span> My stores</a></li>
-            <li><a href="#/settings"><span class="fa fa-cogs"></span> Settings</a></li>
+            <li class="active">
+              <a href="#/my-contacts">
+                <i class="fa fa-book"></i>
+                <span translate="SETTINGS.CONTACTS"> My contacts</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/credit-account">
+                <i class="fa fa-credit-card"></i>
+                <span translate="SETTINGS.CREDIT"> Credit account</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/my-store">
+                <i class="fa fa-shopping-cart"></i>
+                <span translate="SETTINGS.STORE"> My stores</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/settings">
+                <i class="fa fa-cogs"></i>
+                <span translate="SETTINGS.SETTINGS"> Settings</span>
+              </a>
+            </li>
           </ul>
 
           <ul id="account-nav4" class="nav nav-tabs nav-stacked account-nav">
-            <li><h3>Our programs</h3></li>
-            <li><a href="#/refer-contacts"><span class="fa fa-gift"></span> Referral</a></li>
-            <li><a href="#/loyalty"><span class="fa fa-gift"></span> Loyalty</a></li>
+            <li>
+              <h3 translate="SETTINGS.PROGRAMS">Our programs</h3>
+            </li>
+            <li>
+              <a href="#/refer-contacts">
+                <i class="fa fa-gift"></i>
+                <span translate="SETTINGS.REFERRAL"> Referral</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/loyalty">
+                <i class="fa fa-gift"></i>
+                <span translate="SETTINGS.LOYALTY"> Loyalty</span>
+              </a>
+            </li>
           </ul>
         </div>
 
         <div class="col-md-10">
           <div class="panel-white cancel-padding-left-15 panel-white-bordered-">
             <h2 style="margin-bottom: 10px;">
-              <i class="fa fa-book"></i>My contacts
+              <i class="fa fa-book"></i>
+              <span translate="MY_CONTACT.TITLE">My contacts</span>
             </h2>
-            <p class="text-muted" style="margin-bottom: 20px;">Manage your address book</p>
+            <p class="text-muted" style="margin-bottom: 20px;" translate="MY_CONTACT.COMMENT">Manage your address book</p>
 
             <uib-tabset active="activeForm">
               <uib-tab index="0">
                 <uib-tab-heading>
                   <a href="#">
-                    <i class="glyphicon glyphicon-user"></i> All the contacts
+                    <i class="glyphicon glyphicon-user"></i>
+                    <span translate="MY_CONTACT.ALL_CONTACT.TITLE"> All the contacts</span>
                   </a>
                 </uib-tab-heading>
                 <div style="margin: 30px auto 0 auto;">
                   <div class="search-box clearfix">
-                    <form id="searchform" class="form-inline-" role="form" action="http://localhost:32770/en/address/" method="get" accept-charset="UTF-8">
+                    <form id="searchform" class="form-inline-">
                       <div class="form-group col-lg-9 no-padding-left">
                         <label for="q" class="control-label col-lg-12 hidden">&nbsp;</label>
 
                         <div class="col-lg-12">
                           <div class="input-group col-lg-12">
-                            <input type="text" id="q" name="q" class="form-control" value="" placeholder="Search by company, name, client code">
+                            <input type="text" id="q" name="q" class="form-control" value="" placeholder="Search by company, name, client code" translate translate-attr-placeholder="MY_CONTACT.ALL_CONTACT.SEARCH">
                         <span class="input-group-btn">
-                          <button class="btn btn-default btn-search" type="submit" title="Search" onclick="return true;">
+                          <button class="btn btn-default btn-search" type="submit" title="Search">
                             <i class="glyphicon glyphicon-search"></i>
                           </button>
                         </span>
@@ -70,19 +117,21 @@
                       <div class="form-group col-lg-2 float-right text-right no-padding-right hidden">
                         <label class="control-label">&nbsp;</label>
                         <button class="btn btn-primary btn-search" type="submit" title="Search">
-                          <i class="glyphicon glyphicon-search"></i> Search
+                          <i class="glyphicon glyphicon-search"></i>
+                          <span translate="MY_CONTACT.ALL_CONTACT.TITLE"> Search</span>
                         </button>
                       </div>
                     </form>
                   </div>
 
-                  <form id="table_form" name="table_form" action="/en/address/?&amp;sort=lastname&amp;order=asc&amp;page=1" method="post" accept-charset="UTF-8">
+                  <form id="table_form" name="table_form">
                     <div class="paging-container clearfix">
                       <input type="hidden" id="table_action" name="table_action" value="">
                       <div class="col-sm-6 text-left bulk-actions no-padding-left no-padding-right form-inline">
                         <div class="btn-group bulk-actions">
-                          <a class="btn btn-default btn-xs" href="#" onclick="tableAction(&quot;table_form&quot;, &quot;delete&quot;, &quot;Are you sure you want to delete the selected contact(s)?&quot;); return false;">
-                            <span class="glyphicon glyphicon-remove"></span>Delete selected
+                          <a class="btn btn-default btn-xs" href="#">
+                            <span class="glyphicon glyphicon-remove"></span>
+                            <span translate="MY_CONTACT.ALL_CONTACT.DELETE">Delete selected</span>
                           </a>&nbsp;
                         </div>
                       </div>
@@ -107,24 +156,25 @@
                         <thead>
                         <tr>
                           <th width="13px" class="first" style="text-align: center;">
-                            <input id="select_all" name="select_all" type="checkbox" class="check_box" value="1" onclick="checkUncheckAllRows(this, 'table_form');" title="Select/Deselect all">
+                            <input id="select_all" name="select_all" type="checkbox" class="check_box" value="1">
                           </th>
                           <th align="left" style="text-align: left;" width="70px" class="">
-                            <a href="/en/address/?&amp;sort=customer_code&amp;order=asc" title="Sort by Client Code">Client Code&nbsp;</a>
+                            <a title="Sort by Client Code" translate="MY_CONTACT.ALL_CONTACT.CLIENT">Client Code&nbsp;</a>
                           </th>
                           <th align="left" style="text-align: left;" width="120px" class="">
-                            <a href="/en/address/?&amp;sort=lastname&amp;order=desc" title="Sort by Name">Name&nbsp;
+                            <a title="Sort by Name">
+                              <span translate="MY_CONTACT.ALL_CONTACT.NAME">Name&nbsp;</span>
                               <span class="glyphicon glyphicon-chevron-up"></span>
                             </a>
                           </th>
                           <th align="left" style="text-align: left;" width="120px" class="">
-                            <a href="/en/address/?&amp;sort=company&amp;order=asc" title="Sort by Company">Company&nbsp;</a>
+                            <a title="Sort by Company" translate="MY_CONTACT.ALL_CONTACT.COMPANY">Company&nbsp;</a>
                           </th>
                           <th align="left" style="text-align: left;" width="80px" class="">
-                            <a href="/en/address/?&amp;sort=city&amp;order=asc" title="Sort by City">City&nbsp;</a>
+                            <a title="Sort by City" translate="MY_CONTACT.ALL_CONTACT.CITY">City&nbsp;</a>
                           </th>
                           <th align="left" style="text-align: left;" width="80px" class="">
-                            <a href="/en/address/?&amp;sort=country_name&amp;order=asc" title="Sort by Country">Country&nbsp;</a>
+                            <a title="Sort by Country" translate="MY_CONTACT.ALL_CONTACT.COUNTRY">Country&nbsp;</a>
                           </th>
                           <th width="100px">&nbsp;</th>
                         </tr>
@@ -132,21 +182,21 @@
                         <tbody>
                         <tr>
                           <td class="" style="text-align: center;">
-                            <input type="checkbox" class="check_box" id="row_ids_439616" name="row_ids[]" value="439616">
+                            <input type="checkbox" class="check_box" value="439616">
                           </td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439616';"></td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439616';">
+                          <td style="text-align: left;" class=""></td>
+                          <td style="text-align: left;" class="">
                             <font><font>China / Hong Kong</font></font>
                           </td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439616';">
+                          <td style="text-align: left;" class="">
                             <font><font>China / Hong Kong</font></font>
                           </td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439616';">kowloon city</td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439616';">
+                          <td style="text-align: left;" class="">kowloon city</td>
+                          <td style="text-align: left;" class="">
                             <font><font>Hong Kong</font></font>
                           </td>
                           <td class="table-action">
-                            <a href="http://localhost:32770/en/address/edit.php?id=439616" title="Edit">
+                            <a title="Edit">
                               <span class="glyphicon glyphicon-pencil"></span>Edit
                             </a>
                             <div class="btn-group">
@@ -155,17 +205,17 @@
                               </button>
                               <ul class="dropdown-menu">
                                 <li>
-                                  <a href="http://localhost:32770/en/?address2=439616" title="">
+                                  <a title="">
                                     <span class="fa fa-mail-forward"></span>Send
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="http://localhost:32770/en/?address1=439616" title="">
+                                  <a title="">
                                     <span class="fa fa-mail-reply"></span>Arrange a return
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="#" title="Delete" onclick="if (confirm(&quot;Are you sure you want to delete the contact 439616?&quot;)) {checkSingleRow(&quot;table_form&quot;, &quot;row_ids_439616&quot;); $(&quot;#table_action&quot;).val(&quot;delete&quot;); $(&quot;#table_form&quot;).submit();}; return false;">
+                                  <a href="#" title="Delete">
                                     <span class="glyphicon glyphicon-remove"></span>Delete
                                   </a>
                                 </li>
@@ -175,21 +225,21 @@
                         </tr>
                         <tr>
                           <td class="" style="text-align: center;">
-                            <input type="checkbox" class="check_box" id="row_ids_439617" name="row_ids[]" value="439617">
+                            <input type="checkbox" class="check_box" value="439617">
                           </td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439617';"></td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439617';">
+                          <td style="text-align: left;" class=""></td>
+                          <td style="text-align: left;" class="">
                             <font><font>DomTom Reunion / Martinique / Guade</font></font>
                           </td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439617';">
+                          <td style="text-align: left;" class="">
                             <font><font>DomTom Reunion / Martinique / Guadeloupe</font></font>
                           </td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439617';">
+                          <td style="text-align: left;" class="">
                             <font><font>Saint Louis</font></font>
                           </td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439617';">Reunion</td>
+                          <td style="text-align: left;" class="">Reunion</td>
                           <td class="table-action">
-                            <a href="http://localhost:32770/en/address/edit.php?id=439617" title="Edit">
+                            <a title="Edit">
                               <span class="glyphicon glyphicon-pencil"></span>
                               <font><font>Edit</font></font>
                             </a>
@@ -200,19 +250,19 @@
                               </button>
                               <ul class="dropdown-menu">
                                 <li>
-                                  <a href="http://localhost:32770/en/?address2=439617" title="">
+                                  <a title="">
                                     <span class="fa fa-mail-forward"></span>
                                     <font><font>Send</font></font>
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="http://localhost:32770/en/?address1=439617" title="">
+                                  <a title="">
                                     <span class="fa fa-mail-reply"></span>
                                     <font><font>Arrange a return</font></font>
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="#" title="Delete" onclick="if (confirm(&quot;Are you sure you want to delete the contact 439617?&quot;)) {checkSingleRow(&quot;table_form&quot;, &quot;row_ids_439617&quot;); $(&quot;#table_action&quot;).val(&quot;delete&quot;); $(&quot;#table_form&quot;).submit();}; return false;">
+                                  <a href="#" title="Delete">
                                     <span class="glyphicon glyphicon-remove"></span>
                                     <font><font>Delete</font></font>
                                   </a>
@@ -223,19 +273,19 @@
                         </tr>
                         <tr>
                           <td class="" style="text-align: center;">
-                            <input type="checkbox" class="check_box" id="row_ids_439620" name="row_ids[]" value="439620">
+                            <input type="checkbox" class="check_box" value="439620">
                           </td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439620';"></td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439620';">Dubai</td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439620';">
+                          <td style="text-align: left;" class=""></td>
+                          <td style="text-align: left;" class="">Dubai</td>
+                          <td style="text-align: left;" class="">
                             <font><font>Dubai</font></font>
                           </td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439620';">
+                          <td style="text-align: left;" class="">
                             <font><font>Dubai</font></font>
                           </td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439620';">United Arab Emirates</td>
+                          <td style="text-align: left;" class="">United Arab Emirates</td>
                           <td class="table-action">
-                            <a href="http://localhost:32770/en/address/edit.php?id=439620" title="Edit">
+                            <atitle="Edit">
                               <span class="glyphicon glyphicon-pencil"></span>
                               <font><font>Edit</font></font>
                             </a>
@@ -246,19 +296,19 @@
                               </button>
                               <ul class="dropdown-menu">
                                 <li>
-                                  <a href="http://localhost:32770/en/?address2=439620" title="">
+                                  <a title="">
                                     <span class="fa fa-mail-forward"></span>
                                     <font><font>Send</font></font>
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="http://localhost:32770/en/?address1=439620" title="">
+                                  <a title="">
                                     <span class="fa fa-mail-reply"></span>
                                     <font><font>Arrange a return</font></font>
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="#" title="Delete" onclick="if (confirm(&quot;Are you sure you want to delete the contact 439620?&quot;)) {checkSingleRow(&quot;table_form&quot;, &quot;row_ids_439620&quot;); $(&quot;#table_action&quot;).val(&quot;delete&quot;); $(&quot;#table_form&quot;).submit();}; return false;">
+                                  <a href="#" title="Delete">
                                     <span class="glyphicon glyphicon-remove"></span>
                                     <font><font>Delete</font></font>
                                   </a>
@@ -269,17 +319,17 @@
                         </tr>
                         <tr>
                           <td class="" style="text-align: center;">
-                            <input type="checkbox" class="check_box" id="row_ids_439613" name="row_ids[]" value="439613">
+                            <input type="checkbox" class="check_box" value="439613">
                           </td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439613';"></td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439613';">Europe Berlin</td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439613';">
+                          <td style="text-align: left;" class=""></td>
+                          <td style="text-align: left;" class="">Europe Berlin</td>
+                          <td style="text-align: left;" class="">
                             <font><font>Europe Berlin</font></font>
                           </td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439613';">Berlin</td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=439613';">Germany</td>
+                          <td style="text-align: left;" class="">Berlin</td>
+                          <td style="text-align: left;" class="">Germany</td>
                           <td class="table-action">
-                            <a href="http://localhost:32770/en/address/edit.php?id=439613" title="Edit">
+                            <a title="Edit">
                               <span class="glyphicon glyphicon-pencil"></span>
                               <font><font>Edit</font></font>
                             </a>
@@ -290,19 +340,19 @@
                               </button>
                               <ul class="dropdown-menu">
                                 <li>
-                                  <a href="http://localhost:32770/en/?address2=439613" title="">
+                                  <a title="">
                                     <span class="fa fa-mail-forward"></span>
                                     <font><font>Send</font></font>
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="http://localhost:32770/en/?address1=439613" title="">
+                                  <a title="">
                                     <span class="fa fa-mail-reply"></span>
                                     <font><font>Arrange a return</font></font>
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="#" title="Delete" onclick="if (confirm(&quot;Are you sure you want to delete the contact 439613?&quot;)) {checkSingleRow(&quot;table_form&quot;, &quot;row_ids_439613&quot;); $(&quot;#table_action&quot;).val(&quot;delete&quot;); $(&quot;#table_form&quot;).submit();}; return false;">
+                                  <a href="#" title="Delete">
                                     <span class="glyphicon glyphicon-remove"></span>
                                     <font><font>Delete</font></font>
                                   </a>
@@ -313,17 +363,17 @@
                         </tr>
                         <tr>
                           <td class="" style="text-align: center;">
-                            <input type="checkbox" class="check_box" id="row_ids_422671" name="row_ids[]" value="422671">
+                            <input type="checkbox" class="check_box" value="422671">
                           </td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=422671';"></td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=422671';">USA Miami</td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=422671';">
+                          <td style="text-align: left;" class=""></td>
+                          <td style="text-align: left;" class="">USA Miami</td>
+                          <td style="text-align: left;" class="">
                             <font><font>USA Miami</font></font>
                           </td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=422671';">Miami</td>
-                          <td style="text-align: left;" class="" onclick="window.location='http://localhost:32770/en/address/edit.php?id=422671';">United States</td>
+                          <td style="text-align: left;" class="">Miami</td>
+                          <td style="text-align: left;" class="">United States</td>
                           <td class="table-action">
-                            <a href="http://localhost:32770/en/address/edit.php?id=422671" title="Edit">
+                            <a title="Edit">
                               <span class="glyphicon glyphicon-pencil"></span>
                               <font><font>Edit</font></font>
                             </a>
@@ -334,19 +384,19 @@
                               </button>
                               <ul class="dropdown-menu">
                                 <li>
-                                  <a href="http://localhost:32770/en/?address2=422671" title="">
+                                  <a title="">
                                     <span class="fa fa-mail-forward"></span>
                                     <font><font>Send</font></font>
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="http://localhost:32770/en/?address1=422671" title="">
+                                  <a title="">
                                     <span class="fa fa-mail-reply"></span>
                                     <font><font>Arrange a return</font></font>
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="#" title="Delete" onclick="if (confirm(&quot;Are you sure you want to delete the contact 422671?&quot;)) {checkSingleRow(&quot;table_form&quot;, &quot;row_ids_422671&quot;); $(&quot;#table_action&quot;).val(&quot;delete&quot;); $(&quot;#table_form&quot;).submit();}; return false;">
+                                  <a href="#" title="Delete">
                                     <span class="glyphicon glyphicon-remove"></span>
                                     <font><font>Delete</font></font>
                                   </a>
@@ -361,8 +411,9 @@
                   </form>
 
                   <div class="paging-container clearfix">
-                    <div class="col-sm-6 text-left nb-results no-padding-left no-padding-right form-inline">Results per page&nbsp;
-                      <select id="items_per_page" class="select_items_per_page form-control input-sm" onchange="itemsPerPageChanged(this);">
+                    <div class="col-sm-6 text-left nb-results no-padding-left no-padding-right form-inline">
+                      <span translate="MY_CONTACT.ALL_CONTACT.PAGE">Results per page&nbsp;</span>
+                      <select id="items_per_page" class="select_items_per_page form-control input-sm">
                         <option value="10">10</option>
                         <option value="25">25</option>
                         <option value="50" selected="">50</option>
@@ -370,7 +421,8 @@
                         <option value="100">100</option>
                         <option value="1000">1000</option>
                       </select>&nbsp;&nbsp;
-                      <span class="separator">|</span>&nbsp;&nbsp;Results 1 - 5 of 5
+                      <span class="separator">|</span>
+                      <span translate="MY_CONTACT.ALL_CONTACT.RESULT">&nbsp;&nbsp;Results</span> 1 - 5 of 5
                     </div>
 
                     <div class="col-md-6 text-right pagination-container no-padding-left no-padding-right">
@@ -399,39 +451,41 @@
               <uib-tab index="1">
                 <uib-tab-heading>
                   <a href="#">
-                    <i class="glyphicon glyphicon-plus-sign"></i> Add a contact
+                    <i class="glyphicon glyphicon-plus-sign"></i>
+                    <span translate="MY_CONTACT.ALL_CONTACT.TITLE"> Add a contact</span>
                   </a>
                 </uib-tab-heading>
                 <div class="row" style="margin: 30px auto 0 auto;">
                   <div class="col-lg-6 col-lg-offset-0">
-                    <form id="ContactForm" class="form-horizontal" role="form" enctype="multipart/form-data" action="#" accept-charset="UTF-8" method="post" onsubmit="return true;">
+                    <form id="ContactForm" class="form-horizontal" role="form">
                       <input type="hidden" id="id" name="id" value="">
                       <div class="form-group">
                         <div class="col-lg-9 col-lg-offset-3">
                           <div class="checkbox">
                             <label for="pro" class="">
-                              <input type="checkbox" id="pro" name="pro" class="check_box" value="1" unchecked="">Business address
+                              <input type="checkbox" id="pro" name="pro" class="check_box" value="1" unchecked="">
+                              <span translate="MY_CONTACT.ADD_CONTACT.BUSINESS">Business address</span>
                             </label>
                           </div>
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="company" class="control-label col-lg-3">Company</label>
+                        <label for="company" class="control-label col-lg-3" translate="MY_CONTACT.ALL_CONTACT.COMPANY">Company</label>
                         <div class="col-lg-7">
                           <input type="text" id="company" name="company" class="form-control" value="" maxlength="35">
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="lastname" class="control-label col-lg-3 required">Name</label>
+                        <label for="lastname" class="control-label col-lg-3 required" translate="MY_CONTACT.ALL_CONTACT.NAME">Name</label>
                         <div class="col-lg-7">
                           <input type="text" id="lastname" name="lastname" class="form-control" value="" maxlength="35">
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="phone" class="control-label col-lg-3 required">Phone</label>
+                        <label for="phone" class="control-label col-lg-3 required" translate="MY_CONTACT.ADD_CONTACT.PHONE">Phone</label>
                         <div class="col-lg-7">
                           <div class="intl-tel-input allow-dropdown">
                             <div class="flag-container">
@@ -439,90 +493,6 @@
                                 <div class="iti-flag fr"></div>
                                 <div class="iti-arrow"></div>
                               </div>
-
-                              <ul class="country-list hide">
-                                <li class="country preferred active" data-dial-code="33" data-country-code="fr">
-                                  <div class="flag-box">
-                                    <div class="iti-flag fr"></div>
-                                  </div>
-
-                                  <span class="country-name">France</span>
-                                  <span class="dial-code">+33</span>
-                                </li>
-
-                                <li class="country preferred" data-dial-code="32" data-country-code="be">
-                                  <div class="flag-box">
-                                    <div class="iti-flag be"></div>
-                                  </div>
-                                  <span class="country-name">Belgium (België)</span>
-                                  <span class="dial-code">+32</span>
-                                </li>
-
-                                <li class="country preferred" data-dial-code="49" data-country-code="de">
-                                  <div class="flag-box">
-                                    <div class="iti-flag de"></div>
-                                  </div>
-                                  <span class="country-name">Germany (Deutschland)</span>
-                                  <span class="dial-code">+49</span>
-                                </li>
-
-                                <li class="country preferred" data-dial-code="34" data-country-code="es">
-                                  <div class="flag-box">
-                                    <div class="iti-flag es"></div>
-                                  </div>
-                                  <span class="country-name">Spain (España)</span>
-                                  <span class="dial-code">+34</span>
-                                </li>
-
-                                <li class="divider"></li>
-
-                                <li class="country" data-dial-code="93" data-country-code="af">
-                                  <div class="flag-box">
-                                    <div class="iti-flag af"></div>
-                                  </div>
-                                  <span class="country-name">Afghanistan (&#8235;افغانستان&#8236;&lrm;)</span>
-                                  <span class="dial-code">+93</span>
-                                </li>
-
-                                <li class="country" data-dial-code="355" data-country-code="al">
-                                  <div class="flag-box">
-                                    <div class="iti-flag al"></div>
-                                  </div>
-                                  <span class="country-name">Albania (Shqipëri)</span>
-                                  <span class="dial-code">+355</span>
-                                </li>
-
-                                <li class="country" data-dial-code="212" data-country-code="eh">
-                                  <div class="flag-box">
-                                    <div class="iti-flag eh"></div>
-                                  </div>
-                                  <span class="country-name">Western Sahara (&#8235;الصحراء الغربية&#8236;&lrm;)</span>
-                                  <span class="dial-code">+212</span>
-                                </li>
-
-                                <li class="country" data-dial-code="967" data-country-code="ye">
-                                  <div class="flag-box">
-                                    <div class="iti-flag ye"></div>
-                                  </div>
-                                  <span class="country-name">Yemen (&#8235;اليمن&#8236;&lrm;)</span>
-                                  <span class="dial-code">+967</span>
-                                </li>
-
-                                <li class="country" data-dial-code="263" data-country-code="zw">
-                                  <div class="flag-box">
-                                    <div class="iti-flag zw"></div>
-                                  </div>
-                                  <span class="country-name">Zimbabwe</span>
-                                  <span class="dial-code">+263</span>
-                                </li>
-                                <li class="country" data-dial-code="358" data-country-code="ax">
-                                  <div class="flag-box">
-                                    <div class="iti-flag ax"></div>
-                                  </div>
-                                  <span class="country-name">Åland Islands</span>
-                                  <span class="dial-code">+358</span>
-                                </li>
-                              </ul>
                             </div>
 
                             <input type="text" id="phone" name="phone" class="form-control" value="" maxlength="25" autocomplete="off" placeholder="06 12 34 56 78">
@@ -531,14 +501,14 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="email" class="control-label col-lg-3 required">Email</label>
+                        <label for="email" class="control-label col-lg-3 required" translate="MY_CONTACT.ADD_CONTACT.EMAIL">Email</label>
                         <div class="col-lg-7">
                           <input type="text" id="email" name="email" class="form-control" value="" maxlength="50">
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="address1" class="control-label col-lg-3 required">Address</label>
+                        <label for="address1" class="control-label col-lg-3 required" translate="MY_CONTACT.ADD_CONTACT.ADDRESS">Address</label>
                         <div class="col-lg-9">
                           <input type="text" id="address1" name="address1" class="form-control validate" data-validate="isAddress" value="" placeholder="No., street" maxlength="35">
                         </div>
@@ -559,43 +529,22 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="country_id" class="control-label col-lg-3 required">Country</label>
+                        <label class="control-label col-lg-3 required" translate="MY_CONTACT.ADD_CONTACT.COUNTRY">Country</label>
                         <div class="col-lg-7">
-                          <select id="country_id" name="country_id" class="form-control chosen-select" onchange="onChangeCountry('country_id', 'postcode', 'postcode_container', null, 'state', 'state_container');" style="display: none;">
-                            <option value="" selected=""></option>
-                            <option value="1" code="AF" contains-states="0" zipcode="0">Afghanistan</option>
-                            <option value="3" code="AL" contains-states="0" zipcode="0">Albania</option>
-                            <option value="4" code="DZ" contains-states="0" zipcode="1">Algeria</option>
-                            <option value="197" code="AS" contains-states="0" zipcode="0">American Samoa</option>
-                            <option value="244" code="AD" contains-states="0" zipcode="1">Andorra</option>
-                            <option value="7" code="AO" contains-states="0" zipcode="0">Angola</option>
-                            <option value="8" code="AI" contains-states="0" zipcode="0">Anguilla</option>
-                            <option value="9" code="AQ" contains-states="0" zipcode="0">Antarctica</option>
-                            <option value="10" code="AG" contains-states="0" zipcode="0">Antigua &amp; Barbuda</option>
-                            <option value="103" code="VI" contains-states="0" zipcode="0">Virgin Islands, U.S.</option>
-                            <option value="233" code="WF" contains-states="0" zipcode="1">Wallis and Futuna</option>
-                            <option value="187" code="EH" contains-states="0" zipcode="0">Western Sahara</option>
-                            <option value="236" code="ZM" contains-states="0" zipcode="0">Zambia</option>
-                            <option value="237" code="ZW" contains-states="0" zipcode="0">Zimbabwe</option>
-                          </select>
-
-                          <div class="chosen-container chosen-container-single" style="width: 241px;" title="" id="country_id_chosen">
-                            <a class="chosen-single chosen-default" tabindex="-1">
-                              <span>Select an option</span>
-                              <div><b></b></div>
-                            </a>
-                            <div class="chosen-drop">
-                              <div class="chosen-search">
-                                <input type="text" autocomplete="off">
-                              </div>
-                              <ul class="chosen-results"></ul>
-                            </div>
-                          </div>
+                          <ui-select ng-model="$ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                            <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
+                            <ui-select-choices repeat="country.name as country in $ctrl.countries | searchSelectorFilter: {name: $select.search}">
+                              <div ng-bind-html="person.name | highlight: $select.search"></div>
+                              <small>
+                                {{country.name}}
+                              </small>
+                            </ui-select-choices>
+                          </ui-select>
                         </div>
                       </div>
 
                       <div class="form-group" id="postcode_container" style="display: none;">
-                        <label for="postcode" class="control-label col-lg-3 required">Postal code</label>
+                        <label for="postcode" class="control-label col-lg-3 required" translate="MY_CONTACT.ADD_CONTACT.COUNTRY">Postal code</label>
                         <div class="col-lg-7">
                           <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
                           <input type="text" id="postcode" name="postcode" class="form-control validate ui-autocomplete-input" data-validate="isPostCode" value="" maxlength="20" autocomplete="off">
@@ -603,7 +552,7 @@
                       </div>
 
                       <div class="form-group" id="city_container">
-                        <label for="city" class="control-label col-lg-3 required">City</label>
+                        <label for="city" class="control-label col-lg-3 required" translate="MY_CONTACT.ADD_CONTACT.CITY">City</label>
                         <div class="col-lg-7">
                           <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
                           <input type="text" id="city" name="city" class="form-control validate ui-autocomplete-input" data-validate="isCityName" value="" maxlength="255" autocomplete="off">
@@ -618,14 +567,14 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="customer_code" class="control-label col-lg-3">Client Code</label>
+                        <label for="customer_code" class="control-label col-lg-3" translate="MY_CONTACT.ADD_CONTACT.CLIENT_CODE">Client Code</label>
                         <div class="col-lg-7">
                           <input type="text" id="customer_code" name="customer_code" class="form-control" value="" maxlength="35">
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="notes" class="control-label col-lg-3">Notes</label>
+                        <label for="notes" class="control-label col-lg-3" translate="MY_CONTACT.ADD_CONTACT.NOTES">Notes</label>
                         <div class="col-lg-7">
                           <textarea id="notes" name="notes" class="form-control" rows="3" maxlength="35"></textarea>
                         </div>
@@ -633,7 +582,8 @@
 
                       <div class="form-group">
                         <div class="col-lg-9 col-lg-offset-3">
-                          <button type="submit" class="btn btn-primary" id="btn_save" name="btn_save" onclick="return true;">Save</button>&nbsp;&nbsp;<a href="/en/my-contacts">Cancel</a>
+                          <button type="submit" class="btn btn-primary" id="btn_save" name="btn_save" translate="MY_CONTACT.ADD_CONTACT.SAVE">Save</button>
+                          <a href="/en/my-contacts" translate="MY_CONTACT.ADD_CONTACT.CANCEL">Cancel</a>
                         </div>
                       </div>
                     </form>
@@ -643,25 +593,30 @@
               </uib-tab>
               <uib-tab index="2">
                 <uib-tab-heading>
-                  <a href="#"
-                    ><i class="glyphicon glyphicon-upload"></i> Import a list
+                  <a href="#">
+                    <i class="glyphicon glyphicon-upload"></i>
+                    <span translate="MY_CONTACT.IMPORT_LIST.TITLE"> Import a list</span>
                   </a>
                 </uib-tab-heading>
                 <div class="row" style="margin: 0px auto 0 auto;">
                   <div class="col-lg-10 col-lg-offset-0">
-                    <form id="UploadContactsForm" class="form-horizontal" role="form" enctype="multipart/form-data" action="http://localhost:32769/en/my-contacts/import" accept-charset="UTF-8" method="post" onsubmit="return true;">
+                    <form id="UploadContactsForm" class="form-horizontal">
                       <input type="hidden" id="import_contacts" name="import_contacts" value="1">
                       <div class="form-group">
-                        <label for="uploadfile" class="control-label col-lg-4 required">Import spreadsheet (xls, xlsx, csv, txt)</label>
+                        <label for="uploadfile" class="control-label col-lg-4 required" translate="MY_CONTACT.IMPORT_LIST.TITLE">Import spreadsheet (xls, xlsx, csv, txt)</label>
                         <div class="col-lg-7">
                           <input type="file" id="uploadfile" name="uploadfile" medium="" style="padding-left: 0; border: 0; background: none;" value="">
                         </div>
                       </div>
                       <br>
-                      <p>Les pays doivent être renseignés au format
+                      <p>
+                        <span translate="MY_CONTACT.IMPORT_LIST.COMMENT1">Les pays doivent être renseignés au format</span>
                         <a href="/files/upload/iso/Upela_codes_iso.pdf" target="_blank">ISO 3166-1</a>
                       </p>
-                      <p>Les numéros de téléphone doivent être au format international,<br>ex: +336XXXXXXXX pour un portable Français</p>
+                      <p>
+                        <span translate="MY_CONTACT.IMPORT_LIST.COMMENT2">Les numéros de téléphone doivent être au format international,</span>
+                        <span translate="MY_CONTACT.IMPORT_LIST.COMMENT3"><br>ex: +336XXXXXXXX pour un portable Français</span>
+                      </p>
                       <p>
                         <a href="/files/templates/contacts/listecontacts.xls" download_="listecontacts.xls">Cliquez ici</a>
                          pour télécharger un exemple de tableau de contacts au format excel
@@ -673,8 +628,8 @@
 
                       <div class="form-group">
                         <div class="col-lg-8 col-lg-offset-4">
-                          <button type="submit" class="btn btn-primary" id="btn_save" name="btn_save" onclick="return true;">Import</button>
-                          &nbsp;&nbsp;<a href="/en/my-contacts">Cancel</a>
+                          <button type="submit" class="btn btn-primary" id="btn_save" name="btn_save" translate="MY_CONTACT.IMPORT_LIST.IMPORT">Import</button>
+                          &nbsp;&nbsp;<a href="/en/my-contacts" translate="MY_CONTACT.IMPORT_LIST.CANCEL">Cancel</a>
                         </div>
                       </div>
                     </form>
