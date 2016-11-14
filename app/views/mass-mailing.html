@@ -175,7 +175,7 @@
                       <input type="hidden" id="with_box_dimensions" name="with_box_dimensions" value="1">
                       <div class="parcels-container">
                         <div id="parcel_list">
-                          <div class="parcel" id="parcel_0">
+                          <div class="parcel">
                             <label class="parcel-label" translate="MASS_MAIL.PARCELS.PARCELS.NO">No.</label>
                             <input type="text" class="form-control parcel-number input-xmini2" maxlength="3" value="1" placeholder="No." translate translate-attr-placeholder="MASS_MAIL.PARCELS.PARCELS.NO">
 
@@ -183,7 +183,7 @@
                             <input type="text" class="form-control parcel-weight input-xmini2" value="" size="16" maxlength="4" placeholder="Wt/Unit">
                             <span class="weight_unit">kg</span>
 
-                            <label class="parcel-label">Dimensions</label>
+                            <label class="parcel-label" translate="MASS_MAIL.PARCELS.PARCELS.DIMENSIONS">Dimensions</label>
                             <input type="text" class="form-control input-xmini2" value="" size="16" maxlength="3" placeholder="Length" translate translate-attr-placeholder="MASS_MAIL.PARCELS.PARCELS.LENGTH"> x
                             <input type="text" class="form-control input-xmini2" value="" maxlength="3" placeholder="Width" translate translate-attr-placeholder="MASS_MAIL.PARCELS.PARCELS.WIDTH"> x
                             <input type="text" class="form-control input-xmini2" value="" size="16" maxlength="3" placeholder="Height" translate translate-attr-placeholder="MASS_MAIL.PARCELS.PARCELS.HEIGHT">
@@ -296,7 +296,7 @@
               </h3>
               <div class="row" id="insurance_container">
                 <div class="form-group no-personal-effects">
-                  <label for="insurance_declared_value" class="control-label col-lg-3" translate="MASS_MAIL.INSURANCE.DECLARED_VALUE">Declared value</label>
+                  <label class="control-label col-lg-3" translate="MASS_MAIL.INSURANCE.DECLARED_VALUE">Declared value</label>
                   <div class="col-lg-9">
                     <input type="text" class="form-control input-small" style="display: inline-block;" value="0.00" maxlength="32">
                     <select class="form-control input-mini" style="display: inline-block;">
@@ -315,7 +315,7 @@
                 <div class="form-group no-personal-effects">
                   <div class="col-lg-9 col-lg-offset-3">
                     <div class="checkbox">
-                      <label for="insurance" class="">
+                      <label class="">
                         <input type="checkbox" class="check_box" value="1">
                         <span translate="MASS_MAIL.INSURANCE.REAL_VALUE">I want to insure my parcel at its real value (0.6%, minimum 4.5€)&nbsp;</span>
                         <span id="insurance_price_label_container" style="display: none;">
@@ -349,7 +349,7 @@
                   <div class="form-group">
                     <div class="col-lg-9 col-lg-offset-3">
                       <div class="radio">
-                        <label for="dropoff-0">
+                        <label>
                           <input type="radio" value="0" checked="">
                           <span translate="MASS_MAIL.INSURANCE.REAL_VALUE">&nbsp;Collection chosen (subject to the carrier availability)</span>
                         </label>
