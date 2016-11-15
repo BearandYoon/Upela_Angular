@@ -1,55 +1,103 @@
 <div id="wrapper" class="clearfix container">
   <div class="clearfix row">
     <section id="main" class="col-lg-12">
-      <div id="load">
-        <img src="/images/loading.gif" alt="Loading...">&nbsp;&nbsp;Please wait...
-      </div>
-
-      <h1>My Client Space</h1>
-
+      <h1 translate="SETTINGS.TITLE">My Client Space</h1>
       <div class="row">
         <div class="col-md-2">
           <ul id="account-nav" class="nav nav-tabs nav-stacked account-nav">
             <li>
-              <a href="#/my-account"><span class="fa fa-home"></span> Overall view</a>
+              <a href="#/my-account">
+                <i class="fa fa-home"></i>
+                <span translate="SETTINGS.OVERALL">Overall view</span>
+              </a>
             </li>
           </ul>
 
           <ul id="account-nav2" class="nav nav-tabs nav-stacked account-nav">
-            <!--<li><a href="https://www.upela.com/en/"><span class="fa fa-paper-plane"></span> Single shipment</a></li>-->
-            <li><a href="#/ship-to-contact"><span class="fa fa-user"></span> Ship to contact</a></li>
-            <li><a href="#/mass-mailing"><span class="fa fa-users"></span> Mass mailing</a></li>
-            <li class="active"><a href="#/mass-mailing-upload"><span class="fa fa-floppy-o"></span> Sending by file</a></li>
+            <li>
+              <a href="#/ship-to-contact">
+                <i class="fa fa-user"></i>
+                <span translate="SETTINGS.SHIP"> Ship to contact</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/mass-mailing">
+                <i class="fa fa-users"></i>
+                <span translate="SETTINGS.MAILING"> Mass mailing</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="#/mass-mailing-upload">
+                <i class="fa fa-floppy-o"></i>
+                <span translate="SETTINGS.SENDING"> Sending by file</span>
+              </a>
+            </li>
           </ul>
 
           <ul id="account-nav3" class="nav nav-tabs nav-stacked account-nav">
-            <li><a href="#/my-contacts"><span class="fa fa-book"></span> My contacts</a></li>
-            <li><a href="#/credit-account"><span class="fa fa-credit-card"></span> Credit account</a></li>
-            <li><a href="#/my-store"><span class="fa fa-shopping-cart"></span> My stores</a></li>
-            <li><a href="#/settings"><span class="fa fa-cogs"></span> Settings</a></li>
+            <li>
+              <a href="#/my-contacts">
+                <i class="fa fa-book"></i>
+                <span translate="SETTINGS.CONTACTS"> My contacts</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/credit-account">
+                <i class="fa fa-credit-card"></i>
+                <span translate="SETTINGS.CREDIT"> Credit account</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/my-store">
+                <i class="fa fa-shopping-cart"></i>
+                <span translate="SETTINGS.STORE"> My stores</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/settings">
+                <i class="fa fa-cogs"></i>
+                <span translate="SETTINGS.SETTINGS"> Settings</span>
+              </a>
+            </li>
           </ul>
 
           <ul id="account-nav4" class="nav nav-tabs nav-stacked account-nav">
-            <li><h3>Our programs</h3></li>
-            <li><a href="#/refer-contacts"><span class="fa fa-gift"></span> Referral</a></li>
-            <li><a href="#/loyalty"><span class="fa fa-gift"></span> Loyalty</a></li>
+            <li>
+              <h3 translate="SETTINGS.PROGRAMS">Our programs</h3>
+            </li>
+            <li>
+              <a href="#/refer-contacts">
+                <i class="fa fa-gift"></i>
+                <span translate="SETTINGS.REFERRAL"> Referral</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/loyalty">
+                <i class="fa fa-gift"></i>
+                <span translate="SETTINGS.LOYALTY"> Loyalty</span>
+              </a>
+            </li>
           </ul>
         </div>
 
         <div class="col-md-10">
           <div class="panel-white cancel-padding-left-15 panel-white-bordered-">
             <a class="btn btn-default btn-sm btn-rounded text-uppercase pull-right" href="http://www.youtube.com/watch?v=xz3wpmicKG4" target="_blank">
-              <i class="glyphicon glyphicon-play-circle"></i> See the demonstration
+              <i class="glyphicon glyphicon-play-circle"></i>
+              <span translate="MASS_MAIL_UPLOAD.SEE_DEMON">See the demonstration</span>
             </a>
             <h1 style="margin-bottom: 5px;">
-              <i class="fa fa-floppy-o"></i>Ship using Excel spreadsheet or text
+              <i class="fa fa-floppy-o"></i>
+              <span translate="MASS_MAIL_UPLOAD.TITLE">Ship using Excel spreadsheet or text</span>
             </h1>
             <p class="text-muted" style="margin-bottom: 20px;">
-              Schedule the shipment of multiple packages to multiple recipients. Import your completed file according to the examples below.<br>
+              <span translate="MASS_MAIL_UPLOAD.">Schedule the shipment of multiple packages to multiple recipients.</span>
+               Import your completed file according to the examples below.<br>
               Only the weight is required, you must take into account the dimensional weight of your parcel calculated as follows: [length (cm) x height (cm) x width (cm)] / 5000.
               Fill in the highest value between this result and the actual weight.<br>
               <span class="orange">Careful : if the length is greater than <strong>119 cm</strong> (47 inches), you will not be able to use this service.</span><br>
-              If you encounter any problems, contact the <a href="http://localhost:32770/en/contact-us">Upela Customer Service</a> or send us your file <a href="mailto:contact@upela.com">contact@upela.com</a></p>
+              If you encounter any problems, contact the <a href="http://localhost:32770/en/contact-us">Upela Customer Service</a> or send us your file <a href="mailto:contact@upela.com">contact@upela.com</a>
+            </p>
             <hr>
 
             <form id="MassMailingForm" class="form-horizontal" role="form" enctype="multipart/form-data" action="http://localhost:32770/en/mass-mailing/upload.php" accept-charset="UTF-8" method="post" onsubmit="return true;">
