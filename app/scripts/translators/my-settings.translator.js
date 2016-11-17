@@ -5,9 +5,9 @@
 
   'use strict';
 
-  function SettingsTranslate ($translateProvider) {
+  function MySettingsTranslate ($translateProvider) {
     $translateProvider.translations('en', {
-      SETTINGS: {
+      MY_SETTINGS: {
         TITLE: 'Settings',
         INFORMATION: {
           TITLE: 'My information',
@@ -175,7 +175,7 @@
     });
 
     $translateProvider.translations('fr', {
-      SETTINGS: {
+      MY_SETTINGS: {
         TITLE: 'Paramètres',
         INFORMATION: {
           TITLE: 'Mes informations',
@@ -343,7 +343,7 @@
     });
 
     $translateProvider.translations('es', {
-      SETTINGS: {
+      MY_SETTINGS: {
         TITLE: 'Parámetros',
         INFORMATION: {
           TITLE: 'Mi información',
@@ -512,5 +512,5 @@
   }
 
   angular.module('UpelaApp')
-    .config(SettingsTranslate);
+    .config(MySettingsTranslate);
 })();
