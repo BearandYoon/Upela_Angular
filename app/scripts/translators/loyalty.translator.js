@@ -53,38 +53,33 @@
     });
 
     $translateProvider.translations('fr', {
-      Refferral: {
-        SPONSORSHIP: 'SPONSOSHIP',
-        OPERATION: 'Operation : ',
-        PRINCIPLE: 'The Win-Win Principle',
-        ACCORDING: 'according to',
-        GIFT: 'with gift vouchers',
-        HOW_WORK: {
-          TITLE: 'How does it work?',
-          COMMENT: 'There are two options : ',
-          OPTION1: {
-            TITLE: 'Option 1',
-            COMMENT1: 'Invite your social media contacts:',
-            COMMENT2: 'Just click here, and win €20 per sponsored person.'
-          },
-          OPTION2: {
-            TITLE: 'Option 2',
-            ADD_EMAIL: 'Add the email of the contacts you want to refer.',
-            ADD_MESSAGE: 'Add a personalized message:',
-            MESSAGE: 'Message',
-            SEND_INVITATION: 'Send invitations',
-            COMMENT: 'You can also send by email the link below to your contacts:'
-          },
-          BENEFIT: {
-            TITLE: 'voucher benefits',
-            LINK: 'Ticket Kadéos® Online',
-            COMMENT1: 'Easy and practical, the gift voucher is directly emailed to beneficiary;',
-            COMMENT2: 'It allows an easy and secured purchase on the Internet, 24/7;',
-            COMMENT3: 'Scored : can be spent in one purchase or divided into several purchases;',
-            COMMENT4: 'Compatible with other additional means of payment;',
-            COMMENT5: 'Access to thousands of items on 36 online shops covering various industries;',
-            COMMENT6: 'The beneficiary is allowed to exchange his Ticket Kadéos® Online voucher with a Ticket Kadéos® Infini.paper gift voucher.'
-          }
+      LOYALTY: {
+        TITLE: {
+          THE: 'Le programme de',
+          LOYALTY: 'Fidélité',
+          PROGRAM: 'selon',
+          GIFT: 'Plus vous envoyez plus vous gagnez',
+          COMMENT: 'avec les tickets cadeaux'
+        },
+        PROGRAM: 'Vous souhaitez profiter de notre Programme de Fidélité et gagner jusqu\'à 200€ en Tickets Kadéos* ?',
+        REGISTER_FORM: 'Pour cela, rien de plus simple, il vous suffit de vous inscrire en complétant le formulaire d\'inscription ci-dessous :',
+        GENDER: 'Civilité',
+        MALE: 'M.',
+        FEMAIL: 'Mme',
+        FNAME: 'Prénom',
+        LNAME: 'Nom',
+        ADDRESS: 'Adresse',
+        COUNTRY: 'Pays',
+        CITY: 'Ville',
+        OPPORTUNITY: 'J\'en profite',
+        BENEFIT: {
+          TITLE: '<a href="https://www.ticketkadeosonline.fr/Presentation.aspx">Ticket Kadéos® Online</a> voucher benefits',
+          COMMENT1: 'Easy and practical, the gift voucher is directly emailed to beneficiary;',
+          COMMENT2: 'It allows an easy and secured purchase on the Internet, 24/7;',
+          COMMENT3: 'Scored : can be spent in one purchase or divided into several purchases;',
+          COMMENT4: 'Compatible with other additional means of payment;',
+          COMMENT5: 'Access to thousands of items on 36 online shops covering various industries;',
+          COMMENT6: 'The beneficiary is allowed to exchange his Ticket Kadéos® Online voucher with a Ticket Kadéos® Infini.paper gift voucher.'
         },
         RIGHT_SIDE: {
           ONLINE_SHOP: 'Ticket Kadéos® Online voucher give access to thousands of items on 36 online shops covering various industries',
@@ -103,38 +98,34 @@
     });
 
     $translateProvider.translations('es', {
-      Refferral: {
-        SPONSORSHIP: 'SPONSOSHIP',
-        OPERATION: 'Operation : ',
-        PRINCIPLE: 'The Win-Win Principle',
-        ACCORDING: 'according to',
-        GIFT: 'with gift vouchers',
-        HOW_WORK: {
-          TITLE: 'How does it work?',
-          COMMENT: 'There are two options : ',
-          OPTION1: {
-            TITLE: 'Option 1',
-            COMMENT1: 'Invite your social media contacts:',
-            COMMENT2: 'Just click here, and win €20 per sponsored person.'
-          },
-          OPTION2: {
-            TITLE: 'Option 2',
-            ADD_EMAIL: 'Add the email of the contacts you want to refer.',
-            ADD_MESSAGE: 'Add a personalized message:',
-            MESSAGE: 'Message',
-            SEND_INVITATION: 'Send invitations',
-            COMMENT: 'You can also send by email the link below to your contacts:'
-          },
-          BENEFIT: {
-            TITLE: 'voucher benefits',
-            LINK: 'Ticket Kadéos® Online',
-            COMMENT1: 'Easy and practical, the gift voucher is directly emailed to beneficiary;',
-            COMMENT2: 'It allows an easy and secured purchase on the Internet, 24/7;',
-            COMMENT3: 'Scored : can be spent in one purchase or divided into several purchases;',
-            COMMENT4: 'Compatible with other additional means of payment;',
-            COMMENT5: 'Access to thousands of items on 36 online shops covering various industries;',
-            COMMENT6: 'The beneficiary is allowed to exchange his Ticket Kadéos® Online voucher with a Ticket Kadéos® Infini.paper gift voucher.'
-          }
+      LOYALTY: {
+        TITLE: {
+          THE: 'Programa de ',
+          LOYALTY: 'Fidelidad',
+          PROGRAM: 'de ',
+          GIFT: 'Cuanto más envié <br>más bonos regalos obtiene',
+          COMMENT: 'with the gift vouchers'
+        },
+        PROGRAM: 'You would like to benefit of our Loyalty Program and get up to €200 of Tickets Kadéos* gift vouchers?',
+        REGISTER_FORM: 'Nothing could be easier: you just have to subscribe by filling out this below registration form:',
+        GENDER: 'Título',
+        MALE: 'Sr.',
+        FEMAIL: 'Sra.',
+        FNAME: 'Nombre',
+        LNAME: 'Apellido',
+        ADDRESS: 'Dirección',
+        COUNTRY: 'País',
+        CITY: 'Ciudad',
+        OPPORTUNITY: '¡Aprovecho!',
+        BENEFIT: {
+          TITLE: 'voucher benefits',
+          LINK: 'Ticket Kadéos® Online',
+          COMMENT1: 'Easy and practical, the gift voucher is directly emailed to beneficiary;',
+          COMMENT2: 'It allows an easy and secured purchase on the Internet, 24/7;',
+          COMMENT3: 'Scored : can be spent in one purchase or divided into several purchases;',
+          COMMENT4: 'Compatible with other additional means of payment;',
+          COMMENT5: 'Access to thousands of items on 36 online shops covering various industries;',
+          COMMENT6: 'The beneficiary is allowed to exchange his Ticket Kadéos® Online voucher with a Ticket Kadéos® Infini.paper gift voucher.'
         },
         RIGHT_SIDE: {
           ONLINE_SHOP: 'Ticket Kadéos® Online voucher give access to thousands of items on 36 online shops covering various industries',
