@@ -176,9 +176,6 @@
                               <option value="3">Pallet</option>
                             </select>
 
-                            <input type="hidden" id="parcel_unit" name="parcel_unit" value="fr">
-                            <input type="hidden" id="with_box_dimensions" name="with_box_dimensions" value="0">
-
                             <div class="parcels-container">
                               <div id="parcel_list">
                                 <div class="parcel" id="parcel_0">
@@ -235,12 +232,14 @@
                           </label>
 
                           <div class="row">
-                            <div class="col-md-4" id="shipment-date-row">
+                            <div class="col-md-4">
                               <div class="input-group">
-                                <span class="input-group-addon">
-                                  <i class="fa fa-calendar"></i>
+                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                <span class="input-group-btn">
+                                  <button type="button" class="btn btn-default" ng-click="openDate()">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                  </button>
                                 </span>
-                                <input type="text" id="shipment_date" name="shipment_date" class="form-control datepicker hasDatepicker" value="10/31/2016" size="10" maxlength="10">
                               </div>
                               <div class="help" style="font-size: 12px; margin-right: -40px;" translate="MY_ACCOUNT.DATE.COLLECTION_DATE">Collection date requested</div>
                             </div>
@@ -304,19 +303,23 @@
                         <div class="col-md-5" style="margin-bottom: 10px;">
                           <label class="control-label" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_INVOICES.CREATED_FROM">Created From</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
-                            <span class="input-group-addon">
-                              <i class="fa fa-calendar"></i>
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                            <span class="input-group-btn">
+                              <button type="button" class="btn btn-default" ng-click="openDate()">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                              </button>
                             </span>
-                            <input class="form-control datepicker hasDatepicker" type="text" id="created_date_from" name="created_date_from" value="" size="10">
                           </div>
                         </div>
                         <div class="col-md-5" style="margin-bottom: 10px;">
                           <label class="control-label" for="created_date_to" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_INVOICES.CREATED_TO">To</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
-                            <span class="input-group-addon">
-                              <i class="fa fa-calendar"></i>
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                            <span class="input-group-btn">
+                              <button type="button" class="btn btn-default" ng-click="openDate()">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                              </button>
                             </span>
-                            <input class="form-control datepicker hasDatepicker" type="text" id="created_date_to" name="created_date_to" value="" size="10">
                           </div>
                         </div>
                         <div class="col-md-2"></div>
@@ -325,19 +328,23 @@
                         <div class="col-md-5" style="margin-bottom: 10px;">
                           <label class="control-label" for="due_date_from" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_INVOICES.DUE_FROM">Due date From</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
-                            <span class="input-group-addon">
-                              <i class="fa fa-calendar"></i>
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                            <span class="input-group-btn">
+                              <button type="button" class="btn btn-default" ng-click="openDate()">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                              </button>
                             </span>
-                            <input class="form-control datepicker hasDatepicker" type="text" id="due_date_from" name="due_date_from" value="" size="10">
                           </div>
                         </div>
                         <div class="col-md-5" style="margin-bottom: 10px;">
                           <label class="control-label" for="due_date_to" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_INVOICES.DUE_TO">To</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
-                            <span class="input-group-addon">
-                              <i class="fa fa-calendar"></i>
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                            <span class="input-group-btn">
+                              <button type="button" class="btn btn-default" ng-click="openDate()">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                              </button>
                             </span>
-                            <input class="form-control datepicker hasDatepicker" type="text" id="due_date_to" name="due_date_to" value="" size="10">
                           </div>
                         </div>
                         <div class="col-md-2"></div>
@@ -469,19 +476,23 @@
                         <div class="col-md-5" style="margin-bottom: 10px;">
                           <label class="control-label" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_PAYMENTS.DATE_FROM">Date From</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
-                            <span class="input-group-addon">
-                              <i class="fa fa-calendar"></i>
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                            <span class="input-group-btn">
+                              <button type="button" class="btn btn-default" ng-click="openDate()">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                              </button>
                             </span>
-                            <input class="form-control datepicker hasDatepicker" type="text" id="created_date_from" name="created_date_from" value="" size="10">
                           </div>
                         </div>
                         <div class="col-md-5" style="margin-bottom: 10px;">
                           <label class="control-label" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_PAYMENTS.DATE_TO">To</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
-                            <span class="input-group-addon">
-                              <i class="fa fa-calendar"></i>
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                            <span class="input-group-btn">
+                              <button type="button" class="btn btn-default" ng-click="openDate()">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                              </button>
                             </span>
-                            <input class="form-control datepicker hasDatepicker" type="text" id="created_date_to" name="created_date_to" value="" size="10">
                           </div>
                         </div>
                         <div class="col-md-2"></div>

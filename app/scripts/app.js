@@ -26,19 +26,19 @@ angular
         url: '/index',
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: '$ctrl'
+        controllerAs: 'ctrl'
       })
       .state('login', {
         url: '/login',
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
-        controllerAs: '$ctrl'
+        controllerAs: 'ctrl'
       })
       .state('register', {
         url: '/register',
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl',
-        controllerAs: '$ctrl'
+        controllerAs: 'ctrl'
       })
       .state('order-progress', {
         url: '/order-progress',

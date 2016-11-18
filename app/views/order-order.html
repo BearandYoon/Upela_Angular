@@ -554,36 +554,6 @@
                         <!--<a target="_blank" href="https://www.upela.com/en/documents-for-an-international-consignment-25.html" translate="ORDER_ORDER.OBLIGATIONS.COMMENT">International shipping</a>-->
                       </p>
 
-                      <div class="proforma-with-note" style="display: none;">
-                        <br>
-                        <p class="text-muted">
-                          In order to  facilitate customs clearance, please specify:<br>
-                          -&nbsp;the shipment reason (e.g. objects forgotten by its owner; for my daughter's study tour ...)<br>
-                          -&nbsp;the passport number of the recipient
-                        </p>
-
-                        <div class="form-group hidden">
-                          <div class="col-lg-9 col-lg-offset-3">
-                            <div class="checkbox">
-                              <label for="proforma" class="">
-                                <input type="checkbox" id="proforma" name="proforma" class="check_box" value="1" checked="">Proforma
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="form-group" id="proforma_notes_container" style="display: none;">
-                          <label for="proforma_notes" class="control-label col-lg-3">Comments</label>
-                          <div class="col-lg-5">
-                            <textarea id="proforma_notes" name="proforma_notes" class="form-control" placeholder="" rows="3" maxlength="255" data-maxchar="255"></textarea>
-                            <span class="text-count-down-container">
-                              <span id="proforma_notes_counter" class="text-count-down">255</span> character(s) left
-                            </span>
-                          </div>
-                        </div>
-                        <p class="text-muted">And in the table below, fill in the description according to product groups by estimating their second hand value.</p>
-                      </div>
-
                       <div class="proforma-without-note" style="display: block;">
                         <p class="text-muted" translate="ORDER_ORDER.OBLIGATIONS.COMMENT2">So that your shipment is carried in the correct conditions, complete the following fields</p>
                       </div>
@@ -705,56 +675,6 @@
                           <input type="text" id="duty_account_postcode" name="duty_account_postcode" class="form-control validate" data-validate="isPostCode" value="" maxlength="20">
                         </div>
                       </div>
-
-                      <div class="form-group" id="duty_account_country_id_container" style="display: none;">
-                        <label for="duty_account_country_id" class="control-label col-lg-3">Duty account country</label>
-                        <div class="col-lg-3">
-                          <select id="duty_account_country_id" name="duty_account_country_id" class="form-control chosen-select" style="display: none;">
-                            <option value="" selected=""></option>
-                            <option value="1">Afghanistan</option>
-                            <option value="3">Albania</option>
-                            <option value="4">Algeria</option>
-                            <option value="197">American Samoa</option>
-                            <option value="244">Andorra</option>
-                            <option value="7">Angola</option>
-                            <option value="8">Anguilla</option>
-                            <option value="9">Antarctica</option>
-                            <option value="10">Antigua &amp; Barbuda</option>
-                            <option value="13">Argentina</option>
-                            <option value="14">Armenia</option>
-                            <option value="15">Aruba</option>
-                            <option value="16">Australia</option>
-                            <option value="17">Austria</option>
-                            <option value="18">Azerbaijan</option>
-                            <option value="20">Bahamas, The</option>
-                            <option value="21">Bahrain</option>
-                            <option value="22">Bangladesh</option>
-                            <option value="23">Barbados</option>
-                            <option value="29">Belarus</option>
-                            <option value="25">Belgium</option>
-                            <option value="187">Western Sahara</option>
-                            <option value="234">Yemen</option>
-                            <option value="236">Zambia</option>
-                            <option value="237">Zimbabwe</option>
-                          </select>
-
-                          <div class="chosen-container chosen-container-single" style="width: 0px;" title="" id="duty_account_country_id_chosen">
-                            <a class="chosen-single chosen-default" tabindex="-1">
-                              <span>Select an option</span>
-                              <div>
-                                <b></b>
-                              </div>
-                            </a>
-
-                            <div class="chosen-drop">
-                              <div class="chosen-search">
-                                <input type="text" autocomplete="off">
-                              </div>
-                              <ul class="chosen-results"></ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -767,18 +687,18 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="apporteur_code" class="control-label col-lg-3" translate="ORDER_ORDER.VOUCHER.APPORTEUR">Apporteur Code</label>
+                    <label class="control-label col-lg-3" translate="ORDER_ORDER.VOUCHER.APPORTEUR">Apporteur Code</label>
                     <div class="col-lg-7">
-                      <input type="text" id="apporteur_code" name="apporteur_code" class="form-control" value="" maxlength="50">
+                      <input type="text" class="form-control" value="" maxlength="50">
                     </div>
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="cart_rule_code" class="control-label col-lg-3" translate="ORDER_ORDER.VOUCHER.VOUCHER">Voucher code</label>
+                    <label class="control-label col-lg-3" translate="ORDER_ORDER.VOUCHER.VOUCHER">Voucher code</label>
                     <div class="col-lg-7">
-                      <input type="text" id="cart_rule_code" name="cart_rule_code" class="form-control" value="" maxlength="50">
+                      <input type="text" class="form-control" value="" maxlength="50">
                     </div>
                   </div>
                 </div>
@@ -792,21 +712,23 @@
                   <div class="form-group">
                   <div class="col-lg-9 col-lg-offset-3">
                     <div class="radio">
-                      <label for="dropoff-0">
-                        <input type="radio" id="dropoff-0" name="dropoff" value="0" checked="" translate="ORDER_ORDER.PICKUP.COLLECTION">&nbsp;Collection chosen (subject to the carrier availability)
+                      <label>
+                        <input type="radio" value="0" checked="" translate="ORDER_ORDER.PICKUP.COLLECTION">&nbsp;Collection chosen (subject to the carrier availability)
                       </label>
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-lg-9 col-lg-offset-3">
-                    <label for="shipment_date" class="control-label required-" style="display: inline-block; padding: 0; height: 34px; line-height: 34px;" translate="ORDER_ORDER.PICKUP.DATE">Date</label>&nbsp;
+                    <label class="control-label required-" style="display: inline-block; padding: 0; height: 34px; line-height: 34px;" translate="ORDER_ORDER.PICKUP.DATE">Date</label>&nbsp;
 
                     <div class="input-group" style="width: 160px; display: inline-table; vertical-align: middle;">
-                      <span class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
+                      <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="openDate()">
+                          <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
                       </span>
-                      <input type="text" id="shipment_date" name="shipment_date" class="form-control datepicker hasDatepicker" value="10/31/2016" size="10" maxlength="10">
                     </div>
                     <span translate="ORDER_ORDER.PICKUP.BETWEEN"></span>
 
@@ -841,8 +763,8 @@
                 <div class="form-group">
                   <div class="col-lg-9 col-lg-offset-3">
                     <div class="radio">
-                      <label for="dropoff-1">
-                        <input type="radio" id="dropoff-1" name="dropoff" value="1">
+                      <label>
+                        <input type="radio" value="1">
                         <span translate="ORDER_ORDER.PICKUP.DROP_OFF"></span>
                         <img src="images/carriers/logo-ups-en.png" style="max-height: 32px; max-width: 50px; margin-left: 10px;">
                       </label>&nbsp;&nbsp;
@@ -853,7 +775,7 @@
                   </div>
                 </div>
 
-                <div class="form-group" id="dropoff_info" style="display: none;">
+                <div class="form-group" style="display: none;">
                   <div class="col-lg-9 col-lg-offset-3">
                     <p class="text-muted">Note: Any parcel dropped off at the Kiala distribution point should not exceed 20kg in weight or 80cm in length</p>
                   </div>
@@ -883,8 +805,8 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <div class="checkbox">
-                          <label for="prohibited_goods" class="">
-                            <input type="checkbox" id="prohibited_goods" name="prohibited_goods" class="check_box" value="1" unchecked="">
+                          <label class="">
+                            <input type="checkbox" class="check_box" value="1" unchecked="">
                             <span translate="ORDER_ORDER.HAZARDOUS.TITLE"></span>
                           </label>
                         </div>
@@ -934,8 +856,8 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <div class="checkbox">
-                          <label for="tos" class="">
-                            <input type="checkbox" id="tos" name="tos" class="check_box" value="1" checked="">
+                          <label class="">
+                            <input type="checkbox" class="check_box" value="1" checked="">
                             <span translate="ORDER_ORDER.TERMS_CONDITION"></span>
                           </label>
                         </div>
@@ -949,7 +871,8 @@
               <div class="form-group">
                 <div class="text-center">
                   <button type="submit" class="btn btn-primary btn-lg" id="btn_save" name="btn_save" ng-click="clickContinue()">
-                    <i class="glyphicon glyphicon-ok" translate="ORDER_ORDER.CONTINUE"></i>
+                    <i class="glyphicon glyphicon-ok"></i>
+                    <span translate="ORDER_ORDER.CONTINUE"></span>
                   </button>
                 </div>
               </div>
