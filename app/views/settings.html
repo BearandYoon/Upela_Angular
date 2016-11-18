@@ -1,226 +1,216 @@
 <div id="wrapper" class="clearfix container">
   <div class="clearfix row">
     <section id="main" class="col-lg-12">
-      <div id="load">
-        <img src="/images/loading.gif" alt="Loading...">&nbsp;&nbsp;Please wait...
-      </div>
-
-      <h1>My Client Space</h1>
+      <h1 translate="SETTINGS.TITLE">My Client Space</h1>
       <div class="row">
         <div class="col-md-2">
           <ul id="account-nav" class="nav nav-tabs nav-stacked account-nav">
             <li>
-              <a href="#/my-account"><span class="fa fa-home"></span> Overall view</a>
+              <a href="#/my-account">
+                <i class="fa fa-home"></i>
+                <span translate="SETTINGS.OVERALL">Overall view</span>
+              </a>
             </li>
           </ul>
 
           <ul id="account-nav2" class="nav nav-tabs nav-stacked account-nav">
-            <!--<li><a href="https://www.upela.com/en/"><span class="fa fa-paper-plane"></span> Single shipment</a></li>-->
-            <li><a href="#/ship-to-contact"><span class="fa fa-user"></span> Ship to contact</a></li>
-            <li><a href="#/mass-mailing"><span class="fa fa-users"></span> Mass mailing</a></li>
-            <li><a href="#/mass-mailing-upload"><span class="fa fa-floppy-o"></span> Sending by file</a></li>
+            <li>
+              <a href="#/ship-to-contact">
+                <i class="fa fa-user"></i>
+                <span translate="SETTINGS.SHIP"> Ship to contact</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/mass-mailing">
+                <i class="fa fa-users"></i>
+                <span translate="SETTINGS.MAILING"> Mass mailing</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/mass-mailing-upload">
+                <i class="fa fa-floppy-o"></i>
+                <span translate="SETTINGS.SENDING"> Sending by file</span>
+              </a>
+            </li>
           </ul>
 
           <ul id="account-nav3" class="nav nav-tabs nav-stacked account-nav">
-            <li><a href="#/my-contacts"><span class="fa fa-book"></span> My contacts</a></li>
-            <li><a href="#/credit-account"><span class="fa fa-credit-card"></span> Credit account</a></li>
-            <li><a href="#/my-store"><span class="fa fa-shopping-cart"></span> My stores</a></li>
-            <li class="active"><a href="#/settings"><span class="fa fa-cogs"></span> Settings</a></li>
+            <li>
+              <a href="#/my-contacts">
+                <i class="fa fa-book"></i>
+                <span translate="SETTINGS.CONTACTS"> My contacts</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/credit-account">
+                <i class="fa fa-credit-card"></i>
+                <span translate="SETTINGS.CREDIT"> Credit account</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/my-store">
+                <i class="fa fa-shopping-cart"></i>
+                <span translate="SETTINGS.STORE"> My stores</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="#/settings">
+                <i class="fa fa-cogs"></i>
+                <span translate="SETTINGS.SETTINGS"> Settings</span>
+              </a>
+            </li>
           </ul>
 
           <ul id="account-nav4" class="nav nav-tabs nav-stacked account-nav">
-            <li><h3>Our programs</h3></li>
-            <li><a href="#/refer-contacts"><span class="fa fa-gift"></span> Referral</a></li>
-            <li><a href="#/loyalty"><span class="fa fa-gift"></span> Loyalty</a></li>
+            <li>
+              <h3 translate="SETTINGS.PROGRAMS">Our programs</h3>
+            </li>
+            <li>
+              <a href="#/refer-contacts">
+                <i class="fa fa-gift"></i>
+                <span translate="SETTINGS.REFERRAL"> Referral</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/loyalty">
+                <i class="fa fa-gift"></i>
+                <span translate="SETTINGS.LOYALTY"> Loyalty</span>
+              </a>
+            </li>
           </ul>
         </div>
 
         <div class="col-md-10">
           <div class="panel-white cancel-padding-left-15 panel-white-bordered-">
             <h2>
-              <i class="fa fa-cogs"></i>Settings
+              <i class="fa fa-cogs"></i>
+              <span translate="MY_SETTINGS.TITLE">Settings</span>
             </h2>
 
             <uib-tabset active="activeForm">
               <uib-tab index="0">
                 <uib-tab-heading>
                   <a href="#">
-                    <i class="glyphicon glyphicon-info-sign"></i> My information
+                    <i class="glyphicon glyphicon-info-sign"></i>
+                    <span translate="MY_SETTINGS.INFORMATION.TITLE">My information</span>
                   </a>
                 </uib-tab-heading>
-                <form id="UserForm" class="form-horizontal" role="form" enctype="multipart/form-data" action="#" accept-charset="UTF-8" method="post" onsubmit="return true;">
+                <form id="UserForm" class="form-horizontal">
                   <div class="panel-grey">
-                    <h3 class="form-group-legend">Address</h3>
+                    <h3 class="form-group-legend" translate="MY_SETTINGS.INFORMATION.ADDRESS.TITLE">Address</h3>
                     <div class="form-group">
-                      <label for="address_pro" class="control-label col-lg-3">&nbsp;</label>
+                      <label class="control-label col-lg-3">&nbsp;</label>
                       <div class="col-lg-9">
-                        <div class="radio-inline" id="radio-inline-address_pro-0">
-                          <label for="address_pro-0">
-                            <input type="radio" id="address_pro-0" name="address_pro" value="0" onclick="selectAccountType();">&nbsp;Residential address
+                        <div class="radio-inline">
+                          <label>
+                            <input type="radio" value="0">
+                            <span translate="MY_SETTINGS.INFORMATION.ADDRESS.RESIDENTIAL_ADDRESS">&nbsp;Residential address</span>
                           </label>
                         </div>
-                        <div class="radio-inline" id="radio-inline-address_pro-1">
-                          <label for="address_pro-1">
-                            <input type="radio" id="address_pro-1" name="address_pro" value="1" checked="" onclick="selectAccountType();">&nbsp;Business address
+                        <div class="radio-inline">
+                          <label>
+                            <input type="radio" value="1" checked="">
+                            <span translate="MY_SETTINGS.INFORMATION.ADDRESS.BUSINESS_ADDRESS">&nbsp;Business address</span>
                           </label>
                         </div>
                       </div>
                     </div>
 
-                    <div class="form-group" id="address_company_container">
-                      <label for="address_company" class="control-label col-lg-3 required">Company</label>
+                    <div class="form-group">
+                      <label class="control-label col-lg-3 required" translate="MY_SETTINGS.INFORMATION.ADDRESS.COMPANY">Company</label>
                       <div class="col-lg-4">
-                        <input type="text" id="address_company" name="address_company" class="form-control" value="_CLI1" maxlength="255">
+                        <input type="text" class="form-control" value="_CLI1" maxlength="255">
                       </div>
                     </div>
 
-                    <div class="form-group" id="address_siret_container">
-                      <label for="address_siret" class="control-label col-lg-3">SIRET</label>
+                    <div class="form-group">
+                      <label class="control-label col-lg-3" translate="MY_SETTINGS.INFORMATION.ADDRESS.SIRET">SIRET</label>
                       <div class="col-lg-4">
-                        <input type="text" id="address_siret" name="address_siret" class="form-control" value="" maxlength="31">
+                        <input type="text" class="form-control" value="" maxlength="31">
                       </div>
                     </div>
 
                     <div class="form-group" id="address_siret_container2">
                       <label class="control-label col-lg-3">&nbsp;</label>
                       <div class="col-lg-9">
-                        <span class="help-block">For a French professional account, you can enter either the company registration number field or the intra-community VAT field. For a foreign-based account, please indicate a legal registration number in the place of SIRET</span>
-                      </div>
-                    </div>
-
-                    <div class="form-group" id="address_vat_number_container">
-                      <label for="address_vat_number" class="control-label col-lg-3">or VAT N°</label>
-                      <div class="col-lg-4">
-                        <input type="text" id="address_vat_number" name="address_vat_number" class="form-control" value="" maxlength="32">
+                        <span class="help-block" translate="MY_SETTINGS.INFORMATION.ADDRESS.SIRET_COMMENT1">For a French professional account, you can enter either the company registration number field or the intra-community VAT field.</span>
+                        <span class="help-block" translate="MY_SETTINGS.INFORMATION.ADDRESS.SIRET_COMMENT2">For a foreign-based account, please indicate a legal registration number in the place of SIRET</span>
                       </div>
                     </div>
 
                     <div class="form-group">
-                      <label for="address_lastname" class="control-label col-lg-3 required">Last name / First name</label>
+                      <label class="control-label col-lg-3" translate="MY_SETTINGS.INFORMATION.ADDRESS.VAT">or VAT N°</label>
                       <div class="col-lg-4">
-                        <input type="text" id="address_lastname" name="address_lastname" class="form-control" value="_CLI1" maxlength="100">
+                        <input type="text" class="form-control" value="" maxlength="32">
                       </div>
                     </div>
 
                     <div class="form-group">
-                      <label for="address_phone" class="control-label col-lg-3 required">Phone</label>
+                      <label class="control-label col-lg-3 required" translate="MY_SETTINGS.INFORMATION.ADDRESS.NAME">Last name / First name</label>
                       <div class="col-lg-4">
-                        <input type="text" id="address_phone" name="address_phone" class="form-control validate" data-validate="isPhoneNumber" value="0178767979" maxlength="50">
+                        <input type="text" class="form-control" value="_CLI1" maxlength="100">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label col-lg-3 required" translate="MY_SETTINGS.INFORMATION.ADDRESS.PHONE">Phone</label>
+                      <div class="col-lg-4">
+                        <input type="text" class="form-control validate" data-validate="isPhoneNumber" value="0178767979" maxlength="50">
                       </div>
                     </div>
                     <input type="hidden" id="address_email" name="address_email" value="cli1l@upela.com">
 
                     <div class="form-group">
-                      <label for="address_address1" class="control-label col-lg-3 required">Address</label>
+                      <label class="control-label col-lg-3 required" translate="MY_SETTINGS.INFORMATION.ADDRESS.ADDRESS">Address</label>
                       <div class="col-lg-4">
-                        <input type="text" id="address_address1" name="address_address1" class="form-control validate" data-validate="isAddress" value="Cli1" placeholder="No., street" maxlength="255">
+                        <input type="text" class="form-control validate" data-validate="isAddress" value="Cli1" placeholder="No., street" maxlength="255">
                       </div>
                     </div>
 
                     <div class="form-group">
-                      <label for="address_address2" class="control-label col-lg-3">&nbsp;</label>
+                      <label class="control-label col-lg-3">&nbsp;</label>
                       <div class="col-lg-4">
-                        <input type="text" id="address_address2" name="address_address2" class="form-control" value="" placeholder="Line 2" maxlength="255">
+                        <input type="text" class="form-control" value="" placeholder="Line 2" maxlength="255">
                       </div>
                     </div>
 
                     <div class="form-group">
-                      <label for="address_address3" class="control-label col-lg-3">&nbsp;</label>
+                      <label class="control-label col-lg-3">&nbsp;</label>
                       <div class="col-lg-4">
-                        <input type="text" id="address_address3" name="address_address3" class="form-control" value="" placeholder="Line 3" maxlength="255">
+                        <input type="text" class="form-control" value="" placeholder="Line 3" maxlength="255">
                       </div>
                     </div>
 
                     <div class="form-group">
-                      <label for="address_notes" class="control-label col-lg-3">Comments</label>
+                      <label class="control-label col-lg-3" translate="MY_SETTINGS.INFORMATION.ADDRESS.COMMENTS">Comments</label>
                       <div class="col-lg-4">
-                        <textarea id="address_notes" name="address_notes" class="form-control" placeholder="Other information to help the collection driver (interphone, entry code, instructions, opening hours...)" rows="2" maxlength="35" data-maxchar="35"></textarea>
+                        <textarea class="form-control" placeholder="Other information to help the collection driver (interphone, entry code, instructions, opening hours...)" rows="2" maxlength="35" data-maxchar="35"></textarea>
                     <span class="text-count-down-container">
-                      <span id="address_notes_counter" class="text-count-down">35</span> character(s) left
+                      <span class="text-count-down">35</span> character(s) left
                     </span>
                       </div>
                     </div>
 
                     <div class="form-group">
-                      <label for="address_country_id" class="control-label col-lg-3 required">Country</label>
+                      <label class="control-label col-lg-3 required" translate="MY_SETTINGS.INFORMATION.ADDRESS.COUNTRY">Country</label>
                       <div class="col-lg-4">
-                        <select id="address_country_id" name="address_country_id" class="form-control chosen-select" onchange="onChangeCountry('address_country_id', 'address_postcode', 'address_postcode_container', null, 'address_state', 'address_state_container');" style="display: none;">
-                          <option value=""></option>
-                          <option value="1" code="AF" contains-states="0" zipcode="0">Afghanistan</option>
-                          <option value="3" code="AL" contains-states="0" zipcode="0">Albania</option>
-                          <option value="4" code="DZ" contains-states="0" zipcode="1">Algeria</option>
-                          <option value="197" code="AS" contains-states="0" zipcode="0">American Samoa</option>
-                          <option value="244" code="AD" contains-states="0" zipcode="1">Andorra</option>
-                          <option value="7" code="AO" contains-states="0" zipcode="0">Angola</option>
-                          <option value="8" code="AI" contains-states="0" zipcode="0">Anguilla</option>
-                          <option value="9" code="AQ" contains-states="0" zipcode="0">Antarctica</option>
-                          <option value="10" code="AG" contains-states="0" zipcode="0">Antigua &amp; Barbuda</option>
-                          <option value="13" code="AR" contains-states="1" zipcode="1">Argentina</option>
-                          <option value="14" code="AM" contains-states="0" zipcode="1">Armenia</option>
-                          <option value="15" code="AW" contains-states="0" zipcode="0">Aruba</option>
-                          <option value="16" code="AU" contains-states="0" zipcode="1">Australia</option>
-                          <option value="17" code="AT" contains-states="0" zipcode="1">Austria</option>
-                          <option value="18" code="AZ" contains-states="0" zipcode="1">Azerbaijan</option>
-                          <option value="212" code="TW" contains-states="0" zipcode="1">Taiwan</option>
-                          <option value="213" code="TJ" contains-states="0" zipcode="1">Tajikistan</option>
-                          <option value="214" code="TZ" contains-states="0" zipcode="0">Tanzania, United Republic of</option>
-                          <option value="218" code="TH" contains-states="0" zipcode="1">Thailand</option>
-                          <option value="219" code="TL" contains-states="0" zipcode="0">Timor-Leste</option>
-                          <option value="220" code="TG" contains-states="0" zipcode="0">Togo</option>
-                          <option value="223" code="TT" contains-states="0" zipcode="0">Trinidad &amp; Tobago</option>
-                          <option value="224" code="TN" contains-states="0" zipcode="1">Tunisia</option>
-                          <option value="226" code="TR" contains-states="0" zipcode="1">Turkey</option>
-                          <option value="102" code="TC" contains-states="0" zipcode="0">Turks and Caicos Islands</option>
-                          <option value="227" code="TV" contains-states="0" zipcode="0">Tuvalu</option>
-                          <option value="163" code="UG" contains-states="0" zipcode="0">Uganda</option>
-                          <option value="228" code="UA" contains-states="0" zipcode="1">Ukraine</option>
-                        </select>
-
                         <div class="chosen-container chosen-container-single" style="width: 283px;" title="" id="address_country_id_chosen">
-                          <a class="chosen-single chosen-single-with-deselect" tabindex="-1">
-                            <span>France</span>
-                            <abbr class="search-choice-close"></abbr>
-                            <div><b></b></div>
-                          </a>
-
-                          <div class="chosen-drop">
-                            <div class="chosen-search">
-                              <input type="text" autocomplete="off">
-                            </div>
-                            <ul class="chosen-results">
-                              <li class="active-result" style="" data-option-array-index="1">Afghanistan</li>
-                              <li class="active-result" style="" data-option-array-index="2">Albania</li>
-                              <li class="active-result" style="" data-option-array-index="3">Algeria</li>
-                              <li class="active-result" style="" data-option-array-index="4">American Samoa</li>
-                              <li class="active-result" style="" data-option-array-index="5">Andorra</li>
-                              <li class="active-result" style="" data-option-array-index="6">Angola</li>
-                              <li class="active-result" style="" data-option-array-index="7">Anguilla</li>
-                              <li class="active-result" style="" data-option-array-index="8">Antarctica</li>
-                              <li class="active-result" style="" data-option-array-index="9">Antigua &amp; Barbuda</li>
-                              <li class="active-result" style="" data-option-array-index="10">Argentina</li>
-                              <li class="active-result" style="" data-option-array-index="11">Armenia</li>
-                              <li class="active-result" style="" data-option-array-index="12">Aruba</li>
-                              <li class="active-result" style="" data-option-array-index="13">Australia</li>
-                              <li class="active-result" style="" data-option-array-index="14">Austria</li>
-                              <li class="active-result" style="" data-option-array-index="15">Azerbaijan</li>
-                              <li class="active-result" style="" data-option-array-index="16">Bahamas, The</li>
-                              <li class="active-result" style="" data-option-array-index="234">Vatican</li>
-                              <li class="active-result" style="" data-option-array-index="235">Venezuela</li>
-                              <li class="active-result" style="" data-option-array-index="236">Viet Nam</li>
-                              <li class="active-result" style="" data-option-array-index="237">Virgin Islands, British</li>
-                              <li class="active-result" style="" data-option-array-index="238">Virgin Islands, U.S.</li>
-                              <li class="active-result" style="" data-option-array-index="239">Wallis and Futuna</li>
-                              <li class="active-result" style="" data-option-array-index="240">Western Sahara</li>
-                              <li class="active-result" style="" data-option-array-index="241">Zambia</li>
-                              <li class="active-result" style="" data-option-array-index="242">Zimbabwe</li>
-                            </ul>
-                          </div>
+                          <ui-select ng-model="ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                            <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
+                            <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
+                              <div ng-bind-html="person.name | highlight: $select.search"></div>
+                              <small>
+                                {{country.name}}
+                                <!--age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>-->
+                              </small>
+                            </ui-select-choices>
+                          </ui-select>
                         </div>
                       </div>
                     </div>
 
-                    <div class="form-group" id="address_postcode_container">
-                      <label for="address_postcode" class="control-label col-lg-3 required">Postal code</label>
+                    <div class="form-group">
+                      <label class="control-label col-lg-3 required" translate="MY_SETTINGS.INFORMATION.ADDRESS.POSTAL_CODE">Postal code</label>
 
                       <div class="col-lg-4">
                         <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
@@ -228,15 +218,15 @@
                       </div>
                     </div>
 
-                    <div class="form-group" id="address_city_container">
-                      <label for="address_city" class="control-label col-lg-3 required">City</label>
+                    <div class="form-group">
+                      <label class="control-label col-lg-3 required"translate="MY_SETTINGS.INFORMATION.ADDRESS.CITY">City</label>
                       <div class="col-lg-4">
                         <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                        <input type="text" id="address_city" name="address_city" class="form-control validate ui-autocomplete-input" data-validate="isCityName" value="Paris" maxlength="255" autocomplete="off">
+                        <input type="text" class="form-control validate ui-autocomplete-input" data-validate="isCityName" value="Paris" maxlength="255" autocomplete="off">
                       </div>
                     </div>
 
-                    <div class="form-group hidden" id="address_state_container" style="display: none;">
+                    <div class="form-group hidden" style="display: none;">
                       <label for="address_state" class="control-label col-lg-3">State code</label>
                       <div class="col-lg-4">
                         <input type="text" id="address_state" name="address_state" class="form-control" value="" maxlength="64">
@@ -246,8 +236,9 @@
                     <div class="form-group">
                       <div class="col-lg-9 col-lg-offset-3">
                         <div class="checkbox">
-                          <label for="different-addresses" class="">
-                            <input type="checkbox" id="different-addresses" name="different-addresses" class="check_box" value="1" unchecked="" onclick="showHideInvoiceAddress();">Use another address for invoice
+                          <label class="">
+                            <input type="checkbox" class="check_box" value="1" unchecked="">
+                            <span translate="MY_SETTINGS.INFORMATION.ADDRESS.ANOTHER_ADDRESS">Use another address for invoice</span>
                           </label>
                         </div>
                       </div>
@@ -255,166 +246,20 @@
                   </div>
                   <!--<hr>-->
 
-                  <div id="invoice_address_container" style="display: none;">
-                    <div class="panel-grey">
-                      <h3 class="form-group-legend">Invoice address</h3>
-                      <div class="form-group">
-                        <label for="invoice_address_company" class="control-label col-lg-3">Company</label>
-
-                        <div class="col-lg-4">
-                          <input type="text" id="invoice_address_company" name="invoice_address_company" class="form-control" value="" maxlength="255">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="invoice_address_lastname" class="control-label col-lg-3">Last name / First name</label>
-                        <div class="col-lg-4">
-                          <input type="text" id="invoice_address_lastname" name="invoice_address_lastname" class="form-control" value="" maxlength="100">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="invoice_address_phone" class="control-label col-lg-3">Phone</label>
-                        <div class="col-lg-4">
-                          <input type="text" id="invoice_address_phone" name="invoice_address_phone" class="form-control validate" data-validate="isPhoneNumber" value="" maxlength="50">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="invoice_address_email" class="control-label col-lg-3">Email to receive invoices</label>
-                        <div class="col-lg-4">
-                          <input type="text" id="invoice_address_email" name="invoice_address_email" class="form-control" value="" maxlength="200">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="invoice_address_address1" class="control-label col-lg-3">Address</label>
-                        <div class="col-lg-4">
-                          <input type="text" id="invoice_address_address1" name="invoice_address_address1" class="form-control validate" data-validate="isAddress" value="" placeholder="No., street" maxlength="255">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="invoice_address_address2" class="control-label col-lg-3">&nbsp;</label>
-                        <div class="col-lg-4">
-                          <input type="text" id="invoice_address_address2" name="invoice_address_address2" class="form-control" value="" placeholder="Line 2" maxlength="255">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="invoice_address_address3" class="control-label col-lg-3">&nbsp;</label>
-                        <div class="col-lg-4">
-                          <input type="text" id="invoice_address_address3" name="invoice_address_address3" class="form-control" value="" placeholder="Line 3" maxlength="255">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="invoice_address_country_id" class="control-label col-lg-3">Country</label>
-                        <div class="col-lg-4">
-                          <select id="invoice_address_country_id" name="invoice_address_country_id" class="form-control chosen-select" onchange="onChangeCountry('invoice_address_country_id', 'invoice_address_postcode', 'invoice_address_postcode_container', null, 'invoice_address_state', 'invoice_address_state_container');" style="display: none;">
-                            <option value="" selected=""></option>
-                            <option value="1" code="AF" contains-states="0" zipcode="0">Afghanistan</option>
-                            <option value="3" code="AL" contains-states="0" zipcode="0">Albania</option>
-                            <option value="4" code="DZ" contains-states="0" zipcode="1">Algeria</option>
-                            <option value="197" code="AS" contains-states="0" zipcode="0">American Samoa</option>
-                            <option value="244" code="AD" contains-states="0" zipcode="1">Andorra</option>
-                            <option value="7" code="AO" contains-states="0" zipcode="0">Angola</option>
-                            <option value="8" code="AI" contains-states="0" zipcode="0">Anguilla</option>
-                            <option value="9" code="AQ" contains-states="0" zipcode="0">Antarctica</option>
-                            <option value="10" code="AG" contains-states="0" zipcode="0">Antigua &amp; Barbuda</option>
-                            <option value="13" code="AR" contains-states="1" zipcode="1">Argentina</option>
-                            <option value="14" code="AM" contains-states="0" zipcode="1">Armenia</option>
-                            <option value="15" code="AW" contains-states="0" zipcode="0">Aruba</option>
-                            <option value="16" code="AU" contains-states="0" zipcode="1">Australia</option>
-                            <option value="17" code="AT" contains-states="0" zipcode="1">Austria</option>
-                            <option value="18" code="AZ" contains-states="0" zipcode="1">Azerbaijan</option>
-                            <option value="20" code="BS" contains-states="0" zipcode="0">Bahamas, The</option>
-                            <option value="21" code="BH" contains-states="0" zipcode="0">Bahrain</option>
-                            <option value="22" code="BD" contains-states="0" zipcode="1">Bangladesh</option>
-                            <option value="23" code="BB" contains-states="0" zipcode="0">Barbados</option>
-                            <option value="29" code="BY" contains-states="0" zipcode="1">Belarus</option>
-                            <option value="25" code="BE" contains-states="0" zipcode="1">Belgium</option>
-                            <option value="26" code="BZ" contains-states="0" zipcode="0">Belize</option>
-                            <option value="19" code="BJ" contains-states="0" zipcode="0">Benin</option>
-                            <option value="27" code="BM" contains-states="0" zipcode="0">Bermuda</option>
-                            <option value="28" code="BT" contains-states="0" zipcode="1">Bhutan</option>
-                            <option value="31" code="BO" contains-states="0" zipcode="0">Bolivia</option>
-                            <option value="32" code="BA" contains-states="0" zipcode="0">Bosnia and Herzegovina</option>
-                            <option value="33" code="BW" contains-states="0" zipcode="0">Botswana</option>
-                            <option value="88" code="BV" contains-states="0" zipcode="0">Bouvet Island</option>
-                            <option value="34" code="BR" contains-states="0" zipcode="1">Brazil</option>
-                            <option value="217" code="IO" contains-states="0" zipcode="0">British Indian Ocean Territory</option>
-                            <option value="35" code="BN" contains-states="0" zipcode="0">Brunei Darussalam</option>
-                            <option value="36" code="BG" contains-states="0" zipcode="1">Bulgaria</option>
-                            <option value="37" code="BF" contains-states="0" zipcode="0">Burkina Faso</option>
-                            <option value="230" code="VU" contains-states="0" zipcode="0">Vanuatu</option>
-                            <option value="191" code="VA" contains-states="0" zipcode="1">Vatican</option>
-                            <option value="231" code="VE" contains-states="0" zipcode="0">Venezuela</option>
-                            <option value="232" code="VN" contains-states="0" zipcode="1">Viet Nam</option>
-                            <option value="104" code="VG" contains-states="0" zipcode="0">Virgin Islands, British</option>
-                            <option value="103" code="VI" contains-states="0" zipcode="0">Virgin Islands, U.S.</option>
-                            <option value="233" code="WF" contains-states="0" zipcode="1">Wallis and Futuna</option>
-                            <option value="187" code="EH" contains-states="0" zipcode="0">Western Sahara</option>
-                            <option value="236" code="ZM" contains-states="0" zipcode="0">Zambia</option>
-                            <option value="237" code="ZW" contains-states="0" zipcode="0">Zimbabwe</option>
-                          </select>
-
-                          <div class="chosen-container chosen-container-single" style="width: 283px;" title="" id="invoice_address_country_id_chosen">
-                            <a class="chosen-single chosen-default" tabindex="-1">
-                              <span>Select an option</span>
-                              <div><b></b></div>
-                            </a>
-
-                            <div class="chosen-drop">
-                              <div class="chosen-search">
-                                <input type="text" autocomplete="off">
-                              </div>
-                              <ul class="chosen-results"></ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="form-group" id="invoice_address_postcode_container" style="display: none;">
-                        <label for="invoice_address_postcode" class="control-label col-lg-3 required">Postal code</label>
-                        <div class="col-lg-4">
-                          <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                          <input type="text" id="invoice_address_postcode" name="invoice_address_postcode" class="form-control validate ui-autocomplete-input" data-validate="isPostCode" value="" maxlength="20" autocomplete="off">
-                        </div>
-                      </div>
-
-                      <div class="form-group" id="invoice_address_city_container">
-                        <label for="invoice_address_city" class="control-label col-lg-3">City</label>
-                        <div class="col-lg-4">
-                          <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                          <input type="text" id="invoice_address_city" name="invoice_address_city" class="form-control validate ui-autocomplete-input" data-validate="isCityName" value="" maxlength="255" autocomplete="off">
-                        </div>
-                      </div>
-
-                      <div class="form-group hidden" id="invoice_address_state_container" style="display: none;">
-                        <label for="invoice_address_state" class="control-label col-lg-3">State code</label>
-                        <div class="col-lg-4">
-                          <input type="text" id="invoice_address_state" name="invoice_address_state" class="form-control" value="" maxlength="64">
-                        </div>
-                      </div>
-                    </div>
-                    <!--<hr>-->
-                  </div>
-
                   <div class="panel-grey">
-                    <h3 class="form-group-legend">Apporteur Code</h3>
+                    <h3 class="form-group-legend" translate="MY_SETTINGS.INFORMATION.APPORTEUR.TITLE">Apporteur Code</h3>
                     <div class="form-group">
-                      <label for="apporteur_code" class="control-label col-lg-3">Apporteur Code</label>
+                      <label class="control-label col-lg-3" translate="MY_SETTINGS.INFORMATION.APPORTEUR.CODE">Apporteur Code</label>
                       <div class="col-lg-7">
-                        <input type="text" id="apporteur_code" name="apporteur_code" class="form-control" value="TARIF" maxlength="50">
+                        <input type="text" class="form-control" value="TARIF" maxlength="50">
                       </div>
                     </div>
                   </div>
                   <!--<hr>-->
                   <div class="clearfix">
                     <div class="col-lg-9 col-lg-offset-3">
-                      <button type="submit" class="btn btn-primary" id="btn_save" name="btn_save" onclick="return true;">Save</button>
-                      &nbsp;&nbsp;<a href="http://localhost:32769/en/my-account/my-information">Cancel</a>
+                      <button type="submit" class="btn btn-primary" translate="MY_SETTINGS.INFORMATION.APPORTEUR.SAVE">Save</button>
+                      &nbsp;&nbsp;<a href="http://localhost:32769/en/my-account/my-information" translate="MY_SETTINGS.INFORMATION.APPORTEUR.CANCEL">Cancel</a>
                     </div>
                   </div>
                 </form>
@@ -422,72 +267,78 @@
               <uib-tab index="1">
                 <uib-tab-heading>
                   <a href="#">
-                    <i class="fa fa-bank"></i> Direct Debit
+                    <i class="fa fa-bank"></i>
+                    <span translate="MY_SETTINGS.DEBIT.TITLE"> Direct Debit</span>
                   </a>
                 </uib-tab-heading>
                 <div>
-                  <h3>What is a SEPA Direct Debit ?</h3>
-                  <p>The SEPA Direct Debit is the new european standard for bank direct debits.  It is progressively replacing the French bank direct debit with RIB and debit authorisation.</p>
+                  <h3 translate="MY_SETTINGS.DEBIT.WHAT_SEPA.TITLE">What is a SEPA Direct Debit ?</h3>
+                  <p>
+                    <span translate="MY_SETTINGS.DEBIT.WHAT_SEPA.COMMENT1">The SEPA Direct Debit is the new european standard for bank direct debits.</span>
+                    <span translate="MY_SETTINGS.DEBIT.WHAT_SEPA.COMMENT2">It is progressively replacing the French bank direct debit with RIB and debit authorisation.</span>
+                  </p>
                   <br>
 
-                  <h3>How does the SEPA direct debit work?</h3>
-                  <p>Follow these steps :<br>
-                    <b>1.</b> Enter your IBAN and BIC in the following form.<br>
-                    <b>2.</b> Download the document 'Mandate for SEPA Direct Debit'.  Fill in the downloaded form. Don't forget to sign it.<br>
-                    <b>3.</b> Scan and upload the signed mandate by clicking on 'Scan'<br>
+                  <h3 translate="MY_SETTINGS.DEBIT.HOW_SEPA.TITLE">How does the SEPA direct debit work?</h3>
+                  <p>
+                    <span translate="MY_SETTINGS.DEBIT.HOW_SEPA.COMMENT1">Follow these steps :</span><br>
+                    <b>1.</b><span translate="MY_SETTINGS.DEBIT.HOW_SEPA.COMMENT2">Enter your IBAN and BIC in the following form.</span><br>
+                    <b>2.</b><span translate="MY_SETTINGS.DEBIT.HOW_SEPA.COMMENT3">Download the document 'Mandate for SEPA Direct Debit'.  Fill in the downloaded form. Don't forget to sign it.<br></span><br>
+                    <b>3.</b><span translate="MY_SETTINGS.DEBIT.HOW_SEPA.COMMENT4">Scan and upload the signed mandate by clicking on 'Scan'<br></span><br>
                   </p>
                   <hr>
 
-                  <h3 class="form-group-legend">Stage 1</h3>
-                  <p>Enter your IBAN and BIC in the following form.</p>
+                  <h3 class="form-group-legend" translate="MY_SETTINGS.DEBIT.STAGE_ONE.TITLE">Stage 1</h3>
+                  <p translate="MY_SETTINGS.DEBIT.STAGE_ONE.COMMENT">Enter your IBAN and BIC in the following form.</p>
 
                   <div class="form-horizontal">
-                    <input type="hidden" id="sepa_mandate_id" name="sepa_mandate_id" value="50120161107113801">
-                    <input type="hidden" id="sepa_mandate_date" name="sepa_mandate_date" value="2016-11-07">
-
                     <div class="form-group">
-                      <label for="iban" class="control-label col-md-2">IBAN</label>
+                      <label class="control-label col-md-2" translate="MY_SETTINGS.DEBIT.STAGE_ONE.IBAN">IBAN</label>
                       <div class="col-md-4">
-                        <input type="text" class="form-control" id="iban" name="iban" value="" maxlength="34">
+                        <input type="text" class="form-control" value="" maxlength="34">
                       </div>
                     </div>
 
                     <div class="form-group">
-                      <label for="bic" class="control-label col-md-2">BIC</label>
+                      <label class="control-label col-md-2" translate="MY_SETTINGS.DEBIT.STAGE_ONE.BIC">BIC</label>
                       <div class="col-md-4">
-                        <input type="text" class="form-control" id="bic" name="bic" value="" maxlength="34">
+                        <input type="text" class="form-control" value="" maxlength="34">
                       </div>
                     </div>
                   </div>
                   <hr>
 
-                  <h3 class="form-group-legend">Stage 2</h3>
+                  <h3 class="form-group-legend" translate="MY_SETTINGS.DEBIT.STAGE_TWO.TITLE">Stage 2</h3>
                   <p>
-                    <a onclick="openSepaForm('Mandate for SEPA Direct Debit'); return false;" href="#">Click on the link to manage a SEPA Direct Debit</a>.<br>
-                    Fill it in and print it by clicking on 'Print this page'.<br>
-                    Sign your mandate.<br>
+                    <a href="#" translate="MY_SETTINGS.DEBIT.STAGE_TWO.COMMENT1">Click on the link to manage a SEPA Direct Debit</a>.<br>
+                    <span translate="MY_SETTINGS.DEBIT.STAGE_TWO.COMMENT2">Fill it in and print it by clicking on 'Print this page'.<br></span><br>
+                    <span translate="MY_SETTINGS.DEBIT.STAGE_TWO.COMMENT3">Sign your mandate.<br></span><br>
                   </p>
                   <hr>
 
-                  <h3 class="form-group-legend">Stage 3</h3>
-                  <p>Scan and upload your signed mandate+Kbis+RIB by clicking on 'Scan'</p>
-                  <p>Or send us the documents by e-mail to <a href="mailto:contact@upela.com">contact@upela.com</a></p>
+                  <h3 class="form-group-legend" translate="MY_SETTINGS.DEBIT.STAGE_THREE.TITLE">Stage 3</h3>
+                  <p translate="MY_SETTINGS.DEBIT.STAGE_THREE.COMMENT1">Scan and upload your signed mandate+Kbis+RIB by clicking on 'Scan'</p>
+                  <p>
+                    <span translate="MY_SETTINGS.DEBIT.STAGE_THREE.COMMENT2">Or send us the documents by e-mail to </span>
+                    <a href="mailto:contact@upela.com">contact@upela.com</a>
+                  </p>
 
                   <div class="row">
                     <div class="col-md-8">
-                      <form id="UploadSepaForm" class="form-horizontal" role="form" enctype="multipart/form-data" action="http://localhost:32769/en/my-account/sepa-direct-debit" accept-charset="UTF-8" method="post" onsubmit="return true;">
+                      <form id="UploadSepaForm" class="form-horizontal">
                         <input type="hidden" id="upload_sepa" name="upload_sepa" value="1">
                         <div class="form-group">
-                          <label for="uploadfile" class="control-label col-lg-4 required">SEPA mandate + Kbis + RIB</label>
+                          <label class="control-label col-lg-4 required" translate="MY_SETTINGS.DEBIT.STAGE_THREE.SEPA">SEPA mandate + Kbis + RIB</label>
                           <div class="col-lg-7">
-                            <input type="file" id="uploadfile" name="uploadfile" medium="" style="padding-left: 0; border: 0; background: none;" value="">
+                            <input type="file" style="padding-left: 0; border: 0; background: none;" value="">
                           </div>
                         </div>
 
                         <div class="form-group">
                           <div class="col-lg-8 col-lg-offset-4">
-                            <button type="submit" class="btn btn-primary" id="btn_save" name="btn_save" onclick="return true;">Import</button>
-                            &nbsp;&nbsp;<a href="http://localhost:32769/en/my-account/sepa-direct-debit">Cancel</a>
+                            <button type="submit" class="btn btn-primary" translate="MY_SETTINGS.DEBIT.IMPORT">Import</button>
+                            &nbsp;&nbsp;
+                            <a href="" translate="MY_SETTINGS.DEBIT.CANCEL">Cancel</a>
                           </div>
                         </div>
                       </form>
@@ -499,104 +350,93 @@
               <uib-tab index="2">
                 <uib-tab-heading>
                   <a href="#">
-                    <i class="glyphicon glyphicon-cog"></i> Options
+                    <i class="glyphicon glyphicon-cog"></i>
+                    <span translate="MY_SETTINGS.OPTIONS.TITLE"> Options</span>
                   </a>
                 </uib-tab-heading>
                 <div>
-                  <h3>Automate your repetitive tasks</h3>
+                  <h3 translate="MY_SETTINGS.OPTIONS.AUTOMATE_TASK.TITLE">Automate your repetitive tasks</h3>
                   <p class="text-muted">
-                    Select the default parameters of your account and your shipments.<br>
-                    Do you send the same type of packages frequently? Increase efficiency whilst your orders are being processed: the shipment parameters selected will be displayed automatically for each of your consignments!<br>                  However you will be able to change them individually during the ordering procedure.
+                    <span translate="MY_SETTINGS.OPTIONS.AUTOMATE_TASK.COMMENT1">Select the default parameters of your account and your shipments.<br></span><br>
+                    <span translate="MY_SETTINGS.OPTIONS.AUTOMATE_TASK.COMMENT2">Do you send the same type of packages frequently?</span>
+                    <span translate="MY_SETTINGS.OPTIONS.AUTOMATE_TASK.COMMENT3">Increase efficiency whilst your orders are being processed: the shipment parameters selected will be displayed automatically for each of your consignments!<br></span><br>
+                    <span translate="MY_SETTINGS.OPTIONS.AUTOMATE_TASK.COMMENT4">However you will be able to change them individually during the ordering procedure.</span>
                   </p>
 
-                  <form id="UserForm" class="form-horizontal" role="form" enctype="multipart/form-data" action="#" accept-charset="UTF-8" method="post" onsubmit="return true;">
-                    <div style="display: none;">
-                      <h3 class="form-group-legend text-uppercase">Default language for the site</h3>
-                      <div class="panel-grey">
-                        <div class="form-group">
-                          <label for="lang_id" class="control-label col-lg-2 required">Site language</label>
-
-                          <div class="col-lg-3">
-                            <select id="lang_id" name="lang_id" class="form-control">
-                              <option value="1">English</option>
-                              <option value="2" selected="">Français</option>
-                              <option value="4">Spanish</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <h3 class="form-group-legend text-uppercase">Default values for your shipments</h3>
+                  <form id="UserForm" class="form-horizontal">
+                    <h3 class="form-group-legend text-uppercase" translate="MY_SETTINGS.OPTIONS.DEFAULT_VALUES">Default values for your shipments</h3>
                     <div class="panel-grey">
                       <h4 class="settings-subtitle">
-                        <a class="" href="#default-values-section">
-                          <i class="step-circle">1</i> Shipment information
+                        <a class="" href="">
+                          <i class="step-circle">1</i>
+                          <span translate="MY_SETTINGS.OPTIONS.INFORMATION.TITLE">Shipment information</span>
                         </a>
                       </h4>
 
                       <div id="default-values-section" style="display: block;">
                         <label class="settings-label">
-                          <span class="popmark pointer" id="popmark-shipment_type" data-placement="right" data-no-title="true" data-content="Mostly envelopes? = envelope or document < 2.5Kg<br/>Mostly parcels? = cardboard packaging, max weight 70Kg, max length 300cm<br/>Mostly pallets? = max height 200cm and max weight 3T (only for international shipping)" data-original-title="" title="">What type of packaging do you use most often?</span>
+                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Mostly envelopes? = envelope or document < 2.5Kg<br/>Mostly parcels? = cardboard packaging, max weight 70Kg, max length 300cm<br/>Mostly pallets? = max height 200cm and max weight 3T (only for international shipping)" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.TITLE">What type of packaging do you use most often?</span>
                         </label>
                         <div class="settings-form-group-container">
                           <div class="form-group">
-                            <div class="radio-inline" id="radio-inline-shipment_type-1">
-                              <label for="shipment_type-1">
-                                <input type="radio" id="shipment_type-1" name="shipment_type" value="1">&nbsp;Envelope&nbsp;
-                                <img src="/images/icons/parcel-1.png" style="max-height: 32px;">
+                            <div class="radio-inline">
+                              <label>
+                                <input type="radio" value="1" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.ENVELOPE">&nbsp;Envelope&nbsp;
+                                <img src="images/icons/parcel-1.png" style="max-height: 32px;">
                               </label>
                             </div>
 
-                            <div class="radio-inline" id="radio-inline-shipment_type-2">
-                              <label for="shipment_type-2">
-                                <input type="radio" id="shipment_type-2" name="shipment_type" value="2" checked="">&nbsp;Parcel&nbsp;
-                                <img src="/images/icons/parcel-2.png" style="max-height: 32px;">
+                            <div class="radio-inline">
+                              <label>
+                                <input type="radio" value="2" checked="" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.PARCEL">&nbsp;Parcel&nbsp;
+                                <img src="images/icons/parcel-2.png" style="max-height: 32px;">
                               </label>
                             </div>
 
-                            <div class="radio-inline" id="radio-inline-shipment_type-3">
-                              <label for="shipment_type-3">
-                                <input type="radio" id="shipment_type-3" name="shipment_type" value="3">&nbsp;Pallet&nbsp;
-                                <img src="/images/icons/parcel-3.png" style="max-height: 32px;">
+                            <div class="radio-inline">
+                              <label>
+                                <input type="radio" value="3" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.PALLET">&nbsp;Pallet&nbsp;
+                                <img src="images/icons/parcel-3.png" style="max-height: 32px;">
                               </label>
                             </div>
                           </div>
                         </div>
 
                         <label class="settings-label">
-                          <span class="popmark pointer" id="popmark-parcels" data-placement="right" data-no-title="true" data-content="Enter the weight and the dimensions that will be filled in by default in your orders" data-original-title="" title="">Do you regularly send the same shipment (number, weight and size of parcel(s))?</span>
+                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Enter the weight and the dimensions that will be filled in by default in your orders" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.TITLE">Do you regularly send the same shipment (number, weight and size of parcel(s))?</span>
                         </label>
                         <div class="settings-form-group-container">
                           <input type="hidden" id="parcel_unit" name="parcel_unit" value="fr">
                           <div class="parcels-container">
                             <div id="parcel_list">
                               <div class="parcel" id="parcel">
-                                <label class="parcel-label" for="parcel_number">No.</label>
-                                <input type="text" class="form-control parcel-number input-xmini2" maxlength="3" id="parcel_number" name="parcel_number" value="1">
+                                <label class="parcel-label" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.NO">No.</label>
+                                <input type="text" class="form-control parcel-number input-xmini2" maxlength="3" value="1">
 
-                                <label class="parcel-label" for="parcel_weight">Wt.</label>
-                                <input type="text" class="form-control input-xmini2" id="parcel_weight" name="parcel_weight" value="" size="16" maxlength="4" placeholder="Wt.">
+                                <label class="parcel-label" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.UNIT">Wt.</label>
+                                <input type="text" class="form-control input-xmini2" value="" size="16" maxlength="4" placeholder="Wt.">
                                 <span class="weight_unit">kg</span>
 
-                                <label class="parcel-label" for="parcel_x">Dimensions</label>
-                                <input type="text" class="form-control input-xmini2" id="parcel_x" name="parcel_x" value="" size="16" maxlength="3" placeholder="Length"> x
-                                <input type="text" class="form-control input-xmini2" id="parcel_y" name="parcel_y" value="" maxlength="3" placeholder="Width"> x
-                                <input type="text" class="form-control input-xmini2" id="parcel_z" name="parcel_z" value="" size="16" maxlength="3" placeholder="Height">
+                                <label class="parcel-label" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.DIMENSIONS">Dimensions</label>
+                                <input type="text" class="form-control input-xmini2" ng-model="parcel.x" value="" size="16" maxlength="3" placeholder="Length" translate translate-attr-placeholder="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.LENGTH"> x
+                                <input type="text" class="form-control input-xmini2" ng-model="parcel.y" value="" maxlength="3" placeholder="Width" translate translate-attr-placeholder="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.WIDTH"> x
+                                <input type="text" class="form-control input-xmini2" ng-model="parcel.z" value="" size="16" maxlength="3" placeholder="Height" translate translate-attr-placeholder="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.HEIGHT">
                                 <span class="dimension_unit">cm</span>
                               </div><!-- /parcel -->
                             </div>
 
                             <div class="pull-left">
                               <span id="switch_parcel_unit_fr" style="display: none;">
-                                <a href="#" onclick="switchParcelUnit('fr');return false;" style="padding-right:14px;">
-                                  <i class="glyphicon glyphicon-refresh"></i> Change unit of measure (Kgs/cm)
+                                <a href="#" style="padding-right:14px;">
+                                  <i class="glyphicon glyphicon-refresh"></i>
+                                  <span translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.CHANGE_UNIT">Change unit of measure (Kgs/cm)</span>
                                 </a>
                               </span>
 
                               <span id="switch_parcel_unit_us">
-                                <a href="#" onclick="switchParcelUnit('us');return false;" style="padding-right:14px;">
-                                  <i class="glyphicon glyphicon-refresh"></i> Change unit of measure (lbs/inch)
+                                <a href="#" style="padding-right:14px;">
+                                  <i class="glyphicon glyphicon-refresh"></i>
+                                  <span translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.CHANGE_UNIT">Change unit of measure (lbs/inch)</span>
                                 </a>
                               </span>
                             </div>
@@ -605,7 +445,7 @@
                         </div>
 
                         <label class="settings-label">
-                          <span class="popmark pointer" id="popmark-dimensions" data-placement="right" data-no-title="true" data-content="Save the size of your parcels in order to select them in a click<br/>For instance:<br/>Large parcel 80x50x40<br/>Medium-sized parcel 50x40x30<br/>Small parcel 30x20x10" data-original-title="" title="">Set up the standard size of your parcels:</span>
+                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Save the size of your parcels in order to select them in a click<br/>For instance:<br/>Large parcel 80x50x40<br/>Medium-sized parcel 50x40x30<br/>Small parcel 30x20x10" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INFORMATION.PARCELS_SIZE.TITLE">Set up the standard size of your parcels:</span>
                         </label>
 
                         <div class="settings-form-group-container">
@@ -613,8 +453,9 @@
                             <div id="dimension_list"></div>
                             <div class="clear"></div>
                             <div class="parcel-actions pull-left">
-                              <a href="#" onclick="addDimension(); return false;" style="padding-right:14px;">
-                                <i class="glyphicon glyphicon-plus-sign"></i> Add a dimension
+                              <a href="#" style="padding-right:14px;">
+                                <i class="glyphicon glyphicon-plus-sign"></i>
+                                <span translate="MY_SETTINGS.OPTIONS.INFORMATION.PARCELS_SIZE.ADD_DIMENSION">Add a dimension</span>
                               </a>
                             </div>
                             <div class="clear"></div>
@@ -622,7 +463,7 @@
                         </div>
 
                         <label class="settings-label">
-                          <span class="popmark pointer" id="popmark-reason" data-placement="right" data-no-title="true" data-content="Select the main shipping reason of your sendings" data-original-title="" title="">What is the most common reason for sending parcels?</span>
+                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Select the main shipping reason of your sendings" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INFORMATION.PARCELS_REASON">What is the most common reason for sending parcels?</span>
                         </label>
 
                         <div class="settings-form-group-container">
@@ -642,18 +483,18 @@
                         </div>
 
                         <label class="settings-label">
-                          <span class="popmark pointer" id="popmark-content" data-placement="right" data-no-title="true" data-content="Indicate the goods which you send the most" data-original-title="" title="">What is the content of your shipments?</span>
+                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Indicate the goods which you send the most" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_CONTENT">What is the content of your shipments?</span>
                         </label>
 
                         <div class="settings-form-group-container">
                           <div class="form-group">
                             <div class="col-lg-4 col-lg-offset-none">
-                              <input type="text" id="content" name="content" class="form-control" value="" maxlength="35">
+                              <input type="text" class="form-control" value="" maxlength="35">
                             </div>
                           </div>
                         </div>
 
-                        <label class="settings-label">Label format</label>
+                        <label class="settings-label" translate="MY_SETTINGS.OPTIONS.INFORMATION.LABEL_FORMAT">Label format</label>
                         <div class="settings-form-group-container">
                           <div class="form-group">
                             <div class="col-lg-4 col-lg-offset-none">
@@ -670,19 +511,20 @@
                     <div class="panel-grey">
                       <h4 class="settings-subtitle">
                         <a class="" href="#offer-selection-section">
-                          <i class="step-circle">2</i> Selection of transport offers
+                          <i class="step-circle">2</i>
+                          <span translate="MY_SETTINGS.OPTIONS.TRANSPORT_OFFERS.TITLE">Selection of transport offers</span>
                         </a>
                       </h4>
 
                       <div id="offer-selection-section">
                         <label class="settings-label">
-                          <span class="popmark pointer" id="popmark-preferred_carrier_groups" data-placement="right" data-no-title="true" data-content="You can filter the proposed carriers by selecting them from this list.<br/>Only desired carriers will appear in your quotes.<br/>By default, we display all of the offers regardless of the carrier." data-original-title="" title="">Which carrier(s) would you like to use?</span>
+                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="You can filter the proposed carriers by selecting them from this list.<br/>Only desired carriers will appear in your quotes.<br/>By default, we display all of the offers regardless of the carrier." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.TRANSPORT_OFFERS.LIKE_CARRIER">Which carrier(s) would you like to use?</span>
                         </label>
 
                         <div class="settings-form-group-container">
                           <div class="form-group">
                             <div class="col-lg-4 col-lg-offset-none">
-                              <select id="preferred_carrier_groups" name="preferred_carrier_groups[]" class="form-control" style="width: 258px; display: none;" multiple="" size="2">
+                              <select class="form-control" style="width: 258px; display: none;" multiple="" size="2">
                                 <option value="CHRONOPOST">CHRONOPOST</option>
                                 <option value="COLISSIMO">COLISSIMO</option>
                                 <option value="COURSIER">COURSIER</option>
@@ -703,12 +545,12 @@
                         </div>
 
                         <label class="settings-label">
-                          <span class="popmark pointer" id="popmark-dropoff_selection" data-placement="right" data-no-title="true" data-content="Some offers do not include a pickup on site, while others impose it. Select the collection method that you prefere. Then, only desired offers will appear in your quotes. By default, all offers are displayed." data-original-title="" title="">Desired collection method?</span>
+                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Some offers do not include a pickup on site, while others impose it. Select the collection method that you prefere. Then, only desired offers will appear in your quotes. By default, all offers are displayed." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.TRANSPORT_OFFERS.DELIVERY_METHOD">Desired collection method?</span>
                         </label>
                         <div class="settings-form-group-container">
                           <div class="form-group">
                             <div class="col-lg-4 col-lg-offset-none">
-                              <select id="dropoff_selection" name="dropoff_selection" class="form-control">
+                              <select class="form-control">
                                 <option value="0" selected="">Pickup or dropoff</option>
                                 <option value="-1">Pickup only</option>
                                 <option value="1">Dropoff only</option>
@@ -718,7 +560,7 @@
                         </div>
 
                         <label class="settings-label">
-                          <span class="popmark pointer" id="popmark-delivery_to_collection_point_selection" data-placement="right" data-no-title="true" data-content="Some offers include a home delivery, while others delivery to a collection point. Select the delivery method that you prefere. Then, only desired offers will appear in your quotes. By default, all offers are displayed." data-original-title="" title="">Desired delivery method?</span>
+                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Some offers include a home delivery, while others delivery to a collection point. Select the delivery method that you prefere. Then, only desired offers will appear in your quotes. By default, all offers are displayed." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.TRANSPORT_OFFERS.DELIVERY_METHOD">Desired delivery method?</span>
                         </label>
                         <div class="settings-form-group-container">
                           <div class="form-group">
@@ -738,19 +580,20 @@
                     <div class="panel-grey">
                       <h4 class="settings-subtitle">
                         <a class="" href="#insurance-section">
-                          <i class="step-circle">3</i> Shipment value and optional supplementary insurance
+                          <i class="step-circle">3</i>
+                          <span translate="MY_SETTINGS.OPTIONS.INSURANCE.TITLE"> Shipment value and optional supplementary insurance</span>
                         </a>
                       </h4>
 
-                      <div id="insurance-section">
+                      <div>
                         <label class="settings-label">
-                          <span class="popmark pointer" id="popmark-insurance_declared_value" data-placement="right" data-no-title="true" data-content="Corresponds to the value of the content of your shipment. This value is used in the calculation of the insurance cost and sets a reimbursement limit in case of loss or damage." data-original-title="" title="">What is the value of your shipments?</span>
+                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Corresponds to the value of the content of your shipment. This value is used in the calculation of the insurance cost and sets a reimbursement limit in case of loss or damage." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INSURANCE.VALUE">What is the value of your shipments?</span>
                         </label>
                         <div class="settings-form-group-container">
                           <div class="form-group form-inline">
                             <div class="col-lg-12">
                               <input type="text" class="form-control input-small" style="display: inline-block; width: 90px;" placeholder="" id="insurance_declared_value" name="insurance_declared_value" value="" maxlength="32">   &nbsp;
-                              <select class="form-control input-mini" style="display: inline-block; width: 60px;" id="insurance_currency" name="insurance_currency">
+                              <select class="form-control input-mini" style="display: inline-block; width: 60px;">
                                 <option value="EUR" selected="selected">€</option>
                                 <option value="USD">$</option>
                               </select>
@@ -759,25 +602,29 @@
                         </div>
 
                         <label class="settings-label">
-                          <span class="popmark pointer" id="popmark-insurance" data-placement="right" data-no-title="true" data-content="Excluding insurance, the transport warranty is limited to €11/kg for land transport and €22/kg for air transport.<br/>The AdValorem insurance hereby proposed covers you for the total value of your sending." data-original-title="" title="">Would you like to insure your shipments at their real value (cost : 0.6% of the value, minimum 4.5€)?</span>
+                          <span class="popmark pointer" id="popmark-insurance" data-placement="right" data-no-title="true" data-content="Excluding insurance, the transport warranty is limited to €11/kg for land transport and €22/kg for air transport.<br/>The AdValorem insurance hereby proposed covers you for the total value of your sending." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INSURANCE.REAL_VALUE">Would you like to insure your shipments at their real value (cost : 0.6% of the value, minimum 4.5€)?</span>
                         </label>
                         <div class="settings-form-group-container">
                           <div class="form-group form-inline">
                             <div class="col-lg-12">
-                              <div class="radio-inline" id="radio-inline-insurance-1">
-                                <label for="insurance-1">
-                                  <input type="radio" id="insurance-1" name="insurance" value="1">&nbsp;Yes
+                              <div class="radio-inline">
+                                <label>
+                                  <input type="radio" value="1">
+                                  <span translate="MY_SETTINGS.OPTIONS.INSURANCE.YES">&nbsp;Yes</span>
                                 </label>
                               </div>
 
-                              <div class="radio-inline" id="radio-inline-insurance-0">
-                                <label for="insurance-0">
-                                  <input type="radio" id="insurance-0" name="insurance" value="0" checked="">&nbsp;No
+                              <div class="radio-inline">
+                                <label>
+                                  <input type="radio" value="0" checked="">
+                                  <span translate="MY_SETTINGS.OPTIONS.INSURANCE.NO">&nbsp;No</span>
                                 </label>
                               </div>
 
                               <div class="help-block">
-                                <small><a class="orange text-underline" href="/files/upload/insurance/Upela Assurance EXCLUSIONS CONDITIONS GENERALES.pdf" target="_blank">See the conditions of insurance</a></small>
+                                <small>
+                                  <a class="orange text-underline" href="images/files/upload/insurance/Upela Assurance EXCLUSIONS CONDITIONS GENERALES.pdf" target="_blank">See the conditions of insurance</a>
+                                </small>
                               </div>
                             </div>
                           </div>
@@ -788,27 +635,30 @@
                     <div class="panel-grey">
                       <h4 class="settings-subtitle">
                         <a class="" href="#pickup-section">
-                          <i class="step-circle">4</i> Pickup of your parcels
+                          <i class="step-circle">4</i>
+                          <span translate="MY_SETTINGS.OPTIONS.PICKUP.TITLE">Pickup of your parcelss</span>
                         </a>
                       </h4>
 
                       <div id="pickup-section">
                         <label class="settings-label">
-                          <span class="popmark pointer" id="popmark-dropoff" data-placement="right" data-no-title="true" data-content="Indicate a time frame as large as possible for the pickup of your shipments.<br/>If your business is closed at lunchtime, you can specify it in your order" data-original-title="" title="">What are your opening hours?</span>
+                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Indicate a time frame as large as possible for the pickup of your shipments.<br/>If your business is closed at lunchtime, you can specify it in your order" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.PICKUP.OPEN_HOURS">What are your opening hours?</span>
                         </label>
                         <div class="settings-form-group-container">
                           <div class="form-group">
                             <div class="col-lg-9 col-lg-offset-none">
                               <div class="radio">
-                                <label for="dropoff-0">
-                                  <input type="radio" id="dropoff-0" name="dropoff" value="0" checked="">&nbsp;Collection chosen (subject to the carrier availability)
+                                <label>
+                                  <input type="radio" value="0" checked="">
+                                  <span translate="MY_SETTINGS.OPTIONS.PICKUP.COLLECTION">&nbsp;Collection chosen (subject to the carrier availability)</span>
                                 </label>
                               </div>
                             </div>
                           </div>
 
                           <div class="form-group">
-                            <div class="col-lg-9 col-lg-offset-none">Between&nbsp;
+                            <div class="col-lg-9 col-lg-offset-none">
+                              <span translate="MY_SETTINGS.OPTIONS.PICKUP.BETWEEN">Between&nbsp;</span>
                               <select id="ready_time" name="ready_time" class="form-control input-small2 display-inline-block">
                                 <option value="0800">08:00am</option>
                                 <option value="0815">08:15am</option>
@@ -835,7 +685,8 @@
                                 <option value="1330">01:30pm</option>
                                 <option value="1345">01:45pm</option>
                                 <option value="1400">02:00pm</option>
-                              </select>&nbsp;and&nbsp;
+                              </select>
+                              <span translate="MY_SETTINGS.OPTIONS.PICKUP.BETWEEN">&nbsp;and&nbsp;</span>
 
                               <select id="close_time" name="close_time" class="form-control input-small2 display-inline-block">
                                 <option value="1600">04:00pm</option>
@@ -862,8 +713,9 @@
                           <div class="form-group">
                             <div class="col-lg-9 col-lg-offset-none">
                               <div class="radio">
-                                <label for="dropoff-1">
-                                  <input type="radio" id="dropoff-1" name="dropoff" value="1">&nbsp;I prefer to drop off my parcels
+                                <label>
+                                  <input type="radio" value="1">
+                                  <span translate="MY_SETTINGS.OPTIONS.PICKUP.DROP_OFF">&nbsp;I prefer to drop off my parcels</span>
                                 </label>
                                 <span class="popmark pointer" id="popmark-dropoff-1" data-placement="right" data-no-title="true" data-content="Dropoff locations depend on the carrier you selected.<br/>This option is not available for all the offers. " data-original-title="" title="">&nbsp;</span>
                               </div>
@@ -876,64 +728,50 @@
                     <div class="panel-grey">
                       <h4 class="settings-subtitle">
                         <a class="" href="#customs-section">
-                          <i class="step-circle">5</i> Sending abroad
+                          <i class="step-circle">5</i>
+                          <span translate="MY_SETTINGS.OPTIONS.ABROAD.TITLE"> Sending abroad</span>
                         </a>
                       </h4>
                       <div id="customs-section">
                         <label class="settings-label">
-                          <span class="popmark pointer" id="popmark-product_description" data-placement="right" data-no-title="true" data-content="This information serve as a custom declaration for the export invoices. Indicate the content as accurately as possible (in English), or the customs code corresponding to your item." data-original-title="" title="">Add a description (in English) and/or the customs code of your good</span>
+                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="This information serve as a custom declaration for the export invoices. Indicate the content as accurately as possible (in English), or the customs code corresponding to your item." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.ABROAD.ADD_DESCRIPTION">Add a description (in English) and/or the customs code of your good</span>
                         </label>
                         <div class="settings-form-group-container">
                           <div class="form-group">
                             <div class="col-lg-6">
-                              <input type="text" class="form-control" placeholder="Description in English and/or HS code" id="product_description" name="product_description" value="">
+                              <input type="text" class="form-control" placeholder="Description in English and/or HS code" value="">
                             </div>
                           </div>
                         </div>
 
                         <label class="settings-label">
-                          <span class="popmark pointer" id="popmark-product_manufacture_country_code" data-placement="right" data-no-title="true" data-content="Indicate the country of manufacture of your goods.<br/>If you do not know it, or cannot prove their origin, indicate the name of the country of departure." data-original-title="" title="">Enter the country of origin, quantity, and unit price of you item</span>
+                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Indicate the country of manufacture of your goods.<br/>If you do not know it, or cannot prove their origin, indicate the name of the country of departure." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.ABROAD.ITEM">Enter the country of origin, quantity, and unit price of you item</span>
                         </label>
                         <div class="settings-form-group-container">
                           <div class="form-group form-inline">
                             <div class="col-lg-12">
-                              <label for="product_manufacture_country_code" class="control-label">Country</label>&nbsp;
-                              <select id="product_manufacture_country_code" name="product_manufacture_country_code" class="form-control chosen-select" style="display: none;">
-                                <option value="" selected=""></option>
-                                <option value="AF">Afghanistan</option>
-                                <option value="AL">Albania</option>
-                                <option value="DZ">Algeria</option>
-                                <option value="AS">American Samoa</option>
-                                <option value="AD">Andorra</option>
-                                <option value="AO">Angola</option>
-                                <option value="AI">Anguilla</option>
-                                <option value="AQ">Antarctica</option>
-                                <option value="AG">Antigua &amp; Barbuda</option>
-                                <option value="ZW">Zimbabwe</option>
-                              </select>
+                              <label class="control-label" translate="MY_SETTINGS.OPTIONS.ABROAD.COUNTRY">Country</label>&nbsp;
 
-                              <div class="chosen-container chosen-container-single" style="width: 0px;" title="" id="product_manufacture_country_code_chosen">
-                                <a class="chosen-single chosen-default" tabindex="-1">
-                                  <span>Select an option</span>
-                                  <div><b></b></div>
-                                </a>
+                              <ui-select ng-model="ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                                <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
+                                <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
+                                  <div ng-bind-html="person.name | highlight: $select.search"></div>
+                                  <small>
+                                    {{country.name}}
+                                    <!--age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>-->
+                                  </small>
+                                </ui-select-choices>
+                              </ui-select>
 
-                                <div class="chosen-drop">
-                                  <div class="chosen-search">
-                                    <input type="text" autocomplete="off">
-                                  </div>
-                                  <ul class="chosen-results"></ul>
-                                </div>
-                              </div>
                               &nbsp;&nbsp;&nbsp;
-                              <label for="product_number" class="control-label">Quantity</label>&nbsp;
-                              <input type="text" class="form-control input-xmini2" style="display: inline-block; width: 50px;" placeholder="0" id="product_number" name="product_number" value="1">
+                              <label class="control-label" translate="MY_SETTINGS.OPTIONS.ABROAD.QUANTITY">Quantity</label>&nbsp;
+                              <input type="text" class="form-control input-xmini2" style="display: inline-block; width: 50px;" placeholder="0" value="1">
                               &nbsp;&nbsp;&nbsp;
 
-                              <label for="product_value" class="control-label">Unit price</label>&nbsp;
-                              <input type="text" class="form-control input-xmini2" style="display: inline-block; width: 60px;" placeholder="" id="product_value" name="product_value" value="">&nbsp;
+                              <label class="control-label" translate="MY_SETTINGS.OPTIONS.ABROAD.PRICE">Unit price</label>&nbsp;
+                              <input type="text" class="form-control input-xmini2" style="display: inline-block; width: 60px;" placeholder="" value="">&nbsp;
 
-                              <select class="form-control input-xmini3" style="display: inline-block; width: 55px;" id="product_currency" name="product_currency">
+                              <select class="form-control input-xmini3" style="display: inline-block; width: 55px;">
                                 <option value="EUR" selected="selected">€</option>
                                 <option value="USD">$</option>
                               </select>
@@ -943,98 +781,61 @@
                       </div>
                     </div>
 
-                    <div class="panel-grey" style="display: none;">
-                      <h4 class="settings-subtitle">
-                        <i class="glyphicon glyphicon-warning-sign"></i> DHL account for paying duties and taxes
-                      </h4>
-                      <div class="form-group">
-                        <label for="dhl_duty_account_number" class="control-label col-lg-2">DHL account</label>
-                        <div class="col-lg-3">
-                          <input type="text" id="dhl_duty_account_number" name="dhl_duty_account_number" class="form-control" value="" maxlength="12">
-                        </div>
-                      </div>
-                    </div>
-
                     <div class="panel-grey">
                       <h4 class="settings-subtitle">
-                        <a class="" href="#account-for-duties-section">
-                          <i class="step-circle">6</i> Taxes and customs duties account
+                        <a class="" href="">
+                          <i class="step-circle">6</i>
+                          <span translate="MY_SETTINGS.OPTIONS.TAXES.TITLE">Taxes and customs duties account</span>
                         </a>
                       </h4>
 
-                      <div id="account-for-duties-section">
+                      <div>
                         <label class="settings-label">
-                          <span class="popmark pointer" id="popmark-ups_duty_account_number" data-placement="right" data-no-title="true" data-content="UPS requires the use of a UPS account for any import from a country outside the EU.<br/>In the case of exports, this feature allows you to deliver on DDP terms, which means that you will pay for any taxes and custom duties in place of your recipient." data-original-title="" title="">Do you already have a UPS account (required for any import with UPS)?</span>
+                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="UPS requires the use of a UPS account for any import from a country outside the EU.<br/>In the case of exports, this feature allows you to deliver on DDP terms, which means that you will pay for any taxes and custom duties in place of your recipient." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.TAXES.UPS">Do you already have a UPS account (required for any import with UPS)?</span>
                         </label>
                         <div class="settings-form-group-container">
                           <div class="form-group">
-                            <label for="ups_duty_account_number" class="control-label col-lg-2">Account number</label>
+                            <label class="control-label col-lg-2" translate="MY_SETTINGS.OPTIONS.TAXES.ACCOUNT_NUMBER">Account number</label>
                             <div class="col-lg-3">
-                              <input type="text" id="ups_duty_account_number" name="ups_duty_account_number" class="form-control" value="" maxlength="12">
+                              <input type="text" class="form-control" value="" maxlength="12">
                             </div>
                           </div>
 
                           <div class="form-group">
-                            <label for="ups_duty_account_postcode" class="control-label col-lg-2">Postcode</label>
+                            <label class="control-label col-lg-2" translate="MY_SETTINGS.OPTIONS.TAXES.POSTCODE">Postcode</label>
                             <div class="col-lg-3">
-                              <input type="text" id="ups_duty_account_postcode" name="ups_duty_account_postcode" class="form-control validate" data-validate="isPostCode" value="" maxlength="20">
+                              <input type="text" class="form-control validate" data-validate="isPostCode" value="" maxlength="20">
                             </div>
                           </div>
 
                           <div class="form-group">
-                            <label for="ups_duty_account_country_id" class="control-label col-lg-2">Country</label>
+                            <label class="control-label col-lg-2" translate="MY_SETTINGS.OPTIONS.TAXES.COUNTRY">Country</label>
                             <div class="col-lg-3">
-                              <select id="ups_duty_account_country_id" name="ups_duty_account_country_id" class="form-control chosen-select" style="display: none;">
-                                <option value="" selected=""></option>
-                                <option value="1">Afghanistan</option>
-                                <option value="3">Albania</option>
-                                <option value="4">Algeria</option>
-                                <option value="197">American Samoa</option>
-                                <option value="244">Andorra</option>
-                                <option value="7">Angola</option>
-                                <option value="237">Zimbabwe</option>
-                              </select>
-
-                              <div class="chosen-container chosen-container-single" style="width: 0px;" title="" id="ups_duty_account_country_id_chosen">
-                                <a class="chosen-single chosen-default" tabindex="-1">
-                                  <span>Select an option</span>
-                                  <div><b></b></div>
-                                </a>
-
-                                <div class="chosen-drop">
-                                  <div class="chosen-search">
-                                    <input type="text" autocomplete="off">
-                                  </div>
-                                  <ul class="chosen-results">
-                                    <li class="active-result" style="" data-option-array-index="1">Afghanistan</li>
-                                    <li class="active-result" style="" data-option-array-index="2">Albania</li>
-                                    <li class="active-result" style="" data-option-array-index="3">Algeria</li>
-                                    <li class="active-result" style="" data-option-array-index="4">American Samoa</li>
-                                    <li class="active-result" style="" data-option-array-index="5">Andorra</li>
-                                    <li class="active-result" style="" data-option-array-index="6">Angola</li>
-                                    <li class="active-result" style="" data-option-array-index="7">Anguilla</li>
-                                    <li class="active-result" style="" data-option-array-index="8">Antarctica</li>
-                                    <li class="active-result" style="" data-option-array-index="243">Western Sahara</li>
-                                    <li class="active-result" style="" data-option-array-index="244">Yemen</li>
-                                    <li class="active-result" style="" data-option-array-index="245">Zambia</li>
-                                    <li class="active-result" style="" data-option-array-index="246">Zimbabwe</li>
-                                  </ul>
-                                </div>
-                              </div>
+                              <ui-select ng-model="ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                                <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
+                                <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
+                                  <div ng-bind-html="person.name | highlight: $select.search"></div>
+                                  <small>
+                                    {{country.name}}
+                                    <!--age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>-->
+                                  </small>
+                                </ui-select-choices>
+                              </ui-select>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <h3 class="form-group-legend text-uppercase">Email and notifications</h3>
+                    <h3 class="form-group-legend text-uppercase" translate="MY_SETTINGS.OPTIONS.NOTIFICATION.TITLE">Email and notifications</h3>
 
                     <div class="panel-grey">
                       <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
                           <div class="checkbox">
-                            <label for="notification_recipient" class="">
-                              <input type="checkbox" id="notification_recipient" name="notification_recipient" class="check_box" value="1" checked="">Notify your receiver by email of the expected delivery date
+                            <label class="">
+                              <input type="checkbox" class="check_box" value="1" checked="">
+                              <span translate="MY_SETTINGS.OPTIONS.NOTIFICATION.RECEIVER">Notify your receiver by email of the expected delivery date</span>
                             </label>
                           </div>
                         </div>
@@ -1043,8 +844,9 @@
                       <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
                           <div class="checkbox">
-                            <label for="receive_notifications" class="">
-                              <input type="checkbox" id="receive_notifications" name="receive_notifications" class="check_box" value="1" checked="">Receive waybills and invoices by e-mail
+                            <label class="">
+                              <input type="checkbox" class="check_box" value="1" checked="">
+                              <span translate="MY_SETTINGS.OPTIONS.NOTIFICATION.WAYBILL">Receive waybills and invoices by e-mail</span>
                             </label>
                           </div>
                         </div>
@@ -1053,8 +855,9 @@
                       <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
                           <div class="checkbox">
-                            <label for="receive_delivery_confirmations" class="">
-                              <input type="checkbox" id="receive_delivery_confirmations" name="receive_delivery_confirmations" class="check_box" value="1" checked="">Receive delivery confirmations and evaluation requests by e-mail
+                            <label class="">
+                              <input type="checkbox" class="check_box" value="1" checked="">
+                              <span translate="MY_SETTINGS.OPTIONS.NOTIFICATION.DELIVERY">Receive delivery confirmations and evaluation requests by e-mail</span>
                             </label>
                           </div>
                         </div>
@@ -1063,8 +866,9 @@
                       <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
                           <div class="checkbox">
-                            <label for="newsletter" class="">
-                              <input type="checkbox" id="newsletter" name="newsletter" class="check_box" value="1" unchecked="">Receive newsletters and promotional offers
+                            <label class="">
+                              <input type="checkbox" class="check_box" value="1" unchecked="">
+                              <span translate="MY_SETTINGS.OPTIONS.NOTIFICATION.NEWSLETTER">Receive newsletters and promotional offers</span>
                             </label>
                           </div>
                         </div>
@@ -1073,8 +877,9 @@
 
                     <div class="clearfix">
                       <div class="col-md-12 text-center">
-                        <button type="submit" class="btn btn-primary" id="btn_save" name="btn_save" onclick="return true;">Save</button>
-                        &nbsp;&nbsp;<a href="http://localhost:32769/en/my-account/settings">Cancel</a>
+                        <button type="submit" class="btn btn-primary" translate="MY_SETTINGS.OPTIONS.SAVE">Save</button>
+                        &nbsp;&nbsp;
+                        <a href="" translate="MY_SETTINGS.OPTIONS.CANCEL">Cancel</a>
                       </div>
                     </div>
                   </form>
@@ -1083,45 +888,46 @@
               <uib-tab index="3">
                 <uib-tab-heading>
                   <a href="#">
-                    <i class="fa fa-envelope"></i> Change email
+                    <i class="fa fa-envelope"></i>
+                    <span translate="MY_SETTINGS.EMAIL.TITLE"> Change email</span>
                   </a>
                 </uib-tab-heading>
                 <div class="row">
                   <div class="col-md-8">
-                    <form id="ChangeEmailForm" class="form-horizontal" role="form" enctype="multipart/form-data" action="http://localhost:32769/en/my-account/change-email" accept-charset="UTF-8" method="post" onsubmit="validateForm('ChangeEmailForm', {}); return false;">
-                      <p class="text-muted" style="margin-bottom: 15px;">Please enter new email and password</p>
+                    <form id="ChangeEmailForm" class="form-horizontal">
+                      <p class="text-muted" style="margin-bottom: 15px;" translate="MY_SETTINGS.EMAIL.COMMENT">Please enter new email and password</p>
                       <div class="form-group">
-                        <label for="email" class="control-label col-lg-3">Current email</label>
+                        <label class="control-label col-lg-3" translate="MY_SETTINGS.EMAIL.CURRENT">Current email</label>
                         <div class="col-lg-7">
-                          <span class="label-field" id="email">cli1l@upela.com</span>
+                          <span class="label-field">cli1l@upela.com</span>
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="newemail" class="control-label col-lg-3 required">New email</label>
+                        <label class="control-label col-lg-3 required" translate="MY_SETTINGS.EMAIL.NEW">New email</label>
                         <div class="col-lg-7">
-                          <input type="text" id="newemail" name="newemail" class="form-control" value="" placeholder="New email" maxlength="100">
+                          <input type="text" class="form-control" value="" placeholder="New email" maxlength="100" translate translate-attr-placeholder="MY_SETTINGS.EMAIL.NEW">
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="newemail2" class="control-label col-lg-3 required">Confirm email</label>
+                        <label class="control-label col-lg-3 required" translate="MY_SETTINGS.EMAIL.CONFIRM">Confirm email</label>
                         <div class="col-lg-7">
-                          <input type="text" id="newemail2" name="newemail2" class="form-control" value="" placeholder="Confirm email" maxlength="100">
+                          <input type="text" class="form-control" value="" placeholder="Confirm email" maxlength="100" translate translate-attr-placeholder="MY_SETTINGS.EMAIL.CONFIRM">
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="password" class="control-label col-lg-3 required">Password</label>
+                        <label class="control-label col-lg-3 required" translate="MY_SETTINGS.EMAIL.PASSWORD">Password</label>
                         <div class="col-lg-7">
-                          <input type="password" id="password" name="password" class="form-control" value="" placeholder="Password" maxlength="100">
+                          <input type="password" class="form-control" value="" placeholder="Password" maxlength="100" translate translate-attr-placeholder="MY_SETTINGS.EMAIL.PASSWORD">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <div class="col-lg-9 col-lg-offset-3">
-                          <button type="submit" class="btn btn-primary" id="btn_save" name="btn_save" onclick="validateForm('ChangeEmailForm', {}); return false;">Save</button>&nbsp;&nbsp;
-                          <a href="http://localhost:32769/en/my-account/change-email">Cancel</a>
+                          <button type="submit" class="btn btn-primary" translate="MY_SETTINGS.EMAIL.SAVE">Save</button>&nbsp;&nbsp;
+                          <a href="" translate="MY_SETTINGS.EMAIL.CANCEL">Cancel</a>
                         </div>
                       </div>
                     </form>
@@ -1132,39 +938,40 @@
               <uib-tab index="4">
                 <uib-tab-heading>
                   <a href="#">
-                    <i class="glyphicon glyphicon-lock"></i> Change password
+                    <i class="glyphicon glyphicon-lock"></i>
+                    <span translate="MY_SETTINGS.PASSWORD.TITLE"> Change password</span>
                   </a>
                 </uib-tab-heading>
                 <div class="row">
                   <div class="col-md-10">
-                    <form id="ChangePasswordForm" class="form-horizontal" role="form" enctype="multipart/form-data" action="http://localhost:32769/en/my-account/change-password" accept-charset="UTF-8" method="post" onsubmit="validateForm('ChangePasswordForm', {}); return false;">
-                      <p class="text-muted" style="margin-bottom: 15px;">Please enter old and new password</p>
+                    <form class="form-horizontal">
+                      <p class="text-muted" style="margin-bottom: 15px;" translate="MY_SETTINGS.PASSWORD.COMMENT">Please enter old and new password</p>
 
                       <div class="form-group">
-                        <label for="oldpassword" class="control-label col-lg-3 required">Old password</label>
+                        <label class="control-label col-lg-3 required" translate="MY_SETTINGS.PASSWORD.OLD">Old password</label>
                         <div class="col-lg-5">
-                          <input type="password" id="oldpassword" name="oldpassword" class="form-control" value="" placeholder="Old password" maxlength="100">
+                          <input type="password" class="form-control" value="" placeholder="Old password" maxlength="100" translate translate-attr-placeholder="MY_SETTINGS.PASSWORD.OLD">
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="newpassword" class="control-label col-lg-3 required">New password</label>
+                        <label class="control-label col-lg-3 required" translate="MY_SETTINGS.PASSWORD.NEW">New password</label>
                         <div class="col-lg-5">
-                          <input type="password" id="newpassword" name="newpassword" class="form-control" value="" placeholder="New password" maxlength="15">
+                          <input type="password" class="form-control" value="" placeholder="New password" maxlength="15" translate translate-attr-placeholder="MY_SETTINGS.PASSWORD.NEW">
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="newpassword2" class="control-label col-lg-3 required">Confirm password</label>
+                        <label class="control-label col-lg-3 required" translate="MY_SETTINGS.PASSWORD.CONFIRM">Confirm password</label>
                         <div class="col-lg-5">
-                          <input type="password" id="newpassword2" name="newpassword2" class="form-control" value="" placeholder="Confirm password" maxlength="100">
+                          <input type="password" class="form-control" value="" placeholder="Confirm password" maxlength="100" translate translate-attr-placeholder="MY_SETTINGS.PASSWORD.CONFIRM">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <div class="col-lg-9 col-lg-offset-3">
-                          <button type="submit" class="btn btn-primary" id="btn_save" name="btn_save" onclick="validateForm('ChangePasswordForm', {}); return false;">Save</button>&nbsp;&nbsp;
-                          <a href="http://localhost:32769/en/my-account/change-password">Cancel</a>
+                          <button type="submit" class="btn btn-primary" translate="MY_SETTINGS.PASSWORD.SAVE">Save</button>&nbsp;&nbsp;
+                          <a href="" translate="MY_SETTINGS.PASSWORD.CANCEL">Cancel</a>
                         </div>
                       </div>
                     </form>

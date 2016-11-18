@@ -46,9 +46,9 @@
           HOW_SEPA: {
             TITLE: 'How does the SEPA direct debit work?',
             COMMENT1: 'Follow these steps :',
-            COMMENT2: '1. Enter your IBAN and BIC in the following form.',
-            COMMENT3: "2. Download the document 'Mandate for SEPA Direct Debit'. Fill in the downloaded form. Don't forget to sign it.",
-            COMMENT4: "3. Scan and upload the signed mandate by clicking on 'Scan'"
+            COMMENT2: 'Enter your IBAN and BIC in the following form.',
+            COMMENT3: "Download the document 'Mandate for SEPA Direct Debit'. Fill in the downloaded form. Don't forget to sign it.",
+            COMMENT4: "Scan and upload the signed mandate by clicking on 'Scan'"
           },
           STAGE_ONE: {
             TITLE: 'Stage 1',
@@ -114,18 +114,18 @@
             DELIVERY_METHOD: 'Desired delivery method?'
           },
           INSURANCE: {
-            TITLE: '3 SHIPMENT VALUE AND OPTIONAL SUPPLEMENTARY INSURANCE',
+            TITLE: 'SHIPMENT VALUE AND OPTIONAL SUPPLEMENTARY INSURANCE',
             VALUE: 'What is the value of your shipments?',
             REAL_VALUE: 'Would you like to insure your shipments at their real value (cost : 0.6% of the value, minimum 4.5€)?',
-            YES: 'Yes',
-            NO: 'No'
+            YES: '$nbsp;Yes',
+            NO: '$nbsp;No'
           },
           PICKUP: {
             TITLE: 'PICKUP OF YOUR PARCELS',
             OPEN_HOURS: 'What are your opening hours?',
-            COLLECTION: 'Collection chosen (subject to the carrier availability)',
-            BETWEEN: 'Between',
-            AND: 'and',
+            COLLECTION: '&nbsp;Collection chosen (subject to the carrier availability)',
+            BETWEEN: 'Between&nbsp;',
+            AND: '&nbsp;and&nbsp;',
             DROP_OFF: 'I prefer to drop off my parcels'
           },
           ABROAD: {
@@ -165,6 +165,7 @@
         },
         PASSWORD: {
           TITLE: 'Change password',
+          COMMENT: 'Please enter your old and new password',
           OLD: 'Old password',
           NEW: 'New password',
           CONFIRM: 'Confirm password',
@@ -285,15 +286,15 @@
             TITLE: 'Valeur et assurance complémentaire facultative',
             VALUE: 'Quel est la valeur de vos envois ?',
             REAL_VALUE: 'Souhaitez vous assurer vos envois à leur valeur réelle (coût: 0.6% de la valeur, minimum 4.5€) ?',
-            YES: 'Oui',
-            NO: 'Non'
+            YES: '&nbsp;Oui',
+            NO: '&nbsp;Non'
           },
           PICKUP: {
             TITLE: 'Ramassage de vos envois',
             OPEN_HOURS: 'Quels sont vos horaires d’ouverture ?',
-            COLLECTION: 'Enlèvement souhaité (sous réserve des disponibilités du transporteur)',
-            BETWEEN: 'Entre',
-            AND: 'et',
+            COLLECTION: '&nbsp;Enlèvement souhaité (sous réserve des disponibilités du transporteur)',
+            BETWEEN: 'Entre&nbsp;',
+            AND: '&nbsp;et&nbsp;',
             DROP_OFF: 'Je préfère déposer mes envois en agence'
           },
           ABROAD: {
@@ -333,6 +334,7 @@
         },
         PASSWORD: {
           TITLE: 'Changer mon mot de passe',
+          COMMENT: 'Veuillez saisir votre ancien et votre nouveau mot de passe',
           OLD: 'Ancien mot de passe',
           NEW: 'Nouveau mot de passe',
           CONFIRM: 'Confirmer mot de passe',
@@ -453,15 +455,15 @@
             TITLE: '3 Valor y seguro complementario opcional',
             VALUE: '¿Cuál es el valor de sus envíos?',
             REAL_VALUE: '¿Desea asegurar sus envíos al valor real (coste: 0,6 % del valor, mínimo 4,5 €)?',
-            YES: 'Sí',
-            NO: 'No'
+            YES: '&nbsp;Sí',
+            NO: '&nbsp;No'
           },
           PICKUP: {
             TITLE: 'Recogida de sus envíos',
             OPEN_HOURS: '¿Cuáles son sus horarios de apertura?',
-            COLLECTION: 'Recogida seleccionada (según disponibilidad del transportista)',
-            BETWEEN: 'Entre',
-            AND: 'y',
+            COLLECTION: '&nbsp;Recogida seleccionada (según disponibilidad del transportista)',
+            BETWEEN: 'Entre&nbsp;',
+            AND: '&nbsp;y&nbsp;',
             DROP_OFF: 'Prefiero dejar mis paquetes en agencia'
           },
           ABROAD: {
@@ -501,6 +503,7 @@
         },
         PASSWORD: {
           TITLE: 'Cambiar contraseña',
+          COMMENT: 'Veuillez saisir votre ancien et votre nouveau mot de passe',
           OLD: 'Antigua contraseña',
           NEW: 'Nueva contraseña',
           CONFIRM: 'Confirmar la contraseña',
