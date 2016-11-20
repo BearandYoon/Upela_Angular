@@ -21,7 +21,7 @@
                   <div class="espace-pro-headline" translate="MAIN.PAGES.PAGE_TWO.TEXT">
                     +20,000 customers<br> Immediate discounts <br> Deferred payment by Sepa
                   </div>
-                  <a class="btn btn-orange" href="#" translate="MAIN.PAGES.PAGE_TWO.BUTTON_TEXT">Create a professional account</a>
+                  <a class="btn btn-orange" ng-click="ctrl.createAccount()" translate="MAIN.PAGES.PAGE_TWO.BUTTON_TEXT">Create a professional account</a>
                 </div>
               </div>
               <div class="item" style="background-image: url('images/files/upload/home/slider/slide1.jpg');">
@@ -111,32 +111,32 @@
                   <uib-tab-heading>
                     <span translate="MAIN.DIALOG.TITLE1">Begin a shipment</span>
                   </uib-tab-heading>
-                  <form id="ShipmentRatingForm" class="form-horizontal" role="form" enctype="multipart/form-data" accept-charset="UTF-8" method="post">
+                  <form name="ShipmentRatingForm" class="form-horizontal" ng-submit="ShipmentRatingForm.$valid && ctrl.offer()">
                     <div class="form-group">
                       <label class="control-label col-md-2 no-padding-right required-">
-                        <span class="popmark" id="popmark-type" data-placement="right" data-title="Type" data-content="<b>Envelope</b> : envelope or document < 2.5 Kg<br><b>Parcel</b> : maximum weight 70 Kg, max Length 270 cm AND Length + 2 x Height <419 cm<br><b>Pallet</b> : max height 200 cm and max weight 3 tonnes (international only)<br><b>Bulky shipment</b> : max dimensions : 302 cm x 203 cm x 178 cm height (international only)" data-original-title="" title="" translate="MAIN.DIALOG.TYPE.TITLE">Type</span>
+                        <span class="popmark" data-placement="right" data-title="Type" data-content="<b>Envelope</b> : envelope or document < 2.5 Kg<br><b>Parcel</b> : maximum weight 70 Kg, max Length 270 cm AND Length + 2 x Height <419 cm<br><b>Pallet</b> : max height 200 cm and max weight 3 tonnes (international only)<br><b>Bulky shipment</b> : max dimensions : 302 cm x 203 cm x 178 cm height (international only)" data-original-title="" title="" translate="MAIN.DIALOG.TYPE.TITLE">Type</span>
                       </label>
 
                       <div class="col-md-10">
                         <div class="radio-inline" id="radio-inline-type-1">
-                          <label for="type-1">
-                            <input type="radio" id="type-1" name="type" value="1">
+                          <label>
+                            <input type="radio" value="1" ng-model="ctrl.shipment.type">
                             <span translate="MAIN.DIALOG.TYPE.ENVELOPE"></span>
                             <img src="images/icons/parcel-1.png" style="max-height: 32px;">
                           </label>
                         </div>
 
                         <div class="radio-inline" id="radio-inline-type-2">
-                          <label for="type-2">
-                            <input type="radio" id="type-2" name="type" value="2" checked="">
+                          <label>
+                            <input type="radio" value="2" ng-model="ctrl.shipment.type">
                             <span translate="MAIN.DIALOG.TYPE.PARCEL"></span>
                             <img src="images/icons/parcel-2.png" style="max-height: 32px;">
                           </label>
                         </div>
 
                         <div class="radio-inline" id="radio-inline-type-3">
-                          <label for="type-3">
-                            <input type="radio" id="type-3" name="type" value="3">
+                          <label>
+                            <input type="radio" value="3" ng-model="ctrl.shipment.type">
                             <span translate="MAIN.DIALOG.TYPE.PALLET"></span>
                             <img src="images/icons/parcel-3.png" style="max-height: 32px;">
                           </label>
@@ -146,27 +146,26 @@
 
                     <div class="form-group">
                       <label class="control-label col-md-2 no-padding-right required-">
-                        <span class="popmark" id="popmark-origin" data-placement="right" data-title="Origin" data-content="Collection address for your shipment" translate="MAIN.DIALOG.ORIGIN.TITLE">Origin</span>
+                        <span class="popmark" data-placement="right" data-title="Origin" data-content="Collection address for your shipment" translate="MAIN.DIALOG.ORIGIN.TITLE">Origin</span>
                       </label>
 
                       <div class="col-md-10" id="address1-row">
-                        <ui-select ng-model="ctrl.originCountry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                        <ui-select ng-model="ctrl.shipment.origin.country" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
                           <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
                           <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
                             <div ng-bind-html="person.name | highlight: $select.search"></div>
                             <small>
                               {{country.name}}
-                              <!--age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>-->
                             </small>
                           </ui-select-choices>
                         </ui-select>
 
                         <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                        <input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" value="" maxlength="255" placeholder="Postcode, Town" translate translate-attr-placeholder="MAIN.DIALOG.ORIGIN.TOWN">
+                        <input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" ng-model="ctrl.shipment.origin.post_code" value="" maxlength="255" translate translate-attr-placeholder="MAIN.DIALOG.ORIGIN.TOWN" ng-required="true">
 
                         <div class="checkbox">
-                          <label for="address1_pro" class="">
-                            <input type="checkbox" id="address1_pro" name="address1_pro" class="check_box" value="1" unchecked="">
+                          <label>
+                            <input type="checkbox" class="check_box" ng-model="ctrl.shipment.origin.business_address">
                             <span translate="MAIN.DIALOG.ORIGIN.ADDRESS"></span>
                           </label>
                         </div>
@@ -179,51 +178,48 @@
                       </label>
 
                       <div class="col-md-10" id="address1-row">
-                        <ui-select ng-model="ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                        <ui-select ng-model="ctrl.shipment.destination.country" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
                           <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
                           <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
                             <div ng-bind-html="person.name | highlight: $select.search"></div>
                             <small>
                               {{country.name}}
-                              <!--age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>-->
                             </small>
                           </ui-select-choices>
                         </ui-select>
 
                         <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                        <input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" value="" maxlength="255" placeholder="Postcode, Town" translate translate-attr-placeholder="MAIN.DIALOG.DESTINATION.TOWN">
+                        <input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" ng-model="ctrl.shipment.destination.post_code" value="" maxlength="255" translate translate-attr-placeholder="MAIN.DIALOG.DESTINATION.TOWN" ng-required="true">
 
                         <div class="checkbox">
-                          <label for="address1_pro" class="">
-                            <input type="checkbox" name="address1_pro" class="check_box" value="1" unchecked="">
+                          <label>
+                            <input type="checkbox" class="check_box" ng-model="ctrl.shipment.destination.business_address">
                             <span translate="MAIN.DIALOG.DESTINATION.ADDRESS"></span>
                           </label>
                         </div>
                       </div>
                     </div>
 
-                    <div class="form-group" id="parcels-form-group">
+                    <div class="form-group">
                       <label class="control-label col-md-2 no-padding-right required-">
                         <span class="popmark" data-placement="right" data-title="Parcels" data-content="Complete the details of your envelope, parcel or pallet - number of parcels, unit weight and dimensions" data-original-title="" title="" translate="MAIN.DIALOG.PARCELS.TITLE">Parcels</span>
                       </label>
                       <div class="col-md-10">
-                        <input type="hidden" id="parcel_unit" name="parcel_unit" value="fr">
-                        <input type="hidden" id="with_box_dimensions" name="with_box_dimensions" value="0">
                         <div class="parcels-container">
-                          <div id="parcel_list" ng-repeat="parcel in ctrl.parcels">
+                          <div id="parcel_list" ng-repeat="parcel in ctrl.shipment.parcels">
                             <div class="parcel">
                               <label class="parcel-label" translate="MAIN.DIALOG.PARCELS.NO">No.</label>
-                              <input type="text" class="form-control parcel-number input-xmini2" maxlength="3"  ng-model="parcel.number" value="1" placeholder="No." translate translate-attr-placeholder="MAIN.DIALOG.PARCELS.NO">
+                              <input type="text" class="form-control parcel-number input-xmini2" maxlength="3" ng-model="parcel.number" value="1" placeholder="No." translate translate-attr-placeholder="MAIN.DIALOG.PARCELS.NO" ng-required="true">
 
                               <label class="parcel-label" translate="MAIN.DIALOG.PARCELS.UNIT">Wt/Unit</label>
-                              <input type="text" class="form-control parcel-weight input-xmini2" ng-model="parcel.weight" value="" size="16" maxlength="4" placeholder="Wt/Unit" translate translate-attr-placeholder="MAIN.DIALOG.PARCELS.UNIT">
+                              <input type="text" class="form-control parcel-weight input-xmini2" ng-model="parcel.weight" value="" size="16" maxlength="4" placeholder="Wt/Unit" translate translate-attr-placeholder="MAIN.DIALOG.PARCELS.UNIT" ng-required="true">
                               <span class="weight_unit" ng-if="ctrl.parcelUnit">kg</span>
                               <span class="weight_unit" ng-if="!ctrl.parcelUnit">lbs</span>
 
                               <label class="parcel-label" translate="MAIN.DIALOG.PARCELS.DIMENSIONS">Dimensions</label>
-                              <input type="text" class="form-control input-xmini2" ng-model="parcel.x" value="" size="16" maxlength="3" placeholder="Length" translate translate-attr-placeholder="MAIN.DIALOG.PARCELS.LENGTH"> x
-                              <input type="text" class="form-control input-xmini2" ng-model="parcel.y" value="" maxlength="3" placeholder="Width" translate translate-attr-placeholder="MAIN.DIALOG.PARCELS.WIDTH"> x
-                              <input type="text" class="form-control input-xmini2" ng-model="parcel.z" value="" size="16" maxlength="3" placeholder="Height" translate translate-attr-placeholder="MAIN.DIALOG.PARCELS.HEIGHT">
+                              <input type="text" class="form-control input-xmini2" ng-model="parcel.x" value="" size="16" maxlength="3" placeholder="Length" translate translate-attr-placeholder="MAIN.DIALOG.PARCELS.LENGTH" ng-required="true"> x
+                              <input type="text" class="form-control input-xmini2" ng-model="parcel.y" value="" maxlength="3" placeholder="Width" translate translate-attr-placeholder="MAIN.DIALOG.PARCELS.WIDTH" ng-required="true"> x
+                              <input type="text" class="form-control input-xmini2" ng-model="parcel.z" value="" size="16" maxlength="3" placeholder="Height" translate translate-attr-placeholder="MAIN.DIALOG.PARCELS.HEIGHT" ng-required="true">
                               <span class="dimension_unit" ng-if="ctrl.parcelUnit">cm</span>
                               <span class="dimension_unit" ng-if="!ctrl.parcelUnit">in</span>
                               <a class="parcel-action" href="#" ng-click="ctrl.removeParcel($index)">
@@ -233,12 +229,12 @@
                           </div>
 
                           <div class="parcel-actions pull-left">
-                            <a href="#" ng-click="ctrl.addParcel()" style="padding-right:14px;">
+                            <a ng-click="ctrl.addParcel()" style="padding-right:14px;">
                               <i class="glyphicon glyphicon-plus-sign"></i>
                               <span translate="MAIN.DIALOG.PARCELS.ADD_PARCEL"></span>
                             </a>
                             <span id="switch_parcel_unit_us">
-                              <a href="#" ng-click="ctrl.switchParcelUnit()" style="padding-right:14px;">
+                              <a ng-click="ctrl.switchParcelUnit()" style="padding-right:14px;">
                                 <i class="glyphicon glyphicon-refresh"></i>
                                 <span translate="MAIN.DIALOG.PARCELS.CHANGE_UNIT"></span>
                               </a>
@@ -252,12 +248,12 @@
 
                     <div class="form-group form-group-no-margin">
                       <label class="control-label col-md-2 no-padding-right required-">
-                        <span class="popmark" id="popmark-shipment-date" data-placement="right" data-title="Date" data-content="Collection date requested" data-original-title="" title="" translate="MAIN.DIALOG.PARCELS.DATE">Date</span>
+                        <span class="popmark" data-placement="right" data-title="Date" data-content="Collection date requested" data-original-title="" title="" translate="MAIN.DIALOG.PARCELS.DATE">Date</span>
                       </label>
 
                       <div class="col-md-4">
                         <div class="input-group">
-                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="ctrl.shipment.date" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                           <span class="input-group-btn">
                             <button type="button" class="btn btn-default" ng-click="openDate()">
                               <i class="glyphicon glyphicon-calendar"></i>
@@ -271,14 +267,14 @@
                       </div>
 
                       <div class="col-md-6 text-center" id="shipment-date-row">
-                        <button type="submit" class="btn btn-primary btn-lg" id="btn_save" name="btn_save" ng-click="gotoProgress()">
+                        <button type="submit" class="btn btn-primary btn-lg">
                           <i class="glyphicon glyphicon-ok"></i>
                           <span translate="MAIN.DIALOG.PARCELS.COMPARE_OFFER"></span>
                         </button>
                       </div>
                     </div>
-
                   </form>
+
                   <div class="clear"></div>
                 </uib-tab>
                 <uib-tab index="1">

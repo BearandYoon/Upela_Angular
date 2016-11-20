@@ -17,15 +17,28 @@ angular.module('UpelaApp')
 
     vm.disabled = undefined;
     vm.searchEnabled = undefined;
-    vm.destinationCoutry = 'France';
-    vm.originCountry = 'France';
-    vm.parcels = [{
-      number: 1,
-      weight: '',
-      x: '',
-      y: '',
-      z: ''
-    }];
+
+    vm.shipment = {
+      type: 1,
+      origin: {
+        country: 'France',
+        post_code: '',
+        business_address: false
+      },
+      destination: {
+        country: 'France',
+        post_code: '',
+        business_address: false
+      },
+      parcels: [{
+        number: 1,
+        weight: '',
+        x: '',
+        y: '',
+        z: ''
+      }],
+      date: ''
+    };
 
     vm.parcelCount = 1;
     vm.parcelUnit = true;
@@ -34,6 +47,47 @@ angular.module('UpelaApp')
 
     vm.setInputFocus = function (){
       $scope.$broadcast('UiSelectDemo1');
+    };
+
+    vm.enable = function() {
+      vm.disabled = false;
+    };
+
+    vm.disable = function() {
+      vm.disabled = true;
+    };
+
+    vm.addParcel = function() {
+      var parcel = {
+        number: vm.parcelCount + 1,
+        weight: '',
+        x: '',
+        y: '',
+        z: ''
+      };
+
+      vm.shipment.parcels.push(parcel);
+      vm.parcelCount++;
+    };
+
+    vm.removeParcel = function(index) {
+      if(vm.parcelCount > 1) {
+        vm.shipment.parcels.splice(index, 1);
+        vm.parcelCount--;
+      }
+    };
+
+    vm.switchParcelUnit = function() {
+      vm.parcelUnit = !vm.parcelUnit;
+    };
+
+    $scope.today = function() {
+      vm.shipment.date = new Date();
+    };
+    $scope.today();
+
+    $scope.clear = function() {
+      vm.shipment.date = null;
     };
 
     // Disable weekend selection
@@ -61,59 +115,18 @@ angular.module('UpelaApp')
       return '';
     }
 
-    vm.enable = function() {
-      vm.disabled = false;
-    };
-
-    vm.disable = function() {
-      vm.disabled = true;
-    };
-
-    vm.addParcel = function() {
-      var parcel = {
-        number: vm.parcelCount + 1,
-        weight: '',
-        x: '',
-        y: '',
-        z: ''
-      };
-
-      vm.parcels.push(parcel);
-      vm.parcelCount++;
-    };
-
-    vm.removeParcel = function(index) {
-      if(vm.parcelCount > 1) {
-        vm.parcels.splice(index, 1);
-        vm.parcelCount--;
-      }
-    };
-
-    vm.switchParcelUnit = function() {
-      vm.parcelUnit = !vm.parcelUnit;
-    };
-
-    $scope.today = function() {
-      $scope.shipDate = new Date();
-    };
-    $scope.today();
-
-    $scope.clear = function() {
-      $scope.shipDate = null;
-    };
-
     $scope.inlineOptions = {
       customClass: getDayClass,
       minDate: new Date(),
-      showWeeks: true
+      showWeeks: false
     };
 
     $scope.dateOptions = {
-      dateDisabled: disabled,
       formatYear: 'yy',
       maxDate: new Date(2020, 5, 22),
       minDate: new Date(),
-      startingDay: 1
+      startingDay: 1,
+      showWeeks: false
     };
 
     $scope.toggleMin = function() {
@@ -128,7 +141,7 @@ angular.module('UpelaApp')
     };
 
     $scope.setDate = function(year, month, day) {
-      $scope.shipDate = new Date(year, month, day);
+      vm.shipment.date = new Date(year, month, day);
     };
 
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
@@ -139,10 +152,13 @@ angular.module('UpelaApp')
       opened: false
     };
 
-    var tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    var afterTomorrow = new Date();
-    afterTomorrow.setDate(tomorrow.getDate() + 1);
-
     vm.countries = MainService.getCountries();
+
+    vm.offer = function() {
+      console.log('shipment = ', vm.shipment);
+    };
+
+    vm.createAccount = function() {
+      $state.go('register');
+    }
   });
