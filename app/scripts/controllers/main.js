@@ -9,10 +9,6 @@
  */
 angular.module('UpelaApp')
   .controller('MainCtrl', function ($scope, $state, MainService) {
-    $scope.gotoProgress = function() {
-      $state.go('order-progress');
-    };
-
     var vm = this;
 
     vm.disabled = undefined;
@@ -156,6 +152,7 @@ angular.module('UpelaApp')
 
     vm.offer = function() {
       console.log('shipment = ', vm.shipment);
+      $state.go('order-progress');
     };
 
     vm.createAccount = function() {
