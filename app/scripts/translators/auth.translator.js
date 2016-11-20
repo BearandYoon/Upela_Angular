@@ -26,6 +26,12 @@
         ADVANTAGE: 'What are the advantages of a pro account?',
         PERSONAL: 'Personnal account',
         PROFESSIONAL: 'Professional account'
+      },
+      FORGOT_PASS: {
+        TITLE: 'Lost Password',
+        COMMENT: 'Please enter your email address',
+        EMAIL: 'Email',
+        SUBMIT: 'Submit'
       }
     });
 
@@ -49,6 +55,12 @@
         ADVANTAGE: 'Quels sont les avantages d\'un compte pro ?',
         PERSONAL: 'Compte personnel',
         PROFESSIONAL: 'Compte professionnel'
+      },
+      FORGOT_PASS: {
+        TITLE: 'Mot de passe oublié',
+        COMMENT: 'Veuillez entrer votre adresse email',
+        EMAIL: 'Email',
+        SUBMIT: 'Envoyer'
       }
     });
 
@@ -72,6 +84,12 @@
         ADVANTAGE: '¿Cuáles son las ventajas de una cuenta profesional?',
         PERSONAL: 'Cuenta personal',
         PROFESSIONAL: 'Cuenta profesional'
+      },
+      FORGOT_PASS: {
+        TITLE: 'He olvidado mi contraseña',
+        COMMENT: 'Introduzca su dirección de e-mail.',
+        EMAIL: 'Correo electrónico',
+        SUBMIT: 'Enviar'
       }
     });
   }

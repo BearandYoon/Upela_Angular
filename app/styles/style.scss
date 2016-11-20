@@ -1774,7 +1774,12 @@ p.payment_module img {margin: 0 10px 0px 0;}
 #parcel_list .parcel:first-child a.remove-parcel-btn {display: none;}
 #parcel_list span.error {display: block;}
 .parcel-actions {margin-top: -8px;}
-#switch_parcel_unit_fr a, #switch_parcel_unit_us a, .parcel-actions a {color: #e55933; font-size: 12px;}
+#switch_parcel_unit_fr a, #switch_parcel_unit_us a, .parcel-actions a
+{
+  cursor: pointer;
+  color: #e55933;
+  font-size: 12px;
+}
 /* END PARCELS */
 
 /* DIMENSIONS */
