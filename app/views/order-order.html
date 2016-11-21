@@ -13,9 +13,9 @@
                 <span translate="ORDER.STEP_TITLE.OFFERS"></span>
                 <i class="fa fa-pencil"></i>
               </a>
-              <a class="active" href="#" translate="ORDER.STEP_TITLE.ORDER">3. Your order</a>
-              <a class="disabled" href="#" translate="ORDER.STEP_TITLE.PAYMENT">4. Payment</a>
-              <a class="disabled" href="#" translate="ORDER.STEP_TITLE.CONFIRMATION">5. Confirmation</a>
+              <a class="active" translate="ORDER.STEP_TITLE.ORDER">3. Your order</a>
+              <a class="disabled" translate="ORDER.STEP_TITLE.PAYMENT">4. Payment</a>
+              <a class="disabled" translate="ORDER.STEP_TITLE.CONFIRMATION">5. Confirmation</a>
             </div>
 
             <h1 class="blue text-center">
@@ -23,8 +23,7 @@
               <small class="pull-right-" translate="ORDER_ORDER.COMMENT">Complete your choice</small>
             </h1>
 
-            <form id="ShipmentForm" class="form-horizontal" role="form" enctype="multipart/form-data" accept-charset="UTF-8" autocomplete="off">
-              <input type="hidden" id="carrier_id" name="carrier_id" value="1">
+            <form name="ShipmentForm" class="form-horizontal" ng-submit="ShipmentForm.$valid && ctrl.waybill()">
               <div class="row">
                 <div class="col-md-6 col-md-right-border">
                   <h2 class="address-group-legend">
@@ -36,25 +35,23 @@
                       </a>
                     </small>
                   </h2>
-                  <input type="hidden" id="address1_id" name="address1_id" value="2883604">
-                  <input type="hidden" id="address1_pro" name="address1_pro" value="1">
 
                   <div class="form-group">
-                    <label for="address1_company" class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.COMPANY">Company</label>
+                    <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.COMPANY">Company</label>
                     <div class="col-lg-7">
-                      <input type="text" id="address1_company" name="address1_company" class="form-control" value="" maxlength="35">
+                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.ship_from.company" required>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="address1_lastname" class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.NAME">Name</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.NAME">Name</label>
                     <div class="col-lg-7">
-                      <input type="text" id="address1_lastname" name="address1_lastname" class="form-control" value="" maxlength="35">
+                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.ship_from.name" required>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="address1_phone" class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.PHONE">Phone</label>
+                    <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.PHONE">Phone</label>
                     <div class="col-lg-7">
                       <div class="intl-tel-input allow-dropdown">
                         <div class="flag-container">
@@ -62,166 +59,74 @@
                             <div class="iti-flag ro"></div>
                             <div class="iti-arrow"></div>
                           </div>
-                          <ul class="country-list hide">
-                            <li class="country preferred" data-dial-code="33" data-country-code="fr">
-                              <div class="flag-box">
-                                <div class="iti-flag fr"></div>
-                              </div>
-                              <span class="country-name">France</span>
-                              <span class="dial-code">+33</span>
-                            </li>
-                            <li class="country preferred" data-dial-code="32" data-country-code="be">
-                              <div class="flag-box">
-                                <div class="iti-flag be"></div>
-                              </div>
-                              <span class="country-name">Belgium (België)</span>
-                              <span class="dial-code">+32</span>
-                            </li>
-                            <li class="country preferred" data-dial-code="49" data-country-code="de">
-                              <div class="flag-box">
-                                <div class="iti-flag de"></div>
-                              </div>
-                              <span class="country-name">Germany (Deutschland)</span>
-                              <span class="dial-code">+49</span>
-                            </li>
-                            <li class="country preferred" data-dial-code="34" data-country-code="es">
-                              <div class="flag-box">
-                                <div class="iti-flag es"></div>
-                              </div>
-                              <span class="country-name">Spain (España)</span>
-                              <span class="dial-code">+34</span>
-                            </li>
-                            <li class="country preferred" data-dial-code="39" data-country-code="it">
-                              <div class="flag-box">
-                                <div class="iti-flag it"></div>
-                              </div>
-                              <span class="country-name">Italy (Italia)</span>
-                              <span class="dial-code">+39</span>
-                            </li>
-                            <li class="country preferred" data-dial-code="41" data-country-code="ch">
-                              <div class="flag-box">
-                                <div class="iti-flag ch"></div>
-                              </div>
-                              <span class="country-name">Switzerland (Schweiz)</span>
-                              <span class="dial-code">+41</span>
-                            </li>
-                          </ul>
                         </div>
-                        <input type="text" id="address1_phone" name="address1_phone" class="form-control validate" data-validate="isPhoneNumber" value="" maxlength="25" autocomplete="off" placeholder="0712 345 678">
+                        <input type="number" class="form-control validate" data-validate="isPhoneNumber" value="" maxlength="25" placeholder="0712 345 678" ng-model="ctrl.shipment.ship_from.phone" required>
                       </div>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="address1_email" class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.EMAIL">Email</label>
+                    <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.EMAIL">Email</label>
                     <div class="col-lg-7">
-                      <input type="text" id="address1_email" name="address1_email" class="form-control" value="" maxlength="50">
+                      <input type="email" class="form-control" value="" maxlength="50" ng-model="ctrl.shipment.ship_from.email" required>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="address1_address1" class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.ADDRESS">Address</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.ADDRESS">Address</label>
                     <div class="col-lg-9">
-                      <input type="text" id="address1_address1" name="address1_address1" class="form-control validate" data-validate="isAddress" value="" placeholder="No., street" maxlength="35">
+                      <input type="text" class="form-control validate" data-validate="isAddress" value="" placeholder="No., street" maxlength="35" ng-model="ctrl.shipment.ship_from.address1" required>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="address1_address2" class="control-label col-lg-3">&nbsp;</label>
+                    <label class="control-label col-lg-3">&nbsp;</label>
                     <div class="col-lg-9">
-                      <input type="text" id="address1_address2" name="address1_address2" class="form-control" value="" placeholder="Line 2" maxlength="35">
+                      <input type="text" class="form-control" value="" placeholder="Line 2" maxlength="35" ng-model="ctrl.shipment.ship_from.address2" required>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="address1_address3" class="control-label col-lg-3">&nbsp;</label>
+                    <label class="control-label col-lg-3">&nbsp;</label>
                     <div class="col-lg-9">
-                      <input type="text" id="address1_address3" name="address1_address3" class="form-control" value="" placeholder="Line 3" maxlength="35">
+                      <input type="text" class="form-control" value="" placeholder="Line 3" maxlength="35" ng-model="ctrl.shipment.ship_from.address3" required>
                     </div>
                   </div>
-                  <div class="form-group hidden">
-                    <label for="address1_country_id" class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.COUNTRY">Country</label>
+
+                  <div class="form-group">
+                    <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.COUNTRY">Country</label>
                     <div class="col-lg-7">
-                      <select id="address1_country_id" name="address1_country_id" class="form-control chosen-select" style="display: none;">
-                        <option value=""></option>
-                        <option value="1" code="AF" contains-states="0" zipcode="0">Afghanistan</option>
-                        <option value="3" code="AL" contains-states="0" zipcode="0">Albania</option>
-                        <option value="4" code="DZ" contains-states="0" zipcode="1">Algeria</option>
-                        <option value="197" code="AS" contains-states="0" zipcode="0">American Samoa</option>
-                        <option value="244" code="AD" contains-states="0" zipcode="1">Andorra</option>
-                        <option value="8" code="AI" contains-states="0" zipcode="0">Anguilla</option>
-                        <option value="9" code="AQ" contains-states="0" zipcode="0">Antarctica</option>
-                        <option value="13" code="AR" contains-states="1" zipcode="1">Argentina</option>
-                        <option value="14" code="AM" contains-states="0" zipcode="1">Armenia</option>
-                        <option value="15" code="AW" contains-states="0" zipcode="0">Aruba</option>
-                        <option value="16" code="AU" contains-states="0" zipcode="1">Australia</option>
-                        <option value="17" code="AT" contains-states="0" zipcode="1">Austria</option>
-                        <option value="18" code="AZ" contains-states="0" zipcode="1">Azerbaijan</option>
-                        <option value="20" code="BS" contains-states="0" zipcode="0">Bahamas, The</option>
-                        <option value="21" code="BH" contains-states="0" zipcode="0">Bahrain</option>
-                        <option value="22" code="BD" contains-states="0" zipcode="1">Bangladesh</option>
-                        <option value="23" code="BB" contains-states="0" zipcode="0">Barbados</option>
-                        <option value="29" code="BY" contains-states="0" zipcode="1">Belarus</option>
-                        <option value="25" code="BE" contains-states="0" zipcode="1">Belgium</option>
-                        <option value="26" code="BZ" contains-states="0" zipcode="0">Belize</option>
-                        <option value="19" code="BJ" contains-states="0" zipcode="0">Benin</option>
-                        <option value="237" code="ZW" contains-states="0" zipcode="0">Zimbabwe</option>
-                      </select>
-                      <div class="chosen-container chosen-container-single" style="width: 0px;" title="" id="address1_country_id_chosen">
-                        <a class="chosen-single chosen-single-with-deselect" tabindex="-1">
-                          <span>Romania</span>
-                          <abbr class="search-choice-close"></abbr>
-                          <div><b></b></div>
-                        </a>
-                        <div class="chosen-drop">
-                          <div class="chosen-search">
-                            <input type="text" autocomplete="off">
-                          </div>
-                          <ul class="chosen-results"></ul>
-                        </div>
-                      </div>
+                      <input type="text" class="form-control" value="Romania" maxlength="255" ng-model="ctrl.shipment.ship_from.country_code" required>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="address1_country_name" class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.COUNTRY">Country</label>
+                    <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.POSTAL">Postal code</label>
                     <div class="col-lg-7">
-                      <input type="text" id="address1_country_name" name="address1_country_name" class="form-control" value="Romania" maxlength="255" readonly="readonly" tabindex="-1">
-                    </div>
-                  </div>
-                  <div class="form-group" id="address1_postcode_container">
-                    <label for="address1_postcode" class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.POSTAL">Postal code</label>
-                    <div class="col-lg-7">
-                      <input type="text" id="address1_postcode" name="address1_postcode" class="form-control" value="517042" maxlength="20" readonly="readonly" tabindex="-1">
-                    </div>
-                  </div>
-                  <div class="form-group" id="address1_city_container">
-                    <label for="address1_city" class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.CITY">City</label>
-                    <div class="col-lg-7">
-                      <input type="text" id="address1_city" name="address1_city" class="form-control" value="Bubeşti" maxlength="255" readonly="readonly" tabindex="-1">
-                    </div>
-                  </div>
-                  <div class="form-group hidden" id="address1_state_container" style="display: none;">
-                    <label for="address1_state" class="control-label col-lg-3">State code</label>
-                    <div class="col-lg-3">
-                      <input type="text" id="address1_state" name="address1_state" class="form-control" value="" maxlength="64">
+                      <input type="number" class="form-control" value="517042" maxlength="20" ng-model="ctrl.shipment.ship_from.postcode" required>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="address1_customer_code" class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.REF">Your ref.</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.CITY">City</label>
                     <div class="col-lg-7">
-                      <input type="text" id="address1_customer_code" name="address1_customer_code" class="form-control" value="" maxlength="35" autocomplete="off">
+                      <input type="text" class="form-control" value="Bubeşti" maxlength="255" ng-model="ctrl.shipment.ship_from.city" required>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="address1_notes" class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.OTHERS">Others</label>
+                    <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.REF">Your ref.</label>
+                    <div class="col-lg-7">
+                      <input type="text" class="form-control" value="" maxlength="35">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.OTHERS">Others</label>
                     <div class="col-lg-9">
-                      <textarea id="address1_notes" name="address1_notes" class="form-control" placeholder="Other information to help the collection driver (interphone, entry code, instructions, opening hours...)" rows="2" maxlength="30" data-maxchar="30" autocomplete="off"></textarea>
+                      <textarea class="form-control" placeholder="Other information to help the collection driver (interphone, entry code, instructions, opening hours...)" rows="2" maxlength="30" data-maxchar="30"></textarea>
                       <span class="text-count-down-container">
-					              <span id="address1_notes_counter" class="text-count-down">30</span> character(s) left
+					              <span class="text-count-down">30</span> character(s) left
 				              </span>
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="col-lg-9 col-lg-offset-3">
                       <div class="checkbox">
-                        <label for="address1_save_in_address_book" class="">
-                          <input type="checkbox" id="address1_save_in_address_book" name="address1_save_in_address_book" class="check_box" value="1" unchecked="">
+                        <label class="">
+                          <input type="checkbox" class="check_box" value="1" unchecked="">
                           <span translate="ORDER_ORDER.SAVE_ADD_BOOK"></span>
                         </label>
                       </div>
@@ -238,25 +143,23 @@
                       </a>
                     </small>
                   </h2>
-                  <input type="hidden" id="address2_id" name="address2_id" value="2883605">
-                  <input type="hidden" id="address2_pro" name="address2_pro" value="1">
 
                   <div class="form-group">
-                    <label for="address2_company" class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.COMPANY">Company</label>
+                    <label class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.COMPANY">Company</label>
                     <div class="col-lg-7">
-                      <input type="text" id="address2_company" name="address2_company" class="form-control" value="" maxlength="35">
+                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.ship_to.company" required>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="address2_lastname" class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.NAME">Name</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.NAME">Name</label>
                     <div class="col-lg-7">
-                      <input type="text" id="address2_lastname" name="address2_lastname" class="form-control" value="" maxlength="35">
+                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.ship_to.name" required>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="address2_phone" class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.CELL_PHONE">Cellphone</label>
+                    <label class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.CELL_PHONE">Cellphone</label>
                     <div class="col-lg-7">
                       <div class="intl-tel-input allow-dropdown">
                         <div class="flag-container">
@@ -264,174 +167,73 @@
                             <div class="iti-flag ru"></div>
                             <div class="iti-arrow"></div>
                           </div>
-                          <ul class="country-list hide">
-                            <li class="country preferred" data-dial-code="33" data-country-code="fr">
-                              <div class="flag-box">
-                                <div class="iti-flag fr"></div>
-                              </div>
-                              <span class="country-name">France</span>
-                              <span class="dial-code">+33</span>
-                            </li>
-
-                            <li class="country preferred" data-dial-code="32" data-country-code="be">
-                              <div class="flag-box">
-                                <div class="iti-flag be"></div>
-                              </div>
-                              <span class="country-name">Belgium (België)</span>
-                              <span class="dial-code">+32</span>
-                            </li>
-
-                            <li class="country preferred" data-dial-code="49" data-country-code="de">
-                              <div class="flag-box">
-                                <div class="iti-flag de"></div>
-                              </div>
-                              <span class="country-name">Germany (Deutschland)</span>
-                              <span class="dial-code">+49</span>
-                            </li>
-
-                            <li class="country preferred" data-dial-code="34" data-country-code="es">
-                              <div class="flag-box">
-                                <div class="iti-flag es"></div>
-                              </div>
-                              <span class="country-name">Spain (España)</span>
-                              <span class="dial-code">+34</span>
-                            </li>
-
-                            <li class="country" data-dial-code="263" data-country-code="zw">
-                              <div class="flag-box">
-                                <div class="iti-flag zw"></div>
-                              </div>
-                              <span class="country-name">Zimbabwe</span>
-                              <span class="dial-code">+263</span>
-                            </li>
-                          </ul>
                         </div>
 
-                        <input type="text" id="address2_phone" name="address2_phone" class="form-control validate" data-validate="isPhoneNumber" value="" placeholder="SMS notifications" maxlength="25" autocomplete="off">
+                        <input type="number" class="form-control validate" data-validate="isPhoneNumber" value="" placeholder="SMS notifications" maxlength="25" ng-model="ctrl.shipment.ship_to.phone" required>
                       </div>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="address2_email" class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.EMAIL">Email</label>
+                    <label class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.EMAIL">Email</label>
                     <div class="col-lg-7">
-                      <input type="text" id="address2_email" name="address2_email" class="form-control" value="" maxlength="50">
+                      <input type="email" class="form-control" value="" maxlength="50" ng-model="ctrl.shipment.ship_to.email" required>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="address2_address1" class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.ADDRESS">Address</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.ADDRESS">Address</label>
                     <div class="col-lg-9">
-                      <input type="text" id="address2_address1" name="address2_address1" class="form-control validate" data-validate="isAddress" value="" placeholder="No., street" maxlength="35">
+                      <input type="text" class="form-control validate" placeholder="No., street" maxlength="35" ng-model="ctrl.shipment.ship_to.address1" required>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="address2_address2" class="control-label col-lg-3">&nbsp;</label>
+                    <label class="control-label col-lg-3">&nbsp;</label>
                     <div class="col-lg-9">
-                      <input type="text" id="address2_address2" name="address2_address2" class="form-control" value="" placeholder="Line 2" maxlength="35">
+                      <input type="text" class="form-control" value="" placeholder="Line 2" maxlength="35" ng-model="ctrl.shipment.ship_to.address2" required>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="address2_address3" class="control-label col-lg-3">&nbsp;</label>
+                    <label class="control-label col-lg-3">&nbsp;</label>
                     <div class="col-lg-9">
-                      <input type="text" id="address2_address3" name="address2_address3" class="form-control" value="" placeholder="Line 3" maxlength="35">
-                    </div>
-                  </div>
-
-                  <div class="form-group hidden">
-                    <label for="address2_country_id" class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.COUNTRY">Country</label>
-                    <div class="col-lg-7">
-                      <select id="address2_country_id" name="address2_country_id" class="form-control chosen-select" style="display: none;">
-                        <option value=""></option>
-                        <option value="1" code="AF" contains-states="0" zipcode="0">Afghanistan</option>
-                        <option value="3" code="AL" contains-states="0" zipcode="0">Albania</option>
-                        <option value="4" code="DZ" contains-states="0" zipcode="1">Algeria</option>
-                        <option value="197" code="AS" contains-states="0" zipcode="0">American Samoa</option>
-                        <option value="244" code="AD" contains-states="0" zipcode="1">Andorra</option>
-                        <option value="7" code="AO" contains-states="0" zipcode="0">Angola</option>
-                        <option value="8" code="AI" contains-states="0" zipcode="0">Anguilla</option>
-                        <option value="9" code="AQ" contains-states="0" zipcode="0">Antarctica</option>
-                        <option value="10" code="AG" contains-states="0" zipcode="0">Antigua &amp; Barbuda</option>
-                        <option value="13" code="AR" contains-states="1" zipcode="1">Argentina</option>
-                        <option value="14" code="AM" contains-states="0" zipcode="1">Armenia</option>
-                        <option value="15" code="AW" contains-states="0" zipcode="0">Aruba</option>
-                        <option value="16" code="AU" contains-states="0" zipcode="1">Australia</option>
-                        <option value="17" code="AT" contains-states="0" zipcode="1">Austria</option>
-                        <option value="18" code="AZ" contains-states="0" zipcode="1">Azerbaijan</option>
-                        <option value="20" code="BS" contains-states="0" zipcode="0">Bahamas, The</option>
-                        <option value="187" code="EH" contains-states="0" zipcode="0">Western Sahara</option>
-                        <option value="236" code="ZM" contains-states="0" zipcode="0">Zambia</option>
-                        <option value="237" code="ZW" contains-states="0" zipcode="0">Zimbabwe</option>
-                      </select>
-
-                      <div class="chosen-container chosen-container-single" style="width: 0px;" title="" id="address2_country_id_chosen">
-                        <a class="chosen-single chosen-single-with-deselect" tabindex="-1">
-                          <span>Russia</span>
-                          <abbr class="search-choice-close"></abbr>
-                          <div><b></b></div>
-                        </a>
-
-                        <div class="chosen-drop">
-                          <div class="chosen-search">
-                            <input type="text" autocomplete="off">
-                          </div>
-                          <ul class="chosen-results"></ul>
-                        </div>
-                      </div>
+                      <input type="text" class="form-control" value="" placeholder="Line 3" maxlength="35" ng-model="ctrl.shipment.ship_to.address3" required>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="address2_country_name" class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.COUNTRY">Country</label>
+                    <label class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.COUNTRY">Country</label>
                     <div class="col-lg-7">
-                      <input type="text" id="address2_country_name" name="address2_country_name" class="form-control" value="Russia" maxlength="255" readonly="readonly" tabindex="-1">
-                    </div>
-                  </div>
-
-                  <div class="form-group" id="address2_postcode_container">
-                    <label for="address2_postcode" class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.POSTAL">Postal code</label>
-                    <div class="col-lg-7">
-                      <input type="text" id="address2_postcode" name="address2_postcode" class="form-control" value="101000" maxlength="20" readonly="readonly" tabindex="-1">
-                    </div>
-                  </div>
-
-                  <div class="form-group" id="address2_city_container">
-                    <label for="address2_city" class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.CITY">City</label>
-                    <div class="col-lg-7">
-                      <input type="text" id="address2_city" name="address2_city" class="form-control" value="Moscow" maxlength="255" readonly="readonly" tabindex="-1">
-                    </div>
-                  </div>
-
-                  <div class="form-group hidden" id="address2_state_container" style="display: none;">
-                    <label for="address2_state" class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.POSTAL">State code</label>
-                    <div class="col-lg-3">
-                      <input type="text" id="address2_state" name="address2_state" class="form-control" value="" maxlength="64">
+                      <input type="text" class="form-control" value="Russia" maxlength="255" ng-model="ctrl.shipment.ship_to.country" required>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="address2_customer_code" class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.REF">Your ref.</label>
+                    <label class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.POSTAL">Postal code</label>
                     <div class="col-lg-7">
-                      <input type="text" id="address2_customer_code" name="address2_customer_code" class="form-control" value="" maxlength="35" autocomplete="off">
+                      <input type="number" class="form-control" value="101000" maxlength="20" ng-model="ctrl.shipment.ship_to.postcode" required>
                     </div>
                   </div>
 
-                  <div class="form-group hidden">
-                    <label for="address2_notes" class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.OTHERS">Others</label>
-                    <div class="col-lg-9">
-                      <textarea id="address2_notes" name="address2_notes" class="form-control blue-placeholder" placeholder="Delivery instructions: opening hours, desired date/time of delivery (subject to feasibility), access code, ..." rows="3" maxlength="35" data-maxchar="35" autocomplete="off"></textarea>
-                      <span class="text-count-down-container">
-                        <span id="address2_notes_counter" class="text-count-down">35</span> character(s) left
-                      </span>
+                  <div class="form-group">
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.CITY">City</label>
+                    <div class="col-lg-7">
+                      <input type="text" class="form-control" value="Moscow" maxlength="255" ng-model="ctrl.shipment.ship_to.city" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.REF">Your ref.</label>
+                    <div class="col-lg-7">
+                      <input type="text" class="form-control" value="" maxlength="35" autocomplete="off">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <div class="col-lg-9 col-lg-offset-3">
                       <div class="checkbox">
-                        <label for="address2_save_in_address_book" class="">
-                          <input type="checkbox" id="address2_save_in_address_book" name="address2_save_in_address_book" class="check_box" value="1" unchecked="">
+                        <label class="">
+                          <input type="checkbox" class="check_box" value="1" unchecked="">
                           <span translate="ORDER_ORDER.SAVE_ADD_BOOK"></span>
                         </label>
                       </div>
@@ -441,8 +243,8 @@
                   <div class="form-group">
                     <div class="col-lg-9 col-lg-offset-3">
                       <div class="checkbox">
-                        <label for="notification_recipient" class="">
-                          <input type="checkbox" id="notification_recipient" name="notification_recipient" class="check_box" value="1" checked="">
+                        <label class="">
+                          <input type="checkbox" class="check_box" value="1" checked="">
                           <span translate="ORDER_ORDER.RECIPIENT.SEND_EMAIL"></span>
                         </label>
                       </div>
@@ -456,9 +258,9 @@
                 <div class="col-md-6">
                   <h2 class="form-group-legend" translate="ORDER_ORDER.CHARACTERISTICS.TITLE">Characteristics</h2>
                   <div class="form-group">
-                    <label for="reason" class="control-label col-lg-3 required" translate="ORDER_ORDER.CHARACTERISTICS.REASON">Reason</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.CHARACTERISTICS.REASON">Reason</label>
                     <div class="col-lg-7">
-                      <select id="reason" name="reason" class="form-control">
+                      <select class="form-control" ng-model="ctrl.shipment.reason" required>
                         <option value="" selected="">-- Select in the list --</option>
                         <option value="Commercial">Commercial</option>
                         <option value="Cadeau">Gift</option>
@@ -472,36 +274,26 @@
                 <div class="col-md-6">
                   <h2 class="form-group-legend">&nbsp;</h2>
                   <div class="form-group">
-                    <label for="content" class="control-label col-lg-3 required" translate="ORDER_ORDER.CHARACTERISTICS.CONTENT">Content</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.CHARACTERISTICS.CONTENT">Content</label>
                     <div class="col-lg-7">
-                      <input type="text" id="content" name="content" class="form-control" value="" maxlength="35">
+                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.content" required>
                       <span class="help-block">
                         <a href="#" translate="ORDER_ORDER.CHARACTERISTICS.PROHIBIT">Prohibited Goods</a>
                       </span>
                     </div>
                   </div>
                 </div>
-
-                <div class="col-md-12 orange" id="furniture-warning" style="display: none;">
-                  <strong>CAREFUL</strong>:
-                  <strong>Furniture</strong> must be
-                  <strong>dismantled</strong> and packed in the
-                  <strong>original packaging</strong>, which also must suit the constraints of air transportation (new box, appropriate internal protections in accordance with goods’ weights, full and uniform carton packaging).
-                  <br><br>
-                  <strong>Any failure to meet this requirement will deprived you of any redress, in case of loss or return to shipper.</strong>
-                </div>
               </div>
 
-              <input type="hidden" id="invoicing" name="invoicing" value="0">
               <hr style="margin: 10px 0 20px 0;">
               <div class="row">
                 <div class="col-md-12">
                   <h2 class="form-group-legend" translate="ORDER_ORDER.INSURANCE.TITLE">Insurance</h2>
                   <div class="form-group no-personal-effects">
-                    <label for="insurance_declared_value" class="control-label col-lg-3" translate="ORDER_ORDER.INSURANCE.DECLARED_VALUE">Declared value</label>
+                    <label class="control-label col-lg-3" translate="ORDER_ORDER.INSURANCE.DECLARED_VALUE">Declared value</label>
                     <div class="col-lg-9">
-                      <input type="text" id="insurance_declared_value" name="insurance_declared_value" class="form-control input-small" style="display: inline-block;" value="0.00" maxlength="32">
-                      <select class="form-control input-mini" style="display: inline-block;" id="insurance_currency" name="insurance_currency">
+                      <input type="text" class="form-control input-small" style="display: inline-block;" value="0.00" maxlength="32">
+                      <select class="form-control input-mini" style="display: inline-block;">
                         <option value="EUR" selected="selected">€</option>
                         <option value="USD">$</option>
                       </select>
@@ -517,12 +309,9 @@
                   <div class="form-group no-personal-effects">
                     <div class="col-lg-9 col-lg-offset-3">
                       <div class="checkbox">
-                        <label for="insurance" class="">
-                          <input type="checkbox" id="insurance" name="insurance" class="check_box" value="1">
+                        <label>
+                          <input type="checkbox" class="check_box" value="1">
                           <span translate="ORDER_ORDER.INSURANCE.REAL_VALUE"></span>
-                          <span id="insurance_price_label_container" style="display: none;">
-                            <span id="insurance_price_label" style="display: none;">0€</span>
-                          </span>
                         </label>
                       </div>
                       <div class="help-block">
@@ -531,7 +320,6 @@
                     </div>
                   </div>
 
-                  <input type="hidden" id="insurance_declared_value_eur" name="insurance_declared_value_eur" value="0">
                   <div class="form-group personal-effects" style="display: none;">
                     <div class="col-lg-9 col-lg-offset-3">
                       <p><strong>Important note: Personal effects are excluded from the general insurance conditions.</strong></p>
@@ -544,10 +332,10 @@
               </div>
 
               <hr style="margin: 10px 0 20px 0;">
-              <div id="duties_and_taxes_container">
+              <div>
                 <div class="row">
                   <div class="col-md-12">
-                    <div id="duties_and_taxes_container-">
+                    <div>
                       <h2 class="form-group-legend" translate="ORDER_ORDER.OBLIGATIONS.TITLE">Customs obligations</h2>
                       <p class="text-muted">
                         <span translate="ORDER_ORDER.OBLIGATIONS.COMMENT1">Documents and taxes may be requested. Please refer to our section</span>
@@ -558,7 +346,7 @@
                         <p class="text-muted" translate="ORDER_ORDER.OBLIGATIONS.COMMENT2">So that your shipment is carried in the correct conditions, complete the following fields</p>
                       </div>
 
-                      <div id="products-container" class="products-container">
+                      <div class="products-container">
                         <table id="products-table" class="table table-bordered table-striped- table-condensed" style="background-color:#fff;">
                           <thead>
                             <tr>
@@ -573,27 +361,26 @@
                               <th></th>
                             </tr>
                           </thead>
-                          <tbody id="product_list">
-                            <tr id="product_0" class="product" style="vertical-align: middle;">
+                          <tbody>
+                            <tr class="product" style="vertical-align: middle;">
                               <td>
-                                <input type="text" class="form-control input-medium2" placeholder="Description in English and/or HS code" id="poducts_description_0" name="products[0][description]" value="">
+                                <input type="text" class="form-control input-medium2" placeholder="Description in English and/or HS code" value="">
                               </td>
                               <td>
-                                <input type="text" class="form-control input-xmini2" placeholder="..." id="products_manufacture_country_code_0" name="products[0][manufacture_country_code]" value="">
+                                <input type="text" class="form-control input-xmini2" placeholder="..." value="">
                               </td>
                               <td>
-                                <input type="text" class="form-control input-xmini2" placeholder="0" id="products_number_0" name="products[0][number]" value="1">
+                                <input type="text" class="form-control input-xmini2" placeholder="0" value="1">
                               </td>
                               <td>
-                                <input type="text" class="form-control input-xmini2" placeholder="" id="products_value_0" name="products[0][value]" value="">
-                                <input type="hidden" id="products_value_eur_0" name="products[0][value_eur]" value="0">
+                                <input type="text" class="form-control input-xmini2" placeholder="" value="">
 
-                                <select class="form-control input-xmini3" id="products_currency_0" name="products[0][currency]">
+                                <select class="form-control input-xmini3">
                                   <option value="EUR" selected="selected">€</option>
                                   <option value="USD">$</option>
                                 </select>
                               </td>
-                              <td id="products_total_price_eur_0">0</td>
+                              <td>0</td>
                               <td class="product-actions">
                                 <a class="product-action" href="#">
                                   <i class="glyphicon glyphicon-plus-sign"></i>
@@ -607,9 +394,9 @@
                           <tfoot>
                             <tr style="vertical-align: middle;">
                               <td colspan="2"><strong>TOTAL</strong></td>
-                              <td id="products_total_number">1</td>
+                              <td>1</td>
                               <td></td>
-                              <td id="products_total_price_eur">0</td>
+                              <td>0</td>
                               <td></td>
                             </tr>
                           </tfoot>
@@ -625,7 +412,7 @@
 
                       <p class="text-center">
                         <i class="fa fa-warning orange"></i>
-                        <span class="popmark pointer" id="popmark-duties" data-placement="right" data-title="Customs duties and VAT" data-content="The customs duties and VAT are not included in the transport costs. Additional costs may be required at destination (personal effects included) when departure and destination countries are not in the same economic area (French overseas departments and territories included). These duties and taxes are calculated by the Customs." data-original-title="" title="">
+                        <span class="popmark pointer" data-placement="right" data-title="Customs duties and VAT" data-content="The customs duties and VAT are not included in the transport costs. Additional costs may be required at destination (personal effects included) when departure and destination countries are not in the same economic area (French overseas departments and territories included). These duties and taxes are calculated by the Customs." data-original-title="" title="">
                           <span class="orange" translate="ORDER_ORDER.OBLIGATIONS.VAT">The customs duties and VAT are not included in the transport costs.</span>
                         </span>
                       </p>
@@ -642,37 +429,30 @@
 
                 <div style="display: none;">
                   <hr style="margin: 10px 0 20px 0;">
-                  <div class="row" id="duty_payment_container">
+                  <div class="row">
                     <div class="col-md-12">
                       <h2 class="form-group-legend">Tax and duty payment</h2>
-                      <div class="form-group" id="duty_payment_third_party_container">
+                      <div class="form-group">
                         <label class="control-label col-lg-3">Tax and duty payment</label>
                         <div class="col-lg-7">
-                          <div class="radio" id="radio-duty_payment_third_party-0">
-                            <label for="duty_payment_third_party-0">
-                              <input type="radio" id="duty_payment_third_party-0" name="duty_payment_third_party" value="0">&nbsp;Duties and taxes are paid by the recipient
+                          <div class="radio">
+                            <label>
+                              <input type="radio" value="0">&nbsp;Duties and taxes are paid by the recipient
                             </label>
                           </div>
 
-                          <div class="radio" id="radio-duty_payment_third_party-1">
-                            <label for="duty_payment_third_party-1">
-                              <input type="radio" id="duty_payment_third_party-1" name="duty_payment_third_party" value="1">&nbsp;Duties and taxes are paid by the sender or a third party
+                          <div class="radio">
+                            <label>
+                              <input type="radio" value="1">&nbsp;Duties and taxes are paid by the sender or a third party
                             </label>
                           </div>
                         </div>
                       </div>
 
-                      <div class="form-group" id="duty_account_number_container" style="display: none;">
-                        <label for="duty_account_number" class="control-label col-lg-3">Duty account nr</label>
+                      <div class="form-group" style="display: none;">
+                        <label class="control-label col-lg-3">Duty account postcode</label>
                         <div class="col-lg-3">
-                          <input type="text" id="duty_account_number" name="duty_account_number" class="form-control" value="" maxlength="12">
-                        </div>
-                      </div>
-
-                      <div class="form-group" id="duty_account_postcode_container" style="display: none;">
-                        <label for="duty_account_postcode" class="control-label col-lg-3">Duty account postcode</label>
-                        <div class="col-lg-3">
-                          <input type="text" id="duty_account_postcode" name="duty_account_postcode" class="form-control validate" data-validate="isPostCode" value="" maxlength="20">
+                          <input type="text" class="form-control validate" data-validate="isPostCode" value="" maxlength="20">
                         </div>
                       </div>
                     </div>
@@ -708,7 +488,6 @@
               <div class="row">
                 <div class="col-md-12">
                   <h2 class="form-group-legend" translate="ORDER_ORDER.PICKUP.TITLE">Pickup</h2>
-                  <input type="hidden" id="dropoff_selection" name="dropoff_selection" value="1">
                   <div class="form-group">
                   <div class="col-lg-9 col-lg-offset-3">
                     <div class="radio">
@@ -732,7 +511,7 @@
                     </div>
                     <span translate="ORDER_ORDER.PICKUP.BETWEEN"></span>
 
-                    <select id="ready_time" name="ready_time" class="form-control input-small2 display-inline-block">
+                    <select class="form-control input-small2 display-inline-block">
                       <option value="0800">08:00am</option>
                       <option value="0815">08:15am</option>
                       <option value="0830">08:30am</option>
@@ -870,7 +649,7 @@
 
               <div class="form-group">
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary btn-lg" id="btn_save" name="btn_save" ng-click="clickContinue()">
+                  <button type="submit" class="btn btn-primary btn-lg" ng-click="clickContinue()">
                     <i class="glyphicon glyphicon-ok"></i>
                     <span translate="ORDER_ORDER.CONTINUE"></span>
                   </button>

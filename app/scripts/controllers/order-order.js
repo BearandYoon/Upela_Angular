@@ -9,9 +9,7 @@
  */
 angular.module('UpelaApp')
   .controller('OrderOrderCtrl', function ($scope, $state) {
-    $scope.clickContinue = function() {
-      $state.go('order-payment');
-    };
+    var vm = this;
 
     // Disable weekend selection
     function disabled(data) {
@@ -82,5 +80,46 @@ angular.module('UpelaApp')
 
     $scope.popup = {
       opened: false
+    };
+
+    vm.shipment = {
+      account: {
+        login: '',
+        password: ''
+      },
+      shipment_id: '',
+      ship_from: {
+        company: '',
+        name: '',
+        phone: '',
+        email: '',
+        address1: '',
+        address2: '',
+        address3: '',
+        country_code: '',
+        postcode: '',
+        city: '',
+        pro: ''
+      },
+      ship_to: {
+        company: '',
+        name: '',
+        phone: '',
+        email: '',
+        address1: '',
+        address2: '',
+        address3: '',
+        country_code: '',
+        postcode: '',
+        city: '',
+        pro: ''
+      },
+      reason: '',
+      content: '',
+      label_format: ''
+    };
+
+    vm.waybill = function() {
+      console.log('shipment-waybill = ', vm.shipment);
     };
   });

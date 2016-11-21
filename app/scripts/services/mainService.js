@@ -255,11 +255,17 @@ angular.module('UpelaApp')
       {name: 'Zimbabwe', code: 'ZW'}
     ];
 
+    var BaseUrl = 'https://www.upela.com/api/v2/';
+    function getOffers() {
+
+    }
+
     function getCountries() {
       return countries;
     }
 
     return ({
-      getCountries: getCountries
+      getCountries: getCountries,
+      getOffers: getOffers
     });
   });
