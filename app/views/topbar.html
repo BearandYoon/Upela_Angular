@@ -79,13 +79,13 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown dropdown-lang">
-          <a class="dropdown-toggle" data-toggle="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;">
             <img ng-src="{{selLanguage.image}}" title={{selLanguage.language}}>
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu" style="min-width: 0; max-width: 58px;">
             <li ng-repeat="language in languages" ng-if="selLanguage !== language">
-              <a title={{language.language}} ng-click="selectLanguage(language)">
+              <a title={{language.language}} ng-click="selectLanguage(language)" style="cursor: pointer;">
                 <img ng-src="{{language.image}}" title={{language.language}}>
               </a>
             </li>

@@ -39,7 +39,7 @@
                   <div class="form-group">
                     <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.COMPANY">Company</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.ship_from.company" required>
+                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.ship_from.company">
                     </div>
                   </div>
 
@@ -60,14 +60,14 @@
                             <div class="iti-arrow"></div>
                           </div>
                         </div>
-                        <input type="number" class="form-control validate" data-validate="isPhoneNumber" value="" maxlength="25" placeholder="0712 345 678" ng-model="ctrl.shipment.ship_from.phone" required>
+                        <input type="text" class="form-control validate" value="" maxlength="25" placeholder="0712 345 678" ng-model="ctrl.shipment.ship_from.phone">
                       </div>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.EMAIL">Email</label>
                     <div class="col-lg-7">
-                      <input type="email" class="form-control" value="" maxlength="50" ng-model="ctrl.shipment.ship_from.email" required>
+                      <input type="email" class="form-control" value="" maxlength="50" ng-model="ctrl.shipment.ship_from.email">
                     </div>
                   </div>
                   <div class="form-group">
@@ -79,26 +79,26 @@
                   <div class="form-group">
                     <label class="control-label col-lg-3">&nbsp;</label>
                     <div class="col-lg-9">
-                      <input type="text" class="form-control" value="" placeholder="Line 2" maxlength="35" ng-model="ctrl.shipment.ship_from.address2" required>
+                      <input type="text" class="form-control" value="" placeholder="Line 2" maxlength="35" ng-model="ctrl.shipment.ship_from.address2">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="control-label col-lg-3">&nbsp;</label>
                     <div class="col-lg-9">
-                      <input type="text" class="form-control" value="" placeholder="Line 3" maxlength="35" ng-model="ctrl.shipment.ship_from.address3" required>
+                      <input type="text" class="form-control" value="" placeholder="Line 3" maxlength="35" ng-model="ctrl.shipment.ship_from.address3">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.COUNTRY">Country</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" value="Romania" maxlength="255" ng-model="ctrl.shipment.ship_from.country_code" required>
+                      <input type="text" class="form-control" value="Romania" maxlength="255" ng-model="ctrl.shipment.ship_from.country_code">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.POSTAL">Postal code</label>
                     <div class="col-lg-7">
-                      <input type="number" class="form-control" value="517042" maxlength="20" ng-model="ctrl.shipment.ship_from.postcode" required>
+                      <input type="number" class="form-control" value="517042" maxlength="20" ng-model="ctrl.shipment.ship_from.postcode">
                     </div>
                   </div>
                   <div class="form-group">
@@ -147,7 +147,7 @@
                   <div class="form-group">
                     <label class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.COMPANY">Company</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.ship_to.company" required>
+                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.ship_to.company">
                     </div>
                   </div>
 
@@ -169,7 +169,7 @@
                           </div>
                         </div>
 
-                        <input type="number" class="form-control validate" data-validate="isPhoneNumber" value="" placeholder="SMS notifications" maxlength="25" ng-model="ctrl.shipment.ship_to.phone" required>
+                        <input type="number" class="form-control validate" data-validate="isPhoneNumber" value="" placeholder="SMS notifications" maxlength="25" ng-model="ctrl.shipment.ship_to.phone">
                       </div>
                     </div>
                   </div>
@@ -177,7 +177,7 @@
                   <div class="form-group">
                     <label class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.EMAIL">Email</label>
                     <div class="col-lg-7">
-                      <input type="email" class="form-control" value="" maxlength="50" ng-model="ctrl.shipment.ship_to.email" required>
+                      <input type="email" class="form-control" value="" maxlength="50" ng-model="ctrl.shipment.ship_to.email">
                     </div>
                   </div>
 
@@ -191,27 +191,27 @@
                   <div class="form-group">
                     <label class="control-label col-lg-3">&nbsp;</label>
                     <div class="col-lg-9">
-                      <input type="text" class="form-control" value="" placeholder="Line 2" maxlength="35" ng-model="ctrl.shipment.ship_to.address2" required>
+                      <input type="text" class="form-control" value="" placeholder="Line 2" maxlength="35" ng-model="ctrl.shipment.ship_to.address2">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="control-label col-lg-3">&nbsp;</label>
                     <div class="col-lg-9">
-                      <input type="text" class="form-control" value="" placeholder="Line 3" maxlength="35" ng-model="ctrl.shipment.ship_to.address3" required>
+                      <input type="text" class="form-control" value="" placeholder="Line 3" maxlength="35" ng-model="ctrl.shipment.ship_to.address3">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.COUNTRY">Country</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" value="Russia" maxlength="255" ng-model="ctrl.shipment.ship_to.country" required>
+                      <input type="text" class="form-control" value="Russia" maxlength="255" ng-model="ctrl.shipment.ship_to.country">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.POSTAL">Postal code</label>
                     <div class="col-lg-7">
-                      <input type="number" class="form-control" value="101000" maxlength="20" ng-model="ctrl.shipment.ship_to.postcode" required>
+                      <input type="number" class="form-control" value="101000" maxlength="20" ng-model="ctrl.shipment.ship_to.postcode">
                     </div>
                   </div>
 
