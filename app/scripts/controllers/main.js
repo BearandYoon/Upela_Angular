@@ -8,7 +8,7 @@
  * Controller of the UpelaApp
  */
 angular.module('UpelaApp')
-  .controller('MainCtrl', function ($scope, $state, MainService) {
+  .controller('MainCtrl', function ($scope, $state, MainService, $http) {
     var vm = this;
 
     vm.disabled = undefined;
@@ -49,6 +49,10 @@ angular.module('UpelaApp')
     vm.countries = [];
     vm.ship_to_country = 'France';
     vm.ship_from_country = 'France';
+    vm.ship_to_addresses = [];
+    vm.merged_ship_to_addresses = [];
+    vm.ship_from_addresses = [];
+    vm.merged_ship_from_addresses = [];
 
     vm.setInputFocus = function (){
       $scope.$broadcast('UiSelectDemo1');
@@ -158,15 +162,24 @@ angular.module('UpelaApp')
 
     getCountries();
 
-    $scope.$watch('ctrl.shipment.ship_to.postcode', function (newValue, oldValue) {
-      if (!angular.equals(newValue, oldValue)) {
-        var country_code = getCountryCodeFromName(vm.ship_to_country);
-        MainService.getCityandPostcode(country_code, newValue, function(response) {
-          console.log('getCityandPostcode = ', response);
+    $scope.refreshAddresses = function(address) {
+      var country_code = getCountryCodeFromName(vm.ship_to_country);
+      MainService.getCityandPostcode(country_code, address, function(response) {
+        console.log('getCityandPostcode = ', response);
+        if(response) {
+          vm.ship_to_addresses = response.data;
+          mergeCityandPostcode(response.data);
+        }
+      });
+    };
 
-        });
+    function mergeCityandPostcode(data) {
+      vm.merged_ship_to_addresses = [];
+      for(var i = 0; i < data.length; i++) {
+        var temp = data[i].zip_code + ', ' + data[i].city;
+        vm.merged_ship_to_addresses.push(temp);
       }
-    });
+    }
 
     function getCountryCodeFromName(name) {
       for(var i = 0; i < vm.countries.length; i++) {

@@ -150,7 +150,7 @@
                       </label>
 
                       <div class="col-md-10" id="address1-row">
-                        <ui-select ng-model="ctrl.ship_from_country" theme="select2" style="width: 160px;" title="Select the Country">
+                        <ui-select class="address1_country" ng-model="ctrl.ship_from_country" theme="select2" style="width: 160px;" title="Select the Country">
                           <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
                           <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
                             <div ng-bind-html="person.name | highlight: $select.search"></div>
@@ -178,7 +178,7 @@
                       </label>
 
                       <div class="col-md-10" id="address1-row">
-                        <ui-select ng-model="ctrl.ship_to_country" theme="select2" style="width: 160px;" title="Select the Country">
+                        <ui-select class="address1_country" ng-model="ctrl.ship_to_country" theme="select2" style="width: 160px;" title="Select the Country">
                           <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
                           <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
                             <div ng-bind-html="person.name | highlight: $select.search"></div>
@@ -189,7 +189,26 @@
                         </ui-select>
 
                         <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                        <input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" ng-model="ctrl.shipment.ship_to.postcode" value="" maxlength="255" translate translate-attr-placeholder="MAIN.DIALOG.DESTINATION.TOWN" ng-required="true">
+                        <!--<input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" ng-model="ctrl.shipment.ship_to.postcode" value="" maxlength="255" translate translate-attr-placeholder="MAIN.DIALOG.DESTINATION.TOWN" ng-required="true">-->
+                        <!--<ui-select id="address1_postcode_city" ng-model="ctrl.shipment.ship_to.postcode" theme="bootstrap" reset-search-input="false">-->
+                          <!--<ui-select-match placeholder="Enter an address...">{{$select.selected.formatted_address}}</ui-select-match>-->
+                          <!--<ui-select-choices repeat="address in ctrl.ship_to_addresses track by $index"-->
+                                             <!--refresh="ctrl.refreshAddresses($select.search)"-->
+                                             <!--refresh-delay="0">-->
+                            <!--<div ng-bind-html="address.formatted_address | highlight: $select.search"></div>-->
+                          <!--</ui-select-choices>-->
+                        <!--</ui-select>-->
+                        <ui-select ng-model="ctrl.shipment.ship_to.postcode" id="address1_postcode_city"
+                                   theme="bootstrap"
+                                   ng-disabled="disabled"
+                                   reset-search-input="false">
+                          <ui-select-match placeholder="Enter an address...">{{$select.selected}}</ui-select-match>
+                          <ui-select-choices repeat="address in ctrl.merged_ship_to_addresses track by $index"
+                                             refresh="refreshAddresses($select.search)"
+                                             refresh-delay="0">
+                            <div ng-bind-html="address | highlight: $select.search"></div>
+                          </ui-select-choices>
+                        </ui-select>
 
                         <div class="checkbox">
                           <label>

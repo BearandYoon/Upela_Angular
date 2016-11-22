@@ -1808,8 +1808,25 @@ p.payment_module img {margin: 0 10px 0px 0;}
 .cms_content #ShipmentRatingForm {max-width: 100% !important;}
 #address1-row #address1_country_id, #address1-row #address1_country_id_chosen,
 #address2-row #address2_country_id, #address2-row #address2_country_id_chosen {display: inline-block; width: 160px;}
-#address1-row #address1_postcode_city, #address2-row #address2_postcode_city {display: inline-block; width: 160px; margin: 0 0 0 10px;}
-#address1-row div.checkbox, #address2-row div.checkbox {display: inline-block;}
+
+#address1-row .address1_country, #address2-row .address2_country {
+  float: left;
+}
+
+#address1-row #address1_postcode_city, #address2-row #address2_postcode_city
+{
+  display: inline-block;
+  width: 160px;
+  margin: 0 10px 0 10px;
+  float: left;
+}
+
+#address1-row div.checkbox, #address2-row div.checkbox
+{
+  display: inline-block;
+  float: left;
+}
+
 #shipment-date-row .input-group {width: 160px; width: 130px; float: left;}
 #shipment-date-row div.help {/*line-height: 34px; margin-left: 10px;*/ color: #666; clear: left; padding-top: 5px;}
 @media (max-width:991px) {
