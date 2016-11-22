@@ -4,7 +4,7 @@
       <h1 translate="SETTINGS.TITLE">My Client Space</h1>
       <div class="row">
         <div class="col-md-2">
-          <ul id="account-nav" class="nav nav-tabs nav-stacked account-nav">
+          <ul class="nav nav-tabs nav-stacked account-nav">
             <li class="active">
               <a href="#/my-account">
                 <i class="fa fa-home"></i>
@@ -13,7 +13,7 @@
             </li>
           </ul>
 
-          <ul id="account-nav2" class="nav nav-tabs nav-stacked account-nav">
+          <ul class="nav nav-tabs nav-stacked account-nav">
             <li>
               <a href="#/ship-to-contact">
                 <i class="fa fa-user"></i>
@@ -34,7 +34,7 @@
             </li>
           </ul>
 
-          <ul id="account-nav3" class="nav nav-tabs nav-stacked account-nav">
+          <ul class="nav nav-tabs nav-stacked account-nav">
             <li>
               <a href="#/my-contacts">
                 <i class="fa fa-book"></i>
@@ -91,7 +91,7 @@
 
               <div class="tab-content">
                 <div class="tab-pane fade in active" id="pricer">
-                  <form id="AccountShipmentRatingForm" class="form-horizontal" role="form" enctype="multipart/form-data" action="https://www.upela.com/en/" accept-charset="UTF-8" method="post" onsubmit="return true;">
+                  <form id="AccountShipmentRatingForm" class="form-horizontal">
                     <div class="row" style="margin-bottom: 20px;">
                       <div class="col-md-6">
                         <div class="">
@@ -103,7 +103,7 @@
                           </label>
 
                           <div id="address1-row">
-                            <ui-select ng-model="ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                            <ui-select ng-model="ctrl.shipment.origin.country" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
                               <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
                               <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
                                 <div ng-bind-html="person.name | highlight: $select.search"></div>
@@ -114,11 +114,11 @@
                             </ui-select>
 
                             <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                            <input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" value="107497, Buchilaşi" maxlength="255" placeholder="Postcode, Town" translate translate-attr-placeholder="MY_ACCOUNT.ORIGIN.TOWN">
+                            <input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" value="107497, Buchilaşi" maxlength="255" translate translate-attr-placeholder="MY_ACCOUNT.ORIGIN.TOWN" ng-model="ctrl.shipment.origin.postcode">
 
                             <div class="checkbox">
-                              <label for="address1_pro" class="">
-                                <input type="checkbox" id="address1_pro" name="address1_pro" class="check_box" value="1" unchecked="">
+                              <label class="">
+                                <input type="checkbox" class="check_box" value="1" unchecked="" ng-model="ctrl.shipment.origin.postcode">
                                 <span translate="MY_ACCOUNT.ORIGIN.ADDRESS"></span>
                               </label>
                             </div>
@@ -129,14 +129,14 @@
                       <div class="col-md-6">
                         <div class="">
                           <label class="control-label required-" style="margin-bottom: 7px;">
-                            <span class="popmark" id="popmark-destination" data-placement="right" data-title="Destination" data-content="Delivery address for your shipment" data-original-title="" title="">
+                            <span class="popmark" data-placement="right" data-title="Destination" data-content="Delivery address for your shipment" data-original-title="" title="">
                               <i class="step-circle-small">2</i>
                               <span translate="MY_ACCOUNT.DESTINATION.TITLE"></span>
                             </span>
                           </label>
 
                           <div id="address2-row">
-                            <ui-select ng-model="ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                            <ui-select  ng-model="ctrl.shipment.destination.country" theme="select2" style="width: 160px;" title="Select the Country">
                               <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
                               <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
                                 <div ng-bind-html="person.name | highlight: $select.search"></div>
@@ -147,11 +147,11 @@
                             </ui-select>
 
                             <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                            <input type="text" id="address2_postcode_city" class="form-control ui-autocomplete-input" value="517042, Bubeşti" maxlength="255" placeholder="Postcode, Town" translate translate-attr-placeholder="MY_ACCOUNT.DESTINATION.TOWN">
+                            <input type="text" id="address2_postcode_city" class="form-control ui-autocomplete-input" value="517042, Bubeşti" maxlength="255" translate translate-attr-placeholder="MY_ACCOUNT.DESTINATION.TOWN" ng-model="ctrl.shipment.destination.postcode">
 
                             <div class="checkbox">
-                              <label for="address2_pro" class="">
-                                <input type="checkbox" id="address2_pro" name="address2_pro" class="check_box" value="1" unchecked="">
+                              <label class="">
+                                <input type="checkbox" class="check_box" value="1" unchecked="" ng-model="ctrl.shipment.destination.postcode">
                                 <span translate="MY_ACCOUNT.DESTINATION.ADDRESS"></span>
                               </label>
                             </div>
