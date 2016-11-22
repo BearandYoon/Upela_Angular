@@ -18,5 +18,5 @@ angular.module('UpelaApp')
     self.login = function() {
       $uibModalInstance.close();
       $rootScope.IsLoggedIn = true;
-    }
+    };
   });

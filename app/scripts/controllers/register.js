@@ -13,5 +13,5 @@ angular.module('UpelaApp')
 
     self.login = function() {
       $rootScope.IsLoggedIn = true;
-    }
+    };
  });

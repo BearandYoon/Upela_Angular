@@ -15,16 +15,21 @@ angular.module('UpelaApp')
     vm.searchEnabled = undefined;
 
     vm.shipment = {
-      type: 1,
-      origin: {
-        country: 'France',
-        post_code: '',
-        business_address: false
+      account: {
+        login: '',
+        password: ''
       },
-      destination: {
-        country: 'France',
-        post_code: '',
-        business_address: false
+      ship_from: {
+        country_code: '',
+        postcode: '',
+        city: '',
+        pro: ''
+      },
+      ship_to: {
+        country_code: '',
+        postcode: '',
+        city: '',
+        pro: ''
       },
       parcels: [{
         number: 1,
@@ -33,13 +38,17 @@ angular.module('UpelaApp')
         y: '',
         z: ''
       }],
-      date: ''
+      shipment_date: '',
+      unit: '',
+      selection: ''
     };
 
     vm.parcelCount = 1;
     vm.parcelUnit = true;
 
-    vm.countries = {};
+    vm.countries = [];
+    vm.ship_to_country = 'France';
+    vm.ship_from_country = 'France';
 
     vm.setInputFocus = function (){
       $scope.$broadcast('UiSelectDemo1');
@@ -86,14 +95,7 @@ angular.module('UpelaApp')
       vm.shipment.date = null;
     };
 
-    // Disable weekend selection
-    function disabled(data) {
-      var date = data.date,
-        mode = data.mode;
-      return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
-    }
-
-    function getDayClass(data) {
+     function getDayClass(data) {
       var date = data.date,
         mode = data.mode;
       if (mode === 'day') {
@@ -148,14 +150,40 @@ angular.module('UpelaApp')
       opened: false
     };
 
-    vm.countries = MainService.getCountries();
+    function getCountries() {
+      MainService.getCountries(function(response) {
+        vm.countries = _.uniqBy(response.data, 'country_id');
+      });
+    }
+
+    getCountries();
+
+    $scope.$watch('ctrl.shipment.ship_to.postcode', function (newValue, oldValue) {
+      if (!angular.equals(newValue, oldValue)) {
+        var country_code = getCountryCodeFromName(vm.ship_to_country);
+        MainService.getCityandPostcode(country_code, newValue, function(response) {
+          console.log('getCityandPostcode = ', response);
+
+        });
+      }
+    });
+
+    function getCountryCodeFromName(name) {
+      for(var i = 0; i < vm.countries.length; i++) {
+        if(vm.countries[i].name === name) {
+          return vm.countries[i].country_id;
+        }
+      }
+    }
 
     vm.offer = function() {
+      vm.shipment.ship_from.country_code = getCountryCodeFromName(vm.ship_from_country);
+      vm.shipment.ship_to.country_code = getCountryCodeFromName(vm.ship_to_country);
       console.log('shipment = ', vm.shipment);
       $state.go('order-progress');
     };
 
     vm.createAccount = function() {
       $state.go('register');
-    }
+    };
   });

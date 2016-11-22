@@ -8,7 +8,7 @@
  * Controller of the UpelaApp
  */
 angular.module('UpelaApp')
-  .controller('OrderOrderCtrl', function ($scope, $state) {
+  .controller('OrderOrderCtrl', function ($scope) {
     var vm = this;
 
     // Disable weekend selection

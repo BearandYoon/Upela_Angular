@@ -87,4 +87,26 @@ angular.module('UpelaApp')
     $scope.popup = {
       opened: false
     };
+
+    vm.shipment = {
+      type: 1,
+      origin: {
+        country: 'France',
+        post_code: '',
+        business_address: false
+      },
+      destination: {
+        country: 'France',
+        post_code: '',
+        business_address: false
+      },
+      parcels: [{
+        number: 1,
+        weight: '',
+        x: '',
+        y: '',
+        z: ''
+      }],
+      date: ''
+    };
   });

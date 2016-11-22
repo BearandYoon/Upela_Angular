@@ -18,7 +18,8 @@ angular
     'ui.router',
     'pascalprecht.translate',
     'ui.bootstrap',
-    'ui.select'
+    'ui.select',
+    'ngLodash'
   ])
   .config(function ($stateProvider, $urlRouterProvider, $translateProvider) {
     $stateProvider

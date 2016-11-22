@@ -150,7 +150,7 @@
                       </label>
 
                       <div class="col-md-10" id="address1-row">
-                        <ui-select ng-model="ctrl.shipment.origin.country" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                        <ui-select ng-model="ctrl.ship_from_country" theme="select2" style="width: 160px;" title="Select the Country">
                           <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
                           <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
                             <div ng-bind-html="person.name | highlight: $select.search"></div>
@@ -161,11 +161,11 @@
                         </ui-select>
 
                         <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                        <input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" ng-model="ctrl.shipment.origin.post_code" value="" maxlength="255" translate translate-attr-placeholder="MAIN.DIALOG.ORIGIN.TOWN" ng-required="true">
+                        <input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" ng-model="ctrl.shipment.ship_from.postcode" value="" maxlength="255" translate translate-attr-placeholder="MAIN.DIALOG.ORIGIN.TOWN" ng-required="true">
 
                         <div class="checkbox">
                           <label>
-                            <input type="checkbox" class="check_box" ng-model="ctrl.shipment.origin.business_address">
+                            <input type="checkbox" class="check_box" ng-model="ctrl.shipment.ship_from.business_address">
                             <span translate="MAIN.DIALOG.ORIGIN.ADDRESS"></span>
                           </label>
                         </div>
@@ -178,7 +178,7 @@
                       </label>
 
                       <div class="col-md-10" id="address1-row">
-                        <ui-select ng-model="ctrl.shipment.destination.country" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                        <ui-select ng-model="ctrl.ship_to_country" theme="select2" style="width: 160px;" title="Select the Country">
                           <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
                           <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
                             <div ng-bind-html="person.name | highlight: $select.search"></div>
@@ -189,11 +189,11 @@
                         </ui-select>
 
                         <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                        <input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" ng-model="ctrl.shipment.destination.post_code" value="" maxlength="255" translate translate-attr-placeholder="MAIN.DIALOG.DESTINATION.TOWN" ng-required="true">
+                        <input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" ng-model="ctrl.shipment.ship_to.postcode" value="" maxlength="255" translate translate-attr-placeholder="MAIN.DIALOG.DESTINATION.TOWN" ng-required="true">
 
                         <div class="checkbox">
                           <label>
-                            <input type="checkbox" class="check_box" ng-model="ctrl.shipment.destination.business_address">
+                            <input type="checkbox" class="check_box" ng-model="ctrl.shipment.ship_to.business_address">
                             <span translate="MAIN.DIALOG.DESTINATION.ADDRESS"></span>
                           </label>
                         </div>
