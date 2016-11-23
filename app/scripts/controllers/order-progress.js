@@ -8,11 +8,18 @@
  * Controller of the UpelaApp
  */
 angular.module('UpelaApp')
-  .controller('OrderProgressCtrl', function ($scope, $state) {
+  .controller('OrderProgressCtrl', function ($interval) {
     var vm = this;
-    vm.progressValue = 100;
+    vm.progressValue = 0;
 
-    $scope.clickImage = function() {
-      $state.go('order-offer');
-    };
+    function timeoutFn() {
+      if(vm.progressValue >= 90) {
+        console.log('timeoutFn()=stop');
+        $interval.cancel(timer);
+      }
+      vm.progressValue++;
+      console.log('timeoutFn()');
+    }
+
+    var timer = $interval(timeoutFn, 100);
   });

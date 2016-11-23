@@ -158,7 +158,6 @@ angular.module('UpelaApp')
     function getCountries() {
       MainService.getCountries(function(response) {
         vm.countries = _.uniqBy(response.data, 'country_id');
-        console.log('getCountries = ', vm.countries);
       });
     }
 

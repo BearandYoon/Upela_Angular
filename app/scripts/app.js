@@ -51,7 +51,10 @@ angular
         url: '/order-offer',
         templateUrl: 'views/order-offer.html',
         controller: 'OrderOfferCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: 'ctrl',
+        params: {
+          offers: null
+        }
       })
       .state('order-order', {
         url: '/order-order',
