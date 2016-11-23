@@ -120,7 +120,7 @@
                       <div class="col-md-10">
                         <div class="radio-inline" id="radio-inline-type-1">
                           <label>
-                            <input type="radio" value="1" ng-model="ctrl.shipment.type">
+                            <input type="radio" value="1" checked>
                             <span translate="MAIN.DIALOG.TYPE.ENVELOPE"></span>
                             <img src="images/icons/parcel-1.png" style="max-height: 32px;">
                           </label>
@@ -161,11 +161,22 @@
                         </ui-select>
 
                         <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                        <input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" ng-model="ctrl.shipment.ship_from.postcode" value="" maxlength="255" translate translate-attr-placeholder="MAIN.DIALOG.ORIGIN.TOWN" ng-required="true">
+                        <!--<input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" ng-model="ctrl.shipment.ship_from.postcode" value="" maxlength="255" translate translate-attr-placeholder="MAIN.DIALOG.ORIGIN.TOWN" ng-required="true">-->
+                        <ui-select ng-model="ctrl.ship_from_addresses" id="address1_postcode_city"
+                                   theme="bootstrap"
+                                   ng-disabled="disabled"
+                                   reset-search-input="false">
+                          <ui-select-match placeholder="Postcode, Town">{{$select.selected}}</ui-select-match>
+                          <ui-select-choices repeat="address in ctrl.merged_ship_from_addresses track by $index"
+                                             refresh="refreshFromAddresses($select.search)"
+                                             refresh-delay="0">
+                            <div ng-bind-html="address | highlight: $select.search"></div>
+                          </ui-select-choices>
+                        </ui-select>
 
                         <div class="checkbox">
                           <label>
-                            <input type="checkbox" class="check_box" ng-model="ctrl.shipment.ship_from.business_address">
+                            <input type="checkbox" class="check_box" ng-model="ctrl.shipment.ship_from.pro">
                             <span translate="MAIN.DIALOG.ORIGIN.ADDRESS"></span>
                           </label>
                         </div>
@@ -180,7 +191,7 @@
                       <div class="col-md-10" id="address1-row">
                         <ui-select class="address1_country" ng-model="ctrl.ship_to_country" theme="select2" style="width: 160px;" title="Select the Country">
                           <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
-                          <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
+                          <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search} | orderBy: 'name'">
                             <div ng-bind-html="person.name | highlight: $select.search"></div>
                             <small>
                               {{country.name}}
@@ -189,22 +200,13 @@
                         </ui-select>
 
                         <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                        <!--<input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" ng-model="ctrl.shipment.ship_to.postcode" value="" maxlength="255" translate translate-attr-placeholder="MAIN.DIALOG.DESTINATION.TOWN" ng-required="true">-->
-                        <!--<ui-select id="address1_postcode_city" ng-model="ctrl.shipment.ship_to.postcode" theme="bootstrap" reset-search-input="false">-->
-                          <!--<ui-select-match placeholder="Enter an address...">{{$select.selected.formatted_address}}</ui-select-match>-->
-                          <!--<ui-select-choices repeat="address in ctrl.ship_to_addresses track by $index"-->
-                                             <!--refresh="ctrl.refreshAddresses($select.search)"-->
-                                             <!--refresh-delay="0">-->
-                            <!--<div ng-bind-html="address.formatted_address | highlight: $select.search"></div>-->
-                          <!--</ui-select-choices>-->
-                        <!--</ui-select>-->
-                        <ui-select ng-model="ctrl.shipment.ship_to.postcode" id="address1_postcode_city"
+                        <ui-select ng-model="ctrl.ship_to_addresses" id="address1_postcode_city"
                                    theme="bootstrap"
                                    ng-disabled="disabled"
                                    reset-search-input="false">
-                          <ui-select-match placeholder="Enter an address...">{{$select.selected}}</ui-select-match>
+                          <ui-select-match placeholder="Postcode, Town">{{$select.selected}}</ui-select-match>
                           <ui-select-choices repeat="address in ctrl.merged_ship_to_addresses track by $index"
-                                             refresh="refreshAddresses($select.search)"
+                                             refresh="refreshToAddresses($select.search)"
                                              refresh-delay="0">
                             <div ng-bind-html="address | highlight: $select.search"></div>
                           </ui-select-choices>
@@ -212,7 +214,7 @@
 
                         <div class="checkbox">
                           <label>
-                            <input type="checkbox" class="check_box" ng-model="ctrl.shipment.ship_to.business_address">
+                            <input type="checkbox" class="check_box" ng-model="ctrl.shipment.ship_to.pro">
                             <span translate="MAIN.DIALOG.DESTINATION.ADDRESS"></span>
                           </label>
                         </div>
@@ -272,7 +274,7 @@
 
                       <div class="col-md-4">
                         <div class="input-group">
-                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="ctrl.shipment.date" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="ctrl.shipment_date" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                           <span class="input-group-btn">
                             <button type="button" class="btn btn-default" ng-click="openDate()">
                               <i class="glyphicon glyphicon-calendar"></i>
