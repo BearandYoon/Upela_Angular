@@ -39,79 +39,89 @@
                     <th style=""></th>
                     <th style="text-align: center;" colspan="2"><span class="blue">Shipping</span></th>
                     <th style=""></th>
-                    <th id="th_delivery-date" style="text-align: center;" colspan="2" class="sortable" title="Sort by Expected delivery</th>
-                  <th id="th_price-te" style="text-align: center;" class="sortable" title="Sort by Price">Price</th>
+                    <th style="text-align: center;" colspan="2" class="sortable" title="Sort by Expected delivery">Expected delivery</th>
+                    <th style="text-align: center;" class="sortable" title="Sort by Price">Price</th>
                   </tr>
                   <tr class="thead-second-row">
                     <th style=""></th>
                     <th style="text-align: center;" colspan="2">
-                      <label for="allow_pickup" class="checkbox-inline" title="Price">
-                        <input type="checkbox" value="1" name="allow_pickup" id="allow_pickup" checked>
+                      <label class="checkbox-inline" title="Price">
+                        <input type="checkbox" value="1" ng-model="ctrl.shipment_pickup" ng-click="ctrl.switchShipPickup()">
                         <span class="fa fa-home orange" title="Pickup"></span>
                       </label>&nbsp;
-                      <label for="allow_dropoff" class="checkbox-inline" title="Dropoff">
-                        <input type="checkbox" value="1" name="allow_dropoff" id="allow_dropoff" checked>
+                      <label class="checkbox-inline" title="Dropoff">
+                        <input type="checkbox" value="1" ng-model="ctrl.shipment_dropoff" ng-click="ctrl.switchShipPickup()">
                         <span class="fa fa-map-marker blue" title="Dropoff"></span>
                       </label>
                     </th>
                     <th style=""></th>
                     <th style="text-align: center;" colspan="2">
-                      <label for="delivery_onsite" class="checkbox-inline" title="On-site">
-                        <input type="checkbox" value="1" name="delivery_onsite" id="delivery_onsite" checked>
+                      <label class="checkbox-inline" title="On-site">
+                        <input type="checkbox" value="1" ng-model="ctrl.delivery_onsite" ng-click="ctrl.switchDeliveryDropoff()">
                         <span class="fa fa-home orange" title="On-site"></span>
                       </label>&nbsp;
-                      <label for="delivery_to_collection_point" class="checkbox-inline" title="Dropoff">
-                        <input type="checkbox" value="1" name="delivery_to_collection_point" id="delivery_to_collection_point" checked>
+                      <label class="checkbox-inline" title="Dropoff">
+                        <input type="checkbox" value="1" ng-model="ctrl.delivery_dropoff" ng-click="ctrl.switchDeliveryDropoff()">
                         <span class="fa fa-map-marker blue" title="Dropoff"></span>
                       </label>
                     </th>
                     <th style="text-align: center;"></th>
                   </tr>
                   </thead>
-                  <tbody id="table-offers-body">
-                  <tr class="offer-row odd allow_pickup allow_dropoff  delivery_onsite delivery_time_express" data-delivery-date="1478298600" data-price-te="951.17" rel="sort1" style="display: table-row;">
-                    <td style="text-align: center; max-width: 60px;">
-                      <img src="images/carriers/logo-ups-en.png" style="width: 50px; height: auto;">
-                    </td>
-                    <td style="text-align: center; max-width: 150px;">Monday<br>
-                      <strong>10/31/2016</strong><br>
-                    <span id="popmark-more-info-9768123" class="control-label popmark" data-placement="bottom" style="cursor:pointer;" data-content="Express Service, transportation operated by UPS<br />
-        Collection from the sender's address or dropoff on Monday 31 October 2016<br />
-        Delivery at the recipient address on Friday 04 November 2016 during the day<br />
-        Guaranteed delivery time but no refund (<a target='_blank' href='https://www.upela.com/en/shipment-customer-service-late-lost-parcel-60.html'>further details</a>)<br />
-        Possible online tracking<br />
-        Option: insurance Ad Valorem" data-original-title="" title="">UPS Express Saver®</span>
-                    </td>
-                    <td style="text-align: center; padding-left: 0; padding-right: 0; max-width: 75px;">
-                    <span class="dropoff-info orange dropoff-info-pickup" style="display: inline;">
-                      <span class="fa fa-home"></span><br>Pickup
-                    </span>
-                    <span class="dropoff-info blue dropoff-info-dropoff" style="display: none;">
-                      <span class="fa fa-map-marker"></span>
-                      <br><a class="text-underline" href="https://www.ups.com/dropoff?loc=en_US" target="_blank">Dropoff</a>
-                    </span>
-                    </td>
-                    <td style="text-align: center; padding-left: 0; padding-right: 0;">
-                      <img src="images/icons/arrow-small.png">
-                    </td>
-                    <td style="text-align: center; padding-left: 0; padding-right: 0; max-width: 75px;">
-                    <span class="dropoff-info orange">
-                      <span class="fa fa-home"></span>
-                      <br>On-site
-                    </span>
-                    </td>
-                    <td style="text-align: center;">Friday<br>
-                      <strong>11/04/2016</strong>
-                      <br>during the day
-                    </td>
-                    <td style="text-align: center;">
-                      <span class="price-bold">951.17 € with tax</span>
-                      <br>
-                      <span class="price-small">(1 037.38 $ with tax)</span>
-                      <br>
-                      <a class="btn btn-primary" ng-click="clickChoose()">CHOOSE</a>
-                    </td>
-                  </tr>
+                  <tbody>
+                    <tr ng-repeat="offer in ctrl.display_offers">
+                      <td style="text-align: center; max-width: 60px;">
+                        <img ng-src={{offer.carrier_logo}} style="width: 50px; height: auto;">
+                      </td>
+                      <td style="text-align: center; max-width: 150px;">{{offer.shipment_weekday}}<br>
+                        <strong>{{offer.shipment_date}}</strong><br>
+                        <span id="popmark-more-info-9768123" class="control-label popmark" data-placement="bottom" style="cursor:pointer;" data-content="Express Service, transportation operated by UPS<br />
+                          Collection from the sender's address or dropoff on Monday 31 October 2016<br />
+                          Delivery at the recipient address on Friday 04 November 2016 during the day<br />
+                          Guaranteed delivery time but no refund (<a target='_blank' href='https://www.upela.com/en/shipment-customer-service-late-lost-parcel-60.html'>further details</a>)<br />
+                          Possible online tracking<br />
+                          Option: insurance Ad Valorem" data-original-title="" title="">{{offer.service_name}}</span>
+                      </td>
+                      <td style="text-align: center; padding-left: 0; padding-right: 0; max-width: 75px;">
+                        <span ng-if="offer.allow_pickup_flag" class="dropoff-info orange dropoff-info-pickup" style="display: inline;">
+                          <span class="fa fa-home"></span><br>Pickup
+                        </span>
+                        <span ng-if="!offer.allow_pickup_flag" class="dropoff-info blue dropoff-info-dropoff" style="display: inline;">
+                          <span class="fa fa-map-marker"></span>
+                          <br><a class="text-underline" href="https://www.ups.com/dropoff?loc=en_US" target="_blank">Dropoff</a>
+                        </span>
+                      </td>
+                      <td style="text-align: center; padding-left: 0; padding-right: 0;">
+                        <img src="images/icons/arrow-small.png">
+                      </td>
+                      <td style="text-align: center; padding-left: 0; padding-right: 0; max-width: 75px;">
+                        <span class="dropoff-info orange" ng-if="!offer.delivery_flag">
+                          <span class="fa fa-home"></span>
+                          <br>On-site
+                        </span>
+                        <span class="dropoff-info blue" ng-if="offer.delivery_flag">
+                          <span class="fa fa-map-marker"></span>
+                          <br><a class="text-underline" href="#">Dropoff</a>
+                        </span>
+                      </td>
+                      <td style="text-align: center;">{{offer.delivery_weekday}}<br>
+                        <strong>{{offer.delivery_date}}</strong>
+                        <br>during the day
+                      </td>
+                      <td style="text-align: center;">
+                        <span class="price-bold">
+                          <span ng-if="offer.currency === 'EUR'">{{offer.price_excl_tax}} € with tax</span>
+                          <span ng-if="offer.currency === 'USD'">{{offer.price_excl_tax}} $ with tax</span>
+                        </span>
+                        <br>
+                        <span class="price-small">
+                          <span ng-if="offer.currency === 'EUR'">({{offer.price_incl_tax}} € with tax)</span>
+                          <span ng-if="offer.currency === 'USD'">({{offer.price_incl_tax}} $ with tax)</span>
+                        </span>
+                        <br>
+                        <a class="btn btn-primary" ng-click="chooseOffer()">CHOOSE</a>
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
                 <div class="clear"></div>
