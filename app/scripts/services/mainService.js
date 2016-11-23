@@ -10,6 +10,7 @@
 angular.module('UpelaApp')
   .service('MainService', function ($http, $state) {
     var BaseUrl = 'https://www.upela.com/api/v3/';
+    var Shipment = '';
 
     function getCountries(callback) {
       var url = BaseUrl + 'get_countries/';
@@ -38,8 +39,9 @@ angular.module('UpelaApp')
       var url = BaseUrl + 'rate/';
       return $http.post(url, shipment).then(
         function successCallback(response) {
-          $state.go('order-offer', {offers: response.data});
+          $state.go('order-offer', {offers: response.data, shipment: shipment});
           console.log('getOffers-response = ', response);
+          Shipment = shipment;
         }, function errorCallback() {
           $state.go('home');
         }

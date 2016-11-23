@@ -14,11 +14,9 @@ angular.module('UpelaApp')
 
     function timeoutFn() {
       if(vm.progressValue >= 90) {
-        console.log('timeoutFn()=stop');
         $interval.cancel(timer);
       }
       vm.progressValue++;
-      console.log('timeoutFn()');
     }
 
     var timer = $interval(timeoutFn, 100);

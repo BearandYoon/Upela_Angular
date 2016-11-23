@@ -53,7 +53,8 @@ angular
         controller: 'OrderOfferCtrl',
         controllerAs: 'ctrl',
         params: {
-          offers: null
+          offers: null,
+          shipment: null
         }
       })
       .state('order-order', {
