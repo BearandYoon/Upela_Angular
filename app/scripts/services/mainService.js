@@ -11,6 +11,7 @@ angular.module('UpelaApp')
   .service('MainService', function ($http, $state) {
     var BaseUrl = 'https://www.upela.com/api/v3/';
     var Shipment = '';
+    var Offers = '';
 
     function getCountries(callback) {
       var url = BaseUrl + 'get_countries/';
@@ -42,8 +43,22 @@ angular.module('UpelaApp')
           $state.go('order-offer', {offers: response.data, shipment: shipment});
           console.log('getOffers-response = ', response);
           Shipment = shipment;
+          Offers = response.data;
         }, function errorCallback() {
           $state.go('home');
+        }
+      );
+    }
+
+    function selectOffer(offer) {
+      var url = BaseUrl + 'select_offer/';
+      return $http.post(url, offer).then(
+        function successCallback(response) {
+          $state.go('order-order');
+          console.log('selectOffer-response = ', response);
+        }, function errorCallback() {
+          console.log('selectOffer-response-error = ', response);
+          $state.go('order-offer');
         }
       );
     }
@@ -51,6 +66,7 @@ angular.module('UpelaApp')
     return ({
       getCountries: getCountries,
       getOffers: getOffers,
-      getCityandPostcode: getCityandPostcode
+      getCityandPostcode: getCityandPostcode,
+      selectOffer: selectOffer
     });
   });

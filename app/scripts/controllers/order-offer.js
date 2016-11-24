@@ -8,14 +8,7 @@
  * Controller of the UpelaApp
  */
 angular.module('UpelaApp')
-  .controller('OrderOfferCtrl', function ($scope, $state, $stateParams) {
-    $scope.chooseOffer = function() {
-      $state.go('order-order');
-    };
-
-    console.log('offers = ', $stateParams.offers);
-    console.log('shipment = ', $stateParams.shipment);
-
+  .controller('OrderOfferCtrl', function ($state, $stateParams, MainService) {
     var vm = this;
     vm.offers = $stateParams.offers;
     vm.shipment = $stateParams.shipment;
@@ -90,7 +83,6 @@ angular.module('UpelaApp')
         }
       }
 
-      console.log('temp = ', temp);
       vm.display_offers = temp;
     };
 
@@ -124,7 +116,6 @@ angular.module('UpelaApp')
         }
       }
 
-      console.log('temp = ', temp);
       vm.display_offers = temp;
     };
 
@@ -133,7 +124,19 @@ angular.module('UpelaApp')
       vm.switchShipPickup();
       vm.switchDeliveryDropoff();
       vm.display_offers = vm.offers.offers;
-      console.log('offers.offers = ', vm.offers);
     }
+
+    vm.chooseOffer = function(offer) {
+      var selectedOffer = {
+        account: {
+          login: 'hugo.rusek@oqios.com',
+          password: 'yoon1104'
+        },
+        shipment_id: vm.offers.shipment_id,
+        offer_id: offer.id
+      };
+
+      MainService.selectOffer(selectedOffer);
+    };
   });
 

@@ -236,6 +236,8 @@ angular.module('UpelaApp')
 
       vm.shipment.shipment_date = vm.shipment_date.getFullYear() + '-' + (vm.shipment_date.getMonth() + 1) + '-' + vm.shipment_date.getDate();
 
+      vm.shipment.ship_from.country_name = vm.ship_from_country;
+      vm.shipment.ship_to.country_name = vm.ship_to_country;
       vm.shipment.ship_from.country_code = getCountryCodeFromName(vm.ship_from_country);
       vm.shipment.ship_to.country_code = getCountryCodeFromName(vm.ship_to_country);
       console.log('shipment = ', vm.shipment);
