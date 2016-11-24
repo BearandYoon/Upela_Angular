@@ -32,7 +32,9 @@
           FROM: '<strong>From</strong>',
           TO: '<strong>To</strong>',
           DATE: '<strong>Collection date</strong>',
-          COMMENT: 'Our prices include fuel supplements, Air Cargo Security and all other supplements - residential address, remote location, oversize, extra handling supplements …. <strong>but do not include taxes and duties, nor possible customs checks, weight or dimensions amendments, address amendments</strong>...'
+          COMMENT: 'Our prices include fuel supplements, Air Cargo Security and all other supplements - residential address, remote location, oversize, extra handling supplements …. <strong>but do not include taxes and duties, nor possible customs checks, weight or dimensions amendments, address amendments</strong>...',
+          MORE_INFO: 'More infos',
+          EMAIL: 'Send by email'
         },
         OFFERS: {
           TITLE: 'All offers',
@@ -53,6 +55,17 @@
           TITLE: 'Standard',
           SHIPPING: 'Shipping',
           PRICE: 'Price'
+        },
+        QUESTION: {
+          TITLE: 'Frequently asked questions',
+          COMMENT1: 'Comment effectuer un devis ?',
+          COMMENT2: 'Est-ce que vous fournissez/effectuez l’emballage ?',
+          COMMENT3: 'Que se passe-t-il si je ne suis pas présent lors de la livraison ?',
+          COMMENT4: 'Le destinataire peut-il également passer commande ?',
+          COMMENT5: 'Je ne veux pas que ce soit le destinataire qui paye les droits et taxes, comment puis-je faire ?',
+          COMMENT6: 'Le coursier n’a pas pu récupérer mon colis car l’adresse de l’expéditeur était incomplète, que dois-je faire ?',
+          COMMENT7: 'Le suivi de mon envoi n’affiche aucune information, comment cela se fait ?',
+          COMMENT8: 'Si mon colis est livré avec du retard, puis-je me faire rembourser ?'
         }
       }
     });
@@ -83,7 +96,9 @@
           FROM: '<strong>De :<strong>',
           TO: '<strong>A :<strong>',
           DATE: '<strong>Date de ramassage:<strong>',
-          COMMENT: 'Nos tarifs incluent la taxe carburant, la sûreté du fret aérien et tous les suppléments du type : adresse résidentielle, zone éloignée, hors gabarit, frais de manutention supplémentaire...'
+          COMMENT: 'Nos tarifs incluent la taxe carburant, la sûreté du fret aérien et tous les suppléments du type : adresse résidentielle, zone éloignée, hors gabarit, frais de manutention supplémentaire...',
+          MORE_INFO: 'More infos',
+          EMAIL: 'Envoyer par email'
         },
         OFFERS: {
           TITLE: 'Toutes les offres',
@@ -104,6 +119,17 @@
           TITLE: 'Standard',
           SHIPPING: 'Shipping',
           PRICE: 'Price'
+        },
+        QUESTION: {
+          TITLE: 'Questions fréquentes',
+          COMMENT1: 'Comment effectuer un devis ?',
+          COMMENT2: 'Est-ce que vous fournissez/effectuez l’emballage ?',
+          COMMENT3: 'Que se passe-t-il si je ne suis pas présent lors de la livraison ?',
+          COMMENT4: 'Le destinataire peut-il également passer commande ?',
+          COMMENT5: 'Je ne veux pas que ce soit le destinataire qui paye les droits et taxes, comment puis-je faire ?',
+          COMMENT6: 'Le coursier n’a pas pu récupérer mon colis car l’adresse de l’expéditeur était incomplète, que dois-je faire ?',
+          COMMENT7: 'Le suivi de mon envoi n’affiche aucune information, comment cela se fait ?',
+          COMMENT8: 'Si mon colis est livré avec du retard, puis-je me faire rembourser ?'
         }
       }
     });
@@ -134,7 +160,9 @@
           FROM: '<strong>De :</strong>',
           TO: '<strong>Hacia :</strong>',
           DATE: '<strong>Fecha de recogida :</strong>',
-          COMMENT: 'Nuestras tarifas incluyen las tasas de carburante, la seguridad de la carga aérea y todos los suplementos del tipo: dirección residencial, zona alejada, exceso de tamaño, gastos adicionales de manipulación...'
+          COMMENT: 'Nuestras tarifas incluyen las tasas de carburante, la seguridad de la carga aérea y todos los suplementos del tipo: dirección residencial, zona alejada, exceso de tamaño, gastos adicionales de manipulación...',
+          MORE_INFO: 'More infos',
+          EMAIL: 'Enviar por correo electrónico'
         },
         OFFERS: {
           TITLE: 'Todas las ofertas',
@@ -155,6 +183,17 @@
           TITLE: 'Estándar',
           SHIPPING: 'Shipping',
           PRICE: 'Price'
+        },
+        QUESTION: {
+          TITLE: 'Preguntas Frecuentes',
+          COMMENT1: 'Comment effectuer un devis ?',
+          COMMENT2: 'Est-ce que vous fournissez/effectuez l’emballage ?',
+          COMMENT3: 'Que se passe-t-il si je ne suis pas présent lors de la livraison ?',
+          COMMENT4: 'Le destinataire peut-il également passer commande ?',
+          COMMENT5: 'Je ne veux pas que ce soit le destinataire qui paye les droits et taxes, comment puis-je faire ?',
+          COMMENT6: 'Le coursier n’a pas pu récupérer mon colis car l’adresse de l’expéditeur était incomplète, que dois-je faire ?',
+          COMMENT7: 'Le suivi de mon envoi n’affiche aucune information, comment cela se fait ?',
+          COMMENT8: 'Si mon colis est livré avec du retard, puis-je me faire rembourser ?'
         }
       }
     });
