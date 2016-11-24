@@ -19,9 +19,10 @@ angular
     'pascalprecht.translate',
     'ui.bootstrap',
     'ui.select',
-    'ngLodash'
+    'ngLodash',
+    'ngIntlTelInput'
   ])
-  .config(function ($stateProvider, $urlRouterProvider, $translateProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $translateProvider, ngIntlTelInputProvider) {
     $stateProvider
       .state('home', {
         url: '/index',
@@ -61,7 +62,12 @@ angular
         url: '/order-order',
         templateUrl: 'views/order-order.html',
         controller: 'OrderOrderCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: 'ctrl',
+        params: {
+          offers: null,
+          shipment: null,
+          offer_id: null
+        }
       })
       .state('order-payment', {
         url: '/order-payment',
@@ -151,6 +157,8 @@ angular
     $translateProvider.fallbackLanguage('en');
     $translateProvider.determinePreferredLanguage();
     $urlRouterProvider.otherwise('/index');
+
+    ngIntlTelInputProvider.set({initialCountry: 'fr'});
   })
   .constant('Config', {
     Language: 'language'

@@ -54,9 +54,9 @@ angular.module('UpelaApp')
       var url = BaseUrl + 'select_offer/';
       return $http.post(url, offer).then(
         function successCallback(response) {
-          $state.go('order-order');
+          $state.go('order-order', {offers: Offers, shipment: Shipment, offer_id: offer.offer_id});
           console.log('selectOffer-response = ', response);
-        }, function errorCallback() {
+        }, function errorCallback(response) {
           console.log('selectOffer-response-error = ', response);
           $state.go('order-offer');
         }

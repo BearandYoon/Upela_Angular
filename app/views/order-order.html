@@ -37,9 +37,9 @@
                   </h2>
 
                   <div class="form-group">
-                    <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.COMPANY">Company</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.COMPANY">Company</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.ship_from.company">
+                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.ship_from.company" required>
                     </div>
                   </div>
 
@@ -51,23 +51,15 @@
                   </div>
 
                   <div class="form-group">
-                    <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.PHONE">Phone</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.PHONE">Phone</label>
                     <div class="col-lg-7">
-                      <div class="intl-tel-input allow-dropdown">
-                        <div class="flag-container">
-                          <div class="selected-flag" tabindex="0" title="Romania (România): +40">
-                            <div class="iti-flag ro"></div>
-                            <div class="iti-arrow"></div>
-                          </div>
-                        </div>
-                        <input type="text" class="form-control validate" value="" maxlength="25" placeholder="0712 345 678" ng-model="ctrl.shipment.ship_from.phone">
-                      </div>
+                      <input type="text" class="form-control validate" name="tel" ng-model="ctrl.shipment.ship_from.phone" ng-intl-tel-input required>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.EMAIL">Email</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.EMAIL">Email</label>
                     <div class="col-lg-7">
-                      <input type="email" class="form-control" value="" maxlength="50" ng-model="ctrl.shipment.ship_from.email">
+                      <input type="email" class="form-control" value="" maxlength="50" ng-model="ctrl.shipment.ship_from.email" required>
                     </div>
                   </div>
                   <div class="form-group">
@@ -90,21 +82,21 @@
                   </div>
 
                   <div class="form-group">
-                    <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.COUNTRY">Country</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.COUNTRY">Country</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" value="Romania" maxlength="255" ng-model="ctrl.shipment.ship_from.country_code">
+                      <input type="text" class="form-control" readonly="readonly" value="Romania" maxlength="255" ng-model="ctrl.shipment.ship_from.conntry_name">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.POSTAL">Postal code</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.POSTAL">Postal code</label>
                     <div class="col-lg-7">
-                      <input type="number" class="form-control" value="517042" maxlength="20" ng-model="ctrl.shipment.ship_from.postcode">
+                      <input type="text" class="form-control" readonly="readonly" value="517042" maxlength="20" ng-model="ctrl.shipment.ship_from.postcode">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.CITY">City</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" value="Bubeşti" maxlength="255" ng-model="ctrl.shipment.ship_from.city" required>
+                      <input type="text" class="form-control" readonly="readonly" value="Bubeşti" maxlength="255" ng-model="ctrl.shipment.ship_from.city" required>
                     </div>
                   </div>
                   <div class="form-group">
@@ -145,9 +137,9 @@
                   </h2>
 
                   <div class="form-group">
-                    <label class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.COMPANY">Company</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.COMPANY">Company</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.ship_to.company">
+                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.ship_to.company" required>
                     </div>
                   </div>
 
@@ -159,25 +151,16 @@
                   </div>
 
                   <div class="form-group">
-                    <label class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.CELL_PHONE">Cellphone</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.CELL_PHONE">Cellphone</label>
                     <div class="col-lg-7">
-                      <div class="intl-tel-input allow-dropdown">
-                        <div class="flag-container">
-                          <div class="selected-flag" tabindex="0" title="Russia (Россия): +7">
-                            <div class="iti-flag ru"></div>
-                            <div class="iti-arrow"></div>
-                          </div>
-                        </div>
-
-                        <input type="number" class="form-control validate" data-validate="isPhoneNumber" value="" placeholder="SMS notifications" maxlength="25" ng-model="ctrl.shipment.ship_to.phone">
-                      </div>
+                      <input type="text" class="form-control validate" name="tel" ng-model="ctrl.shipment.ship_to.phone" ng-intl-tel-input required>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.EMAIL">Email</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.EMAIL">Email</label>
                     <div class="col-lg-7">
-                      <input type="email" class="form-control" value="" maxlength="50" ng-model="ctrl.shipment.ship_to.email">
+                      <input type="email" class="form-control" value="" maxlength="50" ng-model="ctrl.shipment.ship_to.email" required>
                     </div>
                   </div>
 
@@ -202,23 +185,23 @@
                   </div>
 
                   <div class="form-group">
-                    <label class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.COUNTRY">Country</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.COUNTRY">Country</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" value="Russia" maxlength="255" ng-model="ctrl.shipment.ship_to.country">
+                      <input type="text" class="form-control" readonly="readonly" value="Russia" maxlength="255" ng-model="ctrl.shipment.ship_to.conntry_name">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label class="control-label col-lg-3" translate="ORDER_ORDER.RECIPIENT.POSTAL">Postal code</label>
+                    <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.POSTAL">Postal code</label>
                     <div class="col-lg-7">
-                      <input type="number" class="form-control" value="101000" maxlength="20" ng-model="ctrl.shipment.ship_to.postcode">
+                      <input type="text" class="form-control" readonly="readonly" value="101000" maxlength="20" ng-model="ctrl.shipment.ship_to.postcode">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.CITY">City</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" value="Moscow" maxlength="255" ng-model="ctrl.shipment.ship_to.city" required>
+                      <input type="text" class="form-control" readonly="readonly" value="Moscow" maxlength="255" ng-model="ctrl.shipment.ship_to.city" required>
                     </div>
                   </div>
 
@@ -649,7 +632,7 @@
 
               <div class="form-group">
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary btn-lg" ng-click="clickContinue()">
+                  <button type="submit" class="btn btn-primary btn-lg">
                     <i class="glyphicon glyphicon-ok"></i>
                     <span translate="ORDER_ORDER.CONTINUE"></span>
                   </button>
@@ -671,112 +654,127 @@
         <div class="col-md-3">
           <div class="panel-white cancel-padding-left-15 panel-muted">
             <p>
-              <span class="very-light-grey bold">1. Your shipment&nbsp;&nbsp;
-                <a href="https://www.upela.com/en/">
+              <span class="very-light-grey bold">
+                <span translate="ORDER_ORDER.PAST_STEP.STEP_ONE.TITLE">1. Your shipment&nbsp;&nbsp;</span>
+                <a href="#">
                   <i class="fa fa-pencil"></i>
                 </a>
               </span>
             </p>
-            <p>
-              <strong>Type :</strong> 1 Parcel(s)<br>
-              1 Parcel(s) of 12 kg (120x120x12 cm)<br>
-              <strong>From :</strong> 517042 (Romania)<br>
-              <strong>To :</strong> 101000 (Russia)<br>
-              <strong>Collection date :</strong> 10/31/2016<br>
+            <p style="margin-bottom: 10px;" ng-repeat="parcel in ctrl.origin_shipment.parcels">
+              <span translate="ORDER_ORDER.PAST_STEP.STEP_ONE.TYPE"></span>
+              <span ng-if="ctrl.shipment.unit === fr"> {{$index+1}} Parcel(s)<br> {{$index+1}} Parcel(s) of {{parcel.weight}} kg ({{parcel.x}}x{{parcel.y}}x{{parcel.z}}cm)<br></span>
+              <span ng-if="ctrl.shipment.unit !== fr"> {{$index+1}} Parcel(s)<br> {{$index+1}} Parcel(s) of {{parcel.weight}} lbs ({{parcel.x}}x{{parcel.y}}x{{parcel.z}}in)<br></span>
+              <span translate="ORDER_ORDER.PAST_STEP.STEP_ONE.FROM"></span>
+              <span> {{ctrl.shipment.ship_from.postcode}} ({{ctrl.shipment.ship_from.country_name}})<br></span>
+              <span translate="ORDER_ORDER.PAST_STEP.STEP_ONE.TO"></span>
+              <span> {{ctrl.shipment.ship_to.postcode}} ({{ctrl.shipment.ship_to.country_name}})<br></span>
+              <span translate="ORDER_ORDER.PAST_STEP.STEP_ONE.DATE"></span>
+              <span> {{ctrl.shipment.shipment_date}}<br></span>
             </p>
             <hr>
             <p>
-              <span class="very-light-grey bold">2. Your offer&nbsp;&nbsp;
-                <a href="https://www.upela.com/en/order/offers.php">
+              <span class="very-light-grey bold">
+                <span translate="ORDER_ORDER.PAST_STEP.STEP_TWO.TITLE">2. Your offer&nbsp;&nbsp;</span>
+                <a href="#/order-offer">
                   <i class="fa fa-pencil"></i>
                 </a>
               </span>
             </p>
             <p>
-              <strong>UPS Express Saver®</strong><br>
-              Collection from the sender on Monday 31 October 2016<br>
-              Delivery on Friday 04 November 2016, during the day
+              <strong>{{ctrl.selected_offer.service_name}}</strong><br>
+              <span translate="ORDER_ORDER.PAST_STEP.STEP_TWO.DROP_OFF">Dropoff on</span>
+              <span>{{ctrl.selected_offer.shipment_weekday}} {{ctrl.selected_offer.shipment_date}}</span><br>
+              <span translate="ORDER_ORDER.PAST_STEP.STEP_TWO.DELIVERY">Delivery on </span>
+              <span>{{ctrl.selected_offer.delivery_weekday}} {{ctrl.selected_offer.delivery_date}}</span>
+              <span translate="ORDER_ORDER.PAST_STEP.STEP_TWO.DURING"></span>
             </p>
             <hr class="orange">
-            <div class="text-right">
-              <strong>Amount :</strong>
-              <span class="price-bold">951.17 € excl tax</span>
-              <small> (951.17 € with tax)</small>
+            <div>
+              <strong translate="ORDER_ORDER.PAST_STEP.AMOUNT">Amount :</strong>
+              <span class="price-bold">{{ctrl.selected_offer.price_excl_tax}}</span>
+              <span class="price-bold" translate="ORDER_ORDER.PAST_STEP.EXCL_TAX">€ excl tax</span>
+              <small> {{ctrl.selected_offer.price_incl_tax}}</small>
+              <small translate="ORDER_ORDER.PAST_STEP.INC_TAX"> € with tax</small>
             </div>
             <br>
             <a class="orange pull-left" href="#">
-              <i class="glyphicon glyphicon-envelope" style="margin-right: 5px;"></i>Send by email
+              <i class="glyphicon glyphicon-envelope" style="margin-right: 5px;"></i>
+              <span translate="ORDER_ORDER.PAST_STEP.EMAIL">Send by email</span>
             </a>
             <br>
           </div>
 
           <div class="panel-white cancel-padding-left-15 panel-muted">
-            <a class="collapse-toggle collapse-toggle-panel collapsed" data-toggle="collapse" href="#online-help">
-              <i class="fa fa-question-circle"></i> Frequently asked questions
-            </a>
-            <div class="clear"></div>
-            <div class="collapse" id="online-help">
-              <p><a target="_blank" href="https://www.upela.com/en/frequently-asked-questions-20.html#faq-1">Comment effectuer un devis ?</a></p>
-              <p><a target="_blank" href="https://www.upela.com/en/frequently-asked-questions-20.html#faq-2">Est-ce que vous fournissez/effectuez l’emballage ?</a></p>
-              <p><a target="_blank" href="https://www.upela.com/en/frequently-asked-questions-20.html#faq-3">Que se passe-t-il si je ne suis pas présent lors de la livraison ?</a></p>
-              <p><a target="_blank" href="https://www.upela.com/en/frequently-asked-questions-20.html#faq-4">Le destinataire peut-il également passer commande ?</a></p>
-              <p><a target="_blank" href="https://www.upela.com/en/frequently-asked-questions-20.html#faq-6">Je ne veux pas que ce soit le destinataire qui paye les droits et taxes, comment puis-je faire ?</a></p>
-              <p><a target="_blank" href="https://www.upela.com/en/frequently-asked-questions-20.html#faq-7">Le coursier n’a pas pu récupérer mon colis car l’adresse de l’expéditeur était incomplète, que dois-je faire ?</a></p>
-              <p><a target="_blank" href="https://www.upela.com/en/frequently-asked-questions-20.html#faq-8">Le suivi de mon envoi n’affiche aucune information, comment cela se fait ?</a></p>
-              <p><a target="_blank" href="https://www.upela.com/en/frequently-asked-questions-20.html#faq-9">Si mon colis est livré avec du retard, puis-je me faire rembourser ?</a></p>    </div>
+            <uib-accordion close-others="true">
+              <div uib-accordion-group class="panel-default">
+                <uib-accordion-heading>
+                  <i class="fa fa-question-circle"></i>
+                  <span translate="ORDER_ORDER.PAST_STEP.QUESTION.TITLE">Frequently asked questions</span>
+                </uib-accordion-heading>
+                <p>
+                  <p><a target="_blank" translate="ORDER_ORDER.PAST_STEP.QUESTION.COMMENT1">Comment effectuer un devis ?</a></p>
+                  <p><a target="_blank" translate="ORDER_ORDER.PAST_STEP.QUESTION.COMMENT2">Est-ce que vous fournissez/effectuez l’emballage ?</a></p>
+                  <p><a target="_blank" translate="ORDER_ORDER.PAST_STEP.QUESTION.COMMENT3">Que se passe-t-il si je ne suis pas présent lors de la livraison ?</a></p>
+                  <p><a target="_blank" translate="ORDER_ORDER.PAST_STEP.QUESTION.COMMENT4">Le destinataire peut-il également passer commande ?</a></p>
+                  <p><a target="_blank" translate="ORDER_ORDER.PAST_STEP.QUESTION.COMMENT5">Je ne veux pas que ce soit le destinataire qui paye les droits et taxes, comment puis-je faire ?</a></p>
+                  <p><a target="_blank" translate="ORDER_ORDER.PAST_STEP.QUESTION.COMMENT6">Le coursier n’a pas pu récupérer mon colis car l’adresse de l’expéditeur était incomplète, que dois-je faire ?</a></p>
+                  <p><a target="_blank" translate="ORDER_ORDER.PAST_STEP.QUESTION.COMMENT7">Le suivi de mon envoi n’affiche aucune information, comment cela se fait ?</a></p>
+                  <p><a target="_blank" translate="ORDER_ORDER.PAST_STEP.QUESTION.COMMENT8">Si mon colis est livré avec du retard, puis-je me faire rembourser ?</a></p>
+                </p>
+              </div>
+            </uib-accordion>
           </div>
 
           <div class="panel-white cancel-padding-left-15 panel-muted">
             <div style="text-align: center;">
-              <span style="color: #e55933;">REMINDER OF COMMON PROHIBITED GOODS</span>
+              <span style="color: #e55933;" translate="ORDER_ORDER.PAST_STEP.PROHIBIT.TITLE">REMINDER OF COMMON PROHIBITED GOODS</span>
             </div>
             <br>
             <div class="prohibited">
               <div class="col4">
                 <img alt="Aérosols" src="images/files/upload/dangerous goods/aerosol.[1].png" width="50" height="54">
-                <p>Aerosols</p>
+                <p translate="ORDER_ORDER.PAST_STEP.PROHIBIT.AEROSOLS">Aerosols</p>
               </div>
               <div class="col4">
                 <img alt="Parfum" src="images/prohibited-goods/parfums.png">
-                <p>Fragrance</p>
+                <p translate="ORDER_ORDER.PAST_STEP.PROHIBIT.FRAGRANCE">Fragrance</p>
               </div>
               <div class="col4">
                 <img alt="Batterie lithium" src="images/prohibited-goods/batterie.png">
-                <p>Lithium&nbsp;batteries</p>
+                <p translate="ORDER_ORDER.PAST_STEP.PROHIBIT.LITHIUM">Lithium&nbsp;batteries</p>
               </div>
               <div class="clear"></div>
             </div>
             <div class="prohibited">
               <div class="col4">
                 <img alt="Inflammables / Explosifs" src="images/prohibited-goods/inflammable.png">
-                <p>Explosives / Inflammable</p>
-                <p>articles</p>
+                <p translate="ORDER_ORDER.PAST_STEP.PROHIBIT.EXPLOSIVE">Explosives / Inflammable</p>
               </div>
               <div class="col4">
                 <img alt="Produits périssables" src="images/prohibited-goods/perissable.png">
-                <p>Perishable&nbsp;</p>
-                <p>products</p>
+                <p translate="ORDER_ORDER.PAST_STEP.PROHIBIT.PERISHABLE">Perishable&nbsp;</p>
               </div>
               <div class="col4"><img alt="Electroménager" src="images/prohibited-goods/electromenager.png">
-                <p>Appliances</p>
+                <p translate="ORDER_ORDER.PAST_STEP.PROHIBIT.APPLIANCE">Appliances</p>
               </div>
               <div class="clear"></div>
             </div>
             <div class="prohibited">
               <div class="col4">
                 <img alt="Bouteilles en verre" src="images/files/upload/dangerous goods/ali-boi-c-vin-rouge.jpg" width="110" height="265">
-                <p>Wine, glass bottle</p>
+                <p translate="ORDER_ORDER.PAST_STEP.PROHIBIT.WINE">Wine, glass bottle</p>
               </div>
               <div class="col4"><img alt="Meubles" src="images/files/upload/dangerous goods/meuble.[1].png" width="66" height="47">
-                <p>Furnitures</p>
+                <p translate="ORDER_ORDER.PAST_STEP.PROHIBIT.FURNITURE">Furnitures</p>
               </div>
               <div class="col4"><img src="images/files/upload/dangerous goods/TV.png" alt="" width="88" height="67">
-                <p>Screens</p>
+                <p translate="ORDER_ORDER.PAST_STEP.PROHIBIT.SCREEN">Screens</p>
               </div>
               <div class="clear"></div>
             </div>
             <br>
-            <p class="last" style="text-align: center;">For more details, please refer to our website page <a target="_blank" href="https://www.upela.com/en/prohibited-controlled-goods-23.html">Prohibited or controlled goods</a>.</p>
+            <p class="last" style="text-align: center;" translate="ORDER_ORDER.PAST_STEP.PROHIBIT.COMMENT">For more details, please refer to our website page <a target="_blank">Prohibited or controlled goods</a>.</p>
           </div>
         </div>
       </div>

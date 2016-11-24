@@ -8,15 +8,65 @@
  * Controller of the UpelaApp
  */
 angular.module('UpelaApp')
-  .controller('OrderOrderCtrl', function ($scope) {
+  .controller('OrderOrderCtrl', function ($scope, $state, $stateParams, MainService) {
     var vm = this;
+    vm.offers = $stateParams.offers;
+    vm.origin_shipment = $stateParams.shipment;
+    vm.selected_offerId = $stateParams.offer_id;
+    vm.selected_offer = '';
+    console.log('vm.origin_shipment = ', vm.origin_shipment);
+    console.log('vm.offers = ', vm.offers);
+    console.log('vm.selected_offerId = ', vm.selected_offerId);
 
-    // Disable weekend selection
-    function disabled(data) {
-      var date = data.date,
-        mode = data.mode;
-      return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
+    if(!vm.offers && !vm.origin_shipment) {
+      $state.go('home');
     }
+
+    for(var i = 0; i < vm.offers.offers.length; i++) {
+      if(vm.offers.offers[i].id === vm.selected_offerId) {
+        vm.selected_offer = vm.offers.offers[i];
+        console.log('vm.selected_offer = ', vm.selected_offer);
+      }
+    }
+
+    vm.shipment = {
+      account: {
+        login: 'hugo.rusek@oqios.com',
+        password: 'yoon1104'
+      },
+      shipment_id: vm.offers.shipment_id,
+      ship_from: {
+        company: '',
+        name: '',
+        phone: '',
+        email: '',
+        address1: '',
+        address2: '',
+        address3: '',
+        country_code: vm.origin_shipment.ship_from.country_code,
+        conntry_name: vm.origin_shipment.ship_from.country_name,
+        postcode: vm.origin_shipment.ship_from.postcode,
+        city: vm.origin_shipment.ship_from.city,
+        pro: ''
+      },
+      ship_to: {
+        company: '',
+        name: '',
+        phone: '',
+        email: '',
+        address1: '',
+        address2: '',
+        address3: '',
+        country_code: vm.origin_shipment.ship_to.country_code,
+        conntry_name: vm.origin_shipment.ship_to.country_name,
+        postcode: vm.origin_shipment.ship_to.postcode,
+        city: vm.origin_shipment.ship_to.city,
+        pro: ''
+      },
+      reason: '',
+      content: '',
+      label_format: ''
+    };
 
     function getDayClass(data) {
       var date = data.date,
@@ -48,15 +98,15 @@ angular.module('UpelaApp')
     $scope.inlineOptions = {
       customClass: getDayClass,
       minDate: new Date(),
-      showWeeks: true
+      showWeeks: false
     };
 
     $scope.dateOptions = {
-      dateDisabled: disabled,
       formatYear: 'yy',
       maxDate: new Date(2020, 5, 22),
       minDate: new Date(),
-      startingDay: 1
+      startingDay: 1,
+      showWeeks: false
     };
 
     $scope.toggleMin = function() {
@@ -80,43 +130,6 @@ angular.module('UpelaApp')
 
     $scope.popup = {
       opened: false
-    };
-
-    vm.shipment = {
-      account: {
-        login: '',
-        password: ''
-      },
-      shipment_id: '',
-      ship_from: {
-        company: '',
-        name: '',
-        phone: '',
-        email: '',
-        address1: '',
-        address2: '',
-        address3: '',
-        country_code: '',
-        postcode: '',
-        city: '',
-        pro: ''
-      },
-      ship_to: {
-        company: '',
-        name: '',
-        phone: '',
-        email: '',
-        address1: '',
-        address2: '',
-        address3: '',
-        country_code: '',
-        postcode: '',
-        city: '',
-        pro: ''
-      },
-      reason: '',
-      content: '',
-      label_format: ''
     };
 
     vm.waybill = function() {

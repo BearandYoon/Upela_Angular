@@ -95,6 +95,49 @@
           AEROSOLS: 'Aerosols, gas bottles, extinguishers',
           OTHERS: 'Or any other product with this kind of symbol. It will be then your full responsibility in case of incidence :'
         },
+        PAST_STEP: {
+          STEP_ONE: {
+            TITLE: '1. Your shipment&nbsp;&nbsp;',
+            TYPE: '<strong>Type :</strong>',
+            FROM: '<strong>From</strong>',
+            TO: '<strong>To</strong>',
+            DATE: '<strong>Collection date</strong>'
+          },
+          STEP_TWO: {
+            TITLE: '2. Your offer',
+            DROP_OFF: 'Dropoff on ',
+            DELIVERY: 'Delivery on ',
+            DURING: 'during the day'
+          },
+          AMOUNT: 'Amount : ',
+          EXCL_TAX: 'excl tax',
+          INC_TAX: 'with tax',
+          EMAIL: 'Send by email',
+          QUESTION: {
+            TITLE: 'Frequently asked questions',
+            COMMENT1: 'Comment effectuer un devis ?',
+            COMMENT2: 'Est-ce que vous fournissez/effectuez l’emballage ?',
+            COMMENT3: 'Que se passe-t-il si je ne suis pas présent lors de la livraison ?',
+            COMMENT4: 'Le destinataire peut-il également passer commande ?',
+            COMMENT5: 'Je ne veux pas que ce soit le destinataire qui paye les droits et taxes, comment puis-je faire ?',
+            COMMENT6: 'Le coursier n’a pas pu récupérer mon colis car l’adresse de l’expéditeur était incomplète, que dois-je faire ?',
+            COMMENT7: 'Le suivi de mon envoi n’affiche aucune information, comment cela se fait ?',
+            COMMENT8: 'Si mon colis est livré avec du retard, puis-je me faire rembourser ?'
+          },
+          PROHIBIT: {
+            TITLE: 'REMINDER OF COMMON PROHIBITED GOODS',
+            AEROSOLS: 'Aerosols',
+            FRAGRANCE: 'Fragrance',
+            LITHIUM: 'Lithium batteries',
+            EXPLOSIVE: 'Explosives / Inflammable articles',
+            PERISHABLE: 'Perishable products',
+            APPLIANCE: 'Appliances',
+            WINE: 'Wine, glass bottle',
+            FURNITURE: 'Furnitures',
+            SCREEN: 'Screens',
+            COMMENT: 'For more details, please refer to our website page <a target="_blank" href="https://www.upela.com/en/prohibited-controlled-goods-23.html">Prohibited or controlled goods'
+          }
+        },
         TERMS_CONDITION: 'I accept <a href="images/files/upload/cgv/CGV_Upela.pdf" target="_blank">terms and conditions of the Upela.com website</a> and the <a href="images/files/upload/cgv/CGV UPS En.pdf" target="_blank">terms and conditions of the carrier</a>',
         CONTINUE: ' Continue',
         CONTACT: 'Information that is collected is subject to computer processing to ensure the good routing of your shipments. Data may be passed to: DHL, FedEx, or UPS to allow the performance of the contract.<br>In accordance with the law of Data Protection of January 6th, 1978, amended in 2004, you have the right to access and rectify all data concerning you, writing to: <a href="mailto:contact@upela.com">contact@upela.com</a>, Philippe Boulay<br>You can also, for legitimate reasons, oppose the processing of your personal data.'
@@ -190,6 +233,49 @@
           AEROSOLS: 'Aérosols, Bouteilles de gaz, Extincteurs',
           OTHERS: 'Ou tout autre produit portant un symbole de ce type, votre responsabilité pourrait être engagée :'
         },
+        PAST_STEP: {
+          STEP_ONE: {
+            TITLE: '1. Votre expédition&nbsp;&nbsp;',
+            TYPE: '<strong>Type :</strong>',
+            FROM: '<strong>De :<strong>',
+            TO: '<strong>A :<strong>',
+            DATE: '<strong>Date de ramassage:<strong>',
+          },
+          STEP_TWO: {
+            TITLE: '2. Votre offre',
+            DROP_OFF: 'Dépôt le ',
+            DELIVERY: 'Livraison le ',
+            DURING: 'dans la journée'
+          },
+          AMOUNT: 'Montant : ',
+          EXCL_TAX: 'HT',
+          INC_TAX: 'TTC',
+          EMAIL: 'Envoyer par email',
+          QUESTION: {
+            TITLE: 'Questions fréquentes',
+            COMMENT1: 'Comment effectuer un devis ?',
+            COMMENT2: 'Est-ce que vous fournissez/effectuez l’emballage ?',
+            COMMENT3: 'Que se passe-t-il si je ne suis pas présent lors de la livraison ?',
+            COMMENT4: 'Le destinataire peut-il également passer commande ?',
+            COMMENT5: 'Je ne veux pas que ce soit le destinataire qui paye les droits et taxes, comment puis-je faire ?',
+            COMMENT6: 'Le coursier n’a pas pu récupérer mon colis car l’adresse de l’expéditeur était incomplète, que dois-je faire ?',
+            COMMENT7: 'Le suivi de mon envoi n’affiche aucune information, comment cela se fait ?',
+            COMMENT8: 'Si mon colis est livré avec du retard, puis-je me faire rembourser ?'
+          },
+          PROHIBIT: {
+            TITLE: 'RAPPEL DES MARCHANDISES INTERDITES COURANTES',
+            AEROSOLS: 'Aérosols',
+            FRAGRANCE: 'Parfum',
+            LITHIUM: 'Batterie lithium',
+            EXPLOSIVE: 'Inflammables / Explosifs',
+            PERISHABLE: 'Produits périssables',
+            APPLIANCE: 'Appareils électroménagers',
+            WINE: 'Vin, bouteilles en verre',
+            FURNITURE: 'Meubles',
+            SCREEN: 'Ecrans',
+            COMMENT: 'Pour plus de détails, veuillez consulter notre page <a target="_blank">marchandises interdites / réglementées'
+          }
+        },
         TERMS_CONDITION: 'J&apos;accepte <a href="images/files/upload/cgv/CGV_Upela.pdf" target="_blank">les conditions générales d&apos;utilisation du site web Upela.com</a> ainsi que les  <a href="images/files/upload/cgv/CGV UPS En.pdf" target="_blank">conditions générales du transporteur</a>',
         CONTINUE: 'Continuer',
         CONTACT: 'Les informations recueillies font l’objet d’un traitement informatique destiné au bon acheminement de vos expéditions. Les données pourront être transmises à : DHL, Fedex ou UPS afin de permettre l’exécution de la prestation objet du contrat. <br>Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée en 2004, vous bénéficiez d’un droit d’accès et de rectification aux informations qui vous concernent, que vous pouvez exercer en vous adressant à : <a href="mailto:contact@upela.com">contact@upela.com</a>, Philippe Boulay.<br> Vous pouvez également, pour des motifs légitimes, vous opposer au traitement des données vous concernant.'
@@ -284,6 +370,49 @@
           ELECTRONIC: 'Cigarrillo electrónico (<a href="https://www.upela.com/en/prohibited-controlled-goods-23.html" target="_blank">más información</a>)',
           AEROSOLS: 'Aerosoles, botella de gas, extintor',
           OTHERS: 'O cualquier producto llevando un símbolo de este tipo, su responsabilidad podría verse comprometida en caso de incidente :'
+        },
+        PAST_STEP: {
+          STEP_ONE: {
+            TITLE: '1. Su envío&nbsp;&nbsp;',
+            TYPE: '<strong>Tipo :</strong>',
+            FROM: '<strong>De :</strong>',
+            TO: '<strong>Hacia :</strong>',
+            DATE: '<strong>Fecha de recogida :</strong>',
+          },
+          STEP_TWO: {
+            TITLE: '2. Su oferta',
+            DROP_OFF: 'Depósito el ',
+            DELIVERY: 'Entrega el ',
+            DURING: 'en el día'
+          },
+          AMOUNT: 'Importe : ',
+          EXCL_TAX: 'SIN IVA',
+          INC_TAX: 'IVA incl.',
+          EMAIL: 'Enviar por correo electrónico',
+          QUESTION: {
+            TITLE: ' Preguntas Frecuentes',
+            COMMENT1: 'Comment effectuer un devis ?',
+            COMMENT2: 'Est-ce que vous fournissez/effectuez l’emballage ?',
+            COMMENT3: 'Que se passe-t-il si je ne suis pas présent lors de la livraison ?',
+            COMMENT4: 'Le destinataire peut-il également passer commande ?',
+            COMMENT5: 'Je ne veux pas que ce soit le destinataire qui paye les droits et taxes, comment puis-je faire ?',
+            COMMENT6: 'Le coursier n’a pas pu récupérer mon colis car l’adresse de l’expéditeur était incomplète, que dois-je faire ?',
+            COMMENT7: 'Le suivi de mon envoi n’affiche aucune information, comment cela se fait ?',
+            COMMENT8: 'Si mon colis est livré avec du retard, puis-je me faire rembourser ?'
+          },
+          PROHIBIT: {
+            TITLE: 'RECORDATORIO DE MERCANCIAS PROHIBIDAS HABITUALES',
+            AEROSOLS: 'Aerosoles',
+            FRAGRANCE: 'Perfume',
+            LITHIUM: 'Batería de litio',
+            EXPLOSIVE: 'Inflamables / Explosivos',
+            PERISHABLE: 'Productos perecederos',
+            APPLIANCE: 'Aparatos electro-domésticos',
+            WINE: 'Vino, botellas de vidrio',
+            FURNITURE: 'Muebles',
+            SCREEN: 'Screens',
+            COMMENT: 'Para más detalles, consulte nuestra página <a target="_blank">ercancías prohibidas o restringidas'
+          }
         },
         TERMS_CONDITION: 'Acepto las <a href="images/files/upload/cgv/CGV_Upela.pdf" target="_blank">condiciones generales de la página Web Upela.com</a> y las <a href="images/files/upload/cgv/CGV UPS En.pdf" target="_blank">condiciones generales del transportista</a>',
         CONTINUE: 'Continuar',
