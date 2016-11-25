@@ -53,7 +53,7 @@
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.PHONE">Phone</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control validate" name="tel" ng-model="ctrl.shipment.ship_from.phone" ng-intl-tel-input required>
+                      <input type="text" class="form-control" ng-class="{'invalid': !ShipmentForm.ship_from_phone.$valid}" name="ship_from_phone" ng-model="ctrl.shipment.ship_from.phone" ng-intl-tel-input data-default-country="{{ctrl.origin_shipment.ship_from.country_code}}" required>
                     </div>
                   </div>
                   <div class="form-group">
@@ -108,9 +108,9 @@
                   <div class="form-group">
                     <label class="control-label col-lg-3" translate="ORDER_ORDER.SENDER.OTHERS">Others</label>
                     <div class="col-lg-9">
-                      <textarea class="form-control" placeholder="Other information to help the collection driver (interphone, entry code, instructions, opening hours...)" rows="2" maxlength="30" data-maxchar="30"></textarea>
+                      <textarea class="form-control" ng-model="others" placeholder="Other information to help the collection driver (interphone, entry code, instructions, opening hours...)" rows="2" maxlength="30" data-maxchar="30"></textarea>
                       <span class="text-count-down-container">
-					              <span class="text-count-down">30</span> character(s) left
+					              <span class="text-count-down">{{30-others.length}}</span> character(s) left
 				              </span>
                     </div>
                   </div>
@@ -153,7 +153,8 @@
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.CELL_PHONE">Cellphone</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control validate" name="tel" ng-model="ctrl.shipment.ship_to.phone" ng-intl-tel-input required>
+                      <input type="text" class="form-control" ng-class="{'invalid': !ShipmentForm.ship_to_phone.$valid}" name="ship_to_phone" ng-model="ctrl.shipment.ship_to.phone" ng-intl-tel-input required>
+                      <!--<span class="help-block" ng-show="ShipmentForm.ship_to_phone.$valid">Valid :)</span>-->
                     </div>
                   </div>
 
@@ -409,38 +410,6 @@
                     </div>
                   </div>
                 </div>
-
-                <div style="display: none;">
-                  <hr style="margin: 10px 0 20px 0;">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <h2 class="form-group-legend">Tax and duty payment</h2>
-                      <div class="form-group">
-                        <label class="control-label col-lg-3">Tax and duty payment</label>
-                        <div class="col-lg-7">
-                          <div class="radio">
-                            <label>
-                              <input type="radio" value="0">&nbsp;Duties and taxes are paid by the recipient
-                            </label>
-                          </div>
-
-                          <div class="radio">
-                            <label>
-                              <input type="radio" value="1">&nbsp;Duties and taxes are paid by the sender or a third party
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="form-group" style="display: none;">
-                        <label class="control-label col-lg-3">Duty account postcode</label>
-                        <div class="col-lg-3">
-                          <input type="text" class="form-control validate" data-validate="isPostCode" value="" maxlength="20">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 <hr style="margin: 10px 0 20px 0;">
               </div>
 
@@ -472,77 +441,71 @@
                 <div class="col-md-12">
                   <h2 class="form-group-legend" translate="ORDER_ORDER.PICKUP.TITLE">Pickup</h2>
                   <div class="form-group">
-                  <div class="col-lg-9 col-lg-offset-3">
-                    <div class="radio">
-                      <label>
-                        <input type="radio" value="0" checked="" translate="ORDER_ORDER.PICKUP.COLLECTION">&nbsp;Collection chosen (subject to the carrier availability)
-                      </label>
+                    <div class="col-lg-9 col-lg-offset-3">
+                      <div class="radio">
+                        <label>
+                          <input type="radio" value="0" checked="" translate="ORDER_ORDER.PICKUP.COLLECTION">&nbsp;Collection chosen (subject to the carrier availability)
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-9 col-lg-offset-3">
+                      <label class="control-label required-" style="display: inline-block; padding: 0; height: 34px; line-height: 34px;" translate="ORDER_ORDER.PICKUP.DATE">Date</label>&nbsp;
+
+                      <div class="input-group" style="width: 160px; display: inline-table; vertical-align: middle;">
+                        <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                        <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="openDate()">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                          </button>
+                        </span>
+                      </div>
+                      <span translate="ORDER_ORDER.PICKUP.BETWEEN"></span>
+
+                      <select class="form-control input-small2 display-inline-block">
+                        <option value="0800">08:00am</option>
+                        <option value="0815">08:15am</option>
+                        <option value="0830">08:30am</option>
+                        <option value="0845">08:45am</option>
+                        <option value="0900">09:00am</option>
+                        <option value="0915">09:15am</option>
+                        <option value="0930">09:30am</option>
+                        <option value="0945">09:45am</option>
+                        <option value="1000">10:00am</option>
+                        <option value="1015">10:15am</option>
+                        <option value="1030">10:30am</option>
+                        <option value="1045">10:45am</option>
+                        <option value="1100">11:00am</option>
+                        <option value="1115">11:15am</option>
+                        <option value="1130">11:30am</option>
+                        <option value="1145">11:45am</option>
+                        <option value="1200">12:00pm</option>
+                        <option value="1215">12:15pm</option>
+                        <option value="1900">07:00pm</option>
+                        <option value="1915">07:15pm</option>
+                        <option value="1930">07:30pm</option>
+                        <option value="1945">07:45pm</option>
+                        <option value="2000">08:00pm</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-lg-9 col-lg-offset-3">
+                      <div class="radio">
+                        <label>
+                          <input type="radio" value="1">
+                          <span translate="ORDER_ORDER.PICKUP.DROP_OFF"></span>
+                          <img src="images/carriers/logo-ups-en.png" style="max-height: 32px; max-width: 50px; margin-left: 10px;">
+                        </label>&nbsp;&nbsp;
+                        <span class="text-muted">
+                          <a href="https://www.ups.com/dropoff?loc=en_US" target="_blank" translate="ORDER_ORDER.PICKUP.NEAREST">See the nearest collection points</a>
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="form-group">
-                  <div class="col-lg-9 col-lg-offset-3">
-                    <label class="control-label required-" style="display: inline-block; padding: 0; height: 34px; line-height: 34px;" translate="ORDER_ORDER.PICKUP.DATE">Date</label>&nbsp;
-
-                    <div class="input-group" style="width: 160px; display: inline-table; vertical-align: middle;">
-                      <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-                      <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="openDate()">
-                          <i class="glyphicon glyphicon-calendar"></i>
-                        </button>
-                      </span>
-                    </div>
-                    <span translate="ORDER_ORDER.PICKUP.BETWEEN"></span>
-
-                    <select class="form-control input-small2 display-inline-block">
-                      <option value="0800">08:00am</option>
-                      <option value="0815">08:15am</option>
-                      <option value="0830">08:30am</option>
-                      <option value="0845">08:45am</option>
-                      <option value="0900">09:00am</option>
-                      <option value="0915">09:15am</option>
-                      <option value="0930">09:30am</option>
-                      <option value="0945">09:45am</option>
-                      <option value="1000">10:00am</option>
-                      <option value="1015">10:15am</option>
-                      <option value="1030">10:30am</option>
-                      <option value="1045">10:45am</option>
-                      <option value="1100">11:00am</option>
-                      <option value="1115">11:15am</option>
-                      <option value="1130">11:30am</option>
-                      <option value="1145">11:45am</option>
-                      <option value="1200">12:00pm</option>
-                      <option value="1215">12:15pm</option>
-                      <option value="1900">07:00pm</option>
-                      <option value="1915">07:15pm</option>
-                      <option value="1930">07:30pm</option>
-                      <option value="1945">07:45pm</option>
-                      <option value="2000">08:00pm</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <div class="col-lg-9 col-lg-offset-3">
-                    <div class="radio">
-                      <label>
-                        <input type="radio" value="1">
-                        <span translate="ORDER_ORDER.PICKUP.DROP_OFF"></span>
-                        <img src="images/carriers/logo-ups-en.png" style="max-height: 32px; max-width: 50px; margin-left: 10px;">
-                      </label>&nbsp;&nbsp;
-                      <span class="text-muted">
-                        <a href="https://www.ups.com/dropoff?loc=en_US" target="_blank" translate="ORDER_ORDER.PICKUP.NEAREST">See the nearest collection points</a>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group" style="display: none;">
-                  <div class="col-lg-9 col-lg-offset-3">
-                    <p class="text-muted">Note: Any parcel dropped off at the Kiala distribution point should not exceed 20kg in weight or 80cm in length</p>
-                  </div>
-                </div>
-              </div>
               </div>
 
               <hr style="margin: 10px 0 20px 0;">
@@ -619,7 +582,7 @@
                       <div class="form-group">
                         <div class="checkbox">
                           <label class="">
-                            <input type="checkbox" class="check_box" value="1" checked="">
+                            <input type="checkbox" class="check_box" value="1" required>
                             <span translate="ORDER_ORDER.TERMS_CONDITION"></span>
                           </label>
                         </div>

@@ -65,7 +65,7 @@ angular.module('UpelaApp')
       },
       reason: '',
       content: '',
-      label_format: ''
+      label_format: 'PDF'
     };
 
     function getDayClass(data) {
@@ -134,5 +134,6 @@ angular.module('UpelaApp')
 
     vm.waybill = function() {
       console.log('shipment-waybill = ', vm.shipment);
+      MainService.waybill(vm.shipment);
     };
   });
