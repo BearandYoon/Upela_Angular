@@ -91,7 +91,7 @@
 
               <div class="tab-content">
                 <div class="tab-pane fade in active" id="pricer">
-                  <form id="AccountShipmentRatingForm" class="form-horizontal">
+                  <form name="AccountShipmentRatingForm" class="form-horizontal" ng-submit="AccountShipmentRatingForm.$valid && ctrl.offer()">
                     <div class="row" style="margin-bottom: 20px;">
                       <div class="col-md-6">
                         <div class="">
@@ -103,7 +103,7 @@
                           </label>
 
                           <div id="address1-row">
-                            <ui-select ng-model="ctrl.shipment.origin.country" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                            <ui-select class="address1_country" ng-model="ctrl.ship_from_country" theme="select2" style="width: 160px;" title="Select the Country" required>
                               <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
                               <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
                                 <div ng-bind-html="person.name | highlight: $select.search"></div>
@@ -114,11 +114,21 @@
                             </ui-select>
 
                             <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                            <input type="text" id="address1_postcode_city" class="form-control ui-autocomplete-input" value="107497, Buchilaşi" maxlength="255" translate translate-attr-placeholder="MY_ACCOUNT.ORIGIN.TOWN" ng-model="ctrl.shipment.origin.postcode">
+                            <ui-select ng-model="ctrl.ship_from_addresses" id="address1_postcode_city"
+                                       theme="bootstrap"
+                                       ng-disabled="disabled"
+                                       reset-search-input="false" required>
+                              <ui-select-match placeholder="Postcode, Town">{{$select.selected}}</ui-select-match>
+                              <ui-select-choices repeat="address in ctrl.merged_ship_from_addresses track by $index"
+                                                 refresh="refreshFromAddresses($select.search)"
+                                                 refresh-delay="0">
+                                <div ng-bind-html="address | highlight: $select.search"></div>
+                              </ui-select-choices>
+                            </ui-select>
 
                             <div class="checkbox">
-                              <label class="">
-                                <input type="checkbox" class="check_box" value="1" unchecked="" ng-model="ctrl.shipment.origin.postcode">
+                              <label>
+                                <input type="checkbox" class="check_box" ng-model="ctrl.shipment.ship_from.pro">
                                 <span translate="MY_ACCOUNT.ORIGIN.ADDRESS"></span>
                               </label>
                             </div>
@@ -135,10 +145,10 @@
                             </span>
                           </label>
 
-                          <div id="address2-row">
-                            <ui-select  ng-model="ctrl.shipment.destination.country" theme="select2" style="width: 160px;" title="Select the Country">
+                          <div id="address1-row">
+                            <ui-select class="address1_country" ng-model="ctrl.shipment.destination.country" theme="select2" style="width: 160px;" title="Select the Country" required>
                               <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
-                              <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
+                              <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search} | orderBy: 'name'">
                                 <div ng-bind-html="person.name | highlight: $select.search"></div>
                                 <small>
                                   {{country.name}}
@@ -147,11 +157,21 @@
                             </ui-select>
 
                             <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                            <input type="text" id="address2_postcode_city" class="form-control ui-autocomplete-input" value="517042, Bubeşti" maxlength="255" translate translate-attr-placeholder="MY_ACCOUNT.DESTINATION.TOWN" ng-model="ctrl.shipment.destination.postcode">
+                            <ui-select ng-model="ctrl.ship_to_addresses" id="address1_postcode_city"
+                                       theme="bootstrap"
+                                       ng-disabled="disabled"
+                                       reset-search-input="false" required>
+                              <ui-select-match placeholder="Postcode, Town">{{$select.selected}}</ui-select-match>
+                              <ui-select-choices repeat="address in ctrl.merged_ship_to_addresses track by $index"
+                                                 refresh="refreshToAddresses($select.search)"
+                                                 refresh-delay="0">
+                                <div ng-bind-html="address | highlight: $select.search"></div>
+                              </ui-select-choices>
+                            </ui-select>
 
                             <div class="checkbox">
-                              <label class="">
-                                <input type="checkbox" class="check_box" value="1" unchecked="" ng-model="ctrl.shipment.destination.postcode">
+                              <label>
+                                <input type="checkbox" class="check_box" ng-model="ctrl.shipment.ship_to.pro">
                                 <span translate="MY_ACCOUNT.DESTINATION.ADDRESS"></span>
                               </label>
                             </div>
@@ -170,52 +190,48 @@
                             </span>
                           </label>
                           <div>
-                            <select id="type" name="type" class="form-control">
+                            <select id="type" name="type" class="form-control" required>
                               <option value="1">Envelope</option>
                               <option value="2" selected="">Parcel</option>
                               <option value="3">Pallet</option>
                             </select>
 
                             <div class="parcels-container">
-                              <div id="parcel_list">
-                                <div class="parcel" id="parcel_0">
+                              <div id="parcel_list" ng-repeat="parcel in ctrl.shipment.parcels">
+                                <div class="parcel">
                                   <label class="parcel-label" translate="MY_ACCOUNT.SHIPMENT.NO">No.</label>
-                                  <input type="text" class="form-control parcel-number input-xmini2" maxlength="3" value="1" placeholder="No." translate translate-attr-placeholder="MY_ACCOUNT.SHIPMENT.NO">
+                                  <input type="text" class="form-control parcel-number input-xmini2" maxlength="3" ng-model="parcel.number" value="1" placeholder="No." translate translate-attr-placeholder="MY_ACCOUNT.SHIPMENT.NO" ng-required="true">
 
-                                  <label class="parcel-label" translate="MY_ACCOUNT.SHIPMENT.UNIT">Wt/Unit</label>
-                                  <input type="text" class="form-control parcel-weight input-xmini2" value="10" size="16" maxlength="4" placeholder="Wt/Unit" translate translate-attr-placeholder="MY_ACCOUNT.SHIPMENT.UNIT">
+                                  <label class="parcel-label" translate="MY_ACCOUNT.PARCELS.UNIT">Wt/Unit</label>
+                                  <input type="text" class="form-control parcel-weight input-xmini2" ng-model="parcel.weight" value="" size="16" maxlength="4" placeholder="Wt/Unit" translate translate-attr-placeholder="MY_ACCOUNT.SHIPMENT.UNIT" ng-required="true">
+                                  <span class="weight_unit" ng-if="ctrl.parcelUnit">kg</span>
+                                  <span class="weight_unit" ng-if="!ctrl.parcelUnit">lbs</span>
 
-                                  <span class="weight_unit">kg</span>
-                                  <label class="parcel-label">Dimensions</label>
-
-                                  <input type="text" class="form-control input-xmini2" value="50" size="16" maxlength="3" placeholder="Length" translate translate-attr-placeholder="MY_ACCOUNT.SHIPMENT.LENGTH"> x
-                                  <input type="text" class="form-control input-xmini2" value="50" maxlength="3" placeholder="Width" translate translate-attr-placeholder="MY_ACCOUNT.SHIPMENT.WIDTH"> x
-                                  <input type="text" class="form-control input-xmini2" value="50" size="16" maxlength="3" placeholder="Height" translate translate-attr-placeholder="MY_ACCOUNT.SHIPMENT.HEIGHT">
-                                  <span class="dimension_unit">cm</span>
-                                  <a class="parcel-action" href="#">
+                                  <label class="parcel-label" translate="MY_ACCOUNT.PARCELS.DIMENSIONS">Dimensions</label>
+                                  <input type="text" class="form-control input-xmini2" ng-model="parcel.x" value="" size="16" maxlength="3" placeholder="Length" translate translate-attr-placeholder="MY_ACCOUNT.SHIPMENT.LENGTH" ng-required="true"> x
+                                  <input type="text" class="form-control input-xmini2" ng-model="parcel.y" value="" maxlength="3" placeholder="Width" translate translate-attr-placeholder="MY_ACCOUNT.SHIPMENT.WIDTH" ng-required="true"> x
+                                  <input type="text" class="form-control input-xmini2" ng-model="parcel.z" value="" size="16" maxlength="3" placeholder="Height" translate translate-attr-placeholder="MY_ACCOUNT.SHIPMENT.HEIGHT" ng-required="true">
+                                  <span class="dimension_unit" ng-if="ctrl.parcelUnit">cm</span>
+                                  <span class="dimension_unit" ng-if="!ctrl.parcelUnit">in</span>
+                                  <a class="parcel-action" ng-click="ctrl.removeParcel($index)">
                                     <i class="glyphicon glyphicon-minus-sign"></i>
                                   </a>
                                 </div><!-- /parcel -->
                               </div>
 
                               <div class="parcel-actions pull-left">
-                                <a href="#" style="padding-right:14px;">
+                                <a ng-click="ctrl.addParcel()" style="padding-right:14px;">
                                   <i class="glyphicon glyphicon-plus-sign"></i>
-                                  <span translate="MY_ACCOUNT.SHIPMENT.ADD_PARCEL"> Add a parcel</span>
+                                  <span translate="MY_ACCOUNT.SHIPMENT.ADD_PARCEL"></span>
                                 </a>
-                                <span id="switch_parcel_unit_fr" style="display: none;">
-                                  <a href="#" style="padding-right:14px;">
-                                    <i class="glyphicon glyphicon-refresh"></i> Change unit of measure (Kgs/cm)
-                                  </a>
-                                </span>
-
                                 <span id="switch_parcel_unit_us">
-                                  <a href="#" style="padding-right:14px;">
+                                  <a ng-click="ctrl.switchParcelUnit()" style="padding-right:14px;">
                                     <i class="glyphicon glyphicon-refresh"></i>
-                                    <span translate="MY_ACCOUNT.SHIPMENT.CHANGE_UNIT"> Change unit of measure (lbs/inch)</span>
+                                    <span translate="MY_ACCOUNT.SHIPMENT.CHANGE_UNIT"></span>
                                   </a>
                                 </span>
                               </div>
+
                               <div class="clear"></div>
                             </div>
                           </div>
@@ -244,7 +260,7 @@
                               <div class="help" style="font-size: 12px; margin-right: -40px;" translate="MY_ACCOUNT.DATE.COLLECTION_DATE">Collection date requested</div>
                             </div>
                             <div class="col-md-8 text-center" id="shipment-date-row">
-                              <button type="submit" class="btn btn-primary btn-lg" id="btn_save" name="btn_save" onclick="return true;">
+                              <button type="submit" class="btn btn-primary btn-lg">
                                 <i class="glyphicon glyphicon-ok"></i>
                                 <span translate="MY_ACCOUNT.COMPARE_OFFER"> COMPARE THE OFFERS!</span>
                               </button>
