@@ -14,7 +14,7 @@ angular.module('UpelaApp')
     vm.shipment = $stateParams.shipment;
 
     if(!vm.offers) {
-      $state.go('home');
+      $state.go('home', {shipment: vm.shipment});
     }
 
     vm.shipment_pickup = true;

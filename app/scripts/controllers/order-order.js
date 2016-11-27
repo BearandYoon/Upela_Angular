@@ -14,15 +14,15 @@ angular.module('UpelaApp')
     vm.origin_shipment = $stateParams.shipment;
     vm.selected_offerId = $stateParams.offer_id;
     vm.selected_offer = '';
+    console.log('offer_id = ', vm.selected_offerId);
 
-    if(!vm.offers && !vm.origin_shipment) {
-      $state.go('home');
+    if(!vm.offers || !vm.origin_shipment) {
+      $state.go('order-offer', {shipment: vm.origin_shipment, offers: vm.offers});
     }
 
     for(var i = 0; i < vm.offers.offers.length; i++) {
       if(vm.offers.offers[i].id === vm.selected_offerId) {
         vm.selected_offer = vm.offers.offers[i];
-        console.log('vm.selected_offer = ', vm.selected_offer);
       }
     }
 

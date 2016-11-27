@@ -76,7 +76,13 @@ angular
         url: '/order-payment',
         templateUrl: 'views/order-payment.html',
         controller: 'OrderPaymentCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: 'ctrl',
+        params: {
+          offers: null,
+          shipment: null,
+          offer_id: null,
+          waybill: null
+        }
       })
       .state('order-confirm', {
         url: '/order-confirm',

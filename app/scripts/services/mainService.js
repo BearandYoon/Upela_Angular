@@ -12,6 +12,7 @@ angular.module('UpelaApp')
     var BaseUrl = 'https://upela54extractionhtml_web_1.upela.oqios.com/api/v3/';
     var Shipment = '';
     var Offers = '';
+    var Offer_Id;
 
     var country_code = [ // Taken from https://gist.github.com/unceus/6501985
       {name: 'Afghanistan', code: 'AF'},
@@ -295,10 +296,10 @@ angular.module('UpelaApp')
             Shipment = shipment;
             Offers = response.data;
           } else {
-            $state.go('home');
+            console.log('getOffers-response = ', response);
           }
         }, function errorCallback() {
-          $state.go('home');
+          console.log('getOffers-response = ', response);
         }
       );
     }
@@ -309,11 +310,14 @@ angular.module('UpelaApp')
         function successCallback(response) {
           if(response.data.success) {
             $state.go('order-order', {offers: Offers, shipment: Shipment, offer_id: offer.offer_id});
+            Offer_Id = offer.offer_id;
           } else {
-            $state.go('order-offer');
+//            $state.go('order-offer', {offers: Offers, shipment: Shipment});
+            console.log('selectOffer-response = ', response);
           }
         }, function errorCallback(response) {
-          $state.go('order-offer');
+          console.log('selectOffer-response = ', response);
+//          $state.go('order-offer');
         }
       );
     }
@@ -323,12 +327,15 @@ angular.module('UpelaApp')
       return $http.post(url, shipment).then(
         function successCallback(response) {
           if(response.data.success) {
-            console.log('selectOffer-response = ', response);
+            console.log('waybill-response = ', response);
+            $state.go('order-payment', {offers: Offers, shipment: Shipment, offer_id: Offer_Id, waybill: response.data});
           } else {
-            $state.go('order-offer');
+            console.log('waybill-response-error = ', response);
+//            $state.go('order-offer', {offers: Offers, shipment: Shipment, offer_id: offer.offer_id});
           }
         }, function errorCallback() {
-          $state.go('order-offer');
+          console.log('waybill-error = ', response);
+//          $state.go('order-offer', {offers: Offers, shipment: Shipment, offer_id: offer.offer_id});
         }
       );
     }
