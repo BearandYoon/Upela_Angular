@@ -138,5 +138,9 @@ angular.module('UpelaApp')
 
       MainService.selectOffer(selectedOffer);
     };
+
+    vm.remakeShipment = function() {
+      $state.go('home', {shipment: vm.shipment});
+    }
   });
 

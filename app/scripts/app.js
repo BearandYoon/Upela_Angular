@@ -28,7 +28,10 @@ angular
         url: '/index',
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: 'ctrl',
+        params: {
+          shipment: null
+        }
       })
       .state('login', {
         url: '/login',
