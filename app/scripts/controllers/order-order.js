@@ -14,9 +14,6 @@ angular.module('UpelaApp')
     vm.origin_shipment = $stateParams.shipment;
     vm.selected_offerId = $stateParams.offer_id;
     vm.selected_offer = '';
-    console.log('vm.origin_shipment = ', vm.origin_shipment);
-    console.log('vm.offers = ', vm.offers);
-    console.log('vm.selected_offerId = ', vm.selected_offerId);
 
     if(!vm.offers && !vm.origin_shipment) {
       $state.go('home');
@@ -135,5 +132,13 @@ angular.module('UpelaApp')
     vm.waybill = function() {
       console.log('shipment-waybill = ', vm.shipment);
       MainService.waybill(vm.shipment);
+    };
+
+    vm.remakeShipment = function() {
+      $state.go('home', {shipment: vm.origin_shipment});
+    };
+
+    vm.remakeOffer = function() {
+      $state.go('order-offer', {shipment: vm.origin_shipment, offers: vm.offers});
     };
   });

@@ -292,7 +292,6 @@ angular.module('UpelaApp')
         function successCallback(response) {
           if(response.data.success){
             $state.go('order-offer', {offers: response.data, shipment: shipment});
-            console.log('getOffers-response = ', response);
             Shipment = shipment;
             Offers = response.data;
           } else {
@@ -310,13 +309,10 @@ angular.module('UpelaApp')
         function successCallback(response) {
           if(response.data.success) {
             $state.go('order-order', {offers: Offers, shipment: Shipment, offer_id: offer.offer_id});
-            console.log('selectOffer-response = ', response);
           } else {
-            console.log('selectOffer-response-error = ', response);
             $state.go('order-offer');
           }
         }, function errorCallback(response) {
-          console.log('selectOffer-response-error = ', response);
           $state.go('order-offer');
         }
       );
@@ -327,14 +323,11 @@ angular.module('UpelaApp')
       return $http.post(url, shipment).then(
         function successCallback(response) {
           if(response.data.success) {
-//          $state.go('order-order', {offers: Offers, shipment: Shipment, offer_id: offer.offer_id});
             console.log('selectOffer-response = ', response);
           } else {
-//          console.log('selectOffer-response-error = ', response);
             $state.go('order-offer');
           }
-        }, function errorCallback(response) {
-//          console.log('selectOffer-response-error = ', response);
+        }, function errorCallback() {
           $state.go('order-offer');
         }
       );

@@ -28,7 +28,6 @@ angular.module('UpelaApp')
 
     if($stateParams.shipment) {
       vm.shipment = $stateParams.shipment;
-      console.log('MainCtrl.$stateParams-shipment = ', vm.shipment);
 
       if(vm.shipment.unit === 'fr') {
         vm.parcelUnit = true;
@@ -37,7 +36,6 @@ angular.module('UpelaApp')
       }
 
       vm.shipment_date = new Date(vm.shipment.shipment_date);
-      console.log('vm.shipment_date = ', vm.shipment_date);
 
       vm.ship_from_addresses = vm.shipment.ship_from.from_address;
       vm.ship_to_addresses = vm.shipment.ship_to.to_address;
@@ -261,7 +259,6 @@ angular.module('UpelaApp')
       vm.shipment.ship_to.country_name = vm.ship_to_country;
       vm.shipment.ship_from.country_code = getCountryCodeFromName(vm.ship_from_country);
       vm.shipment.ship_to.country_code = getCountryCodeFromName(vm.ship_to_country);
-      console.log('shipment = ', vm.shipment);
 
       MainService.getOffers(vm.shipment);
       //$state.go('order-progress');
