@@ -8,44 +8,15 @@
  * Controller of the UpelaApp
  */
 angular.module('UpelaApp')
-  .controller('MainCtrl', function ($scope, $state, MainService, $http) {
+  .controller('MainCtrl', function ($scope, $state, MainService, $stateParams) {
     var vm = this;
 
     vm.disabled = undefined;
     vm.searchEnabled = undefined;
 
-    vm.shipment = {
-      account: {
-        login: 'hugo.rusek@oqios.com',
-        password: 'yoon1104'
-      },
-      ship_from: {
-        country_code: '',
-        postcode: '',
-        city: '',
-        pro: ''
-      },
-      ship_to: {
-        country_code: '',
-        postcode: '',
-        city: '',
-        pro: ''
-      },
-      parcels: [{
-        number: 1,
-        weight: '',
-        x: '',
-        y: '',
-        z: ''
-      }],
-      shipment_date: '',
-      unit: 'fr',
-      selection: 'all'
-    };
-
     vm.parcelCount = 1;
     vm.parcelUnit = true;
-    vm.shipment_date = '';
+    vm.shipment_date = new Date();
 
     vm.countries = [];
     vm.ship_to_country = 'France';
@@ -54,6 +25,57 @@ angular.module('UpelaApp')
     vm.merged_ship_to_addresses = [];
     vm.ship_from_addresses = '';
     vm.merged_ship_from_addresses = [];
+
+    if($stateParams.shipment) {
+      vm.shipment = $stateParams.shipment;
+      console.log('MainCtrl.$stateParams-shipment = ', vm.shipment);
+
+      if(vm.shipment.unit === 'fr') {
+        vm.parcelUnit = true;
+      } else {
+        vm.parcelUnit = false;
+      }
+
+      vm.shipment_date = new Date(vm.shipment.shipment_date);
+      console.log('vm.shipment_date = ', vm.shipment_date);
+
+      vm.ship_from_addresses = vm.shipment.ship_from.from_address;
+      vm.ship_to_addresses = vm.shipment.ship_to.to_address;
+
+      vm.ship_from_country = vm.shipment.ship_from.country_name;
+      vm.ship_to_country = vm.shipment.ship_to.country_name;
+
+      vm.parcelCount = vm.shipment.parcels.length;
+    } else {
+      vm.shipment = {
+        account: {
+          login: 'hugo.rusek@oqios.com',
+          password: 'yoon1104'
+        },
+        ship_from: {
+          country_code: '',
+          postcode: '',
+          city: '',
+          pro: ''
+        },
+        ship_to: {
+          country_code: '',
+          postcode: '',
+          city: '',
+          pro: ''
+        },
+        parcels: [{
+          number: 1,
+          weight: '',
+          x: '',
+          y: '',
+          z: ''
+        }],
+        shipment_date: '',
+        unit: 'fr',
+        selection: 'all'
+      };
+    }
 
     var country_code = MainService.getCountryCode();
 
@@ -93,16 +115,11 @@ angular.module('UpelaApp')
       vm.parcelUnit = !vm.parcelUnit;
     };
 
-    $scope.today = function() {
-      vm.shipment_date = new Date();
-    };
-    $scope.today();
-
     $scope.clear = function() {
       vm.shipment_date = null;
     };
 
-     function getDayClass(data) {
+    function getDayClass(data) {
       var date = data.date,
         mode = data.mode;
       if (mode === 'day') {
@@ -210,11 +227,13 @@ angular.module('UpelaApp')
     function splitCityandPostcode() {
       var tempString = vm.ship_from_addresses;
       var n = tempString.search(',');
+      vm.shipment.ship_from.from_address = vm.ship_from_addresses;
       vm.shipment.ship_from.postcode = tempString.substr(0, n);
       vm.shipment.ship_from.city = tempString.substr(n+2);
 
       tempString = vm.ship_to_addresses;
       n = tempString.search(',');
+      vm.shipment.ship_to.to_address = vm.ship_to_addresses;
       vm.shipment.ship_to.postcode = tempString.substr(0, n);
       vm.shipment.ship_to.city = tempString.substr(n+2);
     }
