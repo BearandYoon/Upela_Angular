@@ -9,7 +9,7 @@
                 <span translate="ORDER.STEP_TITLE.SHIPMENT"></span>
                 <i class="fa fa-pencil"></i>
               </a>
-              <a  ng-click="ctrl.remakeOffer()">
+              <a ng-click="ctrl.remakeOffer()">
                 <span translate="ORDER.STEP_TITLE.OFFERS"></span>
                 <i class="fa fa-pencil"></i>
               </a>
@@ -619,7 +619,7 @@
             <p>
               <span class="very-light-grey bold">
                 <span translate="ORDER_ORDER.PAST_STEP.STEP_ONE.TITLE">1. Your shipment&nbsp;&nbsp;</span>
-                <a href="#">
+                <a ng-click="ctrl.remakeShipment()">
                   <i class="fa fa-pencil"></i>
                 </a>
               </span>
@@ -639,7 +639,7 @@
             <p>
               <span class="very-light-grey bold">
                 <span translate="ORDER_ORDER.PAST_STEP.STEP_TWO.TITLE">2. Your offer&nbsp;&nbsp;</span>
-                <a href="#/order-offer">
+                <a ng-click="ctrl.remakeOffer()">
                   <i class="fa fa-pencil"></i>
                 </a>
               </span>
@@ -661,7 +661,7 @@
               <small translate="ORDER_ORDER.PAST_STEP.INC_TAX"> € with tax</small>
             </div>
             <br>
-            <a class="orange pull-left" href="#">
+            <a class="orange pull-left">
               <i class="glyphicon glyphicon-envelope" style="margin-right: 5px;"></i>
               <span translate="ORDER_ORDER.PAST_STEP.EMAIL">Send by email</span>
             </a>

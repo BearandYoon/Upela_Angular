@@ -47,14 +47,14 @@
                       <li>{{ctrl.shipping_info.ship_from.phone}}</li>
                       <li>
                         <span translate="ORDER_PAYMENT.BUSINESS"></span>
-                        <div ng-if="ctrl.shipping_info.ship_from.pro">
+                        <span ng-if="ctrl.shipping_info.ship_from.pro">
                           <i class="glyphicon glyphicon-ok"></i>
                           <span translate="ORDER_PAYMENT.OK"></span>
-                        </div>
-                        <div ng-if="!ctrl.shipping_info.ship_from.pro">
+                        </span>
+                        <span ng-if="!ctrl.shipping_info.ship_from.pro">
                           <i class="glyphicon glyphicon-remove"></i>
                           <span translate="ORDER_PAYMENT.NO"></span>
-                        </div>
+                        </span>
                       </li>
                     </ul>
                   </td>
@@ -76,14 +76,14 @@
                       <li>{{ctrl.shipping_info.ship_to.phone}}</li>
                       <li>
                         <span translate="ORDER_PAYMENT.BUSINESS"></span>
-                        <div ng-if="ctrl.shipping_info.ship_to.pro">
+                        <span ng-if="ctrl.shipping_info.ship_to.pro">
                           <i class="glyphicon glyphicon-ok"></i>
                           <span translate="ORDER_PAYMENT.OK"></span>
-                        </div>
-                        <div ng-if="!ctrl.shipping_info.ship_to.pro">
+                        </span>
+                        <span ng-if="!ctrl.shipping_info.ship_to.pro">
                           <i class="glyphicon glyphicon-remove"></i>
                           <span translate="ORDER_PAYMENT.NO"></span>
-                        </div>
+                        </span>
                       </li>
                     </ul>
                   </td>
@@ -92,41 +92,39 @@
             </table>
 
             <div>
-              <a class="orange pull-right" href="/order-offer">
+              <a class="orange pull-right" ng-click="ctrl.remakeOffer()">
                 <i class="fa fa-pencil" style="margin-right: 5px;" translate="ORDER_PAYMENT.EDIT"></i>
               </a>
             </div>
 
             <table class="table table-bordered offer-summary">
-              <table class="table table-bordered offer-summary">
-                <tbody>
-                <tr>
-                  <td>
-                    <center>
-                      <img src="images/carriers/logo-ups-en.png" style="max-width: 60px;">
-                    </center>
-                  </td>
-                  <td style="border-right: 0;">
-                    <ul class="list-unstyled" style="text-align: left;">
-                      <li><strong>UPS EXPRESS SAVER®</strong></li>
-                      <li class="text-muted">Dropoff on Monday 31 October 2016</li>
-                      <li class="text-muted">Delivery on Wednesday 02 November 2016, during the day</li>
-                    </ul>
-                  </td>
-                  <td style="border-left: 0; text-align: right;">
-                    <span class="price-bold">37.96 € with tax</span>
-                    <br><small>(41.72 $)</small>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
+              <tbody>
+              <tr>
+                <td>
+                  <center>
+                    <img ng-src={{ctrl.selected_offer.carrier_logo}} style="max-width: 60px;">
+                  </center>
+                </td>
+                <td style="border-right: 0;">
+                  <ul class="list-unstyled" style="text-align: left;">
+                    <li><strong>{{ctrl.selected_offer.service_name}}</strong></li>
+                    <li class="text-muted">
+                      <span translate="ORDER_PAYMENT.DROP_OFF">Dropoff on</span>
+                      <span>{{ctrl.selected_offer.shipment_weekday}} {{ctrl.selected_offer.shipment_date}}</span>
+                    </li>
+                    <li class="text-muted">
+                      <span translate="ORDER_PAYMENT.DELIVERY">Delivery on</span>
+                      <span>{{ctrl.selected_offer.delivery_weekday}} {{ctrl.selected_offer.delivery_date}}</span>
+                    </li>
+                  </ul>
+                </td>
+                <td style="border-left: 0; text-align: right;">
+                  <span class="price-bold">{{ctrl.selected_offer.price_incl_tax}} € with tax</span>
+                  <!--<br><small>(41.72 $)</small>-->
+                </td>
+              </tr>
+              </tbody>
             </table>
-
-            <center>
-              <a class="btn btn-primary btn-lg" id="validate_order_btn" style="display: none;">
-                <i class="glyphicon glyphicon-ok"></i> VALIDATE YOUR ORDER
-              </a>
-            </center>
 
             <div class="panel-grey panel-grey-bordered" id="payment_form_container">
               <h2 class="text-center text-uppercase blue" translate="ORDER_PAYMENT.PAYMENT.TITLE">SECURE ON LINE PAYMENT</h2>
@@ -134,7 +132,7 @@
                 <p class="muted" translate="ORDER_PAYMENT.PAYMENT.COMMENT">Choose your payment method  <br>You will be transferred to our secure payment server</p>
               </center>
 
-              <form method="POST" ng-click="ctrl.clickPayment()" target="_top">
+              <form method="POST" target="_top">
                 <div align="center">
                   <input type="IMAGE" name="CB" border="0" src="images/atos/card_logo/CB.gif">
                   <img src="images/atos/card_logo/INTERVAL.gif">
@@ -147,7 +145,9 @@
               <div class="alert alert-info">
                 <center>
                   <p><strong translate="ORDER_PAYMENT.PAYMENT.SEVERAL">Several parcels to send?</strong></p>
-                  <p translate="ORDER_PAYMENT.PAYMENT.CREDIT"><a style="text-decoration: underline;" href="https://www.upela.com/en/credit-account/" target="_blank">Credit your account</a> and receive extra discounts</p>
+                  <p translate="ORDER_PAYMENT.PAYMENT.CREDIT">
+                    <a style="text-decoration: underline;" href="https://www.upela.com/en/credit-account/" target="_blank">Credit your account</a> and receive extra discounts
+                  </p>
                 </center>
               </div>
               <center>
@@ -161,46 +161,38 @@
         <div class="col-md-3">
           <div class="panel-white cancel-padding-left-15 panel-muted">
             <p>
-              <span class="very-light-grey bold">1. Your shipment&nbsp;&nbsp;
-                <a href="https://www.upela.com/en/">
+              <span class="very-light-grey bold">
+                <span translate="ORDER_ORDER.PAST_STEP.STEP_ONE.TITLE">1. Your shipment&nbsp;&nbsp;</span>
+                <a ng-click="ctrl.remakeShipment()">
                   <i class="fa fa-pencil"></i>
                 </a>
               </span>
             </p>
-            <p style="margin-bottom: 15px;"><strong>Type :</strong> 1 Parcel(s)<br>
-              1 Parcel(s) of 10 kg (50x50x50 cm)<br>
-              <strong>From :</strong> 107497 (Romania)<br>
-              <strong>To :</strong> 517042 (Romania)<br>
-              <strong>Collection date :</strong> 10/31/2016<br>
+            <p style="margin-bottom: 10px;" ng-repeat="parcel in ctrl.origin_shipment.parcels">
+              <span translate="ORDER_ORDER.PAST_STEP.STEP_ONE.TYPE"></span>
+              <span ng-if="ctrl.shipping_info.unit === fr"> {{$index+1}} Parcel(s)<br> {{$index+1}} Parcel(s) of {{parcel.weight}} kg ({{parcel.x}}x{{parcel.y}}x{{parcel.z}}cm)<br></span>
+              <span ng-if="ctrl.shipping_info.unit !== fr"> {{$index+1}} Parcel(s)<br> {{$index+1}} Parcel(s) of {{parcel.weight}} lbs ({{parcel.x}}x{{parcel.y}}x{{parcel.z}}in)<br></span>
+              <span translate="ORDER_ORDER.PAST_STEP.STEP_ONE.FROM"></span>
+              <span> {{ctrl.shipping_info.ship_from.postcode}} ({{ctrl.origin_shipment.ship_from.country_name}})<br></span>
+              <span translate="ORDER_ORDER.PAST_STEP.STEP_ONE.TO"></span>
+              <span> {{ctrl.shipping_info.ship_to.postcode}} ({{ctrl.origin_shipment.ship_to.country_name}})<br></span>
+              <span translate="ORDER_ORDER.PAST_STEP.STEP_ONE.DATE"></span>
+              <span> {{ctrl.origin_shipment.shipment_date}}<br></span>
             </p>
 
-            <table class="table table-bordered order-prices-summary">
-              <tbody>
-              <tr>
-                <td class="price-label">Transport excl tax</td>
-                <td class="price-value">27.88 €</td>
-              </tr>
-              <tr>
-                <td class="price-label">Insurance</td>
-                <td class="price-value">4.50 €</td>
-              </tr>
-              <tr>
-                <td class="price-label">VAT</td>
-                <td class="price-value">5.58 €</td>
-              </tr>
-              <tr class="price-total">
-                <td class="price-label orange"><strong>Total incl tax</strong></td>
-                <td class="price-value">
-                  <span class="bold orange">37.96 €</span>
-                  <br><small>(41.72 $)</small>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-
+            <div>
+              <strong translate="ORDER_ORDER.PAST_STEP.AMOUNT">Amount :</strong>
+              <span class="price-bold">{{ctrl.selected_offer.price_excl_tax}}</span>
+              <span class="price-bold" translate="ORDER_ORDER.PAST_STEP.EXCL_TAX">€ excl tax</span>
+              <small> {{ctrl.selected_offer.price_incl_tax}}</small>
+              <small translate="ORDER_ORDER.PAST_STEP.INC_TAX"> € with tax</small>
+            </div>
             <br>
             <a class="orange pull-left">
-              <i class="glyphicon glyphicon-envelope" style="margin-right: 5px;"></i>Send by email</a><br>
+              <i class="glyphicon glyphicon-envelope" style="margin-right: 5px;"></i>
+              <span translate="ORDER_ORDER.PAST_STEP.EMAIL">Send by email</span>
+              <br><br>
+            </a><br><br>
           </div>
 
           <div class="panel-white cancel-padding-left-15 panel-muted">

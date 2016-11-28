@@ -14,6 +14,8 @@
         BUSINESS: 'Business address',
         OK: 'Yes',
         NO: 'No',
+        DROP_OFF: 'Dropoff on ',
+        DELIVERY: 'Delivery on ',
         EDIT: ' Edit',
         PAYMENT: {
           TITLE: 'SECURE ON LINE PAYMENT',
@@ -32,6 +34,8 @@
         BUSINESS: 'Adresse commerciale',
         OK: 'Yes',
         NO: 'No',
+        DROP_OFF: 'Dépôt le ',
+        DELIVERY: 'Livraison le ',
         EDIT: ' Editer',
         PAYMENT: {
           TITLE: 'PAIEMENT EN LIGNE SECURISÉ',
@@ -50,6 +54,8 @@
         BUSINESS: 'Dirección de la empresa',
         OK: 'Yes',
         NO: 'No',
+        DROP_OFF: 'Depósito el ',
+        DELIVERY: 'Entrega el ',
         EDIT: ' Modificar',
         PAYMENT: {
           TITLE: 'PAGO EN LÍNEA SEGURO',
