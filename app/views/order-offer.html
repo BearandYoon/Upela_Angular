@@ -269,7 +269,7 @@
                   <tbody>
                   <tr ng-repeat="offer in ctrl.display_offers">
                     <td style="text-align: center; max-width: 60px;">
-                      <img ng-src={{offer.carrier_logo}} style="width: 50px; height: auto;">
+                      <img ng-src={{offer.carrier_logo}} style="width: 50px; height: auto;">d
                     </td>
                     <td style="text-align: center; max-width: 150px;">{{offer.shipment_weekday}}<br>
                       <strong>{{offer.shipment_date}}</strong><br>
@@ -299,7 +299,7 @@
                         </span>
                         <span class="dropoff-info blue" ng-if="offer.delivery_flag">
                           <span class="fa fa-map-marker"></span>
-                          <br><a class="text-underline" href="#">Dropoff</a>
+                          <br><a class="text-underline">Dropoff</a>
                         </span>
                     </td>
                     <td style="text-align: center;">{{offer.delivery_weekday}}<br>

@@ -114,17 +114,23 @@
             TITLE: 'Type',
             ENVELOPE: 'Envelope',
             PARCEL: 'Parcel',
-            PALLET: 'Pallet'
+            PALLET: 'Pallet',
+            TOOLTIP: 'Envelope : envelope or document < 2.5 Kg\n' +
+                      'Parcel : maximum weight 70 Kg, max Length 270 cm AND Length + 2 x Height <419 cm' +
+                      'Pallet : max height 200 cm and max weight 3 tonnes (international only)' +
+                      'Bulky shipment : max dimensions : 302 cm x 203 cm x 178 cm height (international only)'
           },
           ORIGIN: {
             TITLE: 'Origin',
             TOWN: 'Postcode, Town',
-            ADDRESS: 'Business address'
+            ADDRESS: 'Business address',
+            TOOLTIP: 'Collection address for your shipment'
           },
           DESTINATION: {
             TITLE: 'Destination',
             TOWN: 'Postcode, Town',
-            ADDRESS: 'Business address'
+            ADDRESS: 'Business address',
+            TOOLTIP: 'Delivery address for your shipment'
           },
           PARCELS: {
             TITLE: 'Parcels',
@@ -137,8 +143,10 @@
             ADD_PARCEL: 'Add a parcel',
             CHANGE_UNIT: 'Change unit of measure',
             DATE: 'Date',
+            DATE_TOOLTIP: 'Collection date requested',
             COLLECTION_DATE: 'Collection date requested',
-            COMPARE_OFFER: 'COMPARE THE OFFERS!'
+            COMPARE_OFFER: 'COMPARE THE OFFERS!',
+            TOOLTIP: 'Complete the details of your envelope, parcel or pallet - number of parcels, unit weight and dimensions'
           }
         },
         FOOTER: {
@@ -270,17 +278,23 @@
             TITLE: 'Type',
             ENVELOPE: 'Pli',
             PARCEL: 'Colis',
-            PALLET: 'Palette'
+            PALLET: 'Palette',
+            TOOLTIP: 'Envelope : envelope or document < 2.5 Kg\n' +
+            'Parcel : maximum weight 70 Kg, max Length 270 cm AND Length + 2 x Height <419 cm' +
+            'Pallet : max height 200 cm and max weight 3 tonnes (international only)' +
+            'Bulky shipment : max dimensions : 302 cm x 203 cm x 178 cm height (international only)'
           },
           ORIGIN: {
             TITLE: 'Départ',
             TOWN: 'Code postal Ville',
-            ADDRESS: 'Adresse commerciale'
+            ADDRESS: 'Adresse commerciale',
+            TOOLTIP: 'Collection address for your shipment'
           },
           DESTINATION: {
             TITLE: 'Destination',
             TOWN: 'Code postal Ville',
-            ADDRESS: 'Adresse commerciale'
+            ADDRESS: 'Adresse commerciale',
+            TOOLTIP: 'Delivery address for your shipment'
           },
           PARCELS: {
             TITLE: 'Colis',
@@ -292,9 +306,11 @@
             HEIGHT: 'Haut',
             ADD_PARCEL: 'Ajouter un colis',
             CHANGE_UNIT: 'Changer unité',
+            DATE_TOOLTIP: 'Collection date requested',
             DATE: 'Date',
             COLLECTION_DATE: 'Date d\'enlèvement souhaitée',
-            COMPARE_OFFER: 'COMPAREZ LES OFFRES !'
+            COMPARE_OFFER: 'COMPAREZ LES OFFRES !',
+            TOOLTIP: 'Complete the details of your envelope, parcel or pallet - number of parcels, unit weight and dimensions'
           }
         },
         FOOTER: {
@@ -426,17 +442,23 @@
             TITLE: 'Tipo',
             ENVELOPE: 'Sobre',
             PARCEL: 'Paquete',
-            PALLET: 'Palet'
+            PALLET: 'Palet',
+            TOOLTIP: 'Envelope : envelope or document < 2.5 Kg\n' +
+            'Parcel : maximum weight 70 Kg, max Length 270 cm AND Length + 2 x Height <419 cm' +
+            'Pallet : max height 200 cm and max weight 3 tonnes (international only)' +
+            'Bulky shipment : max dimensions : 302 cm x 203 cm x 178 cm height (international only)'
           },
           ORIGIN: {
             TITLE: 'Salida',
             TOWN: 'Código postal, Ciudad',
-            ADDRESS: 'Dirección de la empresa'
+            ADDRESS: 'Dirección de la empresa',
+            TOOLTIP: 'Collection address for your shipment'
           },
           DESTINATION: {
             TITLE: 'Destino',
             TOWN: 'Código postal, Ciudad',
-            ADDRESS: 'Dirección de la empresa'
+            ADDRESS: 'Dirección de la empresa',
+            TOOLTIP: 'Delivery address for your shipment'
           },
           PARCELS: {
             TITLE: 'Paquete',
@@ -448,9 +470,11 @@
             HEIGHT: 'Alt.',
             ADD_PARCEL: 'Añadir un paquete',
             CHANGE_UNIT: 'Cambiar unidad',
+            DATE_TOOLTIP: 'Collection date requested',
             DATE: 'El:',
             COLLECTION_DATE: 'Fecha de recogida deseada',
-            COMPARE_OFFER: '¡COMPARE LAS OFERTAS!'
+            COMPARE_OFFER: '¡COMPARE LAS OFERTAS!',
+            TOOLTIP: 'Complete the details of your envelope, parcel or pallet - number of parcels, unit weight and dimensions'
           }
         },
         FOOTER: {

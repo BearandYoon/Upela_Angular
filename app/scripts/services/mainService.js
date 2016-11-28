@@ -298,6 +298,7 @@ angular.module('UpelaApp')
             Offers = response.data;
           } else {
             console.log('getOffers-response = ', response);
+            $state.go('home', {shipment: shipment});
           }
         }, function errorCallback() {
           console.log('getOffers-response = ', response);
