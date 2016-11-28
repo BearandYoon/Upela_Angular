@@ -69,7 +69,8 @@ angular
         params: {
           offers: null,
           shipment: null,
-          offer_id: null
+          offer_id: null,
+          shipping_info: null
         }
       })
       .state('order-payment', {
@@ -81,6 +82,7 @@ angular
           offers: null,
           shipment: null,
           offer_id: null,
+          shipping_info: null,
           waybill: null
         }
       })

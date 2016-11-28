@@ -14,10 +14,12 @@ angular.module('UpelaApp')
     vm.origin_shipment = $stateParams.shipment;
     vm.offer_id = $stateParams.offer_id;
     vm.waybill = $stateParams.waybill;
+    vm.shipping_info = $stateParams.shipping_info;
+
     console.log('OrderPaymentCtrl = ', vm.waybill);
 
-    if(!vm.offers || !vm.origin_shipment || !vm.waybill || vm.offer_id) {
-      $state.go('order-order', {shipment: vm.origin_shipment, offers: vm.offers, offer_id: vm.offer_id});
+    if(!vm.offers || !vm.origin_shipment || !vm.waybill || !vm.offer_id || !vm.shipping_info) {
+      $state.go('order-order', {shipment: vm.origin_shipment, offers: vm.offers, offer_id: vm.offer_id, shipping_info: vm.shipping_info});
     }
 
     vm.remakeShipment = function() {
@@ -29,6 +31,6 @@ angular.module('UpelaApp')
     };
 
     vm.remakeOrder = function() {
-      $state.go('order-order', {shipment: vm.origin_shipment, offers: vm.offers, offer_id: vm.offer_id});
+      $state.go('order-order', {shipment: vm.origin_shipment, offers: vm.offers, offer_id: vm.offer_id, shipping_info: vm.shipping_info});
     };
    });

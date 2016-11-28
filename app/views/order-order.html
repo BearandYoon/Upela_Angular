@@ -39,64 +39,64 @@
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.COMPANY">Company</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.ship_from.company" required>
+                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipping_info.ship_from.company" required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.NAME">Name</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.ship_from.name" required>
+                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipping_info.ship_from.name" required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.PHONE">Phone</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" ng-class="{'invalid': !ShipmentForm.ship_from_phone.$valid}" name="ship_from_phone" ng-model="ctrl.shipment.ship_from.phone" ng-intl-tel-input data-default-country="{{ctrl.origin_shipment.ship_from.country_code}}" required>
+                      <input type="text" class="form-control" ng-class="{'invalid': !ShipmentForm.ship_from_phone.$valid}" name="ship_from_phone" ng-model="ctrl.shipping_info.ship_from.phone" ng-intl-tel-input data-default-country="{{ctrl.origin_shipment.ship_from.country_code}}" required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.EMAIL">Email</label>
                     <div class="col-lg-7">
-                      <input type="email" class="form-control" value="" maxlength="50" ng-model="ctrl.shipment.ship_from.email" required>
+                      <input type="email" class="form-control" value="" maxlength="50" ng-model="ctrl.shipping_info.ship_from.email" required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.ADDRESS">Address</label>
                     <div class="col-lg-9">
-                      <input type="text" class="form-control validate" data-validate="isAddress" value="" placeholder="No., street" maxlength="35" ng-model="ctrl.shipment.ship_from.address1" required>
+                      <input type="text" class="form-control validate" data-validate="isAddress" value="" placeholder="No., street" maxlength="35" ng-model="ctrl.shipping_info.ship_from.address1" required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="control-label col-lg-3">&nbsp;</label>
                     <div class="col-lg-9">
-                      <input type="text" class="form-control" value="" placeholder="Line 2" maxlength="35" ng-model="ctrl.shipment.ship_from.address2">
+                      <input type="text" class="form-control" value="" placeholder="Line 2" maxlength="35" ng-model="ctrl.shipping_info.ship_from.address2">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="control-label col-lg-3">&nbsp;</label>
                     <div class="col-lg-9">
-                      <input type="text" class="form-control" value="" placeholder="Line 3" maxlength="35" ng-model="ctrl.shipment.ship_from.address3">
+                      <input type="text" class="form-control" value="" placeholder="Line 3" maxlength="35" ng-model="ctrl.shipping_info.ship_from.address3">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.COUNTRY">Country</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" readonly="readonly" value="Romania" maxlength="255" ng-model="ctrl.shipment.ship_from.conntry_name">
+                      <input type="text" class="form-control" readonly="readonly" value="Romania" maxlength="255" ng-model="ctrl.shipping_info.ship_from.conntry_name">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.POSTAL">Postal code</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" readonly="readonly" value="517042" maxlength="20" ng-model="ctrl.shipment.ship_from.postcode">
+                      <input type="text" class="form-control" readonly="readonly" value="517042" maxlength="20" ng-model="ctrl.shipping_info.ship_from.postcode">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.SENDER.CITY">City</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" readonly="readonly" value="Bubeşti" maxlength="255" ng-model="ctrl.shipment.ship_from.city" required>
+                      <input type="text" class="form-control" readonly="readonly" value="Bubeşti" maxlength="255" ng-model="ctrl.shipping_info.ship_from.city" required>
                     </div>
                   </div>
                   <div class="form-group">
@@ -139,21 +139,21 @@
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.COMPANY">Company</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.ship_to.company" required>
+                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipping_info.ship_to.company" required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.NAME">Name</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.ship_to.name" required>
+                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipping_info.ship_to.name" required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.CELL_PHONE">Cellphone</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" ng-class="{'invalid': !ShipmentForm.ship_to_phone.$valid}" name="ship_to_phone" ng-model="ctrl.shipment.ship_to.phone" ng-intl-tel-input required>
+                      <input type="text" class="form-control" ng-class="{'invalid': !ShipmentForm.ship_to_phone.$valid}" name="ship_to_phone" ng-model="ctrl.shipping_info.ship_to.phone" ng-intl-tel-input required>
                       <!--<span class="help-block" ng-show="ShipmentForm.ship_to_phone.$valid">Valid :)</span>-->
                     </div>
                   </div>
@@ -161,48 +161,48 @@
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.EMAIL">Email</label>
                     <div class="col-lg-7">
-                      <input type="email" class="form-control" value="" maxlength="50" ng-model="ctrl.shipment.ship_to.email" required>
+                      <input type="email" class="form-control" value="" maxlength="50" ng-model="ctrl.shipping_info.ship_to.email" required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.ADDRESS">Address</label>
                     <div class="col-lg-9">
-                      <input type="text" class="form-control validate" placeholder="No., street" maxlength="35" ng-model="ctrl.shipment.ship_to.address1" required>
+                      <input type="text" class="form-control validate" placeholder="No., street" maxlength="35" ng-model="ctrl.shipping_info.ship_to.address1" required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-lg-3">&nbsp;</label>
                     <div class="col-lg-9">
-                      <input type="text" class="form-control" value="" placeholder="Line 2" maxlength="35" ng-model="ctrl.shipment.ship_to.address2">
+                      <input type="text" class="form-control" value="" placeholder="Line 2" maxlength="35" ng-model="ctrl.shipping_info.ship_to.address2">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="control-label col-lg-3">&nbsp;</label>
                     <div class="col-lg-9">
-                      <input type="text" class="form-control" value="" placeholder="Line 3" maxlength="35" ng-model="ctrl.shipment.ship_to.address3">
+                      <input type="text" class="form-control" value="" placeholder="Line 3" maxlength="35" ng-model="ctrl.shipping_info.ship_to.address3">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.COUNTRY">Country</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" readonly="readonly" value="Russia" maxlength="255" ng-model="ctrl.shipment.ship_to.conntry_name">
+                      <input type="text" class="form-control" readonly="readonly" value="Russia" maxlength="255" ng-model="ctrl.shipping_info.ship_to.conntry_name">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.POSTAL">Postal code</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" readonly="readonly" value="101000" maxlength="20" ng-model="ctrl.shipment.ship_to.postcode">
+                      <input type="text" class="form-control" readonly="readonly" value="101000" maxlength="20" ng-model="ctrl.shipping_info.ship_to.postcode">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.RECIPIENT.CITY">City</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" readonly="readonly" value="Moscow" maxlength="255" ng-model="ctrl.shipment.ship_to.city" required>
+                      <input type="text" class="form-control" readonly="readonly" value="Moscow" maxlength="255" ng-model="ctrl.shipping_info.ship_to.city" required>
                     </div>
                   </div>
 
@@ -244,7 +244,7 @@
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.CHARACTERISTICS.REASON">Reason</label>
                     <div class="col-lg-7">
-                      <select class="form-control" ng-model="ctrl.shipment.reason" required>
+                      <select class="form-control" ng-model="ctrl.shipping_info.reason" required>
                         <option value="" selected="">-- Select in the list --</option>
                         <option value="Commercial">Commercial</option>
                         <option value="Cadeau">Gift</option>
@@ -260,7 +260,7 @@
                   <div class="form-group">
                     <label class="control-label col-lg-3 required" translate="ORDER_ORDER.CHARACTERISTICS.CONTENT">Content</label>
                     <div class="col-lg-7">
-                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipment.content" required>
+                      <input type="text" class="form-control" value="" maxlength="35" ng-model="ctrl.shipping_info.content" required>
                       <span class="help-block">
                         <a href="#" translate="ORDER_ORDER.CHARACTERISTICS.PROHIBIT">Prohibited Goods</a>
                       </span>
@@ -626,14 +626,14 @@
             </p>
             <p style="margin-bottom: 10px;" ng-repeat="parcel in ctrl.origin_shipment.parcels">
               <span translate="ORDER_ORDER.PAST_STEP.STEP_ONE.TYPE"></span>
-              <span ng-if="ctrl.shipment.unit === fr"> {{$index+1}} Parcel(s)<br> {{$index+1}} Parcel(s) of {{parcel.weight}} kg ({{parcel.x}}x{{parcel.y}}x{{parcel.z}}cm)<br></span>
-              <span ng-if="ctrl.shipment.unit !== fr"> {{$index+1}} Parcel(s)<br> {{$index+1}} Parcel(s) of {{parcel.weight}} lbs ({{parcel.x}}x{{parcel.y}}x{{parcel.z}}in)<br></span>
+              <span ng-if="ctrl.shipping_info.unit === fr"> {{$index+1}} Parcel(s)<br> {{$index+1}} Parcel(s) of {{parcel.weight}} kg ({{parcel.x}}x{{parcel.y}}x{{parcel.z}}cm)<br></span>
+              <span ng-if="ctrl.shipping_info.unit !== fr"> {{$index+1}} Parcel(s)<br> {{$index+1}} Parcel(s) of {{parcel.weight}} lbs ({{parcel.x}}x{{parcel.y}}x{{parcel.z}}in)<br></span>
               <span translate="ORDER_ORDER.PAST_STEP.STEP_ONE.FROM"></span>
-              <span> {{ctrl.shipment.ship_from.postcode}} ({{ctrl.shipment.ship_from.country_name}})<br></span>
+              <span> {{ctrl.shipping_info.ship_from.postcode}} ({{ctrl.shipping_info.ship_from.country_name}})<br></span>
               <span translate="ORDER_ORDER.PAST_STEP.STEP_ONE.TO"></span>
-              <span> {{ctrl.shipment.ship_to.postcode}} ({{ctrl.shipment.ship_to.country_name}})<br></span>
+              <span> {{ctrl.shipping_info.ship_to.postcode}} ({{ctrl.shipping_info.ship_to.country_name}})<br></span>
               <span translate="ORDER_ORDER.PAST_STEP.STEP_ONE.DATE"></span>
-              <span> {{ctrl.shipment.shipment_date}}<br></span>
+              <span> {{ctrl.shipping_info.shipment_date}}<br></span>
             </p>
             <hr>
             <p>

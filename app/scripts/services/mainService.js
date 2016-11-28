@@ -12,6 +12,7 @@ angular.module('UpelaApp')
     var BaseUrl = 'https://upela54extractionhtml_web_1.upela.oqios.com/api/v3/';
     var Shipment = '';
     var Offers = '';
+    var Shipping_info;
     var Offer_Id;
 
     var country_code = [ // Taken from https://gist.github.com/unceus/6501985
@@ -322,13 +323,14 @@ angular.module('UpelaApp')
       );
     }
 
-    function waybill(shipment) {
+    function waybill(shipping_info) {
       var url = BaseUrl + 'ship/';
-      return $http.post(url, shipment).then(
+      return $http.post(url, shipping_info).then(
         function successCallback(response) {
           if(response.data.success) {
+            Shipping_info = shipping_info;
             console.log('waybill-response = ', response);
-            $state.go('order-payment', {offers: Offers, shipment: Shipment, offer_id: Offer_Id, waybill: response.data});
+            $state.go('order-payment', {offers: Offers, shipment: Shipment, offer_id: Offer_Id, shipping_info: Shipping_info, waybill: response.data});
           } else {
             console.log('waybill-response-error = ', response);
 //            $state.go('order-offer', {offers: Offers, shipment: Shipment, offer_id: offer.offer_id});
