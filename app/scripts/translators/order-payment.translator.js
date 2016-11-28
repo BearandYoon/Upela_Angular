@@ -11,6 +11,9 @@
         TITLE: 'Step 4 : Confirmation and payment',
         SENDER: 'SENDER',
         RECIPIENT: 'RECIPIENT',
+        BUSINESS: 'Business address',
+        OK: 'Yes',
+        NO: 'No',
         EDIT: ' Edit',
         PAYMENT: {
           TITLE: 'SECURE ON LINE PAYMENT',
@@ -26,6 +29,9 @@
         TITLE: 'Step 4 : Confirmation et paiement',
         SENDER: 'EXPÉDITEUR',
         RECIPIENT: 'DESTINATAIRE',
+        BUSINESS: 'Adresse commerciale',
+        OK: 'Yes',
+        NO: 'No',
         EDIT: ' Editer',
         PAYMENT: {
           TITLE: 'PAIEMENT EN LIGNE SECURISÉ',
@@ -41,6 +47,9 @@
         TITLE: 'Step 4 : Confirmación y pago',
         SENDER: 'REMITENTE',
         RECIPIENT: 'DESTINATARIO',
+        BUSINESS: 'Dirección de la empresa',
+        OK: 'Yes',
+        NO: 'No',
         EDIT: ' Modificar',
         PAYMENT: {
           TITLE: 'PAGO EN LÍNEA SEGURO',

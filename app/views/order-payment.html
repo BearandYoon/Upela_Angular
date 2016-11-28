@@ -9,11 +9,11 @@
                 <span translate="ORDER.STEP_TITLE.SHIPMENT"></span>
                 <i class="fa fa-pencil"></i>
               </a>
-              <a  ng-click="ctrl.remakeOffer()">
+              <a ng-click="ctrl.remakeOffer()">
                 <span translate="ORDER.STEP_TITLE.OFFERS"></span>
                 <i class="fa fa-pencil"></i>
               </a>
-              <a  ng-click="ctrl.remakeOrder()">
+              <a ng-click="ctrl.remakeOrder()">
                 <span translate="ORDER.STEP_TITLE.ORDER">3. Your order </span>
                 <i class="fa fa-pencil"></i>
               </a>
@@ -24,7 +24,7 @@
             <h1 class="blue text-center" translate="ORDER_PAYMENT.TITLE"> 4 : Confirmation and payment</h1>
 
             <div>
-              <a class="orange pull-right" href="#/order-order">
+              <a class="orange pull-right" ng-click="ctrl.remakeOrder()">
                 <i class="fa fa-pencil" style="margin-right: 5px;" translate="ORDER_PAYMENT.EDIT">Edit</i>
               </a>
             </div>
@@ -37,13 +37,25 @@
                       <li>
                         <h3 translate="ORDER_PAYMENT.SENDER">Sender</h3>
                       </li>
-                      <li>denis</li>
-                      <li>opios</li>
-                      <li>bucharest 15-2</li>
-                      <li>107497 Buchilaşi (Romania)</li>
-                      <li>luckysevenbear@gmail.com</li>
-                      <li>+40712345678</li>
-                      <li>Business address <i class="glyphicon glyphicon-remove"></i> no</li>
+                      <li>{{ctrl.shipping_info.ship_from.name}}</li>
+                      <li>{{ctrl.shipping_info.ship_from.company}}</li>
+                      <li>{{ctrl.shipping_info.ship_from.address1}}</li>
+                      <li>{{ctrl.shipping_info.ship_from.address2}}</li>
+                      <li>{{ctrl.shipping_info.ship_from.address3}}</li>
+                      <li>{{ctrl.shipping_info.ship_from.postcode}} {{ctrl.shipping_info.ship_from.city}} ({{ctrl.shipping_info.ship_from.conntry_name}})</li>
+                      <li>{{ctrl.shipping_info.ship_from.email}}</li>
+                      <li>{{ctrl.shipping_info.ship_from.phone}}</li>
+                      <li>
+                        <span translate="ORDER_PAYMENT.BUSINESS"></span>
+                        <div ng-if="ctrl.shipping_info.ship_from.pro">
+                          <i class="glyphicon glyphicon-ok"></i>
+                          <span translate="ORDER_PAYMENT.OK"></span>
+                        </div>
+                        <div ng-if="!ctrl.shipping_info.ship_from.pro">
+                          <i class="glyphicon glyphicon-remove"></i>
+                          <span translate="ORDER_PAYMENT.NO"></span>
+                        </div>
+                      </li>
                     </ul>
                   </td>
                   <td class="adresses-summary-arrow-cell" width="6%">
@@ -54,13 +66,25 @@
                       <li>
                         <h3 translate="ORDER_PAYMENT.RECIPIENT">Recipient</h3>
                       </li>
-                      <li>daniel</li>
-                      <li>opios</li>
-                      <li>bucharest 17-3</li>
-                      <li>517042 Bubeşti (Romania)</li>
-                      <li>happybear@gmail.com</li>
-                      <li>+40123456</li>
-                      <li>Business address <i class="glyphicon glyphicon-remove"></i> no</li>
+                      <li>{{ctrl.shipping_info.ship_to.name}}</li>
+                      <li>{{ctrl.shipping_info.ship_to.company}}</li>
+                      <li>{{ctrl.shipping_info.ship_to.address1}}</li>
+                      <li>{{ctrl.shipping_info.ship_to.address2}}</li>
+                      <li>{{ctrl.shipping_info.ship_to.address3}}</li>
+                      <li>{{ctrl.shipping_info.ship_to.postcode}} {{ctrl.shipping_info.ship_to.city}} ({{ctrl.shipping_info.ship_to.conntry_name}})</li>
+                      <li>{{ctrl.shipping_info.ship_to.email}}</li>
+                      <li>{{ctrl.shipping_info.ship_to.phone}}</li>
+                      <li>
+                        <span translate="ORDER_PAYMENT.BUSINESS"></span>
+                        <div ng-if="ctrl.shipping_info.ship_to.pro">
+                          <i class="glyphicon glyphicon-ok"></i>
+                          <span translate="ORDER_PAYMENT.OK"></span>
+                        </div>
+                        <div ng-if="!ctrl.shipping_info.ship_to.pro">
+                          <i class="glyphicon glyphicon-remove"></i>
+                          <span translate="ORDER_PAYMENT.NO"></span>
+                        </div>
+                      </li>
                     </ul>
                   </td>
                 </tr>
@@ -99,7 +123,7 @@
             </table>
 
             <center>
-              <a class="btn btn-primary btn-lg" id="validate_order_btn" style="display: none;" href="#" onclick="$('#validate_order_btn').hide(); $('#payment_form_container').fadeIn(); return false;">
+              <a class="btn btn-primary btn-lg" id="validate_order_btn" style="display: none;">
                 <i class="glyphicon glyphicon-ok"></i> VALIDATE YOUR ORDER
               </a>
             </center>
@@ -110,8 +134,7 @@
                 <p class="muted" translate="ORDER_PAYMENT.PAYMENT.COMMENT">Choose your payment method  <br>You will be transferred to our secure payment server</p>
               </center>
 
-              <form method="POST" ng-click="clickPayment()" target="_top">
-                <input type="HIDDEN" name="DATA" value="2020363237603028502c2360562c433c532d2360522d3360502c3360502c2331302d4324575c224360542c3360502c2340522c2324522c2330512e3048502c2328502c2324552c233c552c232c582e333c562e3360502c2324595c224360522e3360502c2329463c4048502c232c502c2360542c533c592d4048502c2334502c2360562d3360512c5360515c224360502d4360502c3330522c2324562c3360532c2324552c3344532c3048502c2340502c2360532e333c585c224360522e2360502c2329463c4048502c2344502c2360523936582a2c2324512c2360552c5641543d2721532e425c4f3d573d572b473550393651412b462d4f3b325d453b425d503837454d393659542b5625543b572c4f3d372d453c455d52393731553c46584e3c2641505c224360532c3360502d333d483d2731503c53484f2b573d573d5259553c26354c383259433b56544f3936584f3c2625593b36354e3d5c225d413d265d532b572d493b26354e3d255d5239372d503b565953393259503a27602a2c2324532c2360552c5641543d2721532e425c4f3d573d572b473550393651412b462d4f3b325d453b425d503837454d393659542b5625543b572c4f3d372d453c455d52393731553c46584e3c2641505c224360512d4360502c232d333454502a2c2324572c2360502d46394639463946394048502c3340502c2360562c2360502c2360505c224360512e3360502c3331433b56554d39372943383659542b463d49394048502c4360502c23245438565d4d3b3635523856254e3d5c2259473a36382a2c2328512c2360512d373d4538462546394625493c4635532b464950395048502c4338502c23245631242c57314324522c2424522c333c512c5360512d3048502c5360502c2328543b2735433a574553393739453b46294538372960395655413a36504e38565d4d5c224360522d5360502d232d373034512c3135313f3234305d3055353335245d2d3135293f3234305b33445d3f3444353334245d2e3454353f3424252731355d3033552d345c224360532d2360502c434154393655503b26255439355d5739362941394639413a3729453c555d453b4259483d26554c5c224360532d5360502c3334512e332c4e2c332c582b4328532c5c2258512c43382a2c232c582c2360502d5324542d2330582d53602a35bef88f20f217fa">
+              <form method="POST" ng-click="ctrl.clickPayment()" target="_top">
                 <div align="center">
                   <input type="IMAGE" name="CB" border="0" src="images/atos/card_logo/CB.gif">
                   <img src="images/atos/card_logo/INTERVAL.gif">
@@ -151,11 +174,6 @@
               <strong>Collection date :</strong> 10/31/2016<br>
             </p>
 
-            <!--
-            </div>
-            <div class="panel-white cancel-padding-left-15 panel-muted">
-            -->
-
             <table class="table table-bordered order-prices-summary">
               <tbody>
               <tr>
@@ -181,7 +199,7 @@
             </table>
 
             <br>
-            <a class="orange pull-left" href="#" onclick="openDialogWithForm('https://www.upela.com/en/account/actions.php?action=popup_send_shipment_resume_link&amp;id=QJCzH', 'Send this shipment by email', {cssClass: ''}); return false;">
+            <a class="orange pull-left">
               <i class="glyphicon glyphicon-envelope" style="margin-right: 5px;"></i>Send by email</a><br>
           </div>
 
