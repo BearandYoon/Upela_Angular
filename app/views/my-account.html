@@ -85,7 +85,7 @@
             <div id="account-rating-form-container">
               <ul class="nav nav-tabs">
                 <li class="active">
-                  <a href="#pricer" data-toggle="tab" translate="MY_ACCOUNT.BEGIN_SHIP">Begin a shipment</a>
+                  <a data-toggle="tab" translate="MY_ACCOUNT.BEGIN_SHIP">Begin a shipment</a>
                 </li>
               </ul>
 
@@ -96,9 +96,9 @@
                       <div class="col-md-6">
                         <div class="">
                           <label class="control-label required-" style="margin-bottom: 7px;">
-                            <span class="popmark" id="popmark-origin" data-placement="right" data-title="Origin" data-content="Collection address for your shipment" data-original-title="" title="">
+                            <span class="popmark" popover-placement="right" popover-title="{{'MAIN.DIALOG.ORIGIN.TITLE' | translate}}" uib-popover="{{'MAIN.DIALOG.ORIGIN.TOOLTIP' | translate}}" popover-trigger="mouseenter">
                               <i class="step-circle-small">1</i>
-                              <span translate="MY_ACCOUNT.ORIGIN.TITLE"></span>
+                              <span translate="MY_ACCOUNT.ORIGIN.TITLE">Origin</span>
                             </span>
                           </label>
 
@@ -139,14 +139,14 @@
                       <div class="col-md-6">
                         <div class="">
                           <label class="control-label required-" style="margin-bottom: 7px;">
-                            <span class="popmark" data-placement="right" data-title="Destination" data-content="Delivery address for your shipment" data-original-title="" title="">
+                            <span class="popmark" popover-placement="right" popover-title="{{'MAIN.DIALOG.DESTINATION.TITLE' | translate}}" uib-popover="{{'MAIN.DIALOG.DESTINATION.TOOLTIP' | translate}}" popover-trigger="mouseenter">
                               <i class="step-circle-small">2</i>
                               <span translate="MY_ACCOUNT.DESTINATION.TITLE"></span>
                             </span>
                           </label>
 
                           <div id="address1-row">
-                            <ui-select class="address1_country" ng-model="ctrl.shipment.destination.country" theme="select2" style="width: 160px;" title="Select the Country" required>
+                            <ui-select class="address1_country" ng-model="ctrl.ship_to_country" theme="select2" style="width: 160px;" title="Select the Country" required>
                               <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
                               <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search} | orderBy: 'name'">
                                 <div ng-bind-html="person.name | highlight: $select.search"></div>
@@ -184,7 +184,7 @@
                       <div class="col-md-6">
                         <div class="" id="parcels-form-group">
                           <label class="control-label required-" style="margin-bottom: 7px;">
-                            <span class="popmark" id="popmark-parcels" data-placement="right" data-title="Your shipment" data-content="Complete the details of your envelope, parcel or pallet - number of parcels, unit weight and dimensions<br><br><b>Envelope</b> : envelope or document < 2.5 Kg<br><b>Parcel</b> : maximum weight 70 Kg, max Length 270 cm AND Length + 2 x Height <419 cm<br><b>Pallet</b> : max height 200 cm and max weight 3 tonnes (international only)<br><b>Bulky shipment</b> : max dimensions : 302 cm x 203 cm x 178 cm height (international only)" data-original-title="" title="">
+                            <span class="popmark" popover-placement="right" popover-title="{{'SHIP_TO_CONTACT.PARCELS.PARCELS.TITLE' | translate}}" uib-popover="{{'MAIN.DIALOG.PARCELS.TOOLTIP' | translate}}" popover-trigger="mouseenter">
                               <i class="step-circle-small">3</i>
                               <span translate="MY_ACCOUNT.SHIPMENT.TITLE"></span>
                             </span>
@@ -241,7 +241,7 @@
                       <div class="col-md-6">
                         <div class="">
                           <label class="control-label required-" style="margin-bottom: 7px;">
-                            <span class="popmark" id="popmark-shipment-date" data-placement="right" data-title="Date" data-content="Collection date requested" data-original-title="" title="">
+                            <span class="popmark" popover-placement="right" popover-title="{{'MAIN.DIALOG.PARCELS.DATE' | translate}}" uib-popover="{{'MAIN.DIALOG.PARCELS.DATE_TOOLTIP' | translate}}" popover-trigger="mouseenter">
                               <i class="step-circle-small">4</i>
                               <span translate="MY_ACCOUNT.DATE.TITLE"></span>
                             </span>
@@ -250,9 +250,9 @@
                           <div class="row">
                             <div class="col-md-4">
                               <div class="input-group">
-                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="ship_popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                                 <span class="input-group-btn">
-                                  <button type="button" class="btn btn-default" ng-click="openDate()">
+                                  <button type="button" class="btn btn-default" ng-click="openShipDate()">
                                     <i class="glyphicon glyphicon-calendar"></i>
                                   </button>
                                 </span>
@@ -319,9 +319,9 @@
                         <div class="col-md-5" style="margin-bottom: 10px;">
                           <label class="control-label" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_INVOICES.CREATED_FROM">Created From</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
-                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="invoice_create_from_Date" is-open="invoice_create_from_Date_popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                             <span class="input-group-btn">
-                              <button type="button" class="btn btn-default" ng-click="openDate()">
+                              <button type="button" class="btn btn-default" ng-click="open_invoice_create_from_Date()">
                                 <i class="glyphicon glyphicon-calendar"></i>
                               </button>
                             </span>
@@ -330,9 +330,9 @@
                         <div class="col-md-5" style="margin-bottom: 10px;">
                           <label class="control-label" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_INVOICES.CREATED_TO">To</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
-                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="invoice_create_to_Date" is-open="invoice_create_to_Date_popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                             <span class="input-group-btn">
-                              <button type="button" class="btn btn-default" ng-click="openDate()">
+                              <button type="button" class="btn btn-default" ng-click="open_invoice_create_to_Date()">
                                 <i class="glyphicon glyphicon-calendar"></i>
                               </button>
                             </span>
@@ -344,9 +344,9 @@
                         <div class="col-md-5" style="margin-bottom: 10px;">
                           <label class="control-label" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_INVOICES.DUE_FROM">Due date From</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
-                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="invoice_due_from_Date" is-open="invoice_due_from_Date_popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                             <span class="input-group-btn">
-                              <button type="button" class="btn btn-default" ng-click="openDate()">
+                              <button type="button" class="btn btn-default" ng-click="open_invoice_due_from_Date()">
                                 <i class="glyphicon glyphicon-calendar"></i>
                               </button>
                             </span>
@@ -355,9 +355,9 @@
                         <div class="col-md-5" style="margin-bottom: 10px;">
                           <label class="control-label" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_INVOICES.DUE_TO">To</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
-                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="invoice_due_to_Date" is-open="invoice_due_to_Date_popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                             <span class="input-group-btn">
-                              <button type="button" class="btn btn-default" ng-click="openDate()">
+                              <button type="button" class="btn btn-default" ng-click="open_invoice_due_to_Date()">
                                 <i class="glyphicon glyphicon-calendar"></i>
                               </button>
                             </span>
@@ -467,13 +467,13 @@
                   <div class="col-md-6 text-right pagination-container no-padding-left no-padding-right">
                     <ul id="pagination" class="pagination pagination-sm">
                       <li class="disabled">
-                        <a href="#">«</a>
+                        <a>«</a>
                       </li>
                       <li class="active">
-                        <a href="#">1</a>
+                        <a>1</a>
                       </li>
                       <li class="disabled">
-                        <a href="#">»</a>
+                        <a>»</a>
                       </li>
                     </ul>
                   </div>
@@ -492,9 +492,9 @@
                         <div class="col-md-5" style="margin-bottom: 10px;">
                           <label class="control-label" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_PAYMENTS.DATE_FROM">Date From</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
-                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="payment_from_Date" is-open="payment_from_Date_popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                             <span class="input-group-btn">
-                              <button type="button" class="btn btn-default" ng-click="openDate()">
+                              <button type="button" class="btn btn-default" ng-click="open_payment_from_Date()">
                                 <i class="glyphicon glyphicon-calendar"></i>
                               </button>
                             </span>
@@ -503,9 +503,9 @@
                         <div class="col-md-5" style="margin-bottom: 10px;">
                           <label class="control-label" style="width: 140px; margin-right: 10px;" translate="MY_ACCOUNT.MY_PAYMENTS.DATE_TO">To</label>
                           <div class="input-group" style="display: inline-table; width: 130px; vertical-align: top;">
-                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="shipDate" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="payment_to_Date" is-open="payment_to_Date_popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                             <span class="input-group-btn">
-                              <button type="button" class="btn btn-default" ng-click="openDate()">
+                              <button type="button" class="btn btn-default" ng-click="open_payment_to_Date()">
                                 <i class="glyphicon glyphicon-calendar"></i>
                               </button>
                             </span>

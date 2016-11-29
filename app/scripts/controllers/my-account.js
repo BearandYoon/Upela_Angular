@@ -156,11 +156,30 @@ angular.module('UpelaApp')
 
     $scope.today = function() {
       $scope.shipDate = new Date();
+
+      $scope.invoice_create_from_Date = new Date();
+      $scope.invoice_create_to_Date = new Date();
+
+      $scope.invoice_due_from_Date = new Date();
+      $scope.invoice_due_to_Date = new Date();
+
+      $scope.payment_from_Date = new Date();
+      $scope.payment_to_Date = new Date();
     };
+
     $scope.today();
 
     $scope.clear = function() {
       $scope.shipDate = null;
+
+      $scope.invoice_create_from_Date = null;
+      $scope.invoice_create_to_Date = null;
+
+      $scope.invoice_due_from_Date = null;
+      $scope.invoice_due_to_Date = null;
+
+      $scope.payment_from_Date = null;
+      $scope.payment_to_Date = null;
     };
 
     $scope.inlineOptions = {
@@ -170,11 +189,11 @@ angular.module('UpelaApp')
     };
 
     $scope.dateOptions = {
-      dateDisabled: disabled,
       formatYear: 'yy',
       maxDate: new Date(2020, 5, 22),
       minDate: new Date(),
-      startingDay: 1
+      startingDay: 1,
+      showWeeks: false
     };
 
     $scope.toggleMin = function() {
@@ -184,8 +203,60 @@ angular.module('UpelaApp')
 
     $scope.toggleMin();
 
-    $scope.openDate = function() {
-      $scope.popup.opened = true;
+    $scope.openShipDate = function() {
+      $scope.ship_popup.opened = true;
+    };
+
+    $scope.ship_popup = {
+      opened: false
+    };
+
+    $scope.open_invoice_create_from_Date = function() {
+      $scope.invoice_create_from_Date_popup.opened = true;
+    };
+
+    $scope.invoice_create_from_Date_popup = {
+      opened: false
+    };
+
+    $scope.open_invoice_create_to_Date = function() {
+      $scope.invoice_create_to_Date_popup.opened = true;
+    };
+
+    $scope.invoice_create_to_Date_popup = {
+      opened: false
+    };
+
+    $scope.open_invoice_due_from_Date = function() {
+      $scope.invoice_due_from_Date_popup.opened = true;
+    };
+
+    $scope.invoice_due_from_Date_popup = {
+      opened: false
+    };
+
+    $scope.open_invoice_due_to_Date = function() {
+      $scope.invoice_due_to_Date_popup.opened = true;
+    };
+
+    $scope.invoice_due_to_Date_popup = {
+      opened: false
+    };
+
+    $scope.open_payment_from_Date = function() {
+      $scope.payment_from_Date_popup.opened = true;
+    };
+
+    $scope.payment_from_Date_popup = {
+      opened: false
+    };
+
+    $scope.open_payment_to_Date = function() {
+      $scope.payment_to_Date_popup.opened = true;
+    };
+
+    $scope.payment_to_Date_popup = {
+      opened: false
     };
 
     $scope.setDate = function(year, month, day) {
@@ -195,10 +266,6 @@ angular.module('UpelaApp')
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
     $scope.format = $scope.formats[1];
     $scope.altInputFormats = ['M!/d!/yyyy'];
-
-    $scope.popup = {
-      opened: false
-    };
 
     function splitCityandPostcode() {
       var tempString = vm.ship_from_addresses;
