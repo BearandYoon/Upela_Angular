@@ -10,12 +10,6 @@
 angular.module('UpelaApp')
   .controller('MassMailingCtrl', function ($scope, MainService) {
     var vm = this;
-    vm.disabled = undefined;
-    vm.searchEnabled = undefined;
-    vm.destinationCoutry = 'France';
-    vm.originCountry = 'France';
-
-    vm.countries = MainService.getCountries();
 
     // Disable weekend selection
     function disabled(data) {
@@ -58,11 +52,11 @@ angular.module('UpelaApp')
     };
 
     $scope.dateOptions = {
-      dateDisabled: disabled,
       formatYear: 'yy',
       maxDate: new Date(2020, 5, 22),
       minDate: new Date(),
-      startingDay: 1
+      startingDay: 1,
+      showWeeks: false
     };
 
     $scope.toggleMin = function() {
@@ -87,4 +81,67 @@ angular.module('UpelaApp')
     $scope.popup = {
       opened: false
     };
+
+    vm.parcelCount = 1;
+    vm.parcelUnit = true;
+    vm.shipment = {
+      account: {
+        login: 'hugo.rusek@oqios.com',
+        password: 'yoon1104'
+      },
+      ship_from: {
+        country_code: '',
+        postcode: '',
+        city: '',
+        pro: ''
+      },
+      ship_to: {
+        country_code: '',
+        postcode: '',
+        city: '',
+        pro: ''
+      },
+      parcels: [{
+        number: 1,
+        weight: '',
+        x: '',
+        y: '',
+        z: ''
+      }],
+      shipment_date: '',
+      unit: 'fr',
+      selection: 'all'
+    };
+
+    vm.addParcel = function() {
+      var parcel = {
+        number: vm.parcelCount + 1,
+        weight: '',
+        x: '',
+        y: '',
+        z: ''
+      };
+
+      vm.shipment.parcels.push(parcel);
+      vm.parcelCount++;
+    };
+
+    vm.removeParcel = function(index) {
+      if(vm.parcelCount > 1) {
+        vm.shipment.parcels.splice(index, 1);
+        vm.parcelCount--;
+      }
+    };
+
+    vm.switchParcelUnit = function() {
+      vm.parcelUnit = !vm.parcelUnit;
+    };
+
+    function getCountries() {
+      MainService.getCountries(function(response) {
+        vm.countries = _.uniqBy(response.data, 'country_id');
+      });
+    }
+
+    getCountries();
   });

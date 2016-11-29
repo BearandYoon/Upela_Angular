@@ -139,13 +139,13 @@
                       <div class="col-md-6 text-right pagination-container no-padding-left no-padding-right">
                         <ul id="pagination" class="pagination pagination-sm">
                           <li class="disabled">
-                            <a href="#">«</a>
+                            <a>«</a>
                           </li>
                           <li class="active">
-                            <a href="#">1</a>
+                            <a>1</a>
                           </li>
                           <li class="disabled">
-                            <a href="#">»</a>
+                            <a>»</a>
                           </li>
                         </ul>
                       </div>
@@ -487,16 +487,7 @@
                       <div class="form-group">
                         <label for="phone" class="control-label col-lg-3 required" translate="MY_CONTACT.ADD_CONTACT.PHONE">Phone</label>
                         <div class="col-lg-7">
-                          <div class="intl-tel-input allow-dropdown">
-                            <div class="flag-container">
-                              <div class="selected-flag" tabindex="0" title="France: +33">
-                                <div class="iti-flag fr"></div>
-                                <div class="iti-arrow"></div>
-                              </div>
-                            </div>
-
-                            <input type="text" id="phone" name="phone" class="form-control" value="" maxlength="25" autocomplete="off" placeholder="06 12 34 56 78">
-                          </div>
+                          <input type="text" class="form-control" ng-class="{'invalid': !ShipmentForm.ship_to_phone.$valid}" name="ship_to_phone" ng-model="ctrl.shipping_info.ship_to.phone" ng-intl-tel-input required>
                         </div>
                       </div>
 
@@ -531,9 +522,9 @@
                       <div class="form-group">
                         <label class="control-label col-lg-3 required" translate="MY_CONTACT.ADD_CONTACT.COUNTRY">Country</label>
                         <div class="col-lg-7">
-                          <ui-select ng-model="$ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                          <ui-select class="address1_country" ng-model="ctrl.ship_to_country" theme="select2" style="width: 160px;" title="Select the Country">
                             <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
-                            <ui-select-choices repeat="country.name as country in $ctrl.countries | searchSelectorFilter: {name: $select.search}">
+                            <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search} | orderBy: 'name'">
                               <div ng-bind-html="person.name | highlight: $select.search"></div>
                               <small>
                                 {{country.name}}

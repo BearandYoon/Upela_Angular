@@ -107,7 +107,7 @@
                     </select>
 
                     <span class="help-block">
-                      <a href="#">
+                      <a>
                         <i class="fa fa-book" style="margin-right: 5px;"></i>
                         <span translate="MASS_MAIL.ADDRESS_BOOK">or open your address book</span>
                       </a>
@@ -123,7 +123,7 @@
                 <span id="address1_container" class="text-muted">
                   <strong>_CLI1</strong> (_CLI1) - Cli1 - 75001 Paris (France)
                 </span>
-                <a href="#" translate="MASS_MAIL.CHANGE_SENDER">Change sender</a>
+                <a translate="MASS_MAIL.CHANGE_SENDER">Change sender</a>
               </p>
               <hr>
 
@@ -174,43 +174,39 @@
                       <input type="hidden" id="parcel_unit" name="parcel_unit" value="fr">
                       <input type="hidden" id="with_box_dimensions" name="with_box_dimensions" value="1">
                       <div class="parcels-container">
-                        <div id="parcel_list">
+                        <div id="parcel_list" ng-repeat="parcel in ctrl.shipment.parcels">
                           <div class="parcel">
                             <label class="parcel-label" translate="MASS_MAIL.PARCELS.PARCELS.NO">No.</label>
-                            <input type="text" class="form-control parcel-number input-xmini2" maxlength="3" value="1" placeholder="No." translate translate-attr-placeholder="MASS_MAIL.PARCELS.PARCELS.NO">
+                            <input type="text" class="form-control parcel-number input-xmini2" maxlength="3" ng-model="parcel.number" translate translate-attr-placeholder="MASS_MAIL.PARCELS.PARCELS.NO" ng-required="true">
 
                             <label class="parcel-label" translate="MASS_MAIL.PARCELS.PARCELS.UNIT">Wt/Unit</label>
-                            <input type="text" class="form-control parcel-weight input-xmini2" value="" size="16" maxlength="4" placeholder="Wt/Unit">
-                            <span class="weight_unit">kg</span>
+                            <input type="text" class="form-control parcel-weight input-xmini2" ng-model="parcel.weight" size="16" maxlength="4" translate translate-attr-placeholder="MY_ACCOUNT.SHIPMENT.UNIT" ng-required="true">
+                            <span class="weight_unit" ng-if="ctrl.parcelUnit">kg</span>
+                            <span class="weight_unit" ng-if="!ctrl.parcelUnit">lbs</span>
 
                             <label class="parcel-label" translate="MASS_MAIL.PARCELS.PARCELS.DIMENSIONS">Dimensions</label>
-                            <input type="text" class="form-control input-xmini2" value="" size="16" maxlength="3" placeholder="Length" translate translate-attr-placeholder="MASS_MAIL.PARCELS.PARCELS.LENGTH"> x
-                            <input type="text" class="form-control input-xmini2" value="" maxlength="3" placeholder="Width" translate translate-attr-placeholder="MASS_MAIL.PARCELS.PARCELS.WIDTH"> x
-                            <input type="text" class="form-control input-xmini2" value="" size="16" maxlength="3" placeholder="Height" translate translate-attr-placeholder="MASS_MAIL.PARCELS.PARCELS.HEIGHT">
-                            <span class="dimension_unit">cm</span>
-                            <a class="parcel-action" href="#">
+                            <input type="text" class="form-control input-xmini2" ng-model="parcel.x" size="16" maxlength="3" translate translate-attr-placeholder="MASS_MAIL.PARCELS.PARCELS.LENGTH" ng-required="true"> x
+                            <input type="text" class="form-control input-xmini2" ng-model="parcel.y" maxlength="3" translate translate-attr-placeholder="MASS_MAIL.PARCELS.PARCELS.WIDTH" ng-required="true"> x
+                            <input type="text" class="form-control input-xmini2" ng-model="parcel.z" size="16" maxlength="3" translate translate-attr-placeholder="MASS_MAIL.PARCELS.PARCELS.HEIGHT" ng-required="true">
+                            <span class="dimension_unit" ng-if="ctrl.parcelUnit">cm</span>
+                            <span class="dimension_unit" ng-if="!ctrl.parcelUnit">in</span>
+                            <a class="parcel-action" ng-click="ctrl.removeParcel($index)">
                               <i class="glyphicon glyphicon-minus-sign"></i>
                             </a>
                           </div><!-- /parcel -->
                         </div>
 
                         <div class="parcel-actions pull-left">
-                          <a href="#" style="padding-right:14px;">
-                            <i class="glyphicon glyphicon-plus-sign"></i> Add a parcel
+                          <a ng-click="ctrl.addParcel()" style="padding-right:14px;">
+                            <i class="glyphicon glyphicon-plus-sign"></i>
                             <span translate="MASS_MAIL.PARCELS.PARCELS.ADD_PARCEL"></span>
                           </a>
-                          <span id="switch_parcel_unit_fr" style="display: none;">
-                            <a href="#" style="padding-right:14px;">
-                              <i class="glyphicon glyphicon-refresh"></i> Change unit of measure (Kgs/cm)
-                              <span translate="MASS_MAIL.PARCELS.PARCELS.CHANGE_UNIT"></span>
-                            </a>
-                          </span>
-                          <span id="switch_parcel_unit_us">
-                            <a href="#" style="padding-right:14px;">
-                              <i class="glyphicon glyphicon-refresh"></i> Change unit of measure (lbs/inch)
-                              <span translate="MASS_MAIL.PARCELS.PARCELS.CHANGE_UNIT"></span>
-                            </a>
-                          </span>
+                            <span id="switch_parcel_unit_us">
+                              <a ng-click="ctrl.switchParcelUnit()" style="padding-right:14px;">
+                                <i class="glyphicon glyphicon-refresh"></i>
+                                <span translate="MASS_MAIL.PARCELS.PARCELS.CHANGE_UNIT"></span>
+                              </a>
+                            </span>
                         </div>
                         <div class="clear"></div>
                       </div>
@@ -237,7 +233,7 @@
                   <div class="form-group">
                     <label class="control-label col-lg-3" translate="MASS_MAIL.SHIPPING_METHOD.CARRIER">Carrier</label>
                     <div class="col-lg-7">
-                      <select class="form-control" multiple="" size="2" style="display: none;">
+                      <select class="form-control">
                         <option value="CHRONOPOST">CHRONOPOST</option>
                         <option value="COLISSIMO">COLISSIMO</option>
                         <option value="COURSIER">COURSIER</option>
@@ -256,7 +252,7 @@
 
               <h3 class="form-group-legend" style="margin-bottom:10px; cursor: pointer;">
                 <span translate="MASS_MAIL.SHIPMENT.TITLE">ABOUT YOUR SHIPMENT</span>
-                <a style="font-weight: normal; font-size: 11px; float: right;" href="#" translate="MASS_MAIL.DISPLAY">display/hide</a>
+                <!--<a style="font-weight: normal; font-size: 11px; float: right;" translate="MASS_MAIL.DISPLAY">display/hide</a>-->
               </h3>
               <div class="row" id="characteristics_container">
                 <div class="col-md-6">
@@ -265,7 +261,7 @@
                     <div class="col-lg-7">
                       <input type="text" class="form-control" value="" maxlength="35">
                       <span class="help-block">
-                        <a href="#" translate="MASS_MAIL.SHIPMENT.GOODS">Prohibited Goods</a>
+                        <a translate="MASS_MAIL.SHIPMENT.GOODS">Prohibited Goods</a>
                       </span>
                     </div>
                   </div>
@@ -292,7 +288,7 @@
 
               <h3 class="form-group-legend" style="margin-bottom:10px; cursor: pointer;">
                 <span translate="MASS_MAIL.INSURANCE.TITLE">VALUE &amp; OPTIONAL ADDITIONAL INSURANCE</span>
-                <a style="font-weight: normal; font-size: 11px; float: right;" href="#" translate="MASS_MAIL.DISPLAY">display/hide</a>
+                <!--<a style="font-weight: normal; font-size: 11px; float: right;" translate="MASS_MAIL.DISPLAY">display/hide</a>-->
               </h3>
               <div class="row" id="insurance_container">
                 <div class="form-group no-personal-effects">
