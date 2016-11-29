@@ -9,6 +9,8 @@
  */
 angular.module('UpelaApp')
   .controller('ShipToContactCtrl', function ($scope) {
+    var vm = this;
+
     // Disable weekend selection
     function disabled(data) {
       var date = data.date,
@@ -78,5 +80,60 @@ angular.module('UpelaApp')
 
     $scope.popup = {
       opened: false
+    };
+
+    vm.parcelCount = 1;
+    vm.parcelUnit = true;
+    vm.shipment = {
+      account: {
+        login: 'hugo.rusek@oqios.com',
+        password: 'yoon1104'
+      },
+      ship_from: {
+        country_code: '',
+        postcode: '',
+        city: '',
+        pro: ''
+      },
+      ship_to: {
+        country_code: '',
+        postcode: '',
+        city: '',
+        pro: ''
+      },
+      parcels: [{
+        number: 1,
+        weight: '',
+        x: '',
+        y: '',
+        z: ''
+      }],
+      shipment_date: '',
+      unit: 'fr',
+      selection: 'all'
+    };
+
+    vm.addParcel = function() {
+      var parcel = {
+        number: vm.parcelCount + 1,
+        weight: '',
+        x: '',
+        y: '',
+        z: ''
+      };
+
+      vm.shipment.parcels.push(parcel);
+      vm.parcelCount++;
+    };
+
+    vm.removeParcel = function(index) {
+      if(vm.parcelCount > 1) {
+        vm.shipment.parcels.splice(index, 1);
+        vm.parcelCount--;
+      }
+    };
+
+    vm.switchParcelUnit = function() {
+      vm.parcelUnit = !vm.parcelUnit;
     };
   });

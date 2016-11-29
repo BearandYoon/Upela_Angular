@@ -201,7 +201,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="control-label col-lg-3">
-                      <span class="popmark" id="popmark-type" data-placement="right" data-content="<b>Envelope</b> : envelope or document < 2.5 Kg<br><b>Parcel</b> : maximum weight 70 Kg, max Length 270 cm AND Length + 2 x Height <419 cm<br><b>Pallet</b> : max height 200 cm and max weight 3 tonnes (international only)<br><b>Bulky shipment</b> : max dimensions : 302 cm x 203 cm x 178 cm height (international only)" data-original-title="" title=""  translate="SHIP_TO_CONTACT.PARCELS.TYPE.TITLE">Type</span>
+                      <span class="popmark" popover-placement="right" popover-title="{{'SHIP_TO_CONTACT.PARCELS.TYPE.TITLE' | translate}}" uib-popover="{{'MAIN.DIALOG.TYPE.TOOLTIP' | translate}}" popover-trigger="mouseenter" translate="SHIP_TO_CONTACT.PARCELS.TYPE.TITLE">Type</span>
                     </label>
 
                     <div class="col-lg-9">
@@ -232,50 +232,43 @@
                   </div>
                   <div class="form-group" id="parcels-form-group">
                     <label class="control-label col-lg-3 no-padding-right required-">
-                      <span class="popmark" id="popmark-parcels" data-placement="right" data-title="Parcels" data-content="Complete the details of your envelope, parcel or pallet - number of parcels, unit weight and dimensions" data-original-title="" title="" translate="SHIP_TO_CONTACT.PARCELS.PARCELS.TITLE">Parcels</span>
+                      <span class="popmark" popover-placement="right" popover-title="{{'SHIP_TO_CONTACT.PARCELS.PARCELS.TITLE' | translate}}" uib-popover="{{'MAIN.DIALOG.PARCELS.TOOLTIP' | translate}}" popover-trigger="mouseenter" translate="SHIP_TO_CONTACT.PARCELS.PARCELS.TITLE">Parcels</span>
                     </label>
                     <div class="col-lg-9">
                       <div class="parcels-container">
-                        <div id="parcel_list">
-                          <div class="parcel" id="parcel_0">
+                        <div id="parcel_list" ng-repeat="parcel in ctrl.shipment.parcels">
+                          <div class="parcel">
                             <label class="parcel-label" translate="SHIP_TO_CONTACT.PARCELS.PARCELS.NO">No.</label>
-                            <input type="text" class="form-control parcel-number input-xmini2" maxlength="3" value="1" placeholder="No." translate translate-attr-placeholder="SHIP_TO_CONTACT.PARCELS.PARCELS.NO">
+                            <input type="text" class="form-control parcel-number input-xmini2" maxlength="3" ng-model="parcel.number" value="1" placeholder="No." translate translate-attr-placeholder="SHIP_TO_CONTACT.PARCELS.PARCELS.NO" ng-required="true">
 
                             <label class="parcel-label" translate="SHIP_TO_CONTACT.PARCELS.PARCELS.UNIT">Wt/Unit</label>
-                            <input type="text" class="form-control parcel-weight input-xmini2" value="" size="16" maxlength="4" placeholder="Wt/Unit" translate translate-attr-placeholder="SHIP_TO_CONTACT.PARCELS.PARCELS.UNIT">
-                            <span class="weight_unit">kg</span>
+                            <input type="text" class="form-control parcel-weight input-xmini2" ng-model="parcel.weight" value="" size="16" maxlength="4" placeholder="Wt/Unit" translate translate-attr-placeholder="SHIP_TO_CONTACT.PARCELS.PARCELS.UNIT" ng-required="true">
+                            <span class="weight_unit" ng-if="ctrl.parcelUnit">kg</span>
+                            <span class="weight_unit" ng-if="!ctrl.parcelUnit">lbs</span>
 
                             <label class="parcel-label" translate="SHIP_TO_CONTACT.PARCELS.PARCELS.DIMENSIONS">Dimensions</label>
-                            <input type="text" class="form-control input-xmini2" value="" size="16" maxlength="3" placeholder="Length" translate translate-attr-placeholder="SHIP_TO_CONTACT.PARCELS.PARCELS.LENGTH"> x
-
-                            <input type="text" class="form-control input-xmini2" value="" maxlength="3" placeholder="Width" translate translate-attr-placeholder="SHIP_TO_CONTACT.PARCELS.PARCELS.WIDTH"> x
-
-                            <input type="text" class="form-control input-xmini2" value="" size="16" maxlength="3" placeholder="Height" translate translate-attr-placeholder="SHIP_TO_CONTACT.PARCELS.PARCELS.HEIGHT">
-
-                            <span class="dimension_unit">cm</span>
-                            <a class="parcel-action" href="#">
+                            <input type="text" class="form-control input-xmini2" ng-model="parcel.x" value="" size="16" maxlength="3" placeholder="Length" translate translate-attr-placeholder="SHIP_TO_CONTACT.PARCELS.PARCELS.LENGTH" ng-required="true"> x
+                            <input type="text" class="form-control input-xmini2" ng-model="parcel.y" value="" maxlength="3" placeholder="Width" translate translate-attr-placeholder="SHIP_TO_CONTACT.PARCELS.PARCELS.WIDTH" ng-required="true"> x
+                            <input type="text" class="form-control input-xmini2" ng-model="parcel.z" value="" size="16" maxlength="3" placeholder="Height" translate translate-attr-placeholder="SHIP_TO_CONTACT.PARCELS.PARCELS.HEIGHT" ng-required="true">
+                            <span class="dimension_unit" ng-if="ctrl.parcelUnit">cm</span>
+                            <span class="dimension_unit" ng-if="!ctrl.parcelUnit">in</span>
+                            <a class="parcel-action" ng-click="ctrl.removeParcel($index)">
                               <i class="glyphicon glyphicon-minus-sign"></i>
                             </a>
                           </div><!-- /parcel -->
                         </div>
 
                         <div class="parcel-actions pull-left">
-                          <a style="padding-right:14px;">
+                          <a ng-click="ctrl.addParcel()" style="padding-right:14px;">
                             <i class="glyphicon glyphicon-plus-sign"></i>
                             <span translate="SHIP_TO_CONTACT.PARCELS.PARCELS.ADD_PARCEL">Add a parcel</span>
                           </a>
-                          <span id="switch_parcel_unit_fr" style="display: none;">
-                            <a style="padding-right:14px;">
-                              <i class="glyphicon glyphicon-refresh"></i>
-                              <span translate="SHIP_TO_CONTACT.PARCELS.PARCELS.CHANGE_UNIT"> Change unit of measure (lbs/inch)</span>
-                            </a>
-                          </span>
-                          <span id="switch_parcel_unit_us">
-                            <a style="padding-right:14px;">
-                              <i class="glyphicon glyphicon-refresh"></i>
-                              <span translate="SHIP_TO_CONTACT.PARCELS.PARCELS.CHANGE_UNIT"> Change unit of measure (lbs/inch)</span>
-                            </a>
-                          </span>
+                            <span id="switch_parcel_unit_us">
+                              <a ng-click="ctrl.switchParcelUnit()" style="padding-right:14px;">
+                                <i class="glyphicon glyphicon-refresh"></i>
+                                <span translate="SHIP_TO_CONTACT.PARCELS.PARCELS.CHANGE_UNIT">Change unit of measure (lbs/inch)</span>
+                              </a>
+                            </span>
                         </div>
                         <div class="clear"></div>
                       </div>
