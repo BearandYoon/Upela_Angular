@@ -12,8 +12,16 @@ angular.module('UpelaApp')
     var vm = this;
     vm.disabled = undefined;
     vm.searchEnabled = undefined;
-    vm.destinationCoutry = 'France';
-    vm.originCountry = 'France';
+    vm.countries = [];
+    vm.ship_to_country = 'France';
 
-    vm.countries = MainService.getCountries();
+    function getCountries() {
+      MainService.getCountries(function(response) {
+        vm.countries = _.uniqBy(response.data, 'country_id');
+      });
+    }
+
+    getCountries();
+
+    vm.business_address = 1;
   });

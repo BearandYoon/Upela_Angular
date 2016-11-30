@@ -95,21 +95,24 @@
                     <span translate="MY_SETTINGS.INFORMATION.TITLE">My information</span>
                   </a>
                 </uib-tab-heading>
-                <form id="UserForm" class="form-horizontal">
+                <form name="UserSettingForm" class="form-horizontal" ng-submit="UserSettingForm.$valid">
                   <div class="panel-grey">
                     <h3 class="form-group-legend" translate="MY_SETTINGS.INFORMATION.ADDRESS.TITLE">Address</h3>
+
                     <div class="form-group">
                       <label class="control-label col-lg-3">&nbsp;</label>
+
                       <div class="col-lg-9">
-                        <div class="radio-inline">
+                        <div class="radio-inline" id="radio-inline-type-1">
                           <label>
-                            <input type="radio" value="0">
+                            <input type="radio" value="0" ng-model="ctrl.business_address">
                             <span translate="MY_SETTINGS.INFORMATION.ADDRESS.RESIDENTIAL_ADDRESS">&nbsp;Residential address</span>
                           </label>
                         </div>
-                        <div class="radio-inline">
+
+                        <div class="radio-inline" id="radio-inline-type-2">
                           <label>
-                            <input type="radio" value="1" checked="">
+                            <input type="radio" value="1" ng-model="ctrl.business_address">
                             <span translate="MY_SETTINGS.INFORMATION.ADDRESS.BUSINESS_ADDRESS">&nbsp;Business address</span>
                           </label>
                         </div>
@@ -155,10 +158,9 @@
                     <div class="form-group">
                       <label class="control-label col-lg-3 required" translate="MY_SETTINGS.INFORMATION.ADDRESS.PHONE">Phone</label>
                       <div class="col-lg-4">
-                        <input type="text" class="form-control validate" data-validate="isPhoneNumber" value="0178767979" maxlength="50">
+                        <input type="text" class="form-control" ng-class="{'invalid': !UserSettingForm.ship_to_phone.$valid}" name="ship_to_phone" ng-model="ctrl.shipping_info.ship_to.phone" ng-intl-tel-input required>
                       </div>
                     </div>
-                    <input type="hidden" id="address_email" name="address_email" value="cli1l@upela.com">
 
                     <div class="form-group">
                       <label class="control-label col-lg-3 required" translate="MY_SETTINGS.INFORMATION.ADDRESS.ADDRESS">Address</label>
@@ -184,10 +186,10 @@
                     <div class="form-group">
                       <label class="control-label col-lg-3" translate="MY_SETTINGS.INFORMATION.ADDRESS.COMMENTS">Comments</label>
                       <div class="col-lg-4">
-                        <textarea class="form-control" placeholder="Other information to help the collection driver (interphone, entry code, instructions, opening hours...)" rows="2" maxlength="35" data-maxchar="35"></textarea>
-                    <span class="text-count-down-container">
-                      <span class="text-count-down">35</span> character(s) left
-                    </span>
+                        <textarea class="form-control" ng-model="others" placeholder="Other information to help the collection driver (interphone, entry code, instructions, opening hours...)" rows="2" maxlength="30" data-maxchar="30"></textarea>
+                        <span class="text-count-down-container">
+                          <span class="text-count-down">{{30-others.length}}</span> character(s) left
+                        </span>
                       </div>
                     </div>
 
@@ -195,13 +197,12 @@
                       <label class="control-label col-lg-3 required" translate="MY_SETTINGS.INFORMATION.ADDRESS.COUNTRY">Country</label>
                       <div class="col-lg-4">
                         <div class="chosen-container chosen-container-single" style="width: 283px;" title="" id="address_country_id_chosen">
-                          <ui-select ng-model="ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                          <ui-select class="address1_country" ng-model="ctrl.ship_to_country" theme="select2" style="width: 160px;" title="Select the Country">
                             <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
                             <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
                               <div ng-bind-html="person.name | highlight: $select.search"></div>
                               <small>
                                 {{country.name}}
-                                <!--age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>-->
                               </small>
                             </ui-select-choices>
                           </ui-select>
@@ -366,66 +367,69 @@
                   <form id="UserForm" class="form-horizontal">
                     <h3 class="form-group-legend text-uppercase" translate="MY_SETTINGS.OPTIONS.DEFAULT_VALUES">Default values for your shipments</h3>
                     <div class="panel-grey">
-                      <h4 class="settings-subtitle">
-                        <a class="" href="">
-                          <i class="step-circle">1</i>
-                          <span translate="MY_SETTINGS.OPTIONS.INFORMATION.TITLE">Shipment information</span>
-                        </a>
-                      </h4>
+                      <uib-accordion close-others="false">
+                        <div uib-accordion-group class="panel-default">
+                          <uib-accordion-heading>
+                            <h4 class="settings-subtitle">
+                              <a class="" href="">
+                                <i class="step-circle">1</i>
+                                <span translate="MY_SETTINGS.OPTIONS.INFORMATION.TITLE">Shipment information</span>
+                              </a>
+                            </h4>
+                          </uib-accordion-heading>
+                          <div id="default-values-section" style="display: block;">
+                            <label class="settings-label">
+                              <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Mostly envelopes? = envelope or document < 2.5Kg<br/>Mostly parcels? = cardboard packaging, max weight 70Kg, max length 300cm<br/>Mostly pallets? = max height 200cm and max weight 3T (only for international shipping)" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.TITLE">What type of packaging do you use most often?</span>
+                            </label>
+                            <div class="settings-form-group-container">
+                              <div class="form-group">
+                                <div class="radio-inline">
+                                  <label>
+                                    <input type="radio" value="1" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.ENVELOPE">&nbsp;Envelope&nbsp;
+                                    <img src="images/icons/parcel-1.png" style="max-height: 32px;">
+                                  </label>
+                                </div>
 
-                      <div id="default-values-section" style="display: block;">
-                        <label class="settings-label">
-                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Mostly envelopes? = envelope or document < 2.5Kg<br/>Mostly parcels? = cardboard packaging, max weight 70Kg, max length 300cm<br/>Mostly pallets? = max height 200cm and max weight 3T (only for international shipping)" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.TITLE">What type of packaging do you use most often?</span>
-                        </label>
-                        <div class="settings-form-group-container">
-                          <div class="form-group">
-                            <div class="radio-inline">
-                              <label>
-                                <input type="radio" value="1" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.ENVELOPE">&nbsp;Envelope&nbsp;
-                                <img src="images/icons/parcel-1.png" style="max-height: 32px;">
-                              </label>
+                                <div class="radio-inline">
+                                  <label>
+                                    <input type="radio" value="2" checked="" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.PARCEL">&nbsp;Parcel&nbsp;
+                                    <img src="images/icons/parcel-2.png" style="max-height: 32px;">
+                                  </label>
+                                </div>
+
+                                <div class="radio-inline">
+                                  <label>
+                                    <input type="radio" value="3" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.PALLET">&nbsp;Pallet&nbsp;
+                                    <img src="images/icons/parcel-3.png" style="max-height: 32px;">
+                                  </label>
+                                </div>
+                              </div>
                             </div>
 
-                            <div class="radio-inline">
-                              <label>
-                                <input type="radio" value="2" checked="" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.PARCEL">&nbsp;Parcel&nbsp;
-                                <img src="images/icons/parcel-2.png" style="max-height: 32px;">
-                              </label>
-                            </div>
+                            <label class="settings-label">
+                              <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Enter the weight and the dimensions that will be filled in by default in your orders" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.TITLE">Do you regularly send the same shipment (number, weight and size of parcel(s))?</span>
+                            </label>
+                            <div class="settings-form-group-container">
+                              <input type="hidden" id="parcel_unit" name="parcel_unit" value="fr">
+                              <div class="parcels-container">
+                                <div id="parcel_list">
+                                  <div class="parcel" id="parcel">
+                                    <label class="parcel-label" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.NO">No.</label>
+                                    <input type="text" class="form-control parcel-number input-xmini2" maxlength="3" value="1">
 
-                            <div class="radio-inline">
-                              <label>
-                                <input type="radio" value="3" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.PALLET">&nbsp;Pallet&nbsp;
-                                <img src="images/icons/parcel-3.png" style="max-height: 32px;">
-                              </label>
-                            </div>
-                          </div>
-                        </div>
+                                    <label class="parcel-label" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.UNIT">Wt.</label>
+                                    <input type="text" class="form-control input-xmini2" value="" size="16" maxlength="4" placeholder="Wt.">
+                                    <span class="weight_unit">kg</span>
 
-                        <label class="settings-label">
-                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Enter the weight and the dimensions that will be filled in by default in your orders" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.TITLE">Do you regularly send the same shipment (number, weight and size of parcel(s))?</span>
-                        </label>
-                        <div class="settings-form-group-container">
-                          <input type="hidden" id="parcel_unit" name="parcel_unit" value="fr">
-                          <div class="parcels-container">
-                            <div id="parcel_list">
-                              <div class="parcel" id="parcel">
-                                <label class="parcel-label" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.NO">No.</label>
-                                <input type="text" class="form-control parcel-number input-xmini2" maxlength="3" value="1">
+                                    <label class="parcel-label" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.DIMENSIONS">Dimensions</label>
+                                    <input type="text" class="form-control input-xmini2" ng-model="parcel.x" value="" size="16" maxlength="3" placeholder="Length" translate translate-attr-placeholder="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.LENGTH"> x
+                                    <input type="text" class="form-control input-xmini2" ng-model="parcel.y" value="" maxlength="3" placeholder="Width" translate translate-attr-placeholder="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.WIDTH"> x
+                                    <input type="text" class="form-control input-xmini2" ng-model="parcel.z" value="" size="16" maxlength="3" placeholder="Height" translate translate-attr-placeholder="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.HEIGHT">
+                                    <span class="dimension_unit">cm</span>
+                                  </div><!-- /parcel -->
+                                </div>
 
-                                <label class="parcel-label" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.UNIT">Wt.</label>
-                                <input type="text" class="form-control input-xmini2" value="" size="16" maxlength="4" placeholder="Wt.">
-                                <span class="weight_unit">kg</span>
-
-                                <label class="parcel-label" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.DIMENSIONS">Dimensions</label>
-                                <input type="text" class="form-control input-xmini2" ng-model="parcel.x" value="" size="16" maxlength="3" placeholder="Length" translate translate-attr-placeholder="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.LENGTH"> x
-                                <input type="text" class="form-control input-xmini2" ng-model="parcel.y" value="" maxlength="3" placeholder="Width" translate translate-attr-placeholder="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.WIDTH"> x
-                                <input type="text" class="form-control input-xmini2" ng-model="parcel.z" value="" size="16" maxlength="3" placeholder="Height" translate translate-attr-placeholder="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.HEIGHT">
-                                <span class="dimension_unit">cm</span>
-                              </div><!-- /parcel -->
-                            </div>
-
-                            <div class="pull-left">
+                                <div class="pull-left">
                               <span id="switch_parcel_unit_fr" style="display: none;">
                                 <a href="#" style="padding-right:14px;">
                                   <i class="glyphicon glyphicon-refresh"></i>
@@ -439,392 +443,394 @@
                                   <span translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.CHANGE_UNIT">Change unit of measure (lbs/inch)</span>
                                 </a>
                               </span>
+                                </div>
+                                <div class="clear"></div>
+                              </div>
                             </div>
-                            <div class="clear"></div>
+
+                            <label class="settings-label">
+                              <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Save the size of your parcels in order to select them in a click<br/>For instance:<br/>Large parcel 80x50x40<br/>Medium-sized parcel 50x40x30<br/>Small parcel 30x20x10" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INFORMATION.PARCELS_SIZE.TITLE">Set up the standard size of your parcels:</span>
+                            </label>
+
+                            <div class="settings-form-group-container">
+                              <div class="dimensions-container">
+                                <div id="dimension_list"></div>
+                                <div class="clear"></div>
+                                <div class="parcel-actions pull-left">
+                                  <a href="#" style="padding-right:14px;">
+                                    <i class="glyphicon glyphicon-plus-sign"></i>
+                                    <span translate="MY_SETTINGS.OPTIONS.INFORMATION.PARCELS_SIZE.ADD_DIMENSION">Add a dimension</span>
+                                  </a>
+                                </div>
+                                <div class="clear"></div>
+                              </div>
+                            </div>
+
+                            <label class="settings-label">
+                              <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Select the main shipping reason of your sendings" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INFORMATION.PARCELS_REASON">What is the most common reason for sending parcels?</span>
+                            </label>
+
+                            <div class="settings-form-group-container">
+                              <div class="form-group">
+                                <div class="col-lg-4 col-lg-offset-none">
+                                  <select id="reason" name="reason" class="form-control">
+                                    <option value="" selected="">-- Select in the list --</option>
+                                    <option value="Commercial">Commercial</option>
+                                    <option value="Cadeau">Gift</option>
+                                    <option value="Documents">Documents</option>
+                                    <option value="Echantillon">Sample</option>
+                                    <option value="Retour et réparation">Returns and repairs</option>
+                                    <option value="Effets personnels">Personal effects</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+
+                            <label class="settings-label">
+                              <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Indicate the goods which you send the most" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_CONTENT">What is the content of your shipments?</span>
+                            </label>
+
+                            <div class="settings-form-group-container">
+                              <div class="form-group">
+                                <div class="col-lg-4 col-lg-offset-none">
+                                  <input type="text" class="form-control" value="" maxlength="35">
+                                </div>
+                              </div>
+                            </div>
+
+                            <label class="settings-label" translate="MY_SETTINGS.OPTIONS.INFORMATION.LABEL_FORMAT">Label format</label>
+                            <div class="settings-form-group-container">
+                              <div class="form-group">
+                                <div class="col-lg-4 col-lg-offset-none">
+                                  <select id="label_format" name="label_format" class="form-control">
+                                    <option value="PDF" selected="">PDF</option>
+                                    <option value="ZPL">ZPL (thermal printers)</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
-
-                        <label class="settings-label">
-                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Save the size of your parcels in order to select them in a click<br/>For instance:<br/>Large parcel 80x50x40<br/>Medium-sized parcel 50x40x30<br/>Small parcel 30x20x10" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INFORMATION.PARCELS_SIZE.TITLE">Set up the standard size of your parcels:</span>
-                        </label>
-
-                        <div class="settings-form-group-container">
-                          <div class="dimensions-container">
-                            <div id="dimension_list"></div>
-                            <div class="clear"></div>
-                            <div class="parcel-actions pull-left">
-                              <a href="#" style="padding-right:14px;">
-                                <i class="glyphicon glyphicon-plus-sign"></i>
-                                <span translate="MY_SETTINGS.OPTIONS.INFORMATION.PARCELS_SIZE.ADD_DIMENSION">Add a dimension</span>
+                        <div uib-accordion-group class="panel-default">
+                          <uib-accordion-heading>
+                            <h4 class="settings-subtitle">
+                              <a class="" href="#offer-selection-section">
+                                <i class="step-circle">2</i>
+                                <span translate="MY_SETTINGS.OPTIONS.TRANSPORT_OFFERS.TITLE">Selection of transport offers</span>
                               </a>
-                            </div>
-                            <div class="clear"></div>
-                          </div>
-                        </div>
+                            </h4>
+                          </uib-accordion-heading>
+                          <div id="offer-selection-section">
+                            <label class="settings-label">
+                              <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="You can filter the proposed carriers by selecting them from this list.<br/>Only desired carriers will appear in your quotes.<br/>By default, we display all of the offers regardless of the carrier." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.TRANSPORT_OFFERS.LIKE_CARRIER">Which carrier(s) would you like to use?</span>
+                            </label>
 
-                        <label class="settings-label">
-                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Select the main shipping reason of your sendings" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INFORMATION.PARCELS_REASON">What is the most common reason for sending parcels?</span>
-                        </label>
+                            <div class="settings-form-group-container">
+                              <div class="form-group">
+                                <div class="col-lg-4 col-lg-offset-none">
+                                  <select class="form-control" style="width: 258px; display: none;" multiple="" size="2">
+                                    <option value="CHRONOPOST">CHRONOPOST</option>
+                                    <option value="COLISSIMO">COLISSIMO</option>
+                                    <option value="COURSIER">COURSIER</option>
+                                    <option value="DHL">DHL</option>
+                                    <option value="DPD">DPD</option>
+                                    <option value="FEDEX">FEDEX</option>
+                                    <option value="MONDIALRELAY">MONDIALRELAY</option>
+                                    <option value="TNT">TNT</option>
+                                    <option value="UPS">UPS</option>
+                                  </select>
 
-                        <div class="settings-form-group-container">
-                          <div class="form-group">
-                            <div class="col-lg-4 col-lg-offset-none">
-                              <select id="reason" name="reason" class="form-control">
-                                <option value="" selected="">-- Select in the list --</option>
-                                <option value="Commercial">Commercial</option>
-                                <option value="Cadeau">Gift</option>
-                                <option value="Documents">Documents</option>
-                                <option value="Echantillon">Sample</option>
-                                <option value="Retour et réparation">Returns and repairs</option>
-                                <option value="Effets personnels">Personal effects</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-
-                        <label class="settings-label">
-                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Indicate the goods which you send the most" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_CONTENT">What is the content of your shipments?</span>
-                        </label>
-
-                        <div class="settings-form-group-container">
-                          <div class="form-group">
-                            <div class="col-lg-4 col-lg-offset-none">
-                              <input type="text" class="form-control" value="" maxlength="35">
-                            </div>
-                          </div>
-                        </div>
-
-                        <label class="settings-label" translate="MY_SETTINGS.OPTIONS.INFORMATION.LABEL_FORMAT">Label format</label>
-                        <div class="settings-form-group-container">
-                          <div class="form-group">
-                            <div class="col-lg-4 col-lg-offset-none">
-                              <select id="label_format" name="label_format" class="form-control">
-                                <option value="PDF" selected="">PDF</option>
-                                <option value="ZPL">ZPL (thermal printers)</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="panel-grey">
-                      <h4 class="settings-subtitle">
-                        <a class="" href="#offer-selection-section">
-                          <i class="step-circle">2</i>
-                          <span translate="MY_SETTINGS.OPTIONS.TRANSPORT_OFFERS.TITLE">Selection of transport offers</span>
-                        </a>
-                      </h4>
-
-                      <div id="offer-selection-section">
-                        <label class="settings-label">
-                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="You can filter the proposed carriers by selecting them from this list.<br/>Only desired carriers will appear in your quotes.<br/>By default, we display all of the offers regardless of the carrier." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.TRANSPORT_OFFERS.LIKE_CARRIER">Which carrier(s) would you like to use?</span>
-                        </label>
-
-                        <div class="settings-form-group-container">
-                          <div class="form-group">
-                            <div class="col-lg-4 col-lg-offset-none">
-                              <select class="form-control" style="width: 258px; display: none;" multiple="" size="2">
-                                <option value="CHRONOPOST">CHRONOPOST</option>
-                                <option value="COLISSIMO">COLISSIMO</option>
-                                <option value="COURSIER">COURSIER</option>
-                                <option value="DHL">DHL</option>
-                                <option value="DPD">DPD</option>
-                                <option value="FEDEX">FEDEX</option>
-                                <option value="MONDIALRELAY">MONDIALRELAY</option>
-                                <option value="TNT">TNT</option>
-                                <option value="UPS">UPS</option>
-                              </select>
-
-                              <button type="button" class="ui-multiselect ui-widget ui-state-default ui-corner-all" aria-haspopup="true" style="width: 264px;">
-                                <span class="ui-icon ui-icon-triangle-2-n-s"></span>
-                                <span>All</span>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-
-                        <label class="settings-label">
-                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Some offers do not include a pickup on site, while others impose it. Select the collection method that you prefere. Then, only desired offers will appear in your quotes. By default, all offers are displayed." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.TRANSPORT_OFFERS.DELIVERY_METHOD">Desired collection method?</span>
-                        </label>
-                        <div class="settings-form-group-container">
-                          <div class="form-group">
-                            <div class="col-lg-4 col-lg-offset-none">
-                              <select class="form-control">
-                                <option value="0" selected="">Pickup or dropoff</option>
-                                <option value="-1">Pickup only</option>
-                                <option value="1">Dropoff only</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-
-                        <label class="settings-label">
-                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Some offers include a home delivery, while others delivery to a collection point. Select the delivery method that you prefere. Then, only desired offers will appear in your quotes. By default, all offers are displayed." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.TRANSPORT_OFFERS.DELIVERY_METHOD">Desired delivery method?</span>
-                        </label>
-                        <div class="settings-form-group-container">
-                          <div class="form-group">
-                            <div class="col-lg-4 col-lg-offset-none">
-                              <select id="delivery_to_collection_point_selection" name="delivery_to_collection_point_selection" class="form-control">
-                                <option value="0" selected="">Onsite or collection point</option>
-                                <option value="-1">Onsite only</option>
-                                <option value="1">Collection point only</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-
-                    <div class="panel-grey">
-                      <h4 class="settings-subtitle">
-                        <a class="" href="#insurance-section">
-                          <i class="step-circle">3</i>
-                          <span translate="MY_SETTINGS.OPTIONS.INSURANCE.TITLE"> Shipment value and optional supplementary insurance</span>
-                        </a>
-                      </h4>
-
-                      <div>
-                        <label class="settings-label">
-                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Corresponds to the value of the content of your shipment. This value is used in the calculation of the insurance cost and sets a reimbursement limit in case of loss or damage." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INSURANCE.VALUE">What is the value of your shipments?</span>
-                        </label>
-                        <div class="settings-form-group-container">
-                          <div class="form-group form-inline">
-                            <div class="col-lg-12">
-                              <input type="text" class="form-control input-small" style="display: inline-block; width: 90px;" placeholder="" id="insurance_declared_value" name="insurance_declared_value" value="" maxlength="32">   &nbsp;
-                              <select class="form-control input-mini" style="display: inline-block; width: 60px;">
-                                <option value="EUR" selected="selected">€</option>
-                                <option value="USD">$</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-
-                        <label class="settings-label">
-                          <span class="popmark pointer" id="popmark-insurance" data-placement="right" data-no-title="true" data-content="Excluding insurance, the transport warranty is limited to €11/kg for land transport and €22/kg for air transport.<br/>The AdValorem insurance hereby proposed covers you for the total value of your sending." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INSURANCE.REAL_VALUE">Would you like to insure your shipments at their real value (cost : 0.6% of the value, minimum 4.5€)?</span>
-                        </label>
-                        <div class="settings-form-group-container">
-                          <div class="form-group form-inline">
-                            <div class="col-lg-12">
-                              <div class="radio-inline">
-                                <label>
-                                  <input type="radio" value="1">
-                                  <span translate="MY_SETTINGS.OPTIONS.INSURANCE.YES">&nbsp;Yes</span>
-                                </label>
+                                  <button type="button" class="ui-multiselect ui-widget ui-state-default ui-corner-all" aria-haspopup="true" style="width: 264px;">
+                                    <span class="ui-icon ui-icon-triangle-2-n-s"></span>
+                                    <span>All</span>
+                                  </button>
+                                </div>
                               </div>
+                            </div>
 
-                              <div class="radio-inline">
-                                <label>
-                                  <input type="radio" value="0" checked="">
-                                  <span translate="MY_SETTINGS.OPTIONS.INSURANCE.NO">&nbsp;No</span>
-                                </label>
+                            <label class="settings-label">
+                              <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Some offers do not include a pickup on site, while others impose it. Select the collection method that you prefere. Then, only desired offers will appear in your quotes. By default, all offers are displayed." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.TRANSPORT_OFFERS.DELIVERY_METHOD">Desired collection method?</span>
+                            </label>
+                            <div class="settings-form-group-container">
+                              <div class="form-group">
+                                <div class="col-lg-4 col-lg-offset-none">
+                                  <select class="form-control">
+                                    <option value="0" selected="">Pickup or dropoff</option>
+                                    <option value="-1">Pickup only</option>
+                                    <option value="1">Dropoff only</option>
+                                  </select>
+                                </div>
                               </div>
+                            </div>
 
-                              <div class="help-block">
-                                <small>
-                                  <a class="orange text-underline" href="images/files/upload/insurance/Upela Assurance EXCLUSIONS CONDITIONS GENERALES.pdf" target="_blank">See the conditions of insurance</a>
-                                </small>
+                            <label class="settings-label">
+                              <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Some offers include a home delivery, while others delivery to a collection point. Select the delivery method that you prefere. Then, only desired offers will appear in your quotes. By default, all offers are displayed." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.TRANSPORT_OFFERS.DELIVERY_METHOD">Desired delivery method?</span>
+                            </label>
+                            <div class="settings-form-group-container">
+                              <div class="form-group">
+                                <div class="col-lg-4 col-lg-offset-none">
+                                  <select id="delivery_to_collection_point_selection" name="delivery_to_collection_point_selection" class="form-control">
+                                    <option value="0" selected="">Onsite or collection point</option>
+                                    <option value="-1">Onsite only</option>
+                                    <option value="1">Collection point only</option>
+                                  </select>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-
-                    <div class="panel-grey">
-                      <h4 class="settings-subtitle">
-                        <a class="" href="#pickup-section">
-                          <i class="step-circle">4</i>
-                          <span translate="MY_SETTINGS.OPTIONS.PICKUP.TITLE">Pickup of your parcelss</span>
-                        </a>
-                      </h4>
-
-                      <div id="pickup-section">
-                        <label class="settings-label">
-                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Indicate a time frame as large as possible for the pickup of your shipments.<br/>If your business is closed at lunchtime, you can specify it in your order" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.PICKUP.OPEN_HOURS">What are your opening hours?</span>
-                        </label>
-                        <div class="settings-form-group-container">
-                          <div class="form-group">
-                            <div class="col-lg-9 col-lg-offset-none">
-                              <div class="radio">
-                                <label>
-                                  <input type="radio" value="0" checked="">
-                                  <span translate="MY_SETTINGS.OPTIONS.PICKUP.COLLECTION">&nbsp;Collection chosen (subject to the carrier availability)</span>
-                                </label>
+                        <div uib-accordion-group class="panel-default">
+                          <uib-accordion-heading>
+                            <h4 class="settings-subtitle">
+                              <a class="" href="#insurance-section">
+                                <i class="step-circle">3</i>
+                                <span translate="MY_SETTINGS.OPTIONS.INSURANCE.TITLE"> Shipment value and optional supplementary insurance</span>
+                              </a>
+                            </h4>
+                          </uib-accordion-heading>
+                          <div>
+                            <label class="settings-label">
+                              <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Corresponds to the value of the content of your shipment. This value is used in the calculation of the insurance cost and sets a reimbursement limit in case of loss or damage." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INSURANCE.VALUE">What is the value of your shipments?</span>
+                            </label>
+                            <div class="settings-form-group-container">
+                              <div class="form-group form-inline">
+                                <div class="col-lg-12">
+                                  <input type="text" class="form-control input-small" style="display: inline-block; width: 90px;" placeholder="" id="insurance_declared_value" name="insurance_declared_value" value="" maxlength="32">   &nbsp;
+                                  <select class="form-control input-mini" style="display: inline-block; width: 60px;">
+                                    <option value="EUR" selected="selected">€</option>
+                                    <option value="USD">$</option>
+                                  </select>
+                                </div>
                               </div>
                             </div>
-                          </div>
 
-                          <div class="form-group">
-                            <div class="col-lg-9 col-lg-offset-none">
-                              <span translate="MY_SETTINGS.OPTIONS.PICKUP.BETWEEN">Between&nbsp;</span>
-                              <select id="ready_time" name="ready_time" class="form-control input-small2 display-inline-block">
-                                <option value="0800">08:00am</option>
-                                <option value="0815">08:15am</option>
-                                <option value="0830">08:30am</option>
-                                <option value="0845">08:45am</option>
-                                <option value="0900">09:00am</option>
-                                <option value="0915">09:15am</option>
-                                <option value="0930">09:30am</option>
-                                <option value="0945">09:45am</option>
-                                <option value="1000">10:00am</option>
-                                <option value="1015">10:15am</option>
-                                <option value="1030">10:30am</option>
-                                <option value="1045">10:45am</option>
-                                <option value="1100" selected="">11:00am</option>
-                                <option value="1115">11:15am</option>
-                                <option value="1130">11:30am</option>
-                                <option value="1145">11:45am</option>
-                                <option value="1200">12:00pm</option>
-                                <option value="1215">12:15pm</option>
-                                <option value="1230">12:30pm</option>
-                                <option value="1245">12:45pm</option>
-                                <option value="1300">01:00pm</option>
-                                <option value="1315">01:15pm</option>
-                                <option value="1330">01:30pm</option>
-                                <option value="1345">01:45pm</option>
-                                <option value="1400">02:00pm</option>
-                              </select>
-                              <span translate="MY_SETTINGS.OPTIONS.PICKUP.BETWEEN">&nbsp;and&nbsp;</span>
+                            <label class="settings-label">
+                              <span class="popmark pointer" id="popmark-insurance" data-placement="right" data-no-title="true" data-content="Excluding insurance, the transport warranty is limited to €11/kg for land transport and €22/kg for air transport.<br/>The AdValorem insurance hereby proposed covers you for the total value of your sending." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.INSURANCE.REAL_VALUE">Would you like to insure your shipments at their real value (cost : 0.6% of the value, minimum 4.5€)?</span>
+                            </label>
+                            <div class="settings-form-group-container">
+                              <div class="form-group form-inline">
+                                <div class="col-lg-12">
+                                  <div class="radio-inline">
+                                    <label>
+                                      <input type="radio" value="1">
+                                      <span translate="MY_SETTINGS.OPTIONS.INSURANCE.YES">&nbsp;Yes</span>
+                                    </label>
+                                  </div>
 
-                              <select id="close_time" name="close_time" class="form-control input-small2 display-inline-block">
-                                <option value="1600">04:00pm</option>
-                                <option value="1615">04:15pm</option>
-                                <option value="1630">04:30pm</option>
-                                <option value="1645">04:45pm</option>
-                                <option value="1700" selected="">05:00pm</option>
-                                <option value="1715">05:15pm</option>
-                                <option value="1730">05:30pm</option>
-                                <option value="1745">05:45pm</option>
-                                <option value="1800">06:00pm</option>
-                                <option value="1815">06:15pm</option>
-                                <option value="1830">06:30pm</option>
-                                <option value="1845">06:45pm</option>
-                                <option value="1900">07:00pm</option>
-                                <option value="1915">07:15pm</option>
-                                <option value="1930">07:30pm</option>
-                                <option value="1945">07:45pm</option>
-                                <option value="2000">08:00pm</option>
-                              </select>
-                            </div>
-                          </div>
+                                  <div class="radio-inline">
+                                    <label>
+                                      <input type="radio" value="0" checked="">
+                                      <span translate="MY_SETTINGS.OPTIONS.INSURANCE.NO">&nbsp;No</span>
+                                    </label>
+                                  </div>
 
-                          <div class="form-group">
-                            <div class="col-lg-9 col-lg-offset-none">
-                              <div class="radio">
-                                <label>
-                                  <input type="radio" value="1">
-                                  <span translate="MY_SETTINGS.OPTIONS.PICKUP.DROP_OFF">&nbsp;I prefer to drop off my parcels</span>
-                                </label>
-                                <span class="popmark pointer" id="popmark-dropoff-1" data-placement="right" data-no-title="true" data-content="Dropoff locations depend on the carrier you selected.<br/>This option is not available for all the offers. " data-original-title="" title="">&nbsp;</span>
+                                  <div class="help-block">
+                                    <small>
+                                      <a class="orange text-underline" href="images/files/upload/insurance/Upela Assurance EXCLUSIONS CONDITIONS GENERALES.pdf" target="_blank">See the conditions of insurance</a>
+                                    </small>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
+                        <div uib-accordion-group class="panel-default">
+                          <uib-accordion-heading>
+                            <h4 class="settings-subtitle">
+                              <a class="" href="#pickup-section">
+                                <i class="step-circle">4</i>
+                                <span translate="MY_SETTINGS.OPTIONS.PICKUP.TITLE">Pickup of your parcelss</span>
+                              </a>
+                            </h4>
+                          </uib-accordion-heading>
+                          <div id="pickup-section">
+                            <label class="settings-label">
+                              <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Indicate a time frame as large as possible for the pickup of your shipments.<br/>If your business is closed at lunchtime, you can specify it in your order" data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.PICKUP.OPEN_HOURS">What are your opening hours?</span>
+                            </label>
+                            <div class="settings-form-group-container">
+                              <div class="form-group">
+                                <div class="col-lg-9 col-lg-offset-none">
+                                  <div class="radio">
+                                    <label>
+                                      <input type="radio" value="0" checked="">
+                                      <span translate="MY_SETTINGS.OPTIONS.PICKUP.COLLECTION">&nbsp;Collection chosen (subject to the carrier availability)</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
 
-                    <div class="panel-grey">
-                      <h4 class="settings-subtitle">
-                        <a class="" href="#customs-section">
-                          <i class="step-circle">5</i>
-                          <span translate="MY_SETTINGS.OPTIONS.ABROAD.TITLE"> Sending abroad</span>
-                        </a>
-                      </h4>
-                      <div id="customs-section">
-                        <label class="settings-label">
-                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="This information serve as a custom declaration for the export invoices. Indicate the content as accurately as possible (in English), or the customs code corresponding to your item." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.ABROAD.ADD_DESCRIPTION">Add a description (in English) and/or the customs code of your good</span>
-                        </label>
-                        <div class="settings-form-group-container">
-                          <div class="form-group">
-                            <div class="col-lg-6">
-                              <input type="text" class="form-control" placeholder="Description in English and/or HS code" value="">
+                              <div class="form-group">
+                                <div class="col-lg-9 col-lg-offset-none">
+                                  <span translate="MY_SETTINGS.OPTIONS.PICKUP.BETWEEN">Between&nbsp;</span>
+                                  <select id="ready_time" name="ready_time" class="form-control input-small2 display-inline-block">
+                                    <option value="0800">08:00am</option>
+                                    <option value="0815">08:15am</option>
+                                    <option value="0830">08:30am</option>
+                                    <option value="0845">08:45am</option>
+                                    <option value="0900">09:00am</option>
+                                    <option value="0915">09:15am</option>
+                                    <option value="0930">09:30am</option>
+                                    <option value="0945">09:45am</option>
+                                    <option value="1000">10:00am</option>
+                                    <option value="1015">10:15am</option>
+                                    <option value="1030">10:30am</option>
+                                    <option value="1045">10:45am</option>
+                                    <option value="1100" selected="">11:00am</option>
+                                    <option value="1115">11:15am</option>
+                                    <option value="1130">11:30am</option>
+                                    <option value="1145">11:45am</option>
+                                    <option value="1200">12:00pm</option>
+                                    <option value="1215">12:15pm</option>
+                                    <option value="1230">12:30pm</option>
+                                    <option value="1245">12:45pm</option>
+                                    <option value="1300">01:00pm</option>
+                                    <option value="1315">01:15pm</option>
+                                    <option value="1330">01:30pm</option>
+                                    <option value="1345">01:45pm</option>
+                                    <option value="1400">02:00pm</option>
+                                  </select>
+                                  <span translate="MY_SETTINGS.OPTIONS.PICKUP.BETWEEN">&nbsp;and&nbsp;</span>
+
+                                  <select id="close_time" name="close_time" class="form-control input-small2 display-inline-block">
+                                    <option value="1600">04:00pm</option>
+                                    <option value="1615">04:15pm</option>
+                                    <option value="1630">04:30pm</option>
+                                    <option value="1645">04:45pm</option>
+                                    <option value="1700" selected="">05:00pm</option>
+                                    <option value="1715">05:15pm</option>
+                                    <option value="1730">05:30pm</option>
+                                    <option value="1745">05:45pm</option>
+                                    <option value="1800">06:00pm</option>
+                                    <option value="1815">06:15pm</option>
+                                    <option value="1830">06:30pm</option>
+                                    <option value="1845">06:45pm</option>
+                                    <option value="1900">07:00pm</option>
+                                    <option value="1915">07:15pm</option>
+                                    <option value="1930">07:30pm</option>
+                                    <option value="1945">07:45pm</option>
+                                    <option value="2000">08:00pm</option>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="col-lg-9 col-lg-offset-none">
+                                  <div class="radio">
+                                    <label>
+                                      <input type="radio" value="1">
+                                      <span translate="MY_SETTINGS.OPTIONS.PICKUP.DROP_OFF">&nbsp;I prefer to drop off my parcels</span>
+                                    </label>
+                                    <span class="popmark pointer" id="popmark-dropoff-1" data-placement="right" data-no-title="true" data-content="Dropoff locations depend on the carrier you selected.<br/>This option is not available for all the offers. " data-original-title="" title="">&nbsp;</span>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
+                        <div uib-accordion-group class="panel-default">
+                          <uib-accordion-heading>
+                            <h4 class="settings-subtitle">
+                              <a class="" href="#customs-section">
+                                <i class="step-circle">5</i>
+                                <span translate="MY_SETTINGS.OPTIONS.ABROAD.TITLE"> Sending abroad</span>
+                              </a>
+                            </h4>
+                          </uib-accordion-heading>
+                          <div id="customs-section">
+                            <label class="settings-label">
+                              <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="This information serve as a custom declaration for the export invoices. Indicate the content as accurately as possible (in English), or the customs code corresponding to your item." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.ABROAD.ADD_DESCRIPTION">Add a description (in English) and/or the customs code of your good</span>
+                            </label>
+                            <div class="settings-form-group-container">
+                              <div class="form-group">
+                                <div class="col-lg-6">
+                                  <input type="text" class="form-control" placeholder="Description in English and/or HS code" value="">
+                                </div>
+                              </div>
+                            </div>
 
-                        <label class="settings-label">
-                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Indicate the country of manufacture of your goods.<br/>If you do not know it, or cannot prove their origin, indicate the name of the country of departure." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.ABROAD.ITEM">Enter the country of origin, quantity, and unit price of you item</span>
-                        </label>
-                        <div class="settings-form-group-container">
-                          <div class="form-group form-inline">
-                            <div class="col-lg-12">
-                              <label class="control-label" translate="MY_SETTINGS.OPTIONS.ABROAD.COUNTRY">Country</label>&nbsp;
+                            <label class="settings-label">
+                              <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="Indicate the country of manufacture of your goods.<br/>If you do not know it, or cannot prove their origin, indicate the name of the country of departure." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.ABROAD.ITEM">Enter the country of origin, quantity, and unit price of you item</span>
+                            </label>
+                            <div class="settings-form-group-container">
+                              <div class="form-group form-inline">
+                                <div class="col-lg-12">
+                                  <label class="control-label" translate="MY_SETTINGS.OPTIONS.ABROAD.COUNTRY">Country</label>&nbsp;
 
-                              <ui-select ng-model="ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
-                                <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
-                                <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
-                                  <div ng-bind-html="person.name | highlight: $select.search"></div>
-                                  <small>
-                                    {{country.name}}
-                                    <!--age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>-->
-                                  </small>
-                                </ui-select-choices>
-                              </ui-select>
+                                  <ui-select ng-model="ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                                    <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
+                                    <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
+                                      <div ng-bind-html="person.name | highlight: $select.search"></div>
+                                      <small>
+                                        {{country.name}}
+                                        <!--age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>-->
+                                      </small>
+                                    </ui-select-choices>
+                                  </ui-select>
 
-                              &nbsp;&nbsp;&nbsp;
-                              <label class="control-label" translate="MY_SETTINGS.OPTIONS.ABROAD.QUANTITY">Quantity</label>&nbsp;
-                              <input type="text" class="form-control input-xmini2" style="display: inline-block; width: 50px;" placeholder="0" value="1">
-                              &nbsp;&nbsp;&nbsp;
+                                  &nbsp;&nbsp;&nbsp;
+                                  <label class="control-label" translate="MY_SETTINGS.OPTIONS.ABROAD.QUANTITY">Quantity</label>&nbsp;
+                                  <input type="text" class="form-control input-xmini2" style="display: inline-block; width: 50px;" placeholder="0" value="1">
+                                  &nbsp;&nbsp;&nbsp;
 
-                              <label class="control-label" translate="MY_SETTINGS.OPTIONS.ABROAD.PRICE">Unit price</label>&nbsp;
-                              <input type="text" class="form-control input-xmini2" style="display: inline-block; width: 60px;" placeholder="" value="">&nbsp;
+                                  <label class="control-label" translate="MY_SETTINGS.OPTIONS.ABROAD.PRICE">Unit price</label>&nbsp;
+                                  <input type="text" class="form-control input-xmini2" style="display: inline-block; width: 60px;" placeholder="" value="">&nbsp;
 
-                              <select class="form-control input-xmini3" style="display: inline-block; width: 55px;">
-                                <option value="EUR" selected="selected">€</option>
-                                <option value="USD">$</option>
-                              </select>
+                                  <select class="form-control input-xmini3" style="display: inline-block; width: 55px;">
+                                    <option value="EUR" selected="selected">€</option>
+                                    <option value="USD">$</option>
+                                  </select>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
+                        <div uib-accordion-group class="panel-default">
+                          <uib-accordion-heading>
+                            <h4 class="settings-subtitle">
+                              <a class="" href="">
+                                <i class="step-circle">6</i>
+                                <span translate="MY_SETTINGS.OPTIONS.TAXES.TITLE">Taxes and customs duties account</span>
+                              </a>
+                            </h4>
+                          </uib-accordion-heading>
+                          <div>
+                            <label class="settings-label">
+                              <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="UPS requires the use of a UPS account for any import from a country outside the EU.<br/>In the case of exports, this feature allows you to deliver on DDP terms, which means that you will pay for any taxes and custom duties in place of your recipient." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.TAXES.UPS">Do you already have a UPS account (required for any import with UPS)?</span>
+                            </label>
+                            <div class="settings-form-group-container">
+                              <div class="form-group">
+                                <label class="control-label col-lg-2" translate="MY_SETTINGS.OPTIONS.TAXES.ACCOUNT_NUMBER">Account number</label>
+                                <div class="col-lg-3">
+                                  <input type="text" class="form-control" value="" maxlength="12">
+                                </div>
+                              </div>
 
-                    <div class="panel-grey">
-                      <h4 class="settings-subtitle">
-                        <a class="" href="">
-                          <i class="step-circle">6</i>
-                          <span translate="MY_SETTINGS.OPTIONS.TAXES.TITLE">Taxes and customs duties account</span>
-                        </a>
-                      </h4>
+                              <div class="form-group">
+                                <label class="control-label col-lg-2" translate="MY_SETTINGS.OPTIONS.TAXES.POSTCODE">Postcode</label>
+                                <div class="col-lg-3">
+                                  <input type="text" class="form-control validate" data-validate="isPostCode" value="" maxlength="20">
+                                </div>
+                              </div>
 
-                      <div>
-                        <label class="settings-label">
-                          <span class="popmark pointer" data-placement="right" data-no-title="true" data-content="UPS requires the use of a UPS account for any import from a country outside the EU.<br/>In the case of exports, this feature allows you to deliver on DDP terms, which means that you will pay for any taxes and custom duties in place of your recipient." data-original-title="" title="" translate="MY_SETTINGS.OPTIONS.TAXES.UPS">Do you already have a UPS account (required for any import with UPS)?</span>
-                        </label>
-                        <div class="settings-form-group-container">
-                          <div class="form-group">
-                            <label class="control-label col-lg-2" translate="MY_SETTINGS.OPTIONS.TAXES.ACCOUNT_NUMBER">Account number</label>
-                            <div class="col-lg-3">
-                              <input type="text" class="form-control" value="" maxlength="12">
-                            </div>
-                          </div>
-
-                          <div class="form-group">
-                            <label class="control-label col-lg-2" translate="MY_SETTINGS.OPTIONS.TAXES.POSTCODE">Postcode</label>
-                            <div class="col-lg-3">
-                              <input type="text" class="form-control validate" data-validate="isPostCode" value="" maxlength="20">
-                            </div>
-                          </div>
-
-                          <div class="form-group">
-                            <label class="control-label col-lg-2" translate="MY_SETTINGS.OPTIONS.TAXES.COUNTRY">Country</label>
-                            <div class="col-lg-3">
-                              <ui-select ng-model="ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
-                                <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
-                                <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
-                                  <div ng-bind-html="person.name | highlight: $select.search"></div>
-                                  <small>
-                                    {{country.name}}
-                                    <!--age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>-->
-                                  </small>
-                                </ui-select-choices>
-                              </ui-select>
+                              <div class="form-group">
+                                <label class="control-label col-lg-2" translate="MY_SETTINGS.OPTIONS.TAXES.COUNTRY">Country</label>
+                                <div class="col-lg-3">
+                                  <ui-select ng-model="ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                                    <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
+                                    <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
+                                      <div ng-bind-html="person.name | highlight: $select.search"></div>
+                                      <small>
+                                        {{country.name}}
+                                        <!--age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>-->
+                                      </small>
+                                    </ui-select-choices>
+                                  </ui-select>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </uib-accordion>
                     </div>
 
                     <h3 class="form-group-legend text-uppercase" translate="MY_SETTINGS.OPTIONS.NOTIFICATION.TITLE">Email and notifications</h3>
