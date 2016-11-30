@@ -1131,8 +1131,8 @@ label.settings-label {padding-left: 15px;}
 }
 
 h4.settings-subtitle a {color: #2389a6; font-weight: normal; text-decoration: none; outline: 0;}
-h4.settings-subtitle a:after {font-family: 'FontAwesome'; content: "\f077"; margin-left: 10px; text-decoration: none; content: "\f0d8"; color: #2389a6; float: right; font-size: 24px; line-height: 24px;}
-h4.settings-subtitle a.collapsed:after {content: "\f0d7";}
+//h4.settings-subtitle a:after {font-family: 'FontAwesome'; content: "\f077"; margin-left: 10px; text-decoration: none; content: "\f0d8"; color: #2389a6; float: right; font-size: 24px; line-height: 24px;}
+//h4.settings-subtitle a.collapsed:after {content: "\f0d7";}
 
 #account-for-duties-section #ups_duty_account_country_id_chosen/*, #customs-section #product_manufacture_country_code_chosen*/ {width: 100% !important;}
 #customs-section #product_manufacture_country_code_chosen {width: 150px !important;}
@@ -1335,8 +1335,8 @@ a.collapse-toggle-panel.collapsed:after {content: "\f0d7";}
 
 .cms_content .panel-default > .panel-heading {background-color: #fff; background-image: none;}
 .cms_content .panel-default > .panel-heading h4, .cms_content .panel-default > .panel-heading h4 a {color: #2389a6; font-weight: bold; text-decoration: none;}
-.cms_content .panel-default > .panel-heading .panel-title>a:after { font-family: 'FontAwesome'; content: "\f077"; margin-left: 10px; text-decoration: none; content: "\f0d7"; color: #2389a6; float: right; font-size: 18px; line-height: 18px;}
-.cms_content .panel-default.panel-open > .panel-heading .panel-title>a:after {content: "\f0d8";}
+.panel-default > .panel-heading .panel-title>a:after { font-family: 'FontAwesome'; content: "\f077"; margin-left: 10px; text-decoration: none; content: "\f0d7"; color: #2389a6; float: right; font-size: 18px; line-height: 18px;}
+.panel-default.panel-open > .panel-heading .panel-title>a:after {content: "\f0d8";}
 /* CAROUSEL */
 /*
 .carousel {}
