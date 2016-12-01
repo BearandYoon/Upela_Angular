@@ -1335,8 +1335,28 @@ a.collapse-toggle-panel.collapsed:after {content: "\f0d7";}
 
 .cms_content .panel-default > .panel-heading {background-color: #fff; background-image: none;}
 .cms_content .panel-default > .panel-heading h4, .cms_content .panel-default > .panel-heading h4 a {color: #2389a6; font-weight: bold; text-decoration: none;}
-.panel-default > .panel-heading .panel-title>a:after { font-family: 'FontAwesome'; content: "\f077"; margin-left: 10px; text-decoration: none; content: "\f0d7"; color: #2389a6; float: right; font-size: 18px; line-height: 18px;}
-.panel-default.panel-open > .panel-heading .panel-title>a:after {content: "\f0d8";}
+.cms_content .panel-default > .panel-heading .panel-title>a:after { font-family: 'FontAwesome'; content: "\f077"; margin-left: 10px; text-decoration: none; content: "\f0d7"; color: #2389a6; float: right; font-size: 18px; line-height: 18px;}
+.cms_content .panel-default.panel-open > .panel-heading .panel-title>a:after {content: "\f0d8";}
+
+.panel-grey .panel-default > .panel-heading .panel-title>a:after {
+  font-family: 'FontAwesome';
+  content: "\f077";
+  margin-left: 10px;
+  text-decoration: none;
+  content: "\f0d7";
+  color: #2389a6;
+  float: right;
+  font-size: 18px;
+  line-height: 18px;
+  padding-top: 7px;
+}
+.panel-grey .panel-default.panel-open > .panel-heading .panel-title>a:after {
+  content: "\f0d8";
+}
+
+.panel-grey .panel-default > .panel-heading .panel-title > a > span {
+  font-size: 16px;
+}
 /* CAROUSEL */
 /*
 .carousel {}

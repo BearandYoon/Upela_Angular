@@ -370,12 +370,10 @@
                       <uib-accordion close-others="false">
                         <div uib-accordion-group class="panel-default">
                           <uib-accordion-heading>
-                            <h4 class="settings-subtitle">
-                              <a class="" href="">
-                                <i class="step-circle">1</i>
-                                <span translate="MY_SETTINGS.OPTIONS.INFORMATION.TITLE">Shipment information</span>
-                              </a>
-                            </h4>
+                            <a class="">
+                              <i class="step-circle">1</i>
+                              <span translate="MY_SETTINGS.OPTIONS.INFORMATION.TITLE">Shipment information</span>
+                            </a>
                           </uib-accordion-heading>
                           <div id="default-values-section" style="display: block;">
                             <label class="settings-label">
@@ -385,21 +383,21 @@
                               <div class="form-group">
                                 <div class="radio-inline">
                                   <label>
-                                    <input type="radio" value="1" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.ENVELOPE">&nbsp;Envelope&nbsp;
+                                    <input type="radio" value="1" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.ENVELOPE" ng-model="ctrl.shipment.type">&nbsp;Envelope&nbsp;
                                     <img src="images/icons/parcel-1.png" style="max-height: 32px;">
                                   </label>
                                 </div>
 
                                 <div class="radio-inline">
                                   <label>
-                                    <input type="radio" value="2" checked="" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.PARCEL">&nbsp;Parcel&nbsp;
+                                    <input type="radio" value="2" checked="" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.PARCEL" ng-model="ctrl.shipment.type">&nbsp;Parcel&nbsp;
                                     <img src="images/icons/parcel-2.png" style="max-height: 32px;">
                                   </label>
                                 </div>
 
                                 <div class="radio-inline">
                                   <label>
-                                    <input type="radio" value="3" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.PALLET">&nbsp;Pallet&nbsp;
+                                    <input type="radio" value="3" translate="MY_SETTINGS.OPTIONS.INFORMATION.TYPE.PALLET" ng-model="ctrl.shipment.type">&nbsp;Pallet&nbsp;
                                     <img src="images/icons/parcel-3.png" style="max-height: 32px;">
                                   </label>
                                 </div>
@@ -430,19 +428,12 @@
                                 </div>
 
                                 <div class="pull-left">
-                              <span id="switch_parcel_unit_fr" style="display: none;">
-                                <a href="#" style="padding-right:14px;">
-                                  <i class="glyphicon glyphicon-refresh"></i>
-                                  <span translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.CHANGE_UNIT">Change unit of measure (Kgs/cm)</span>
-                                </a>
-                              </span>
-
-                              <span id="switch_parcel_unit_us">
-                                <a href="#" style="padding-right:14px;">
-                                  <i class="glyphicon glyphicon-refresh"></i>
-                                  <span translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.CHANGE_UNIT">Change unit of measure (lbs/inch)</span>
-                                </a>
-                              </span>
+                                  <span id="switch_parcel_unit_us">
+                                    <a href="#" style="padding-right:14px;">
+                                      <i class="glyphicon glyphicon-refresh"></i>
+                                      <span translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.CHANGE_UNIT">Change unit of measure (lbs/inch)</span>
+                                    </a>
+                                  </span>
                                 </div>
                                 <div class="clear"></div>
                               </div>
@@ -513,12 +504,10 @@
                         </div>
                         <div uib-accordion-group class="panel-default">
                           <uib-accordion-heading>
-                            <h4 class="settings-subtitle">
-                              <a class="" href="#offer-selection-section">
-                                <i class="step-circle">2</i>
-                                <span translate="MY_SETTINGS.OPTIONS.TRANSPORT_OFFERS.TITLE">Selection of transport offers</span>
-                              </a>
-                            </h4>
+                            <a class="" href="#offer-selection-section">
+                              <i class="step-circle">2</i>
+                              <span translate="MY_SETTINGS.OPTIONS.TRANSPORT_OFFERS.TITLE">Selection of transport offers</span>
+                            </a>
                           </uib-accordion-heading>
                           <div id="offer-selection-section">
                             <label class="settings-label">
@@ -581,12 +570,10 @@
                         </div>
                         <div uib-accordion-group class="panel-default">
                           <uib-accordion-heading>
-                            <h4 class="settings-subtitle">
-                              <a class="" href="#insurance-section">
-                                <i class="step-circle">3</i>
-                                <span translate="MY_SETTINGS.OPTIONS.INSURANCE.TITLE"> Shipment value and optional supplementary insurance</span>
-                              </a>
-                            </h4>
+                            <a class="" href="#insurance-section">
+                              <i class="step-circle">3</i>
+                              <span translate="MY_SETTINGS.OPTIONS.INSURANCE.TITLE"> Shipment value and optional supplementary insurance</span>
+                            </a>
                           </uib-accordion-heading>
                           <div>
                             <label class="settings-label">
@@ -636,12 +623,10 @@
                         </div>
                         <div uib-accordion-group class="panel-default">
                           <uib-accordion-heading>
-                            <h4 class="settings-subtitle">
-                              <a class="" href="#pickup-section">
-                                <i class="step-circle">4</i>
-                                <span translate="MY_SETTINGS.OPTIONS.PICKUP.TITLE">Pickup of your parcelss</span>
-                              </a>
-                            </h4>
+                            <a class="" href="#pickup-section">
+                              <i class="step-circle">4</i>
+                              <span translate="MY_SETTINGS.OPTIONS.PICKUP.TITLE">Pickup of your parcelss</span>
+                            </a>
                           </uib-accordion-heading>
                           <div id="pickup-section">
                             <label class="settings-label">
@@ -729,12 +714,10 @@
                         </div>
                         <div uib-accordion-group class="panel-default">
                           <uib-accordion-heading>
-                            <h4 class="settings-subtitle">
-                              <a class="" href="#customs-section">
-                                <i class="step-circle">5</i>
-                                <span translate="MY_SETTINGS.OPTIONS.ABROAD.TITLE"> Sending abroad</span>
-                              </a>
-                            </h4>
+                            <a class="" href="#customs-section">
+                              <i class="step-circle">5</i>
+                              <span translate="MY_SETTINGS.OPTIONS.ABROAD.TITLE"> Sending abroad</span>
+                            </a>
                           </uib-accordion-heading>
                           <div id="customs-section">
                             <label class="settings-label">
@@ -786,12 +769,10 @@
                         </div>
                         <div uib-accordion-group class="panel-default">
                           <uib-accordion-heading>
-                            <h4 class="settings-subtitle">
-                              <a class="" href="">
-                                <i class="step-circle">6</i>
-                                <span translate="MY_SETTINGS.OPTIONS.TAXES.TITLE">Taxes and customs duties account</span>
-                              </a>
-                            </h4>
+                            <a class="" href="">
+                              <i class="step-circle">6</i>
+                              <span translate="MY_SETTINGS.OPTIONS.TAXES.TITLE">Taxes and customs duties account</span>
+                            </a>
                           </uib-accordion-heading>
                           <div>
                             <label class="settings-label">
