@@ -11,6 +11,8 @@ angular.module('UpelaApp')
   .controller('MassMailingCtrl', function ($scope, MainService) {
     var vm = this;
 
+    vm.carrier = [];
+
     // Disable weekend selection
     function disabled(data) {
       var date = data.date,
@@ -143,5 +145,10 @@ angular.module('UpelaApp')
       });
     }
 
+    function getCarriers() {
+      vm.carriers = MainService.getCarriers();
+    }
+
     getCountries();
+    getCarriers();
   });

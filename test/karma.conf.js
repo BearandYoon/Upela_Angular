@@ -32,6 +32,11 @@ module.exports = function(config) {
       'bower_components/angular-translate/angular-translate.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/angular-ui-select/dist/select.js',
+      'bower_components/ng-lodash/build/ng-lodash.js',
+      'bower_components/intl-tel-input/build/js/intlTelInput.js',
+      'bower_components/ng-intl-tel-input/dist/ng-intl-tel-input.js',
+      'bower_components/lodash/dist/lodash.compat.js',
+      'bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

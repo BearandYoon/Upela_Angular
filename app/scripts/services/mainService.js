@@ -261,8 +261,24 @@ angular.module('UpelaApp')
       {name: 'Zimbabwe', code: 'ZW'}
     ];
 
+    var carriers = [
+      {id: 1, label: "CHRONOPOST"},
+      {id: 2, label: "COLISSIMO"},
+      {id: 3, label: "COURSIER"},
+      {id: 4, label: "DHL"},
+      {id: 5, label: "DPD"},
+      {id: 6, label: "FEDEX"},
+      {id: 7, label: "MONDIALRELAY"},
+      {id: 8, label: "TNT"},
+      {id: 10, label: "UPS"}
+    ];
+
     function getCountryCode() {
       return country_code;
+    }
+
+    function getCarriers() {
+      return carriers;
     }
 
     function getCountries(callback) {
@@ -345,6 +361,7 @@ angular.module('UpelaApp')
 
     return ({
       getCountryCode: getCountryCode,
+      getCarriers: getCarriers,
       getCountries: getCountries,
       getOffers: getOffers,
       getCityandPostcode: getCityandPostcode,
