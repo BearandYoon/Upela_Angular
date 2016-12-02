@@ -20,7 +20,8 @@ angular
     'ui.bootstrap',
     'ui.select',
     'ngLodash',
-    'ngIntlTelInput'
+    'ngIntlTelInput',
+    'angularjs-dropdown-multiselect'
   ])
   .config(function ($stateProvider, $urlRouterProvider, $translateProvider, ngIntlTelInputProvider) {
     $stateProvider

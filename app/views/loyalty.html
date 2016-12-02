@@ -163,7 +163,7 @@
               <div class="form-group">
                 <label class="control-label col-lg-3 required" translate="LOYALTY.COUNTRY">Country</label>
                 <div class="col-lg-7">
-                  <ui-select ng-model="ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                  <ui-select ng-model="ctrl.ship_from_country" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
                     <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
                     <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
                       <div ng-bind-html="person.name | highlight: $select.search"></div>
