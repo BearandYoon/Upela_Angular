@@ -417,19 +417,21 @@
 
                                     <label class="parcel-label" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.UNIT">Wt.</label>
                                     <input type="text" class="form-control input-xmini2" value="" size="16" maxlength="4" placeholder="Wt.">
-                                    <span class="weight_unit">kg</span>
+                                    <span class="weight_unit" ng-if="ctrl.parcelUnit">kg</span>
+                                    <span class="weight_unit" ng-if="!ctrl.parcelUnit">lbs</span>
 
                                     <label class="parcel-label" translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.DIMENSIONS">Dimensions</label>
                                     <input type="text" class="form-control input-xmini2" ng-model="parcel.x" value="" size="16" maxlength="3" placeholder="Length" translate translate-attr-placeholder="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.LENGTH"> x
                                     <input type="text" class="form-control input-xmini2" ng-model="parcel.y" value="" maxlength="3" placeholder="Width" translate translate-attr-placeholder="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.WIDTH"> x
                                     <input type="text" class="form-control input-xmini2" ng-model="parcel.z" value="" size="16" maxlength="3" placeholder="Height" translate translate-attr-placeholder="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.HEIGHT">
-                                    <span class="dimension_unit">cm</span>
+                                    <span class="dimension_unit" ng-if="ctrl.parcelUnit">cm</span>
+                                    <span class="dimension_unit" ng-if="!ctrl.parcelUnit">in</span>
                                   </div><!-- /parcel -->
                                 </div>
 
                                 <div class="pull-left">
                                   <span id="switch_parcel_unit_us">
-                                    <a href="#" style="padding-right:14px;">
+                                    <a ng-click="ctrl.switchParcelUnit()" style="padding-right:14px;">
                                       <i class="glyphicon glyphicon-refresh"></i>
                                       <span translate="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.CHANGE_UNIT">Change unit of measure (lbs/inch)</span>
                                     </a>
@@ -445,10 +447,21 @@
 
                             <div class="settings-form-group-container">
                               <div class="dimensions-container">
-                                <div id="dimension_list"></div>
+                                <div id="dimension_list" ng-repeat="dimension in ctrl.dimensions">
+                                  <div class="parcel">
+                                    <input type="text" class="form-control input-medium" ng-model="dimension.name" translate translate-attr-placeholder="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.NAME" ng-required="true">
+
+                                    <input type="text" class="form-control input-xmini2" ng-model="dimension.x" value="" size="16" maxlength="3" placeholder="Length" translate translate-attr-placeholder="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.LENGTH" ng-required="true"> x
+                                    <input type="text" class="form-control input-xmini2" ng-model="dimension.y" value="" maxlength="3" placeholder="Width" translate translate-attr-placeholder="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.WIDTH" ng-required="true"> x
+                                    <input type="text" class="form-control input-xmini2" ng-model="dimension.z" value="" size="16" maxlength="3" placeholder="Height" translate translate-attr-placeholder="MY_SETTINGS.OPTIONS.INFORMATION.SHIPMENT_SIZE.HEIGHT" ng-required="true">
+                                    <a class="parcel-action" ng-click="ctrl.removeDimension($index)">
+                                      <i class="glyphicon glyphicon-minus-sign"></i>
+                                    </a>
+                                  </div><!-- /parcel -->
+                                </div>
                                 <div class="clear"></div>
                                 <div class="parcel-actions pull-left">
-                                  <a href="#" style="padding-right:14px;">
+                                  <a style="padding-right:14px;" ng-click="ctrl.addDimension()">
                                     <i class="glyphicon glyphicon-plus-sign"></i>
                                     <span translate="MY_SETTINGS.OPTIONS.INFORMATION.PARCELS_SIZE.ADD_DIMENSION">Add a dimension</span>
                                   </a>
@@ -517,7 +530,7 @@
                             <div class="settings-form-group-container">
                               <div class="form-group">
                                 <div class="col-lg-4 col-lg-offset-none">
-                                  <select class="form-control" style="width: 258px; display: none;" multiple="" size="2">
+                                  <select class="form-control" style="width: 258px;">
                                     <option value="CHRONOPOST">CHRONOPOST</option>
                                     <option value="COLISSIMO">COLISSIMO</option>
                                     <option value="COURSIER">COURSIER</option>
@@ -529,10 +542,10 @@
                                     <option value="UPS">UPS</option>
                                   </select>
 
-                                  <button type="button" class="ui-multiselect ui-widget ui-state-default ui-corner-all" aria-haspopup="true" style="width: 264px;">
-                                    <span class="ui-icon ui-icon-triangle-2-n-s"></span>
-                                    <span>All</span>
-                                  </button>
+                                  <!--<button type="button" class="ui-multiselect ui-widget ui-state-default ui-corner-all" aria-haspopup="true" style="width: 264px;">-->
+                                    <!--<span class="ui-icon ui-icon-triangle-2-n-s"></span>-->
+                                    <!--<span>All</span>-->
+                                  <!--</button>-->
                                 </div>
                               </div>
                             </div>
@@ -674,7 +687,7 @@
                                     <option value="1345">01:45pm</option>
                                     <option value="1400">02:00pm</option>
                                   </select>
-                                  <span translate="MY_SETTINGS.OPTIONS.PICKUP.BETWEEN">&nbsp;and&nbsp;</span>
+                                  <span translate="MY_SETTINGS.OPTIONS.PICKUP.AND">&nbsp;and&nbsp;</span>
 
                                   <select id="close_time" name="close_time" class="form-control input-small2 display-inline-block">
                                     <option value="1600">04:00pm</option>
@@ -739,7 +752,7 @@
                                 <div class="col-lg-12">
                                   <label class="control-label" translate="MY_SETTINGS.OPTIONS.ABROAD.COUNTRY">Country</label>&nbsp;
 
-                                  <ui-select ng-model="ctrl.destinationCoutry" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
+                                  <ui-select ng-model="ctrl.ship_to_country" theme="select2" ng-disabled="ctrl.disabled" style="width: 160px;" title="Select the Country">
                                     <ui-select-match placeholder="Select Country">{{$select.selected.name || $select.selected}}</ui-select-match>
                                     <ui-select-choices repeat="country.name as country in ctrl.countries | searchSelectorFilter: {name: $select.search}">
                                       <div ng-bind-html="person.name | highlight: $select.search"></div>

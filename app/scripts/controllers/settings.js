@@ -24,4 +24,31 @@ angular.module('UpelaApp')
     getCountries();
 
     vm.business_address = 1;
+
+    vm.parcelUnit = true;
+    vm.switchParcelUnit = function() {
+      vm.parcelUnit = !vm.parcelUnit;
+    };
+
+    vm.dimensions = [];
+
+    vm.dimensionCount = 0;
+    vm.addDimension = function() {
+      var dimension = {
+        name: '',
+        x: '',
+        y: '',
+        z: ''
+      };
+
+      vm.dimensions.push(dimension);
+      vm.dimensionCount++;
+    };
+
+    vm.removeDimension = function(index) {
+      if(vm.dimensionCount > 0) {
+        vm.dimensions.splice(index, 1);
+        vm.dimensionCount--;
+      }
+    };
   });

@@ -94,6 +94,7 @@
               NO: 'No.',
               UNIT: 'Wt/Unit',
               DIMENSIONS: 'Dimensions',
+              NAME: 'Name',
               LENGTH: 'Length',
               WIDTH: 'Width',
               HEIGHT: 'Height',
@@ -117,8 +118,8 @@
             TITLE: 'SHIPMENT VALUE AND OPTIONAL SUPPLEMENTARY INSURANCE',
             VALUE: 'What is the value of your shipments?',
             REAL_VALUE: 'Would you like to insure your shipments at their real value (cost : 0.6% of the value, minimum 4.5€)?',
-            YES: '$nbsp;Yes',
-            NO: '$nbsp;No'
+            YES: 'Yes',
+            NO: 'No'
           },
           PICKUP: {
             TITLE: 'PICKUP OF YOUR PARCELS',
@@ -263,6 +264,7 @@
               NO: 'Nb.',
               UNIT: 'Pds/Unit',
               DIMENSIONS: 'Dimensions',
+              NAME: 'Nom',
               LENGTH: 'Long',
               WIDTH: 'Larg',
               HEIGHT: 'Haut',
@@ -432,6 +434,7 @@
               NO: 'N.°',
               UNIT: 'Peso /u',
               DIMENSIONS: 'Dimensiones',
+              NAME: 'Apellido',
               LENGTH: 'Long.',
               WIDTH: 'Anch.',
               HEIGHT: 'Alt.',
